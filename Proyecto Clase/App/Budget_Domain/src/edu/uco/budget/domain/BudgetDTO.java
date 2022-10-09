@@ -9,15 +9,18 @@ public class BudgetDTO {
 	private YearDTO year;
 	
 	public BudgetDTO() {
-		super();
+		setPerson(person);
+		setYear(year);
 	}
 
-	public BudgetDTO(PersonDTO person, YearDTO year) {
-		this.person = person;
-		this.year = year;
+	public BudgetDTO(final PersonDTO person,final YearDTO year) {
+		setPerson(person);
+		setYear(year);
 	}
 
-	//CREATE
+	public static final BudgetDTO create(final PersonDTO person,final YearDTO year) {
+		return new BudgetDTO(person,year);
+	}
 	
 	public PersonDTO getPerson() {
 		return person;
@@ -44,6 +47,5 @@ public class BudgetDTO {
 				.setYearNumber(year.getYearNumber())
 				.build();
 	}
-	
 	
 }
