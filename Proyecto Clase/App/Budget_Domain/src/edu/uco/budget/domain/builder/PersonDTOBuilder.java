@@ -43,12 +43,12 @@ public class PersonDTOBuilder {
 	}
 	
 	public final PersonDTOBuilder setFirstSurname(String firstSurname) {
-		this.firstName = firstSurname;
+		this.firstSurname = firstSurname;
 		return this;
 	}
 	
 	public final PersonDTOBuilder setSecondSurname(String secondSurname) {
-		this.firstName = secondSurname;
+		this.secondSurname = secondSurname;
 		return this;
 	}
 	
