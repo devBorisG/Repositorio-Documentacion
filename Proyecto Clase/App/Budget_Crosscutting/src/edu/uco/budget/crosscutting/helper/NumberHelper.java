@@ -4,7 +4,7 @@ import static edu.uco.budget.crosscutting.helper.ObjectHelper.getDefaultIfNull;
 
 public class NumberHelper {
 	
-	public static final byte ZERO = 0; //es constante la variable, por ende el nombre se pone en maysucula 
+	public static final byte ZERO = 0;  //es constante la variable, por ende el nombre se pone en maysucula 
 	
 	private NumberHelper() {
 		super();

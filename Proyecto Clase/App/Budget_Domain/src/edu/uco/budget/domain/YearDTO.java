@@ -7,7 +7,6 @@ import static edu.uco.budget.crosscutting.helper.NumberHelper.ZERO;
 import static edu.uco.budget.crosscutting.helper.UUIDHelper.getDefaultUUID;
 import static edu.uco.budget.crosscutting.helper.UUIDHelper.getNewUUID;
 
-
 public class YearDTO {
 	
 	private UUID id;

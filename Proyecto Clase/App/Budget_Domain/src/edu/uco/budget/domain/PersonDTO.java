@@ -16,7 +16,7 @@ public class PersonDTO {
 	private String firstSurname;
 	private String secondSurname;
 	
-	private PersonDTO() {
+	public PersonDTO() {
 		setId(getNewUUID());
 		setIdCard(EMPTY);
 		setFirstName(EMPTY);
@@ -25,20 +25,24 @@ public class PersonDTO {
 		setSecondSurname(EMPTY);
 	}
 
-	public PersonDTO(UUID id, String idCard, String firstName, String secondName, String firstSurname, String secondSurname) {
-		this.id = id;
-		this.idCard = idCard;
-		this.firstName = firstName;
-		this.secondName = secondName;
-		this.firstSurname = firstSurname;
-		this.secondSurname = secondSurname;
+	public PersonDTO(final UUID id,final String idCard,final String firstName,final String secondName,final String firstSurname,final String secondSurname) {
+		setId(id);
+		setIdCard(idCard);
+		setFirstName(firstName);
+		setSecondName(secondName);
+		setFirstSurname(firstSurname);
+		setSecondSurname(secondSurname);
+	}
+	
+	public static final PersonDTO create(final UUID id,final String idCard,final String firstName,final String secondName,final String firstSurname,final String secondSurname) {
+		return new PersonDTO(id, idCard, firstName, secondName, firstSurname, secondSurname);
 	}
 
 	public UUID getId() {
 		return id;
 	}
 
-	public void setId(UUID id) {
+	public final void setId(final UUID id) {
 		this.id = getDefaultUUID(id);
 	}
 
@@ -46,7 +50,7 @@ public class PersonDTO {
 		return idCard;
 	}
 
-	public void setIdCard(final String idCard) {
+	public final void setIdCard(final String idCard) {
 		this.idCard = applyTrim(idCard);
 	}
 
@@ -54,7 +58,7 @@ public class PersonDTO {
 		return firstName;
 	}
 
-	public void setFirstName(final String firstName) {
+	public final void setFirstName(final String firstName) {
 		this.firstName = applyTrim(firstName);
 	}
 
@@ -62,7 +66,7 @@ public class PersonDTO {
 		return secondName;
 	}
 
-	public void setSecondName(final String secondName) {
+	public final void setSecondName(final String secondName) {
 		this.secondName = applyTrim(secondName);
 	}
 
@@ -70,7 +74,7 @@ public class PersonDTO {
 		return firstSurname;
 	}
 
-	public void setFirstSurname(final String firstSurname) {
+	public final void setFirstSurname(final String firstSurname) {
 		this.firstSurname = applyTrim(firstSurname);
 	}
 
@@ -78,7 +82,7 @@ public class PersonDTO {
 		return secondSurname;
 	}
 
-	public void setSecondSurname(final String secondSurname) {
+	public final void setSecondSurname(final String secondSurname) {
 		this.secondSurname = applyTrim(secondSurname);
 	}
 		
