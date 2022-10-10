@@ -32,5 +32,4 @@ public class YearDTOBuilder {
 	public final YearDTO build() {
 		return create(id, yearNumber);
 	}
-	
 }

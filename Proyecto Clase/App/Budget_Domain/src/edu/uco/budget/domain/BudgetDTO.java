@@ -2,6 +2,7 @@ package edu.uco.budget.domain;
 
 import static edu.uco.budget.domain.builder.PersonDTOBuilder.getPersonDTOBuilder;
 import static edu.uco.budget.domain.builder.YearDTOBuilder.getYearDTOBuilder;
+import static edu.uco.budget.crosscutting.helper.ObjectHelper.getDefaultIfNull;
 
 public class BudgetDTO {
 	
@@ -9,13 +10,13 @@ public class BudgetDTO {
 	private YearDTO year;
 	
 	public BudgetDTO() {
-		setPerson(person);
-		setYear(year);
+		setPerson(getPersonDTOBuilder().build());
+		setYear(getYearDTOBuilder().build());
 	}
 
 	public BudgetDTO(final PersonDTO person,final YearDTO year) {
-		setPerson(person);
-		setYear(year);
+		setPerson(getDefaultIfNull(person, getPersonDTOBuilder().build()));
+		setYear(getDefaultIfNull(year, getYearDTOBuilder().build()));
 	}
 
 	public static final BudgetDTO create(final PersonDTO person,final YearDTO year) {
@@ -27,6 +28,7 @@ public class BudgetDTO {
 	}
 
 	public final void setPerson(final PersonDTO person) {
+		
 		this.person = getPersonDTOBuilder()
 				.setId(person.getId())
 				.setIdCard(person.getIdCard())

@@ -22,8 +22,8 @@ public class prueba {
 				.build();
 		
 		BudgetDTO myBudet = getBudgetDTOBuilder()
-				.setPerson(myPerson)
-				.setYear(myYear)
+				//.setPerson(myPerson)
+				//.setYear(myYear)
 				.build();
 				
 		System.out.println(
