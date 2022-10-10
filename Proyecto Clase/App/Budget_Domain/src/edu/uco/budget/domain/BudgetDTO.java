@@ -15,8 +15,8 @@ public class BudgetDTO {
 	}
 
 	public BudgetDTO(final PersonDTO person,final YearDTO year) {
-		setPerson(getDefaultIfNull(person, getPersonDTOBuilder().build()));
-		setYear(getDefaultIfNull(year, getYearDTOBuilder().build()));
+		setPerson(person);
+		setYear(year);
 	}
 
 	public static final BudgetDTO create(final PersonDTO person,final YearDTO year) {
@@ -28,26 +28,16 @@ public class BudgetDTO {
 	}
 
 	public final void setPerson(final PersonDTO person) {
-		
-		this.person = getPersonDTOBuilder()
-				.setId(person.getId())
-				.setIdCard(person.getIdCard())
-				.setFirstName(person.getFirstName())
-				.setSecondName(person.getSecondName())
-				.setFirstSurname(person.getFirstSurname())
-				.setSecondSurname(person.getSecondSurname())
-				.build();
+		this.person = getDefaultIfNull(person, getPersonDTOBuilder().build()); 
 	}
 
 	public YearDTO getYear() {
 		return year;
+		
 	}
 
 	public final void setYear(final YearDTO year) {
-		this.year = getYearDTOBuilder()
-				.setId(year.getId())
-				.setYearNumber(year.getYearNumber())
-				.build();
+		this.year = getDefaultIfNull(year, getYearDTOBuilder().build());
 	}
 	
 }
