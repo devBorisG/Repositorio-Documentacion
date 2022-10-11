@@ -33,7 +33,6 @@ public class BudgetDTO {
 
 	public YearDTO getYear() {
 		return year;
-		
 	}
 
 	public final void setYear(final YearDTO year) {
