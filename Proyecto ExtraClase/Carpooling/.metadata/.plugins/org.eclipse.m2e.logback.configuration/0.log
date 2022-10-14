@@ -1,0 +1,53 @@
+2022-10-13 17:27:35,411 [Worker-6: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2022-10-13 17:28:10,179 [Worker-12: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: edu.uco.carpooling:Carpooling_Crosscutting:0.0.1-SNAPSHOT @ C:\Users\DAVID\Documents\GitHub\RepositorioDOO\Proyecto ExtraClase\Carpooling\Carpooling_Crosscutting\pom.xml.
+2022-10-13 17:28:10,505 [Worker-12: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-10-13 17:28:10,506 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\DAVID\Documents\GitHub\RepositorioDOO\Proyecto ExtraClase\Carpooling\Carpooling_Crosscutting\src\main\resources
+2022-10-13 17:28:10,511 [Worker-12: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-10-13 17:28:10,513 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\DAVID\Documents\GitHub\RepositorioDOO\Proyecto ExtraClase\Carpooling\Carpooling_Crosscutting\src\test\resources
+2022-10-13 17:28:10,819 [Worker-12: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: edu.uco.carpooling:Carpooling_Data:0.0.1-SNAPSHOT @ C:\Users\DAVID\Documents\GitHub\RepositorioDOO\Proyecto ExtraClase\Carpooling\Carpooling_Data\pom.xml.
+2022-10-13 17:28:10,828 [Worker-12: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for edu.uco.carpooling:Carpooling_Domian:jar:0.0.1-SNAPSHOT is missing, no dependency information available
+2022-10-13 17:28:10,835 [Worker-12: Building] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/Carpooling_Crosscutting: edu.uco.carpooling:Carpooling_Crosscutting:0.0.1-SNAPSHOT with classifier  to /Carpooling_Crosscutting/target/classes
+2022-10-13 17:28:10,881 [Worker-12: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-10-13 17:28:10,883 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\DAVID\Documents\GitHub\RepositorioDOO\Proyecto ExtraClase\Carpooling\Carpooling_Data\src\main\resources
+2022-10-13 17:28:10,886 [Worker-12: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-10-13 17:28:10,887 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\DAVID\Documents\GitHub\RepositorioDOO\Proyecto ExtraClase\Carpooling\Carpooling_Data\src\test\resources
+2022-10-13 17:28:10,962 [Worker-12: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: edu.uco.carpooling:Carpooling_Domian:0.0.1-SNAPSHOT @ C:\Users\DAVID\Documents\GitHub\RepositorioDOO\Proyecto ExtraClase\Carpooling\Carpooling_Domian\pom.xml.
+2022-10-13 17:28:10,965 [Worker-12: Building] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/Carpooling_Crosscutting: edu.uco.carpooling:Carpooling_Crosscutting:0.0.1-SNAPSHOT with classifier  to /Carpooling_Crosscutting/target/classes
+2022-10-13 17:28:11,041 [Worker-12: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: edu.uco.carpooling:Carpooling_Data:0.0.1-SNAPSHOT @ C:\Users\DAVID\Documents\GitHub\RepositorioDOO\Proyecto ExtraClase\Carpooling\Carpooling_Data\pom.xml.
+2022-10-13 17:28:11,047 [Worker-12: Building] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/Carpooling_Domian: edu.uco.carpooling:Carpooling_Domian:0.0.1-SNAPSHOT with classifier  to /Carpooling_Domian/target/classes
+2022-10-13 17:28:11,047 [Worker-12: Building] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/Carpooling_Crosscutting: edu.uco.carpooling:Carpooling_Crosscutting:0.0.1-SNAPSHOT with classifier  to /Carpooling_Crosscutting/target/classes
+2022-10-13 17:28:11,071 [Worker-12: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-10-13 17:28:11,073 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\DAVID\Documents\GitHub\RepositorioDOO\Proyecto ExtraClase\Carpooling\Carpooling_Domian\src\main\resources
+2022-10-13 17:28:11,079 [Worker-12: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-10-13 17:28:11,081 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\DAVID\Documents\GitHub\RepositorioDOO\Proyecto ExtraClase\Carpooling\Carpooling_Domian\src\test\resources
+2022-10-13 17:28:11,194 [Worker-12: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: edu.uco.carpooling:Carpooling_Service:0.0.1-SNAPSHOT @ C:\Users\DAVID\Documents\GitHub\RepositorioDOO\Proyecto ExtraClase\Carpooling\Carpooling_Service\pom.xml.
+2022-10-13 17:28:11,204 [Worker-12: Building] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/Carpooling_Domian: edu.uco.carpooling:Carpooling_Domian:0.0.1-SNAPSHOT with classifier  to /Carpooling_Domian/target/classes
+2022-10-13 17:28:11,205 [Worker-12: Building] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/Carpooling_Crosscutting: edu.uco.carpooling:Carpooling_Crosscutting:0.0.1-SNAPSHOT with classifier  to /Carpooling_Crosscutting/target/classes
+2022-10-13 17:28:11,205 [Worker-12: Building] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/Carpooling_Data: edu.uco.carpooling:Carpooling_Data:0.0.1-SNAPSHOT with classifier  to /Carpooling_Data/target/classes
+2022-10-13 17:28:11,228 [Worker-12: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-10-13 17:28:11,229 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\DAVID\Documents\GitHub\RepositorioDOO\Proyecto ExtraClase\Carpooling\Carpooling_Service\src\main\resources
+2022-10-13 17:28:11,233 [Worker-12: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-10-13 17:28:11,234 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\DAVID\Documents\GitHub\RepositorioDOO\Proyecto ExtraClase\Carpooling\Carpooling_Service\src\test\resources
+2022-10-13 17:28:11,886 [Worker-9: Download sources and javadoc] ERROR o.e.m.j.internal.DownloadSourcesJob - Could not download javadoc for edu.uco.carpooling:Carpooling_Domian:0.0.1-SNAPSHOT
+org.eclipse.core.runtime.CoreException: Could not resolve artifact edu.uco.carpooling:Carpooling_Domian:jar:javadoc:0.0.1-SNAPSHOT
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lambda$6(MavenImpl.java:608) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:350) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:219) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:205) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:577) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:562) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.download(DownloadSourcesJob.java:308) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadAttachments(DownloadSourcesJob.java:294) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadMaven(DownloadSourcesJob.java:252) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadFilesAndPopulateToUpdate(DownloadSourcesJob.java:220) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.lambda$0(DownloadSourcesJob.java:149) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:350) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:262) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:205) ~[na:na]
+	at org.eclipse.m2e.core.embedder.IMaven.execute(IMaven.java:270) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.run(DownloadSourcesJob.java:149) ~[na:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) ~[org.eclipse.core.jobs_3.13.100.v20220817-1539.jar:na]
+2022-10-13 17:28:12,337 [Worker-7: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-10-13 17:28:12,338 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\DAVID\Documents\GitHub\RepositorioDOO\Proyecto ExtraClase\Carpooling\Carpooling_Data\src\main\resources
+2022-10-13 17:28:12,341 [Worker-7: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-10-13 17:28:12,342 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\DAVID\Documents\GitHub\RepositorioDOO\Proyecto ExtraClase\Carpooling\Carpooling_Data\src\test\resources
