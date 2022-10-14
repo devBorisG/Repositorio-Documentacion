@@ -15,14 +15,14 @@ public class UserDTO extends CustomerDTO {
 
 	public UserDTO(final UUID id, final int dni, final String firstName, final String secondName,
 			final String firstSurname, final String secondSurname, final String password, final LocalDate born,
-			final int phone, final String emailCompany, final String referencePoint) {
-		super(id, dni, firstName, secondName, firstSurname, secondSurname, password, born, phone, emailCompany);
+			final int phone, final String companyEmail, final String referencePoint) {
+		super(id, dni, firstName, secondName, firstSurname, secondSurname, password, born, phone, companyEmail);
 		setReferencePoint(referencePoint);
 	}
 	
 	public static final UserDTO create(final UUID id, final int dni, final String firstName, final String secondName,
 			final String firstSurname, final String secondSurname, final String password, final LocalDate born,
-			final int phone, final String emailCompany, final String referencePoint) {
+			final int phone, final String companyEmail, final String referencePoint) {
 		return new UserDTO(
 					id,
 					dni,
@@ -33,7 +33,7 @@ public class UserDTO extends CustomerDTO {
 					password,
 					born,
 					phone,
-					emailCompany,
+					companyEmail,
 					referencePoint
 				);
 	}

@@ -26,7 +26,7 @@ public class CustomerDTO {
 	private String password;
 	private LocalDate born;
 	private int phone;
-	private String emailCompany;
+	private String companyEmail;
 	
 	public CustomerDTO() {
 		setId(getNewUUID());
@@ -38,7 +38,7 @@ public class CustomerDTO {
 		setPassword(EMPTY);
 		setBorn(NOTHING);
 		setPhone(ZERO);
-		setEmailCompany(EMPTY);
+		setCompanyEmail(EMPTY);
 	}
 
 	public CustomerDTO(final UUID id,final int dni,final String firstName,final String secondName,final String firstSurname,final String secondSurname,
@@ -52,7 +52,7 @@ public class CustomerDTO {
 		setPassword(password);
 		setBorn(born);
 		setPhone(phone);
-		setEmailCompany(emailCompany);
+		setCompanyEmail(emailCompany);
 	}
 	
 	public UUID getId() {
@@ -127,12 +127,12 @@ public class CustomerDTO {
 		this.phone = isLessThan(phone, ZERO)? ZERO : phone;
 	}
 
-	public String getEmailCompany() {
-		return emailCompany;
+	public String getCompanyEmail() {
+		return companyEmail;
 	}
 
-	public final void setEmailCompany(final String emailCompany) {
-		this.emailCompany = applyTrim(emailCompany);
+	public final void setCompanyEmail(final String companyEmail) {
+		this.companyEmail = applyTrim(companyEmail);
 	}
 	
 }

@@ -17,7 +17,7 @@ public class DriverDTOBuilder {
 	private String password;
 	private LocalDate born;
 	private int phone;
-	private String emailCompany;
+	private String companyEmail;
 	
 	private DriverDTOBuilder() {
 		super();
@@ -72,12 +72,12 @@ public class DriverDTOBuilder {
 		return this;
 	}
 
-	public final DriverDTOBuilder setEmailCompany(String emailCompany) {
-		this.emailCompany = emailCompany;
+	public final DriverDTOBuilder setCompanyEmail(String companyEmail) {
+		this.companyEmail = companyEmail;
 		return this;
 	}
 	
 	public final DriverDTO build() {
-		return create(id, dni, firstName, secondName, firstSurname, secondSurname, password, born, phone, emailCompany);
+		return create(id, dni, firstName, secondName, firstSurname, secondSurname, password, born, phone, companyEmail);
 	}
 }

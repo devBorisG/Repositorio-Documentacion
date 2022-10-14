@@ -17,7 +17,7 @@ public class UserDTOBuilder {
 	private String password;
 	private LocalDate born;
 	private int phone;
-	private String emailCompany;
+	private String companyEmail;
 	private String referencePoint;
 	
 	private UserDTOBuilder() {
@@ -73,8 +73,8 @@ public class UserDTOBuilder {
 		return this;
 	}
 
-	public final UserDTOBuilder setEmailCompany(String emailCompany) {
-		this.emailCompany = emailCompany;
+	public final UserDTOBuilder setCompanyEmail(String companyEmail) {
+		this.companyEmail = companyEmail;
 		return this;
 	}
 
@@ -84,6 +84,6 @@ public class UserDTOBuilder {
 	}
 	
 	public final UserDTO build() {
-		return create(id, dni, firstName, secondName, firstSurname, secondSurname, password, born, phone, emailCompany, referencePoint);
+		return create(id, dni, firstName, secondName, firstSurname, secondSurname, password, born, phone, companyEmail, referencePoint);
 	}
 }
