@@ -55,22 +55,6 @@ public class CustomerDTO {
 		setEmailCompany(emailCompany);
 	}
 	
-	public static final CustomerDTO create(final UUID id,final int dni,final String firstName,final String secondName,final String firstSurname,final String secondSurname,
-			final String password,final LocalDate born,final int phone,final String emailCompany) {
-		return new CustomerDTO(
-					id,
-					dni,
-					firstName,
-					secondName,
-					firstSurname,
-					secondSurname,
-					password,
-					born,
-					phone,
-					emailCompany
-				);
-	}
-
 	public UUID getId() {
 		return id;
 	}
