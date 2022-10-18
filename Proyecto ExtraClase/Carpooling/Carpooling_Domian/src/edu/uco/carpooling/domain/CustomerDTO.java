@@ -124,7 +124,7 @@ public class CustomerDTO {
 	}
 
 	public final void setPhone(final int phone) {
-		this.phone = isLessThan(phone, ZERO)? ZERO : phone;
+		this.phone = isLessThan(phone, ZZERO)? ZERO : phone;
 	}
 
 	public String getCompanyEmail() {
