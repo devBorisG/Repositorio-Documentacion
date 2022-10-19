@@ -23,6 +23,10 @@ public class DetailRouteDTO {
 		setQuota(quota);
 	}
 	
+	public static final DetailRouteDTO create(final UUID id, final int quota) {
+		return new DetailRouteDTO(id,quota);
+	}
+	
 	public UUID getId() {
 		return id;
 	}

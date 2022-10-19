@@ -2,6 +2,9 @@ package edu.uco.carpooling.domain;
 
 import java.time.LocalDate;
 import java.util.UUID;
+
+import edu.uco.carpooling.domain.builder.RouteDTOBuilder;
+
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getDefaultUUID;
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getNewUUID;
 import static edu.uco.carpooling.crosscutting.helper.NumberHelper.isLessThan;
@@ -43,6 +46,11 @@ public class RouteDTO {
 		setStatus(status);
 		setStartRoute(startRoute);
 		setEndRoute(endRoute);
+	}
+	
+	public static final RouteDTO create(final UUID id,final int quota,final LocalDate creationTime,
+			final LocalDate endTime,final boolean status,final String startRoute,final String endRoute) {
+		return new RouteDTO(id,quota,creationTime,endTime,status,startRoute,endRoute);
 	}
 	
 	public UUID getId() {

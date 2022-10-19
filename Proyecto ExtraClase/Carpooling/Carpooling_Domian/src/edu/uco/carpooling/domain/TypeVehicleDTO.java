@@ -6,19 +6,23 @@ import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getNewUUID;
 import static edu.uco.carpooling.crosscutting.helper.StringHelper.EMPTY;
 import static edu.uco.carpooling.crosscutting.helper.StringHelper.applyTrim;
 
-public class TypeVehicle {
+public class TypeVehicleDTO {
 	
 	private UUID id;
 	private String type;
 	
-	public TypeVehicle() {
+	public TypeVehicleDTO() {
 		setId(getNewUUID());
 		setType(EMPTY);
 	}
 	
-	public TypeVehicle(final UUID id, final String type) {
+	public TypeVehicleDTO(final UUID id, final String type) {
 		setId(id);
 		setType(type);
+	}
+	
+	public static final TypeVehicleDTO create(final UUID id,final String type) {
+		return new TypeVehicleDTO(id,type);
 	}
 	
 	public UUID getId() {
