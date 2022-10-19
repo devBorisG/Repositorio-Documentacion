@@ -34,6 +34,16 @@ public class RouteDTO {
 		setEndRoute(EMPTY);
 	}
 	
+	public RouteDTO(final UUID id,final int quota,final LocalDate creationTime,final LocalDate endTime,
+			final boolean status, final String starRoute,final String endRoute) {
+		setId(getDefaultUUID(id));
+		setQuota(quota);
+		setCreationTime(creationTime);
+		setEndTime(endTime);
+		setStatus(status);
+		setStartRoute(startRoute);
+		setEndRoute(endRoute);
+	}
 	
 	public UUID getId() {
 		return id;
