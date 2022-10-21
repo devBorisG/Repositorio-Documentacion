@@ -1,4 +1,4 @@
-package edu.uco.budget.data.dao.daofactory;
+package edu.uco.budget.data.daofactory;
 
 import edu.uco.budget.crosscutting.messages.Messages;
 import edu.uco.budget.data.dao.BudgetDAO;
@@ -7,7 +7,7 @@ import edu.uco.budget.data.dao.YearDAO;
 import edu.uco.budget.data.enumeration.DAOFactoryType;
 
 public abstract class DAOFactory {
-
+//SI ES UNA CLASE ABSTRACTA QUIERE DECIR QUE NO PUEDE SER INSTANCIADA
 	public static final DAOFactory getDAOFactory(final DAOFactoryType factory) {
 
 		DAOFactory daoFactory;

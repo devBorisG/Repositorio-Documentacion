@@ -1,6 +1,6 @@
 package edu.uco.budget.service.usecase.budget.implementation;
 
-import edu.uco.budget.data.dao.daofactory.DAOFactory;
+import edu.uco.budget.data.daofactory.DAOFactory;
 import edu.uco.budget.data.enumeration.DAOFactoryType;
 import edu.uco.budget.domain.BudgetDTO;
 import edu.uco.budget.service.usecase.budget.CreateBudgetUseCase;

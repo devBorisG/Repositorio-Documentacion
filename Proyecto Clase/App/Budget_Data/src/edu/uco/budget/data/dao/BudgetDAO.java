@@ -1,4 +1,4 @@
-package edu.uco.budget.data.dao;
+	package edu.uco.budget.data.dao;
 
 import java.util.List;
 import java.util.UUID;
@@ -6,12 +6,15 @@ import java.util.UUID;
 import edu.uco.budget.domain.BudgetDTO;
 
 public interface BudgetDAO {
-
-	void create(final BudgetDTO budget);
 	
-	List<BudgetDTO> find(final BudgetDTO budget);
+	//No sirve de nada poner los parametros de tipo final ya que
+	//al ser un contrato no agrega ni quita valor
 	
-	void update(final BudgetDTO budget);
+	void create( BudgetDTO budget);
 	
-	void delete(final UUID id);
+	List<BudgetDTO> find( BudgetDTO budget);
+	
+	void update( BudgetDTO budget);
+	
+	void delete( UUID id);
 }
