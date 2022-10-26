@@ -31,5 +31,10 @@ public class Messages {
 		
 		public static final String TECHNICAL_CONNECTION_IS_NULL = "Connetion is null";
 		public static final String TECHNICAL_CONNECTION_IS_CLOSED= "Connection is closed";
+		public static final String TECHNICAL_CONNECTION_NOT_POSSIBLE = "Connection es not posible in this moment";
+		public static final String TECHNICAL_CONFIRM_TRANSACTION_NOT_POSSIBLE = "The transaction can not be done";
+		public static final String TECHNICAL_CANCEL_TRANSACTION_NOT_POSSIBLE = "Cancel transaction can not be done";
+		public static final String TECHNICAL_UNEXPECTED = "An unexpected exception occurred";
 	}
+	
 }
