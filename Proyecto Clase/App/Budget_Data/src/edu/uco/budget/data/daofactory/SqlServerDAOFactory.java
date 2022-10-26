@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import edu.uco.budget.crosscutting.exceptions.SqlException;
+import edu.uco.budget.crosscutting.messages.Messages;
 import edu.uco.budget.data.dao.BudgetDAO;
 import edu.uco.budget.data.dao.PersonDAO;
 import edu.uco.budget.data.dao.YearDAO;
@@ -31,16 +33,18 @@ final class SqlServerDAOFactory extends DAOFactory{
 				+ "loginTimeout=30;";
 		try {
 			connection = DriverManager.getConnection(url);
-			connection.setAutoCommit(false);
-		} catch (SQLException e) {
-			throw new RuntimeException("No se pudo");
-			 // TODO realizar custom exception
+		} catch (SQLException exception) {
+			throw SqlException.
+			create(Messages.SqlConnectionHelper.TECHNICAL_CONNECTION_NOT_POSSIBLE, exception);
+		} catch (Exception exception) {
+			throw SqlException.
+			create(Messages.SqlConnectionHelper.TECHNICAL_UNEXPECTED, exception); //You have to catch the exceptions that we don't yet know why they occur this way
 		}
 	}
 
 	@Override
 	public void initTransaction() {
-		 // TODO realizar custom exception
+		 // TODO realize custom exception
 		
 	}
 
@@ -48,8 +52,12 @@ final class SqlServerDAOFactory extends DAOFactory{
 	public void confirmTransaction() {
 		 try {
 			connection.commit();
-		} catch (SQLException e) {
-			e.printStackTrace(); // TODO realizar custom exception
+		} catch (SQLException exception) {
+			throw SqlException
+			.create(Messages.SqlConnectionHelper.TECHNICAL_CONFIRM_TRANSACTION_NOT_POSSIBLE,exception);
+		} catch (Exception exception) {
+			throw SqlException
+			.create(Messages.SqlConnectionHelper.TECHNICAL_UNEXPECTED,exception);
 		}
 		
 	}
@@ -58,8 +66,12 @@ final class SqlServerDAOFactory extends DAOFactory{
 	public void cancelTransaction() {
 		 try {
 			connection.rollback();
-		} catch (SQLException e) {
-			e.printStackTrace(); // TODO realizar custom exception
+		} catch (SQLException exception) {
+			throw SqlException
+			.create(Messages.SqlConnectionHelper.TECHNICAL_CANCEL_TRANSACTION_NOT_POSSIBLE, exception); 
+		} catch (Exception exception) {
+			throw SqlException
+			.create(Messages.SqlConnectionHelper.TECHNICAL_UNEXPECTED,exception);
 		}
 		
 	}
@@ -68,9 +80,13 @@ final class SqlServerDAOFactory extends DAOFactory{
 	public void closeConnection() {
 		try {
 			connection.close();
-		} catch (SQLException e) {
-			e.printStackTrace(); // TODO realizar custom exception
-		}	
+		} catch (SQLException exception) {
+			throw SqlException
+			.create(Messages.SqlConnectionHelper.TECHNICAL_CONNECTION_IS_CLOSED, exception);
+		} catch (Exception exception) {
+			throw SqlException
+			.create(Messages.SqlConnectionHelper.TECHNICAL_UNEXPECTED,exception);
+		}
 		
 	}
 

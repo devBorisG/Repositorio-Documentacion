@@ -1,5 +1,6 @@
 package edu.uco.budget.data.daofactory;
 
+import edu.uco.budget.crosscutting.exceptions.SqlException;
 import edu.uco.budget.crosscutting.messages.Messages;
 import edu.uco.budget.data.dao.BudgetDAO;
 import edu.uco.budget.data.dao.PersonDAO;
@@ -17,19 +18,19 @@ public abstract class DAOFactory {
 			daoFactory = new SqlServerDAOFactory();
 			break;
 		case CASSANDRA:
-			throw new RuntimeException(Messages.DAOFactory.TECHNICAL_CASSANDRA_NOT_IMPLEMENTED);
+			throw SqlException.create(Messages.DAOFactory.TECHNICAL_CASSANDRA_NOT_IMPLEMENTED);
 		case MARIADB:
-			throw new RuntimeException(Messages.DAOFactory.TECHNICAL_MARIADB_NOT_IMPLEMENTED);
+			throw SqlException.create(Messages.DAOFactory.TECHNICAL_MARIADB_NOT_IMPLEMENTED);
 		case MONGODB:
-			throw new RuntimeException(Messages.DAOFactory.TECHNICAL_MONGODB_NOT_IMPLEMENTED);
+			throw SqlException.create(Messages.DAOFactory.TECHNICAL_MONGODB_NOT_IMPLEMENTED);
 		case MYSQL:
-			throw new RuntimeException(Messages.DAOFactory.TECHNICAL_MYSQL_NOT_IMPLEMENTED);
+			throw SqlException.create(Messages.DAOFactory.TECHNICAL_MYSQL_NOT_IMPLEMENTED);
 		case ORACLE:
-			throw new RuntimeException(Messages.DAOFactory.TECHNICAL_ORACLE_NOT_IMPLEMENTED);
+			throw SqlException.create(Messages.DAOFactory.TECHNICAL_ORACLE_NOT_IMPLEMENTED);
 		case POSTGRESQL:
-			throw new RuntimeException(Messages.DAOFactory.TECHNICAL_POSTGRESQL_NOT_IMPLEMENTED);
+			throw SqlException.create(Messages.DAOFactory.TECHNICAL_POSTGRESQL_NOT_IMPLEMENTED);
 		default:
-			throw new RuntimeException(Messages.DAOFactory.TECHNICAL_UNEXPECTED_DAOFACTORY);
+			throw SqlException.create(Messages.DAOFactory.TECHNICAL_UNEXPECTED_DAOFACTORY);
 		}
 
 		return daoFactory;
