@@ -3,6 +3,8 @@ package edu.uco.budget.crosscutting.helper;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import edu.uco.budget.crosscutting.exceptions.SqlException;
+
 public final class SqlConnectionHelper {
 	
 	private SqlConnectionHelper() {
@@ -17,7 +19,7 @@ public final class SqlConnectionHelper {
 		try {
 			return !ObjectHelper.isNull(connection) && !connection.isClosed();
 		} catch (final SQLException exception) {
-			throw new RuntimeException(exception.getMessage());
+			throw SqlException.create(exception.getMessage());
 		}
 	}
 }
