@@ -8,7 +8,7 @@ import edu.uco.budget.data.dao.PersonDAO;
 import edu.uco.budget.data.dao.relational.DAORelational;
 import edu.uco.budget.domain.PersonDTO;
 
-public class PersonSqlServerDAO extends DAORelational implements PersonDAO{
+public final class PersonSqlServerDAO extends DAORelational implements PersonDAO{
 
 	public PersonSqlServerDAO(final Connection connection) {
 		super(connection);
@@ -16,25 +16,25 @@ public class PersonSqlServerDAO extends DAORelational implements PersonDAO{
 	}
 
 	@Override
-	public void create(PersonDTO person) {
+	public final void create(final PersonDTO person) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public List<PersonDTO> fin(PersonDTO person) {
+	public final List<PersonDTO> find(final PersonDTO person) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void update(PersonDTO person) {
+	public final void update(final PersonDTO person) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void delete(UUID id) {
+	public final void delete(final UUID id) {
 		// TODO Auto-generated method stub
 		
 	}

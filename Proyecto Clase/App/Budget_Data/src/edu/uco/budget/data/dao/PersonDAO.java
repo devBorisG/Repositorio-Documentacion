@@ -9,7 +9,7 @@ public interface PersonDAO {
 
 	void create(final PersonDTO person);
 	
-	List<PersonDTO> fin(final PersonDTO person);
+	List<PersonDTO> find(final PersonDTO person);
 	
 	void update(final PersonDTO person);
 	
