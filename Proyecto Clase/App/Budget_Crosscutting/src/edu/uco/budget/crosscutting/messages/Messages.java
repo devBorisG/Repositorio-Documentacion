@@ -31,10 +31,23 @@ public class Messages {
 		
 		public static final String TECHNICAL_CONNECTION_IS_NULL = "Connetion is null";
 		public static final String TECHNICAL_CONNECTION_IS_CLOSED= "Connection is closed";
-		public static final String TECHNICAL_CONNECTION_NOT_POSSIBLE = "Connection es not posible in this moment";
-		public static final String TECHNICAL_CONFIRM_TRANSACTION_NOT_POSSIBLE = "The transaction can not be done";
-		public static final String TECHNICAL_CANCEL_TRANSACTION_NOT_POSSIBLE = "Cancel transaction can not be done";
-		public static final String TECHNICAL_UNEXPECTED = "An unexpected exception occurred";
+
 	}
 	
+	public static class SqlServerDAOFactory {
+		
+		private SqlServerDAOFactory() {
+			super();
+		}
+		
+		public static final String TECHNICAL_CLOSE_CONNECTION_IS_NOT_POSSIBLE= "Close connection is not possible";
+		public static final String TECHNICAL_CONNECTION_NOT_POSSIBLE = "Connection is not posible in this moment";
+		public static final String TECHNICAL_CONFIRM_TRANSACTION_NOT_POSSIBLE = "The transaction can not be done";
+		public static final String TECHNICAL_CANCEL_TRANSACTION_NOT_POSSIBLE = "Cancel transaction can not be done";
+		public static final String TECHNICAL_OPEN_CONNECTION_UNEXPECTED_ERROR = "Open connection has an unknow error opening the connection";
+		public static final String TECHNICAL_INIT_TRANSACTION_UNEXPECTED_ERROR = "Init Transaction has an unexpected error";
+		public static final String TECHNICAL_CONFIRM_TRANSACTION_UNEXPECTED_ERROR = "Confirm Transaction has an unexpected error";
+		public static final String TECHNICAL_CANCEL_TRANSACTION_UNEXPECTED_ERROR = "Cancel Transaction has an unexpected error";
+		public static final String TECHNICAL_CLOSE_CONNECTION_UNEXPECTED_ERROR = "Close connection has a unexpected error closing the connection";
+	}
 }
