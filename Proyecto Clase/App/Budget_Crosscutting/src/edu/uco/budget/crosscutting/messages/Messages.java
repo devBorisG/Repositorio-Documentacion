@@ -6,12 +6,64 @@ public class Messages {
 		super();
 	}
 	
-	public static class DAOFactory {
+	public static class DAOFactoryExceptions extends RuntimeException{
+		//Create unchecked for not specify each exception class
 		
-		private DAOFactory() {
+		private static final long serialVersionUID = -8763305813105352135L;
+		
+		private Exception exceptionBranch;
+		private String technicalMessage;
+		private String userMessage;
+		
+		
+		
+		public DAOFactoryExceptions(Exception exceptionBranch, String technicalMessage, String userMessage) {
 			super();
+			this.exceptionBranch = exceptionBranch;
+			this.technicalMessage = technicalMessage;
+			this.userMessage = userMessage;
 		}
 		
+		public static DAOFactoryExceptions create(String message) {
+			return new DAOFactoryExceptions(new Exception(), message, message);
+		}
+		
+		public static DAOFactoryExceptions create(String technicalMessage, Exception exception) {
+			return new DAOFactoryExceptions(exception, technicalMessage, technicalMessage);
+		}
+		
+		public static DAOFactoryExceptions create(String technicalMessage,String userMessage ,Exception exception) {
+			return new DAOFactoryExceptions(exception, technicalMessage, userMessage);
+		}
+		
+		
+		
+		public Exception getExceptionBranch() {
+			return exceptionBranch;
+		}
+
+		public void setExceptionBranch(Exception exceptionBranch) {
+			this.exceptionBranch = exceptionBranch;
+		}
+
+		public String getTechnicalMessage() {
+			return technicalMessage;
+		}
+
+		public void setTechnicalMessage(String technicalMessage) {
+			this.technicalMessage = technicalMessage;
+		}
+
+		public String getUserMessage() {
+			return userMessage;
+		}
+
+		public void setUserMessage(String userMessage) {
+			this.userMessage = userMessage;
+		}
+
+
+
 		public static final String TECHNICAL_MONGODB_NOT_IMPLEMENTED = "DAOFactory for MONGODB is not implemented yet";
 		public static final String TECHNICAL_POSTGRESQL_NOT_IMPLEMENTED = "DAOFactory for POSTGRESQL is not implemented yet";
 		public static final String TECHNICAL_CASSANDRA_NOT_IMPLEMENTED = "DAOFactory for CASSANDRA is not implemented yet";

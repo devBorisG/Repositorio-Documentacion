@@ -18,19 +18,19 @@ public abstract class DAOFactory {
 			daoFactory = new SqlServerDAOFactory();
 			break;
 		case CASSANDRA:
-			throw DataBudgetException.createTechnicalException(Messages.DAOFactory.TECHNICAL_CASSANDRA_NOT_IMPLEMENTED);
+			throw DataBudgetException.createTechnicalException(Messages.DAOFactoryExceptions.TECHNICAL_CASSANDRA_NOT_IMPLEMENTED);
 		case MARIADB:
-			throw DataBudgetException.createTechnicalException(Messages.DAOFactory.TECHNICAL_MARIADB_NOT_IMPLEMENTED);
+			throw DataBudgetException.createTechnicalException(Messages.DAOFactoryExceptions.TECHNICAL_MARIADB_NOT_IMPLEMENTED);
 		case MONGODB:
-			throw DataBudgetException.createTechnicalException(Messages.DAOFactory.TECHNICAL_MONGODB_NOT_IMPLEMENTED);
+			throw DataBudgetException.createTechnicalException(Messages.DAOFactoryExceptions.TECHNICAL_MONGODB_NOT_IMPLEMENTED);
 		case MYSQL:
-			throw DataBudgetException.createTechnicalException(Messages.DAOFactory.TECHNICAL_MYSQL_NOT_IMPLEMENTED);
+			throw DataBudgetException.createTechnicalException(Messages.DAOFactoryExceptions.TECHNICAL_MYSQL_NOT_IMPLEMENTED);
 		case ORACLE:
-			throw DataBudgetException.createTechnicalException(Messages.DAOFactory.TECHNICAL_ORACLE_NOT_IMPLEMENTED);
+			throw DataBudgetException.createTechnicalException(Messages.DAOFactoryExceptions.TECHNICAL_ORACLE_NOT_IMPLEMENTED);
 		case POSTGRESQL:
-			throw DataBudgetException.createTechnicalException(Messages.DAOFactory.TECHNICAL_POSTGRESQL_NOT_IMPLEMENTED);
+			throw DataBudgetException.createTechnicalException(Messages.DAOFactoryExceptions.TECHNICAL_POSTGRESQL_NOT_IMPLEMENTED);
 		default:
-			throw DataBudgetException.createTechnicalException(Messages.DAOFactory.TECHNICAL_UNEXPECTED_DAOFACTORY);
+			throw DataBudgetException.createTechnicalException(Messages.DAOFactoryExceptions.TECHNICAL_UNEXPECTED_DAOFACTORY);
 		}
 
 		return daoFactory;
