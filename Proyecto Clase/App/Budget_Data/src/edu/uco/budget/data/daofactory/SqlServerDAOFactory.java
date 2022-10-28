@@ -30,6 +30,7 @@ final class SqlServerDAOFactory extends DAOFactory {
 				+ "hostNameInCertificate=*.database.windows.net;" + "loginTimeout=30;";
 		try {
 			connection = DriverManager.getConnection(url);
+<<<<<<< Updated upstream
 		} catch (SQLException exception) {
 			throw DataBudgetException.createTechnicalException(
 					Messages.SqlServerDAOFactory.TECHNICAL_CONNECTION_NOT_POSSIBLE, exception);
@@ -38,12 +39,18 @@ final class SqlServerDAOFactory extends DAOFactory {
 					Messages.SqlServerDAOFactory.TECHNICAL_OPEN_CONNECTION_UNEXPECTED_ERROR, exception);
 			// You have to catch the exceptions that we don't yet know why they occur this
 			// way
+=======
+		} catch (SQLException e) {
+			throw new RuntimeException(e.getMessage());
+			 // TODO realizar custom exception
+>>>>>>> Stashed changes
 		}
 	}
 
 	@Override
 	public void initTransaction() {
 		try {
+<<<<<<< Updated upstream
 			SqlConnectionHelper.initTransaction(connection);
 		} catch (CrosscuttingBudgetException exception) {
 			throw DataBudgetException.createTechnicalException(
@@ -53,6 +60,14 @@ final class SqlServerDAOFactory extends DAOFactory {
 					Messages.SqlServerDAOFactory.TECHNICAL_INIT_TRANSACTION_UNEXPECTED_ERROR, exception);
 		}
 
+=======
+			connection.setAutoCommit(false);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		 // TODO realizar custom exception
+		
+>>>>>>> Stashed changes
 	}
 
 	@Override
