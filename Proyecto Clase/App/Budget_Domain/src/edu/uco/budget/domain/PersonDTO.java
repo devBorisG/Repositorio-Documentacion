@@ -2,6 +2,8 @@ package edu.uco.budget.domain;
 
 import java.util.UUID;
 
+import static edu.uco.budget.crosscutting.helper.UUIDHelper.getUUIDAsString;
+
 import static edu.uco.budget.crosscutting.helper.UUIDHelper.getDefaultUUID;
 import static edu.uco.budget.crosscutting.helper.StringHelper.applyTrim;
 import static edu.uco.budget.crosscutting.helper.UUIDHelper.getNewUUID;
@@ -84,6 +86,10 @@ public class PersonDTO {
 
 	public final void setSecondSurname(final String secondSurname) {
 		this.secondSurname = applyTrim(secondSurname);
+	}
+	
+	public final String getIdAsString() {
+		return getUUIDAsString(getId());
 	}
 		
 }

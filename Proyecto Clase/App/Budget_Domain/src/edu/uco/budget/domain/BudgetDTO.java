@@ -5,6 +5,8 @@ import static edu.uco.budget.domain.builder.YearDTOBuilder.getYearDTOBuilder;
 
 import java.util.UUID;
 
+import static edu.uco.budget.crosscutting.helper.UUIDHelper.getUUIDAsString;
+
 import static edu.uco.budget.crosscutting.helper.UUIDHelper.getDefaultUUID;
 import static edu.uco.budget.crosscutting.helper.UUIDHelper.getNewUUID;
 
@@ -56,6 +58,10 @@ public class BudgetDTO {
 
 	public final void setYear(final YearDTO year) {
 		this.year = getDefaultIfNull(year, getYearDTOBuilder().build());
+	}
+	
+	public final String getIdAsString() {
+		return getUUIDAsString(getId());
 	}
 	
 }

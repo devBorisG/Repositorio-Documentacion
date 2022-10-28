@@ -59,4 +59,20 @@ public class Messages {
 		public static final String TECHNICAL_CLOSE_CONNECTION_UNEXPECTED_ERROR = "There was an unexpected error trying close connection in SQLServerDAOFactory";
 
 	}
+	
+	public static class BudgetSqlServerDAO{
+		
+		private BudgetSqlServerDAO() {
+			super();
+		}
+		
+		public static final String TECHNICAL_PROBLEM_CREATE_BUDGET = "There was a problem trying create budget in BudgetSqlServer with id=";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_BUDGET = "There was an unexpected problem trying create budget in BudgetSqlServer";
+		public static final String TECHNICAL_PROBLEM_UPDATE_BUDGET = "There was a problem trying update budget in BudgetSqlServer with id=";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_BUDGET = "There was an unexpected problem trying update budget in BudgetSqlServer";
+		public static final String TECHNICAL_PROBLEM_DELETE_BUDGET = "There was a problem trying delete budget in BudgetSqlServer with id=";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_DELETE_BUDGET = "There was an unexpected problem trying delete budget in BudgetSqlServer";
+
+		
+	}
 }
