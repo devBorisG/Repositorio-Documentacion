@@ -1,6 +1,6 @@
 package edu.uco.carpooling.data.daofactory;
 
-import edu.uco.carpooling.crosscutting.exceptions.SqlException;
+import edu.uco.carpooling.crosscutting.exception.DataCarpoolingException;
 import edu.uco.carpooling.crosscutting.messages.Messages;
 import edu.uco.carpooling.data.dao.DriverDAO;
 import edu.uco.carpooling.data.dao.UserDAO;
@@ -19,19 +19,23 @@ public abstract class DAOFactory {
 			break;
 		}
 		case MONGO_DB: {
-			throw SqlException.create(Messages.DAOFactory.TECHNICAL_MONGO_DB_NOT_IMPLEMENTED);
+			throw DataCarpoolingException
+					.createTechnicalException(Messages.DAOFactory.TECHNICAL_MONGO_DB_NOT_IMPLEMENTED);
 		}
 		case MY_SQL: {
-			throw SqlException.create(Messages.DAOFactory.TECHNICAL_MY_SQL_NOT_IMPLEMENTED);
+			throw DataCarpoolingException
+					.createTechnicalException(Messages.DAOFactory.TECHNICAL_MY_SQL_NOT_IMPLEMENTED);
 		}
 		case ORACLE: {
-			throw SqlException.create(Messages.DAOFactory.TECHNICAL_ORACLE_NOT_IMPLEMENTED);
+			throw DataCarpoolingException
+					.createTechnicalException(Messages.DAOFactory.TECHNICAL_ORACLE_NOT_IMPLEMENTED);
 		}
 		case SQL_SERVER: {
-			throw SqlException.create(Messages.DAOFactory.TECHINICAL_SQL_SERVER_NOT_IMPLEMENTED);
+			throw DataCarpoolingException
+					.createTechnicalException(Messages.DAOFactory.TECHINICAL_SQL_SERVER_NOT_IMPLEMENTED);
 		}
 		default:
-			throw SqlException.create(Messages.DAOFactory.TECHNICAL_UNEXPECTED_DAOFACTORY);
+			throw DataCarpoolingException.createTechnicalException(Messages.DAOFactory.TECHNICAL_UNEXPECTED_DAOFACTORY);
 		}
 
 		return daoFactory;
@@ -48,9 +52,9 @@ public abstract class DAOFactory {
 	public abstract void closeConnection();
 
 	public abstract UserDAO getUserDAO();
-	
+
 	public abstract VehicleDAO getVehicleDAO();
-	
+
 	public abstract DriverDAO getDriverDAO();
 
 	// TODO create others getDAO
