@@ -72,7 +72,19 @@ public class Messages {
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_BUDGET = "There was an unexpected problem trying update budget in BudgetSqlServer";
 		public static final String TECHNICAL_PROBLEM_DELETE_BUDGET = "There was a problem trying delete budget in BudgetSqlServer with id=";
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_DELETE_BUDGET = "There was an unexpected problem trying delete budget in BudgetSqlServer";
-
+	}
+	
+	public static class PersonSqlServerDAO{
 		
+		private PersonSqlServerDAO() {
+			super();
+		}
+		
+		public static final String TECHNICAL_PROBLEM_CREATE_PERSON = "There was a problem trying create person in PersonSqlServer with id=";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_PERSON = "There was an unexpected problem trying create person in PersonSqlServer";
+		public static final String TECHNICAL_PROBLEM_UPDATE_PERSON = "There was a problem trying update person in PersonSqlServer with id=";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_PERSON = "There was an unexpected problem trying update person in PersonSqlServer";
+		public static final String TECHNICAL_PROBLEM_DELETE_PERSON = "There was a problem trying delete person in PersonSqlServer with id=";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_DELETE_PERSON = "There was an unexpected problem trying delete person in PersonSqlServer";
 	}
 }
