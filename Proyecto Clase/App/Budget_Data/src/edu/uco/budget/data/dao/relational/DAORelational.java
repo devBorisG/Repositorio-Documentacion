@@ -16,7 +16,8 @@ public class DAORelational {
 		}
 		
 		this.connection = connection;
-		
+		//Jarod try to commit
+
 	}
 	
 	protected final Connection getConnection() {
