@@ -3,15 +3,15 @@ package edu.uco.carpooling.data.dao;
 import java.util.List;
 import java.util.UUID;
 
-import edu.uco.carpooling.domain.UserDTO;
+import edu.uco.carpooling.domain.CustomerDTO;
 
 public interface UserDAO {
 	
-	void create(UserDTO user);
+	void create(CustomerDTO user);
 	
-	List<UserDTO> find(UserDTO user);
+	List<CustomerDTO> find(CustomerDTO user);
 	
-	void update(UserDTO user);
+	void update(CustomerDTO user);
 	
 	void delete(UUID id);
 }

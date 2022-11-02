@@ -6,7 +6,7 @@ import java.util.UUID;
 
 import edu.uco.carpooling.data.dao.UserDAO;
 import edu.uco.carpooling.data.dao.relational.DAORelational;
-import edu.uco.carpooling.domain.UserDTO;
+import edu.uco.carpooling.domain.CustomerDTO;
 
 public final class UserPostgreSqlDAO extends DAORelational implements UserDAO{
 
@@ -15,19 +15,19 @@ public final class UserPostgreSqlDAO extends DAORelational implements UserDAO{
 	}
 
 	@Override
-	public final void create(final UserDTO user) {
+	public final void create(final CustomerDTO user) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public final List<UserDTO> find(final UserDTO user) {
+	public final List<CustomerDTO> find(final CustomerDTO user) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public final void update(final UserDTO user) {
+	public final void update(final CustomerDTO user) {
 		// TODO Auto-generated method stub
 		
 	}
