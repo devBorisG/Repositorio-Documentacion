@@ -3,7 +3,7 @@ package edu.uco.carpooling.domain;
 import java.time.LocalDate;
 import java.util.UUID;
 
-public class DriverDTO extends CustomerDTO{
+public class DriverDTO extends UserDTO{
 	
 	public DriverDTO() {
 		super();
