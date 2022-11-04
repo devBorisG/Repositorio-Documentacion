@@ -38,7 +38,9 @@ public class PointInterestDTO {
 
     public void setId(final UUID id) {this.id = getDefaultUUID(id);}
 
-    public String getKeyPoint() {return keyPoint;}
+    public String getKeyPoint() {
+    	return keyPoint;
+    }
 
     public void setKeyPoint(final String keyPoint) {this.keyPoint = applyTrim(keyPoint);}
 
