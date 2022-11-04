@@ -9,10 +9,10 @@ import edu.uco.carpooling.crosscutting.exception.DataCarpoolingException;
 import edu.uco.carpooling.crosscutting.helper.SQLConnectionHelper;
 import edu.uco.carpooling.crosscutting.messages.Messages;
 import edu.uco.carpooling.data.dao.DriverDAO;
-import edu.uco.carpooling.data.dao.UserDAO;
+import edu.uco.carpooling.data.dao.CustomerDAO;
 import edu.uco.carpooling.data.dao.VehicleDAO;
 import edu.uco.carpooling.data.dao.relational.postgresql.DriverPostresSqlDAO;
-import edu.uco.carpooling.data.dao.relational.postgresql.UserPostgreSqlDAO;
+import edu.uco.carpooling.data.dao.relational.postgresql.CustomerPostgreSqlDAO;
 import edu.uco.carpooling.data.dao.relational.postgresql.VehiclePostgreSqlDAO;
 
 final class PostgreSqlDAOFactory extends DAOFactory {
@@ -96,8 +96,8 @@ final class PostgreSqlDAOFactory extends DAOFactory {
 	}
 
 	@Override
-	public UserDAO getUserDAO() {
-		return new UserPostgreSqlDAO(connection);
+	public CustomerDAO getUserDAO() {
+		return new CustomerPostgreSqlDAO(connection);
 	}
 
 	@Override
