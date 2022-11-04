@@ -16,7 +16,7 @@ public class RouteStatusDTOBuilder {
 		super();
 	}
 	
-	public static final RouteStatusDTOBuilder getRouteStatusBuilder() {
+	public static final RouteStatusDTOBuilder getRouteStatusDTOBuilder() {
 		return new RouteStatusDTOBuilder();
 	}
 

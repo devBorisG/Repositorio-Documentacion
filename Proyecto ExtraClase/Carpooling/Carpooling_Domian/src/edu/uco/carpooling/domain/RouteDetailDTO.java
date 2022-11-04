@@ -1,6 +1,6 @@
 package edu.uco.carpooling.domain;
 
-import java.time.LocalDate;
+import java.sql.Date;
 import java.util.UUID;
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getDefaultUUID;
 import static edu.uco.carpooling.crosscutting.helper.DateHelper.getDefaultDate;
@@ -9,23 +9,23 @@ import static edu.uco.carpooling.crosscutting.helper.ObjectHelper.getDefaultIfNu
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getNewUUID;
 import static edu.uco.carpooling.crosscutting.helper.DateHelper.NOTHING;
 
-public class RouteDetail {
+public class RouteDetailDTO {
 	
 	private UUID id;
-	private LocalDate creationTime;
-	private LocalDate endTime;
-	private LocalDate date;
+	private Date creationTime;
+	private Date endTime;
+	private Date date;
 	private RouteDTO route;
 	
-	public RouteDetail() {
+	public RouteDetailDTO() {
 		setId(getNewUUID());
 		setCreationTime(NOTHING);
 		setEndTime(NOTHING);
 		setRoute(route);//Poner constructor
 	}
 	
-	public RouteDetail(final UUID id,final LocalDate creationTime,LocalDate endTime,
-			final LocalDate date, final RouteDTO route) {
+	public RouteDetailDTO(final UUID id,final Date creationTime,Date endTime,
+			final Date date, final RouteDTO route) {
 		setId(id);
 		setCreationTime(creationTime);
 		setEndTime(creationTime);
@@ -38,22 +38,22 @@ public class RouteDetail {
 	public final void setId(final UUID id) {
 		this.id = getDefaultUUID(id);
 	}
-	public LocalDate getCreationTime() {
+	public Date getCreationTime() {
 		return creationTime;
 	}
-	public final void setCreationTime(final LocalDate creationTime) {
+	public final void setCreationTime(final Date creationTime) {
 		this.creationTime = getDefaulDate(creationTime, getDefaultDate(creationTime));
 	}
-	public LocalDate getEndTime() {
+	public Date getEndTime() {
 		return endTime;
 	}
-	public final void setEndTime(final LocalDate endTime) {
+	public final void setEndTime(final Date endTime) {
 		this.endTime = getDefaulDate(endTime, getDefaultDate(endTime));
 	}
-	public LocalDate getDate() {
+	public Date getDate() {
 		return date;
 	}
-	public final void setDate(final LocalDate date) {
+	public final void setDate(final Date date) {
 		this.date = getDefaulDate(date, getDefaultDate(date));
 	}
 	public RouteDTO getRoute() {
@@ -65,9 +65,9 @@ public class RouteDetail {
 		this.route = (RouteDTO) getDefaultIfNull(route, x/*builder de ruta*/);
 	}
 	
-	public static final RouteDetail create (final UUID id,final LocalDate creationTime,
-			final LocalDate endTime, final LocalDate date, final RouteDTO route) {
-		return new RouteDetail(id, creationTime, endTime, date, route);
+	public static final RouteDetailDTO create (final UUID id,final Date creationTime,
+			final Date endTime, final Date date, final RouteDTO route) {
+		return new RouteDetailDTO(id, creationTime, endTime, date, route);
 	}
 	
 	/*public static final RouteDetail create (final UUID id,final LocalDate creationTime,
