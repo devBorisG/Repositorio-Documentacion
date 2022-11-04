@@ -18,8 +18,8 @@
     <fullyQualifiedTypeName name="edu.uco.carpooling.domain.RouteDTO"/>
     <fullyQualifiedTypeName name="edu.uco.carpooling.crosscutting.helper.UUIDHelper"/>
     <fullyQualifiedTypeName name="edu.uco.carpooling.crosscutting.helper.NumberHelper"/>
-    <fullyQualifiedTypeName name="edu.uco.carpooling.crosscutting.helper.ObjectHelper"/>
     <fullyQualifiedTypeName name="edu.uco.carpooling.domain.builder.VehicleDTOBuilder"/>
     <fullyQualifiedTypeName name="edu.uco.carpooling.domain.builder.RouteDetailBuilder"/>
     <fullyQualifiedTypeName name="edu.uco.carpooling.domain.builder.RouteStatusBuilder"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.crosscutting.helper.ObjectHelper"/>
 </qualifiedTypeNameHistroy>

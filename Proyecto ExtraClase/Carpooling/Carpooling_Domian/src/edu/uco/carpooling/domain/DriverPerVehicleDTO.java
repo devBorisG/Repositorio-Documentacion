@@ -5,6 +5,7 @@ import java.util.UUID;
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getNewUUID;
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getDefaultUUID;
 import static edu.uco.carpooling.domain.builder.CustomerDTOBuilder.getUserDTOBuilder;
+import static edu.uco.carpooling.crosscutting.helper.ObjectHelper.getDefaultIfNull;
 
 public class DriverPerVehicleDTO {
 
@@ -42,7 +43,7 @@ public class DriverPerVehicleDTO {
 
     public void setDriver(final DriverDTO driver) {
         //Toca castearlo??
-        this.driver = (DriverDTO) getDefaultIfNull(driver, getUserDTOBuilder().build());
+        this.driver = getDefaultIfNull(driver, getUserDTOBuilder().build());
 
     }
 
