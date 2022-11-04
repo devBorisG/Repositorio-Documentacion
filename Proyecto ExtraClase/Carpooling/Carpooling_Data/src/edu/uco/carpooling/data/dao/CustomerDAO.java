@@ -5,7 +5,7 @@ import java.util.UUID;
 
 import edu.uco.carpooling.domain.CustomerDTO;
 
-public interface UserDAO {
+public interface CustomerDAO {
 	
 	void create(CustomerDTO user);
 	
