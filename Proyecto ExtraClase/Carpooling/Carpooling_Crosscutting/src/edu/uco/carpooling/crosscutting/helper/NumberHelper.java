@@ -18,6 +18,10 @@ public class NumberHelper {
 		return getDefaultNumber(value, ZERO);
 	}
 	
+	public static final String getNumberIntAsString(final int value) {
+		return getDefaultNumber(value).toString();
+	}
+	
 	public static final <T extends Number> boolean isLessThan(T numberOne, T numberTwo) {
 		return getDefaultNumber(numberOne).doubleValue() 
 			<
