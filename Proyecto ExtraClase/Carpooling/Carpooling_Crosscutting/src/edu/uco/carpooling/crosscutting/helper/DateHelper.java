@@ -16,6 +16,10 @@ public class DateHelper {
 	}
 	
 	public static final LocalDate getDefaultDate(LocalDate value) {
-		return getDefaulDate(value, NOTHING);
+		return getDefaulDate(value, getHour());
+	}
+	
+	public static final LocalDate getHour() {
+		return LocalDate.now();
 	}
 }

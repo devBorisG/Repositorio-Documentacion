@@ -1,2 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.crosscutting.exception.DataCarpoolingException"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.crosscutting.messages.Messages.DAOFactory"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.crosscutting.messages.Messages.PostgreSqlDAOFactory"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.crosscutting.messages.Messages"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.crosscutting.messages.Messages.SqlConnectionHelper"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.crosscutting.helper.DateHelper"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.domain.builder.RouteDTOBuilder"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.domain.RouteDetail"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.domain.VehicleDriver"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.domain.PointsInterest"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.crosscutting.helper.BooleanHelper"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.crosscutting.helper.StringHelper"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.domain.RouteStatus"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.domain.RouteDTO"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.crosscutting.helper.UUIDHelper"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.crosscutting.helper.NumberHelper"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.crosscutting.helper.ObjectHelper"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.domain.builder.VehicleDTOBuilder"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.domain.builder.RouteDetailBuilder"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.domain.builder.RouteStatusBuilder"/>
+</qualifiedTypeNameHistroy>
