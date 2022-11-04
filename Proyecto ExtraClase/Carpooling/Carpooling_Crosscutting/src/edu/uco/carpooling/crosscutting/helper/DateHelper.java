@@ -18,4 +18,8 @@ public class DateHelper {
 	public static final LocalDate getDefaultDate(LocalDate value) {
 		return getDefaulDate(value, NOTHING);
 	}
+	
+	public static final String getDateAsString(final LocalDate value) {
+		return getDefaultDate(value).toString();
+	}
 }
