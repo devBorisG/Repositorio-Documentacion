@@ -1,9 +1,8 @@
 package edu.uco.carpooling.domain;
 
-import java.time.LocalDate;
+import java.sql.Date;
 import java.util.UUID;
 
-import static edu.uco.carpooling.crosscutting.helper.NumberHelper.getNumberIntAsString;
 
 import static edu.uco.carpooling.crosscutting.helper.StringHelper.applyTrim;
 import static edu.uco.carpooling.crosscutting.helper.StringHelper.EMPTY;
@@ -12,7 +11,6 @@ import static edu.uco.carpooling.crosscutting.helper.NumberHelper.isLessThan;
 import static edu.uco.carpooling.crosscutting.helper.NumberHelper.ZERO;
 
 import static edu.uco.carpooling.crosscutting.helper.DateHelper.getDefaultDate;
-import static edu.uco.carpooling.crosscutting.helper.DateHelper.getDateAsString;
 import static edu.uco.carpooling.crosscutting.helper.DateHelper.NOTHING;
 
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getDefaultUUID;
@@ -28,7 +26,7 @@ public class UserDTO {
 	private String firstSurname;
 	private String secondSurname;
 	private String password;
-	private LocalDate born;
+	private Date born;
 	private int phone;
 	private String companyEmail;
 	
@@ -46,7 +44,7 @@ public class UserDTO {
 	}
 
 	public UserDTO(final UUID id,final int dni,final String firstName,final String secondName,final String firstSurname,final String secondSurname,
-			final String password,final LocalDate born,final int phone,final String emailCompany) {
+			final String password,final Date born,final int phone,final String emailCompany) {
 		setId(id);
 		setDni(dni);
 		setFirstName(firstName);
@@ -115,11 +113,11 @@ public class UserDTO {
 		this.password = applyTrim(password);
 	}
 
-	public LocalDate getBorn() {
+	public Date getBorn() {
 		return born;
 	}
 
-	public final void setBorn(final LocalDate born) {
+	public final void setBorn(final Date born) {
 		this.born = getDefaultDate(born);
 	}
 
@@ -141,18 +139,6 @@ public class UserDTO {
 	
 	public final String getIdAsString() {
 		return getUUIDAsString(getId());
-	}
-	
-	public final String getDniAsString() {
-		return getNumberIntAsString(getDni());
-	}
-	
-	public final String getPhoneAsString() {
-		return getNumberIntAsString(getPhone());
-	}
-	
-	public final String getBornAsString() {
-		return getDateAsString(getBorn());
 	}
 	
 }

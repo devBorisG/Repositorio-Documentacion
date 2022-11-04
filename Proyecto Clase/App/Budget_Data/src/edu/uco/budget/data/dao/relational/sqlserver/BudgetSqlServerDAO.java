@@ -121,7 +121,6 @@ public final class BudgetSqlServerDAO extends DAORelational implements BudgetDAO
 			preparedStatement.setString(3, budget.getIdAsString());
 
 			preparedStatement.executeUpdate();
-
 		} catch (final SQLException exception) {
 			final String message = Messages.BudgetSqlServerDAO.TECHNICAL_PROBLEM_UPDATE_BUDGET
 					.concat(budget.getIdAsString());
@@ -142,7 +141,6 @@ public final class BudgetSqlServerDAO extends DAORelational implements BudgetDAO
 			preparedStatement.setString(1, idAsString);
 			
 			preparedStatement.executeUpdate();
-			
 		} catch (final SQLException exception) {
 			final String message = Messages.BudgetSqlServerDAO.TECHNICAL_PROBLEM_DELETE_BUDGET.concat(idAsString);
 			throw DataBudgetException.createTechnicalException(message, exception);
