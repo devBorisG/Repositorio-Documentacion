@@ -439,6 +439,7 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact edu.uco.carpo
 2022-11-03 12:20:45,042 [Worker-0: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2022-11-03 12:20:45,044 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Federico\U\Doo\Carpooling\Repositorio-Documentacion\Proyecto ExtraClase\Carpooling\Carpooling_Crosscutting\src\test\resources
 2022-11-03 18:35:42,912 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+<<<<<<< Updated upstream
 2022-11-03 18:47:00,575 [Worker-16: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2022-11-03 18:47:00,585 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Federico\U\Doo\Carpooling\Repositorio-Documentacion\Proyecto ExtraClase\Carpooling\Carpooling_Crosscutting\src\main\resources
 2022-11-03 18:47:00,591 [Worker-16: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
@@ -856,5 +857,7 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact edu.uco.carpo
 2022-11-04 00:43:13,398 [Worker-62: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Federico\U\Doo\Carpooling\Repositorio-Documentacion\Proyecto ExtraClase\Carpooling\Carpooling_Domian\src\main\resources
 2022-11-04 00:43:13,402 [Worker-62: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2022-11-04 00:43:13,403 [Worker-62: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Federico\U\Doo\Carpooling\Repositorio-Documentacion\Proyecto ExtraClase\Carpooling\Carpooling_Domian\src\test\resources
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
