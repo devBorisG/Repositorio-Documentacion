@@ -108,12 +108,12 @@ public final class DriverPostresSqlDAO extends DAORelational implements DriverDA
 
 			preparedStatement.executeUpdate();
 		} catch (final SQLException exception) {
-			final String message = Messages.DriverPostgreSqlDAO.TECHNICAL_PROBLEM_CREATE_PHONE_TO_DRIVER
+			final String message = Messages.DriverPostgreSqlDAO.TECHNICAL_PROBLEM_CREATE_DRIVER
 					.concat(idAsString);
 			throw DataCarpoolingException.createTechnicalException(message, exception);
 		} catch (final Exception exception) {
 			throw DataCarpoolingException.createTechnicalException(
-					Messages.DriverPostgreSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_CREATE_PHONE_TO_DRIVER, exception);
+					Messages.DriverPostgreSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_CREATE_DRIVER, exception);
 		}
 	}
 
@@ -128,12 +128,12 @@ public final class DriverPostresSqlDAO extends DAORelational implements DriverDA
 
 			preparedStatement.executeUpdate();
 		} catch (final SQLException exception) {
-			final String message = Messages.DriverPostgreSqlDAO.TECHNICAL_PROBLEM_CREATE_EMAIL_TO_DRIVER
+			final String message = Messages.DriverPostgreSqlDAO.TECHNICAL_PROBLEM_CREATE_DRIVER
 					.concat(idAsString);
 			throw DataCarpoolingException.createTechnicalException(message, exception);
 		} catch (final Exception exception) {
 			throw DataCarpoolingException.createTechnicalException(
-					Messages.DriverPostgreSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_CREATE_EMAIL_TO_DRIVER, exception);
+					Messages.DriverPostgreSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_CREATE_DRIVER, exception);
 		}
 	}
 }
