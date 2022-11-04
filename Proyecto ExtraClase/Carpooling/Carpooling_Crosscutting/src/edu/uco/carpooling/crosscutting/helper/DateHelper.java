@@ -22,4 +22,8 @@ public class DateHelper {
 	public static final LocalDate getHour() {
 		return LocalDate.now();
 	}
+	
+	public static final String getDateAsString(final LocalDate value) {
+		return getDefaultDate(value).toString();
+	}
 }

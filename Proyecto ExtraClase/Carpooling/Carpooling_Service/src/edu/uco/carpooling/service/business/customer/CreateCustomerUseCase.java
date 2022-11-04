@@ -1,4 +1,4 @@
-package edu.uco.carpooling.service.business.user;
+package edu.uco.carpooling.service.business.customer;
 
 import edu.uco.carpooling.domain.CustomerDTO;
 

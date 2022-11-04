@@ -3,6 +3,8 @@ package edu.uco.carpooling.domain;
 import java.time.LocalDate;
 import java.util.UUID;
 
+import static edu.uco.carpooling.crosscutting.helper.NumberHelper.getNumberIntAsString;
+
 import static edu.uco.carpooling.crosscutting.helper.StringHelper.applyTrim;
 import static edu.uco.carpooling.crosscutting.helper.StringHelper.EMPTY;
 
@@ -10,10 +12,12 @@ import static edu.uco.carpooling.crosscutting.helper.NumberHelper.isLessThan;
 import static edu.uco.carpooling.crosscutting.helper.NumberHelper.ZERO;
 
 import static edu.uco.carpooling.crosscutting.helper.DateHelper.getDefaultDate;
+import static edu.uco.carpooling.crosscutting.helper.DateHelper.getDateAsString;
 import static edu.uco.carpooling.crosscutting.helper.DateHelper.NOTHING;
 
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getDefaultUUID;
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getNewUUID;
+import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getUUIDAsString;
 
 public class UserDTO {
 
@@ -133,6 +137,22 @@ public class UserDTO {
 
 	public final void setCompanyEmail(final String companyEmail) {
 		this.companyEmail = applyTrim(companyEmail);
+	}
+	
+	public final String getIdAsString() {
+		return getUUIDAsString(getId());
+	}
+	
+	public final String getDniAsString() {
+		return getNumberIntAsString(getDni());
+	}
+	
+	public final String getPhoneAsString() {
+		return getNumberIntAsString(getPhone());
+	}
+	
+	public final String getBornAsString() {
+		return getDateAsString(getBorn());
 	}
 	
 }

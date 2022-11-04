@@ -55,4 +55,36 @@ public class Messages {
 		public static final String TECHNICAL_PROBLEM_CLOSE_CONNECTION = "There was a problem trying to close connection in PostgreSqlDAOFactory";
 		public static final String TECHNICAL_CLOSE_CONNECTION_UNEXPECTED_ERROR = "There was an unexpected error trying close connection in PostgreSqlDAOFactory";
 	}
+	
+	public static class DriverPostgreSqlDAO{
+		
+		private DriverPostgreSqlDAO() {
+			super();
+		}
+		
+		public static final String TECHNICAL_PROBLEM_CREATE_DRIVER = "There was a problem trying create driver in DriverPostgreSql with id=";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_DRIVER = "There was an unexpected problem trying create driver in DriverPostgreSql";
+		public static final String TECHNICAL_PROBLEM_CREATE_PHONE_TO_DRIVER = "There was a problem trying create phone for driver in DriverPostgreSql with id=";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_PHONE_TO_DRIVER = "There was an unexpected problem trying create phone for driver in DriverPostgreSql";
+		public static final String TECHNICAL_PROBLEM_CREATE_EMAIL_TO_DRIVER = "There was a problem trying create email for driver in DriverPostgreSql with id=";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_EMAIL_TO_DRIVER = "There was an unexpected problem trying create email for driver in DriverPostgreSql";
+		
+	}
+	
+	
+	public static class CustomerPostgreSqlDAO{
+		
+		private CustomerPostgreSqlDAO() {
+			super();
+		}
+		
+		public static final String TECHNICAL_PROBLEM_CREATE_CUSTOMER = "There was a problem trying create customer in CustomerPostgreSql with id=";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_CUSTOMER = "There was an unexpected problem trying create customer in CustomerPostgreSql";
+		public static final String TECHNICAL_PROBLEM_CREATE_PHONE_TO_CUSTOMER = "There was a problem trying create phone for customer in CustomerPostgreSql with id=";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_PHONE_TO_CUSTOMER = "There was an unexpected problem trying create phone for customer in CustomerPostgreSql";
+		public static final String TECHNICAL_PROBLEM_CREATE_EMAIL_TO_CUSTOMER = "There was a problem trying create email for customer in CustomerPostgreSql with id=";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_EMAIL_TO_CUSTOMER = "There was an unexpected problem trying create email for customer in CustomerPostgreSql";
+
+		
+	}
 }
