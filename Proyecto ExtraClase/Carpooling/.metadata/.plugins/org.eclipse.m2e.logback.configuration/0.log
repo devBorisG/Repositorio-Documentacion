@@ -461,6 +461,7 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact edu.uco.carpo
 2022-11-03 18:47:01,995 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Federico\U\Doo\Carpooling\Repositorio-Documentacion\Proyecto ExtraClase\Carpooling\Carpooling_Service\src\main\resources
 2022-11-03 18:47:02,003 [Worker-16: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2022-11-03 18:47:02,004 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Federico\U\Doo\Carpooling\Repositorio-Documentacion\Proyecto ExtraClase\Carpooling\Carpooling_Service\src\test\resources
+<<<<<<< Updated upstream
 2022-11-03 18:51:27,421 [Worker-7: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: edu.uco.carpooling:Carpooling_Data:0.0.1-SNAPSHOT @ C:\Users\Federico\U\Doo\Carpooling\Repositorio-Documentacion\Proyecto ExtraClase\Carpooling\Carpooling_Data\pom.xml.
 2022-11-03 18:51:28,306 [Worker-7: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/postgresql/postgresql/42.5.0/postgresql-42.5.0.pom
 2022-11-03 18:51:28,414 [Worker-7: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/postgresql/postgresql/42.5.0/postgresql-42.5.0.pom
@@ -855,3 +856,5 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact edu.uco.carpo
 2022-11-04 00:43:13,398 [Worker-62: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Federico\U\Doo\Carpooling\Repositorio-Documentacion\Proyecto ExtraClase\Carpooling\Carpooling_Domian\src\main\resources
 2022-11-04 00:43:13,402 [Worker-62: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2022-11-04 00:43:13,403 [Worker-62: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Federico\U\Doo\Carpooling\Repositorio-Documentacion\Proyecto ExtraClase\Carpooling\Carpooling_Domian\src\test\resources
+=======
+>>>>>>> Stashed changes
