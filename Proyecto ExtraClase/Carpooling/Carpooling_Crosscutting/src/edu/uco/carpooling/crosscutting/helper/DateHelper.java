@@ -1,29 +1,24 @@
 package edu.uco.carpooling.crosscutting.helper;
 
+import java.sql.Date;
 import java.time.LocalDate;
+
 import static edu.uco.carpooling.crosscutting.helper.ObjectHelper.getDefaultIfNull;
 
 public class DateHelper {
 	
-	public static final LocalDate NOTHING = LocalDate.of(1,1,1);
+	public static final Date NOTHING = Date.valueOf(LocalDate.of(1, 1, 1));
 	
 	private DateHelper() {
 		super();
 	}
 	
-	public static final LocalDate getDefaulDate(LocalDate value, LocalDate defaultValue) {
+	public static final Date getDefaulDate(Date value, Date defaultValue) {
 		return getDefaultIfNull(value, defaultValue);
 	}
 	
-	public static final LocalDate getDefaultDate(LocalDate value) {
-		return getDefaulDate(value, getHour());
+	public static final Date getDefaultDate(Date value) {
+		return getDefaulDate(value, NOTHING);
 	}
 	
-	public static final LocalDate getHour() {
-		return LocalDate.now();
-	}
-	
-	public static final String getDateAsString(final LocalDate value) {
-		return getDefaultDate(value).toString();
-	}
 }
