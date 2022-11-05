@@ -87,4 +87,19 @@ public class Messages {
 		public static final String TECHNICAL_PROBLEM_DELETE_PERSON = "There was a problem trying delete person in PersonSqlServer with id=";
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_DELETE_PERSON = "There was an unexpected problem trying delete person in PersonSqlServer";
 	}
+	
+	public static class YearSqlServerDAO{
+		
+		private YearSqlServerDAO() {
+			super();
+		}
+		
+		public static final String TECHNICAL_PROBLEM_CREATE_YEAR = "There was a problem trying create year in YearSqlServer with id=";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_YEAR= "There was an unexpected problem trying create year in YearSqlServer";
+		public static final String TECHNICAL_PROBLEM_UPDATE_YEAR = "There was a problem trying update year in YearSqlServer with id=";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_YEAR = "There was an unexpected problem trying update year in YearSqlServer";
+		public static final String TECHNICAL_PROBLEM_DELETE_YEAR = "There was a problem trying delete year in YearSqlServer with id=";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_DELETE_YEAR = "There was an unexpected problem trying delete year in YearSqlServer";
+	
+	}
 }
