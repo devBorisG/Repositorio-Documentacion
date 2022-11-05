@@ -14,17 +14,18 @@
     <fullyQualifiedTypeName name="edu.uco.carpooling.crosscutting.helper.StringHelper"/>
     <fullyQualifiedTypeName name="edu.uco.carpooling.domain.RouteStatus"/>
     <fullyQualifiedTypeName name="edu.uco.carpooling.crosscutting.helper.NumberHelper"/>
-    <fullyQualifiedTypeName name="edu.uco.carpooling.crosscutting.helper.ObjectHelper"/>
-    <fullyQualifiedTypeName name="edu.uco.carpooling.domain.builder.VehicleDTOBuilder"/>
     <fullyQualifiedTypeName name="edu.uco.carpooling.domain.builder.RouteDetailBuilder"/>
     <fullyQualifiedTypeName name="edu.uco.carpooling.domain.builder.RouteStatusBuilder"/>
     <fullyQualifiedTypeName name="edu.uco.carpooling.domain.DriverDTO"/>
-    <fullyQualifiedTypeName name="edu.uco.carpooling.domain.DriverPerVehicleDTO"/>
-    <fullyQualifiedTypeName name="edu.uco.carpooling.domain.builder.DriverPerVehicleDTOBuilder"/>
     <fullyQualifiedTypeName name="edu.uco.carpooling.domain.RouteDTO"/>
     <fullyQualifiedTypeName name="java.sql.Date"/>
     <fullyQualifiedTypeName name="edu.uco.carpooling.domain.builder.RouteDTOBuilder"/>
     <fullyQualifiedTypeName name="edu.uco.carpooling.domain.builder.CustomerDTOBuilder"/>
     <fullyQualifiedTypeName name="edu.uco.carpooling.domain.UserDTO"/>
     <fullyQualifiedTypeName name="edu.uco.carpooling.crosscutting.helper.UUIDHelper"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.crosscutting.helper.ObjectHelper"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.domain.builder.DriverDTOBuilder"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.domain.builder.VehicleDTOBuilder"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.domain.builder.DriverPerVehicleDTOBuilder"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.domain.DriverPerVehicleDTO"/>
 </qualifiedTypeNameHistroy>
