@@ -3,8 +3,10 @@ package edu.uco.carpooling.domain.builder;
 import java.util.UUID;
 
 import edu.uco.carpooling.domain.DriverDTO;
+import edu.uco.carpooling.domain.DriverPerVehicleDTO;
 import edu.uco.carpooling.domain.VehicleDTO;
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getDefaultUUID;
+import static edu.uco.carpooling.domain.DriverPerVehicleDTO.create;
 
 public class DriverPerVehicleDTOBuilder {
 
@@ -30,5 +32,9 @@ public class DriverPerVehicleDTOBuilder {
 
     public void setVehicle(VehicleDTO vehicle) {
         this.vehicle = vehicle;
+    }
+    
+    public final DriverPerVehicleDTO build() {
+    	return create(id,driver,vehicle);
     }
 }
