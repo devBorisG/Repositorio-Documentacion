@@ -38,7 +38,6 @@
 				
 				insertPhone(driver.getIdAsString(), driver.getPhone());
 				insertCompanyEmail(driver.getIdAsString(), driver.getCompanyEmail());
-				System.out.println("melo");
 			} catch (final SQLException exception) {
 				final String message = Messages.DriverPostgreSqlDAO.TECHNICAL_PROBLEM_CREATE_DRIVER
 						.concat(driver.getIdAsString());

@@ -1,6 +1,7 @@
 package edu.uco.carpooling.data.dao.relational.postgresql;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.UUID;
@@ -62,6 +63,9 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 				+ "\"secondSurname\" = ?," + "password = ?," + "\"referencePoint\" = ?" + "WHERE id = ?";
 
 		try (final var preparedStatement = getConnection().prepareStatement(sql)) {
+			final var preparedStatementPhone = updatePhone(user.getIdAsString(), user.getPhone());
+			updateCompanyEmail(user.getIdAsString(), user.getCompanyEmail());
+			
 			preparedStatement.setString(1, user.getFirstName());
 			preparedStatement.setString(2, user.getSecondName());
 			preparedStatement.setString(3, user.getFirstSurname());
@@ -70,10 +74,9 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 			preparedStatement.setString(6, user.getReferencePoint());
 			preparedStatement.setString(7, user.getIdAsString());
 			
-			preparedStatement.executeUpdate();
 			
-			updatePhone(user.getIdAsString(), user.getPhone());
-			updateCompanyEmail(user.getIdAsString(), user.getCompanyEmail());
+			preparedStatement.executeUpdate();
+			preparedStatementPhone.executeUpdate();
 		} catch (final SQLException exception) {
 			final String message = Messages.CustomerPostgreSqlDAO.TECHNICAL_PROBLEM_UPDATE_CUSTOMER
 					.concat(user.getIdAsString());
@@ -87,7 +90,7 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 
 	@Override
 	public final void delete(final UUID id) {
-		final var sql = "DELETE FROM Customer WHERE id = ?";
+		final var sql = "DELETE FROM \"Customer\" WHERE id = ?";
 		final var idAsString = getUUIDAsString(id);
 
 		try (final var preparedStatement = getConnection().prepareStatement(sql)){
@@ -148,14 +151,14 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 		}
 	}
 	
-	private final void updatePhone(final String idAsString, final int phone) {
+	private final PreparedStatement updatePhone(final String idAsString, final int phone) {
 		final var sql = "UPDATE \"Phone\" SET phone = ? WHERE \"Customer_id\" = ?";
 		
 		try (final var preparedStatement = getConnection().prepareStatement(sql)){
 			preparedStatement.setInt(1, phone);
 			preparedStatement.setString(2, idAsString);
 			
-			preparedStatement.executeUpdate();
+			return preparedStatement;
 		} catch (final SQLException exception) {
 			final String message = Messages.CustomerPostgreSqlDAO.TECHNICAL_PROBLEM_UPDATE_CUSTOMER
 					.concat(idAsString);
