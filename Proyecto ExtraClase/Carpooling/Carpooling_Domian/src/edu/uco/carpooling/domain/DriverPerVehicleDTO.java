@@ -7,10 +7,9 @@ import static edu.uco.carpooling.crosscutting.helper.ObjectHelper.getDefaultIfNu
 import static edu.uco.carpooling.domain.builder.DriverDTOBuilder.getDriverDTOBuilder;
 import static edu.uco.carpooling.domain.builder.VehicleDTOBuilder.getVehicleDTOBuilder;
 
-
 public class DriverPerVehicleDTO {
-	
-	private UUID id;
+
+    private UUID id;
     private DriverDTO driver;
     private VehicleDTO vehicle;
     
@@ -25,8 +24,8 @@ public class DriverPerVehicleDTO {
         setDriver(driver);
         setVehicle(vehicle);
     }
-
-    public static final DriverPerVehicleDTO create (final UUID id, final DriverDTO driver,final VehicleDTO vehicle){
+    
+    public static final DriverPerVehicleDTO create(final UUID id, final DriverDTO driver,final VehicleDTO vehicle){
         return new DriverPerVehicleDTO(id, driver , vehicle);
     }
 
@@ -52,6 +51,5 @@ public class DriverPerVehicleDTO {
 
     public void setVehicle(final VehicleDTO vehicle) {
         this.vehicle = getDefaultIfNull(vehicle, getVehicleDTOBuilder().build() );
-
     }
 }

@@ -8,11 +8,16 @@ import edu.uco.carpooling.domain.VehicleDTO;
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getDefaultUUID;
 import static edu.uco.carpooling.domain.DriverPerVehicleDTO.create;
 
+
 public class DriverPerVehicleDTOBuilder {
 
     private UUID id;
     private DriverDTO driver;
     private VehicleDTO vehicle;
+
+    private DriverPerVehicleDTOBuilder() {
+    	super();
+    }
 
     public static final DriverPerVehicleDTOBuilder getDriverPerVehicleDTOBuilder(){
         return new DriverPerVehicleDTOBuilder();

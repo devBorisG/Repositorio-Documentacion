@@ -1,57 +1,52 @@
 package edu.uco.carpooling.domain;
 
-import java.time.LocalDate;
 import java.util.UUID;
 
-import edu.uco.carpooling.domain.builder.RouteDTOBuilder;
 
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getDefaultUUID;
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getNewUUID;
 import static edu.uco.carpooling.crosscutting.helper.NumberHelper.isLessThan;
 import static edu.uco.carpooling.crosscutting.helper.NumberHelper.ZERO;
-import static edu.uco.carpooling.crosscutting.helper.DateHelper.getDefaultDate;
-import static edu.uco.carpooling.crosscutting.helper.BooleanHelper.getDefaultBoolean;
-import static edu.uco.carpooling.crosscutting.helper.StringHelper.applyTrim;
-import static edu.uco.carpooling.crosscutting.helper.StringHelper.EMPTY;
-import static edu.uco.carpooling.crosscutting.helper.DateHelper.NOTHING;
-import static edu.uco.carpooling.crosscutting.helper.BooleanHelper.BFALSE;
+import static edu.uco.carpooling.domain.builder.DetailRouteDTOBuilder.getDetailRouteDTOBuilder;
+import static edu.uco.carpooling.domain.builder.DriverPerVehicleDTOBuilder.getDriverPerVehicleDTOBuilder;
+import static edu.uco.carpooling.domain.builder.RouteStatusDTOBuilder.getRouteStatusDTOBuilder;
+import static edu.uco.carpooling.domain.builder.PointInterestDTOBuilder.getPointInterestDTOBuilder;
+import static edu.uco.carpooling.crosscutting.helper.ObjectHelper.getDefaultIfNull;
 
 public class RouteDTO {
 	
 	private UUID id;
 	private int quota;
-	private LocalDate creationTime;
-	private LocalDate endTime;
-	private boolean status;
-	private String startRoute;
-	private String endRoute;
-	//private DriverVehicle conductorVehiculo;
+	private DriverPerVehicleDTO driverPerVehicleDTO;
+	private PointInterestDTO pointInterest;
+	private DetailRouteDTO detailRouteDTO;
+	private RouteStatusDTO routeStatus;
 
+	public RouteDTO(final UUID id,final int quota,final RouteStatusDTO routeStatus,final DriverPerVehicleDTO driverPerVehicleDTO,
+			final PointInterestDTO pointInterest,final DetailRouteDTO detailRouteDTO) {
+		setId(getDefaultUUID(id));
+		setQuota(quota);
+		setRouteStatus(routeStatus);
+		setDetailRouteDTO(detailRouteDTO);
+		setPointInterest(pointInterest);
+		setDriverPerVehicleDTO(driverPerVehicleDTO);
+	}
+	
 	public RouteDTO() {
 		setId(getNewUUID());
 		setQuota(ZERO);
-		setCreationTime(NOTHING);
-		setEndTime(NOTHING);
-		setStatus(BFALSE);
-		setStartRoute(EMPTY);
-		setEndRoute(EMPTY);
+		setDriverPerVehicleDTO(getDriverPerVehicleDTOBuilder().build());
+		setDetailRouteDTO(getDetailRouteDTOBuilder().build());
+		setRouteStatus(getRouteStatusDTOBuilder().build());
+		setPointInterest(getPointInterestDTOBuilder().build());
 	}
 	
-	public RouteDTO(final UUID id,final int quota,final LocalDate creationTime,final LocalDate endTime,
-			final boolean status, final String starRoute,final String endRoute) {
-		setId(getDefaultUUID(id));
-		setQuota(quota);
-		setCreationTime(creationTime);
-		setEndTime(endTime);
-		setStatus(status);
-		setStartRoute(startRoute);
-		setEndRoute(endRoute);
+	public static final RouteDTO create(final UUID id,final int quota,
+			final RouteStatusDTO routeStatus, final DriverPerVehicleDTO driverPerVehicleDTO, final PointInterestDTO pointInterest,
+			final DetailRouteDTO detailRouteDTO) {
+		return new RouteDTO(id,quota,routeStatus, driverPerVehicleDTO, pointInterest, detailRouteDTO);
 	}
-	
-	public static final RouteDTO create(final UUID id,final int quota,final LocalDate creationTime,
-			final LocalDate endTime,final boolean status,final String startRoute,final String endRoute) {
-		return new RouteDTO(id,quota,creationTime,endTime,status,startRoute,endRoute);
-	}
+
 	
 	public UUID getId() {
 		return id;
@@ -65,34 +60,37 @@ public class RouteDTO {
 	public void setQuota(final int quota) {
 		this.quota = isLessThan(quota, ZERO)? ZERO : quota;
 	}
-	public LocalDate getCreationTime() {
-		return creationTime;
+	
+	public RouteStatusDTO getRouteStatus() {
+		return routeStatus;
 	}
-	public void setCreationTime(final LocalDate creationTime) {
-		this.creationTime = getDefaultDate(creationTime);
+
+	public void setRouteStatus(RouteStatusDTO routeStatus) {
+		this.routeStatus = getDefaultIfNull(routeStatus, getRouteStatusDTOBuilder().build());
 	}
-	public LocalDate getEndTime() {
-		return endTime;
+
+
+	public DriverPerVehicleDTO getDriverPerVehicleDTO() {
+		return driverPerVehicleDTO;
 	}
-	public void setEndTime(final LocalDate endTime) {
-		this.endTime = getDefaultDate(endTime);
+
+	public void setDriverPerVehicleDTO(DriverPerVehicleDTO driverPerVehicleDTO) {
+		this.driverPerVehicleDTO = getDefaultIfNull(driverPerVehicleDTO, getDriverPerVehicleDTOBuilder().build());
 	}
-	public boolean isStatus() {
-		return status;
+
+	public PointInterestDTO getPointInterest() {
+		return pointInterest;
 	}
-	public void setStatus(final boolean status) {
-		this.status = getDefaultBoolean(status);
+
+	public void setPointInterest(PointInterestDTO pointInterest) {
+		this.pointInterest = getDefaultIfNull(pointInterest, getPointInterestDTOBuilder().build());
 	}
-	public String getStartRoute() {
-		return startRoute;
+	
+	public DetailRouteDTO getDetailRouteDTO() {
+		return detailRouteDTO;
 	}
-	public void setStartRoute(final String startRoute) {
-		this.startRoute = applyTrim(startRoute);
-	}
-	public String getEndRoute() {
-		return endRoute;
-	}
-	public void setEndRoute(final String endRoute) {
-		this.endRoute = applyTrim(endRoute);
+
+	public void setDetailRouteDTO(DetailRouteDTO detailRouteDTO) {
+		this.detailRouteDTO = getDefaultIfNull(detailRouteDTO, getDetailRouteDTOBuilder().build());
 	}
 }

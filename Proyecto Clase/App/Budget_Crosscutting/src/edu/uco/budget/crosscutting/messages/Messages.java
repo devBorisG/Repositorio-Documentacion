@@ -31,5 +31,75 @@ public class Messages {
 		
 		public static final String TECHNICAL_CONNECTION_IS_NULL = "Connetion is null";
 		public static final String TECHNICAL_CONNECTION_IS_CLOSED= "Connection is closed";
+		public static final String TECHNICAL_CONNECTION_ALREDY_IS_CLOSED = "Connection alredy is closed";
+		public static final String TECHNICAL_PROBLEM_CLOSING_CONNECTION = "There was a problem try close the connection. Please verify the technicals details";
+		public static final String TECHNICAL_CONNECTION_IS_CLOSED_FOR_INIT_TRANSACTION = "Connection is closed to start a new transaction";
+		public static final String TECHNICAL_CONNECTION_IS_CLOSED_FOR_COMMIT_TRANSACTION = "Connection is closed to commit the current transaction";
+		public static final String TECHNICAL_CONNECTION_IS_CLOSED_FOR_ROLLBACK_TRANSACTION = "Connection is closed to rollback the current transaction";
+		public static final String TECHNICAL_PROBLEM_TRY_INIT_TRANSACTION = "There was a problem trying to start the transaction. Please verify the technical details";		
+		public static final String TECHNICAL_PROBLEM_TRY_COMMIT_TRANSACTION = "There was a problem trying to commit the current trasaction. Please verify te technical details";
+		public static final String TECHNICAL_PROBLEM_TRY_ROLLBACK_TRANSACTION = "There was a problem trying to rollback the current trasaction. Please verify te technical details";
+	}
+	
+	public static class SqlServerDAOFactory {
+		
+		private SqlServerDAOFactory() {
+			super();
+		}
+		
+		public static final String TECHNICAL_CONNECTION_NOT_POSSIBLE = "The connection is not possible";
+		public static final String TECHNICAL_OPEN_CONNECTION_UNEXPECTED_ERROR = "The was an unexpected error trying openning connection in SQLServerDAOFactory";
+		public static final String TECHNICAL_PROBLEM_INIT_TRANSACTION = "There was a problem trying to init transaction with the current connection in SQLServerDAOFactory ";
+		public static final String TECHNICAL_INIT_TRANSACTION_UNEXPECTED_ERROR = "There was an unexpected error trying init transaction in SQLServerDAOFactory";
+		public static final String TECHNICAL_PROBLEM_CONFIRM_TRANSACTION = "There was a problem trying to confirm transaction with the current connection in SQLServerDAOFactory ";
+		public static final String TECHNICAL_CONFIRM_TRANSACTION_UNEXPECTED_ERROR = "There was an unexpected error trying confirm transaction in SQLServerDAOFactory";
+		public static final String TECHNICAL_PROBLEM_CANCEL_TRANSACTION = "There was a problem trying to cancel transaction with the current connection in SQLServerDAOFactory ";
+		public static final String TECHNICAL_CANCEL_TRANSACTION_UNEXPECTED_ERROR = "There was an unexpected error trying cancel transaction in SQLServerDAOFactory";
+		public static final String TECHNICAL_PROBLEM_CLOSE_CONNECTION = "There was a problem trying to close connection in SQLServerDAOFactory ";
+		public static final String TECHNICAL_CLOSE_CONNECTION_UNEXPECTED_ERROR = "There was an unexpected error trying close connection in SQLServerDAOFactory";
+
+	}
+	
+	public static class BudgetSqlServerDAO{
+		
+		private BudgetSqlServerDAO() {
+			super();
+		}
+		
+		public static final String TECHNICAL_PROBLEM_CREATE_BUDGET = "There was a problem trying create budget in BudgetSqlServer with id=";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_BUDGET = "There was an unexpected problem trying create budget in BudgetSqlServer";
+		public static final String TECHNICAL_PROBLEM_UPDATE_BUDGET = "There was a problem trying update budget in BudgetSqlServer with id=";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_BUDGET = "There was an unexpected problem trying update budget in BudgetSqlServer";
+		public static final String TECHNICAL_PROBLEM_DELETE_BUDGET = "There was a problem trying delete budget in BudgetSqlServer with id=";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_DELETE_BUDGET = "There was an unexpected problem trying delete budget in BudgetSqlServer";
+	}
+	
+	public static class PersonSqlServerDAO{
+		
+		private PersonSqlServerDAO() {
+			super();
+		}
+		
+		public static final String TECHNICAL_PROBLEM_CREATE_PERSON = "There was a problem trying create person in PersonSqlServer with id=";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_PERSON = "There was an unexpected problem trying create person in PersonSqlServer";
+		public static final String TECHNICAL_PROBLEM_UPDATE_PERSON = "There was a problem trying update person in PersonSqlServer with id=";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_PERSON = "There was an unexpected problem trying update person in PersonSqlServer";
+		public static final String TECHNICAL_PROBLEM_DELETE_PERSON = "There was a problem trying delete person in PersonSqlServer with id=";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_DELETE_PERSON = "There was an unexpected problem trying delete person in PersonSqlServer";
+	}
+	
+	public static class YearSqlServerDAO{
+		
+		private YearSqlServerDAO() {
+			super();
+		}
+		
+		public static final String TECHNICAL_PROBLEM_CREATE_YEAR = "There was a problem trying create year in YearSqlServer with id=";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_YEAR= "There was an unexpected problem trying create year in YearSqlServer";
+		public static final String TECHNICAL_PROBLEM_UPDATE_YEAR = "There was a problem trying update year in YearSqlServer with id=";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_YEAR = "There was an unexpected problem trying update year in YearSqlServer";
+		public static final String TECHNICAL_PROBLEM_DELETE_YEAR = "There was a problem trying delete year in YearSqlServer with id=";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_DELETE_YEAR = "There was an unexpected problem trying delete year in YearSqlServer";
+	
 	}
 }

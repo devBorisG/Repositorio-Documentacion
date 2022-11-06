@@ -1,11 +1,12 @@
 package edu.uco.carpooling.crosscutting.helper;
 
 import java.time.LocalDate;
+
 import static edu.uco.carpooling.crosscutting.helper.ObjectHelper.getDefaultIfNull;
 
 public class DateHelper {
 	
-	public static final LocalDate NOTHING = LocalDate.of(1,1,1);
+	public static final LocalDate NOTHING = LocalDate.now();
 	
 	private DateHelper() {
 		super();
