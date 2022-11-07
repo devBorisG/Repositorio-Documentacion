@@ -12,7 +12,7 @@ import static edu.uco.carpooling.crosscutting.helper.DateHelper.getDefaultDate;
 
 public class AuthorizedCategoryDTO {
 
-	private UUID id;
+    private UUID id;
     private String category;
     private LocalDate validity;
 
@@ -28,7 +28,7 @@ public class AuthorizedCategoryDTO {
         setValidity(validity);
     }
     public static final AuthorizedCategoryDTO create(final UUID id,final String category,final LocalDate validity) {
-       return new AuthorizedCategoryDTO(id,category,validity);
+        return new AuthorizedCategoryDTO(id,category,validity);
     }
 
     public final void setId(final UUID id) {
