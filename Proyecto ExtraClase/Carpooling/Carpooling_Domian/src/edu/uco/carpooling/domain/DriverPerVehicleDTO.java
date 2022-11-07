@@ -28,6 +28,10 @@ public class DriverPerVehicleDTO {
     public static final DriverPerVehicleDTO create(final UUID id, final DriverDTO driver,final VehicleDTO vehicle){
         return new DriverPerVehicleDTO(id, driver , vehicle);
     }
+    
+	public static final String getUUIDAsString(final UUID value) {
+		return getDefaultUUID(value).toString();
+	}
 
     public UUID getId() {
         return id;
@@ -52,4 +56,7 @@ public class DriverPerVehicleDTO {
     public void setVehicle(final VehicleDTO vehicle) {
         this.vehicle = getDefaultIfNull(vehicle, getVehicleDTOBuilder().build() );
     }
+	public final String getIdAsString() {
+		return getUUIDAsString(getId());
+	}
 }

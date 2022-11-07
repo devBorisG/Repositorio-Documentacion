@@ -94,4 +94,39 @@ public class Messages {
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_DELETE_CUSTOMER = "There was an unexpected problem trying delete customer in CustomerPostgreSql";
 	
 	}
+	
+	public static class UUIDHelper{
+		private UUIDHelper() {
+			super();
+		}
+		
+		public static final String TECHICAL_UUID_FROM_STRING_INAVLID ="The UUID to covert does not have a valied";
+		public static final String TECNICAL_UUID_FROM_STRING_UNEXPECTED_ERROR = "There was an unexpected exception trying to convert a UUID from String";
+	}
+	
+	public static class RouteqlServerDAO{
+	 	private RouteqlServerDAO(){
+	 		super();	
+	 	}	
+	 	
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_ROUTE = "There was an unexpected problem trying to create the route in SQLServerDaoFactory with id= ";
+	 	public static final String TECHNICAL_PROBLEM_CREATE_ROUTE = "There was a problem trying to create the route in SQLServerDaoFactory with id= ";
+	 	public static final String TECHNICAL_PROBLEM_UPDATE_ROUTE = "There was a problem trying to update the route in SQLServerDaoFactory with id= ";
+	 	public static final String TECHNICAL_PROBLEM_DELETE_ROUTE = "There was a problem trying to delete the route in SQLServerDaoFactory with id= ";
+	 	public static final String TECHNICAL_PROBLEM_FILL_RESULTS = "There was a problem recovering results from the select ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS = "There was an unexpected problem trying recovering results from the select ";
+	 	public static final String TECHNICAL_PROBLEM_FILL_ROUTE_DTO = "There was a problem filling routeDTO from the resultSet ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_ROUTE_DTO = "There was an unexpected problem trying fill routeDTO from the resultSet ";
+	 	public static final String TECHNICAL_PROBLEM_FILL_YEAR_DTO = "There was a problem filling YearDTO from the resultSet ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_YEAR_DTO = "There was an unexpected problem trying fill YearDTO from the resultSet ";
+	 	public static final String TECHNICAL_PROBLEM_FILL_PERSON_DTO = "There was a problem filling PersonDTO from the resultSet ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_PERSON_DTO = "There was an unexpected problem trying fill PersonDTO from the resultSet ";
+	 	public static final String TECHNICAL_PROBLEM_EXECUTE_QUERY = "There was a problem trying to excute query to find the specific route";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_EXECEUTE_QUERY = "There was an unexpected problem trying to execute query to finad the specific routes";
+	 	public static final String TECHNICAL_PROBLEM_SET_PARAMETER_VALUES_QUERY = "There was a problem trying to set the parameters values to the query";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMETER_VALUES_QUERY = "There was an unexpected problem trying to set the parameters values to the query";
+	 	public static final String TECHNICAL_PROBLEM_PREPARED_STAMENT = "There was a problem trying to prepared the sql stament the parameters";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STAMENT = "There was an unexpected problem trying to prepared the sql stament the parameters";
+	 	
+	}
 }

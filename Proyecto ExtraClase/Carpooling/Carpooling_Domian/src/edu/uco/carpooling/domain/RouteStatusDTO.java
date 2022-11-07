@@ -69,4 +69,11 @@ public class RouteStatusDTO {
 		return new RouteStatusDTO(id, status, afirmation,negative,waiting);
 	}
 	
+	public static final String getUUIDAsString(final UUID value) {
+		return getDefaultUUID(value).toString();
+	}
+	
+	public final String getIdAsString() {
+		return getUUIDAsString(getId());
+	}
 }

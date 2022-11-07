@@ -47,6 +47,13 @@ public class RouteDTO {
 		return new RouteDTO(id,quota,routeStatus, driverPerVehicleDTO, pointInterest, detailRouteDTO);
 	}
 
+	public static final String getUUIDAsString(final UUID value) {
+		return getDefaultUUID(value).toString();
+	}
+	
+	public static final String getIntAsString(final int value) {
+		return Integer.toString(value);
+	}
 	
 	public UUID getId() {
 		return id;
@@ -92,5 +99,13 @@ public class RouteDTO {
 
 	public void setDetailRouteDTO(DetailRouteDTO detailRouteDTO) {
 		this.detailRouteDTO = getDefaultIfNull(detailRouteDTO, getDetailRouteDTOBuilder().build());
+	}
+	
+	public final String getIdAsString() {
+		return getUUIDAsString(getId());
+	}
+	
+	public final String getQuotaAsStrin() {
+		return getIntAsString(getQuota());
 	}
 }

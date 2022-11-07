@@ -1,6 +1,5 @@
 package edu.uco.carpooling.domain.builder;
 
-import java.time.LocalDate;
 import java.util.UUID;
 
 import edu.uco.carpooling.domain.DriverDTO;
@@ -15,7 +14,6 @@ public class DriverDTOBuilder {
 	private String firstSurname;
 	private String secondSurname;
 	private String password;
-	private LocalDate born;
 	private int phone;
 	private String companyEmail;
 	
@@ -62,11 +60,6 @@ public class DriverDTOBuilder {
 		return this;
 	}
 
-	public final DriverDTOBuilder setBorn(LocalDate born) {
-		this.born = born;
-		return this;
-	}
-
 	public final DriverDTOBuilder setPhone(int phone) {
 		this.phone = phone;
 		return this;
@@ -78,6 +71,6 @@ public class DriverDTOBuilder {
 	}
 	
 	public final DriverDTO build() {
-		return create(id, dni, firstName, secondName, firstSurname, secondSurname, password, born, phone, companyEmail);
+		return create(id, dni, firstName, secondName, firstSurname, secondSurname, password, phone, companyEmail);
 	}
 }

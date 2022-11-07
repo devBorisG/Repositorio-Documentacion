@@ -33,6 +33,10 @@ public class PointInterestDTO {
     public static final PointInterestDTO create(final UUID id, final String keyPoint,final RouteDTO routeCod, final String city){
         return new PointInterestDTO(id, keyPoint,routeCod,city);
     }
+    
+	public static final String getUUIDAsString(final UUID value) {
+		return getDefaultUUID(value).toString();
+	}
 
     public UUID getId() {return id;}
 
@@ -57,4 +61,8 @@ public class PointInterestDTO {
     public void setCity(final String city) {
          this.city = applyTrim(city);
     }
+    
+	public final String getIdAsString() {
+		return getUUIDAsString(getId());
+	}
 }

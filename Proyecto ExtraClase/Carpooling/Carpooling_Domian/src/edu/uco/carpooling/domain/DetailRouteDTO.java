@@ -41,6 +41,10 @@ public class DetailRouteDTO {
 		return new DetailRouteDTO(id, route, creationTime, endTime, date);
 	}
 	
+	public static final String getUUIDAsString(final UUID value) {
+		return getDefaultUUID(value).toString();
+	}
+	
 	public UUID getId() {
 		return id;
 	}
@@ -78,5 +82,9 @@ public class DetailRouteDTO {
 
 	public void setDate(LocalDate date) {
 		this.date = date;
+	}
+	
+	public final String getIdAsString() {
+		return getUUIDAsString(getId());
 	}
 }

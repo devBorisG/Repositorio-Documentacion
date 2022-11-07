@@ -1,18 +1,11 @@
 package edu.uco.carpooling.domain;
 
-import java.time.LocalDate;
 import java.util.UUID;
-
 
 import static edu.uco.carpooling.crosscutting.helper.StringHelper.applyTrim;
 import static edu.uco.carpooling.crosscutting.helper.StringHelper.EMPTY;
-
 import static edu.uco.carpooling.crosscutting.helper.NumberHelper.isLessThan;
 import static edu.uco.carpooling.crosscutting.helper.NumberHelper.ZERO;
-
-import static edu.uco.carpooling.crosscutting.helper.DateHelper.getDefaultDate;
-import static edu.uco.carpooling.crosscutting.helper.DateHelper.NOTHING;
-
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getDefaultUUID;
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getNewUUID;
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getUUIDAsString;
@@ -26,7 +19,6 @@ public class UserDTO {
 	private String firstSurname;
 	private String secondSurname;
 	private String password;
-	private LocalDate born;
 	private int phone;
 	private String companyEmail;
 	
@@ -38,13 +30,12 @@ public class UserDTO {
 		setFirstSurname(EMPTY);
 		setSecondSurname(EMPTY);
 		setPassword(EMPTY);
-		setBorn(NOTHING);
 		setPhone(ZERO);
 		setCompanyEmail(EMPTY);
 	}
 
 	public UserDTO(final UUID id,final int dni,final String firstName,final String secondName,final String firstSurname,final String secondSurname,
-			final String password,final LocalDate born,final int phone,final String emailCompany) {
+			final String password,final int phone,final String emailCompany) {
 		setId(id);
 		setDni(dni);
 		setFirstName(firstName);
@@ -52,7 +43,6 @@ public class UserDTO {
 		setFirstSurname(firstSurname);
 		setSecondSurname(secondSurname);
 		setPassword(password);
-		setBorn(born);
 		setPhone(phone);
 		setCompanyEmail(emailCompany);
 	}
@@ -111,14 +101,6 @@ public class UserDTO {
 
 	public final void setPassword(final String password) {
 		this.password = applyTrim(password);
-	}
-
-	public LocalDate getBorn() {
-		return born;
-	}
-
-	public final void setBorn(final LocalDate born) {
-		this.born = getDefaultDate(born);
 	}
 
 	public int getPhone() {

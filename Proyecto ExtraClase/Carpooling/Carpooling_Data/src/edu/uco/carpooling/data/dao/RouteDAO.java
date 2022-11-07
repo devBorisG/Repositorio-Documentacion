@@ -3,14 +3,15 @@ package edu.uco.carpooling.data.dao;
 import java.util.List;
 import java.util.UUID;
 
-import edu.uco.carpooling.domain.DriverDTO;
+import edu.uco.carpooling.domain.RouteDTO;
 
 public interface RouteDAO {
-void create(DriverDTO driver);
 	
-	List<DriverDTO> find(DriverDTO driver);
+	void create(RouteDTO route);
 	
-	void update(DriverDTO driver);
+	List<RouteDTO> find(RouteDTO route);
+	
+	void update(RouteDTO route);
 	
 	void delete(UUID id);
 }
