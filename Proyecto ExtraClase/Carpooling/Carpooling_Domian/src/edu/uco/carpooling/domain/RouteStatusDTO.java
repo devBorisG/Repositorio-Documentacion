@@ -7,30 +7,34 @@ import static edu.uco.carpooling.crosscutting.helper.BooleanHelper.BFALSE;
 import static edu.uco.carpooling.crosscutting.helper.StringHelper.EMPTY;
 import static edu.uco.carpooling.crosscutting.helper.BooleanHelper.getDefaultBoolean;
 import static edu.uco.carpooling.crosscutting.helper.StringHelper.applyTrim;
+import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getUUIDFromString;
 
 public class RouteStatusDTO {
 
 	private UUID id;
-	private String status;
-	private boolean afirmation;
-	private boolean negative;
-	private boolean waiting;
+	private boolean status;
+	private String valueDefault;
 	
 	public RouteStatusDTO() {
 		setId(getNewUUID());
-		setStatus(EMPTY);
-		setAfirmation(BFALSE);
-		setNegative(BFALSE);
-		setWaiting(isWaiting());
+		setStatus(status);
+		setValueDefault(valueDefault);
 	}
 	
-	public RouteStatusDTO(final UUID id,final String status, final boolean afirmation,
-			final boolean negative, final boolean waiting) {
-		setId(id);
-		setStatus(status);
-		setAfirmation(afirmation);
-		setNegative(negative);
-		setWaiting(waiting);
+	public RouteStatusDTO(final UUID id,final boolean status,final String valueDefault) {
+		setId(getNewUUID());
+		setStatus(BFALSE);
+		setValueDefault(EMPTY);
+	}
+	
+	public static final RouteStatusDTO create(final UUID id,final boolean status,
+			final String valueDefault) {
+		return new RouteStatusDTO(id,status,valueDefault);
+	}
+	
+	public static final RouteStatusDTO create(final String id,final boolean status,
+			final String valueDefault) {
+		return new RouteStatusDTO(getUUIDFromString(id),status,valueDefault);
 	}
 	
 	public UUID getId() {
@@ -39,34 +43,21 @@ public class RouteStatusDTO {
 	public final void setId(final UUID id) {
 		this.id = getDefaultUUID(id);
 	}
-	public String getStatus() {
+	
+	public boolean isStatus() {
 		return status;
 	}
-	public final void setStatus(final String status) {
-		this.status = applyTrim(status);
+
+	public void setStatus(boolean status) {
+		this.status = getDefaultBoolean(status);
 	}
-	public boolean isAfirmation() {
-		return afirmation;
+
+	public String getValueDefault() {
+		return valueDefault;
 	}
-	public final void setAfirmation(final boolean afirmation) {
-		this.afirmation = getDefaultBoolean(afirmation, BFALSE);
-	}
-	public boolean isNegative() {
-		return negative;
-	}
-	public final void setNegative(final boolean negative) {
-		this.negative = getDefaultBoolean(negative, BFALSE);
-	}
-	public boolean isWaiting() {
-		return waiting;
-	}
-	public final void setWaiting(final boolean waiting) {
-		this.waiting = getDefaultBoolean(waiting, BFALSE);
-	}
-	
-	public static final RouteStatusDTO create(final UUID id,final String status,
-			final boolean afirmation, final boolean negative,final boolean waiting) {
-		return new RouteStatusDTO(id, status, afirmation,negative,waiting);
+
+	public void setValueDefault(String valueDefault) {
+		this.valueDefault = applyTrim(valueDefault);
 	}
 	
 	public static final String getUUIDAsString(final UUID value) {

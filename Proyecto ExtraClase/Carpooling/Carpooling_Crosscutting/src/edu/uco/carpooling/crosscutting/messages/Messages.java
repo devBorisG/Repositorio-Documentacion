@@ -117,16 +117,25 @@ public class Messages {
 	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS = "There was an unexpected problem trying recovering results from the select ";
 	 	public static final String TECHNICAL_PROBLEM_FILL_ROUTE_DTO = "There was a problem filling routeDTO from the resultSet ";
 	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_ROUTE_DTO = "There was an unexpected problem trying fill routeDTO from the resultSet ";
-	 	public static final String TECHNICAL_PROBLEM_FILL_YEAR_DTO = "There was a problem filling YearDTO from the resultSet ";
-	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_YEAR_DTO = "There was an unexpected problem trying fill YearDTO from the resultSet ";
-	 	public static final String TECHNICAL_PROBLEM_FILL_PERSON_DTO = "There was a problem filling PersonDTO from the resultSet ";
-	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_PERSON_DTO = "There was an unexpected problem trying fill PersonDTO from the resultSet ";
 	 	public static final String TECHNICAL_PROBLEM_EXECUTE_QUERY = "There was a problem trying to excute query to find the specific route";
 	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_EXECEUTE_QUERY = "There was an unexpected problem trying to execute query to finad the specific routes";
 	 	public static final String TECHNICAL_PROBLEM_SET_PARAMETER_VALUES_QUERY = "There was a problem trying to set the parameters values to the query";
 	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMETER_VALUES_QUERY = "There was an unexpected problem trying to set the parameters values to the query";
 	 	public static final String TECHNICAL_PROBLEM_PREPARED_STAMENT = "There was a problem trying to prepared the sql stament the parameters";
 	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STAMENT = "There was an unexpected problem trying to prepared the sql stament the parameters";
-	 	
+	 	public static final String TECHNICAL_PROBLEM_FILL_ROUTESTATUS_DTO = "There was a problem filling routeStatusDTO from the resultSet ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_ROUTESTATUS_DTO = "There was an unexpected problem trying fill routeStatusDTO from the resultSet ";
+	 	public static final String TECHNICAL_PROBLEM_FILL_DRIVER_DTO = "There was a problem filling DriverDTO from the resultSet ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_DRIVER_DTO = "There was an unexpected problem trying fill DriverDTO from the resultSet ";
+	 	public static final String TECHNICAL_PROBLEM_FILL_AUTHORIZED_CATEGOTY_DTO = "There was a problem filling authorizedCategoryDTO from the resultSet ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_AUTHORIZED_CATEGOTY_DTO = "There was an unexpected problem trying fill authorizedCategoryDTO from the resultSet ";
+	 	public static final String TECHNICAL_PROBLEM_FILL_VEHICLE_DTO = "There was a problem filling vehicleDTO from the resultSet ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_VEHICLE_DTO = "There was an unexpected problem trying fill vehicleDTO from the resultSet ";
+	 	public static final String TECHNICAL_PROBLEM_FILL_DRIVERPERVEHICLE_DTO = "There was a problem filling driverPervehicleDTO from the resultSet ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_DRIVERPERVEHICLE_DTO = "There was an unexpected problem trying fill driverPervehicleDTO from the resultSet ";
+	 	public static final String TECHNICAL_PROBLEM_FILL_POINT_INTEREST_DTO = "There was a problem filling pointInterestDTO from the resultSet ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_POINT_INTEREST_DTO = "There was an unexpected problem trying fill pointInterestDTO from the resultSet ";
+	 	public static final String TECHNICAL_PROBLEM_FILL_DETAIL_ROUTE_DTO = "There was a problem filling detailRouteDTO from the resultSet ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_DETAIL_ROUTE_DTO = "There was an unexpected problem trying fill detailRouteDTO from the resultSet ";
 	}
 }

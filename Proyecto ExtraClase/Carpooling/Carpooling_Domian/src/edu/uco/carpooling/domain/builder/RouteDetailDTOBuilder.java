@@ -11,7 +11,6 @@ public class RouteDetailDTOBuilder {
 	private LocalDate creationTime;
 	private LocalDate endTime;
 	private LocalDate date;
-	private RouteDTO route;
 
 	private RouteDetailDTOBuilder() {
 		super();
@@ -41,12 +40,7 @@ public class RouteDetailDTOBuilder {
 		return this;
 	}
 
-	public final RouteDetailDTOBuilder setRoute(final RouteDTO route) {
-		this.route = route;
-		return this;
-	}
-
 	public final RouteDetailDTO build() {
-		return RouteDetailDTO.create(id, creationTime, endTime, date, route);
+		return RouteDetailDTO.create(id, creationTime, endTime, date);
 	}
 }

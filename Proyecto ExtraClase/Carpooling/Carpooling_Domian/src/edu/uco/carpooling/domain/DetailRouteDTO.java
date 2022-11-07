@@ -1,44 +1,46 @@
 package edu.uco.carpooling.domain;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
+import java.sql.Date;
+import java.sql.Time;
 import java.util.UUID;
-import static edu.uco.carpooling.domain.builder.RouteDTOBuilder.getRouteDTOBuilder;
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getDefaultUUID;
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getNewUUID;
+import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getUUIDFromString;
 import static edu.uco.carpooling.crosscutting.helper.TimeHelper.getDefaultTimeIfNull;
 import static edu.uco.carpooling.crosscutting.helper.DateHelper.getDefaultDate;
-import static edu.uco.carpooling.crosscutting.helper.ObjectHelper.getDefaultIfNull;
 
 public class DetailRouteDTO {
 	
 	private UUID id;
-	private RouteDTO route;
-	private LocalTime creationTime;
-	private LocalTime endTime;
-	private LocalDate date;
+	private Time creationTime;
+	private Time endTime;
+	private Date date;
 	
 	public DetailRouteDTO() {
 		setId(getNewUUID());
 		setCreationTime(getDefaultTimeIfNull(creationTime));
 		setEndTime(getDefaultTimeIfNull(endTime));
 		setDate(getDefaultDate(date));
-		setRoute(getRouteDTOBuilder().build());
 	}
 	
-	public DetailRouteDTO(final UUID id,final RouteDTO route,final LocalTime creationTime,
-			final LocalTime endTime,final LocalDate date) {
+	public DetailRouteDTO(final UUID id,final Time creationTime,
+			final Time endTime,final Date date) {
 		setId(id);
 		setCreationTime(creationTime);
 		setEndTime(endTime);
-		setRoute(route);
 		setDate(date);
 	}
 	
-	public static final DetailRouteDTO create(final UUID id,final RouteDTO route,
-			final LocalTime creationTime,final LocalTime endTime, 
-			final LocalDate date) {
-		return new DetailRouteDTO(id, route, creationTime, endTime, date);
+	public static final DetailRouteDTO create(final UUID id,
+			final Time creationTime,final Time endTime, 
+			final Date date) {
+		return new DetailRouteDTO(id, creationTime, endTime, date);
+	}
+	
+	public static final DetailRouteDTO create(final String id,
+			final Time creationTime,final Time endTime, 
+			final Date date) {
+		return new DetailRouteDTO(getUUIDFromString(id), creationTime, endTime, date);
 	}
 	
 	public static final String getUUIDAsString(final UUID value) {
@@ -52,35 +54,27 @@ public class DetailRouteDTO {
 		this.id = getDefaultUUID(id);
 	}
 
-	public RouteDTO getRoute() {
-		return route;
-	}
-
-	public void setRoute(final RouteDTO route) {
-		this.route = getDefaultIfNull(route, getRouteDTOBuilder().build());
-	}
-
-	public LocalTime getCreationTime() {
+	public Time getCreationTime() {
 		return creationTime;
 	}
 
-	public void setCreationTime(LocalTime creationTime) {
+	public void setCreationTime(Time creationTime) {
 		this.creationTime = creationTime;
 	}
 
-	public LocalTime getEndTime() {
+	public Time getEndTime() {
 		return endTime;
 	}
 
-	public void setEndTime(LocalTime endTime) {
+	public void setEndTime(Time endTime) {
 		this.endTime = endTime;
 	}
 
-	public LocalDate getDate() {
+	public Date getDate() {
 		return date;
 	}
 
-	public void setDate(LocalDate date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 	

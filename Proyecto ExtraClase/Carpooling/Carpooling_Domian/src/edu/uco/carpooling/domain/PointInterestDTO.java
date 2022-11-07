@@ -6,32 +6,33 @@ import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getNewUUID;
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getDefaultUUID;
 import static edu.uco.carpooling.crosscutting.helper.StringHelper.EMPTY;
 import static edu.uco.carpooling.crosscutting.helper.StringHelper.applyTrim;
-import static edu.uco.carpooling.crosscutting.helper.ObjectHelper.getDefaultIfNull;
+import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getUUIDFromString;
 
 public class PointInterestDTO {
 
     private UUID id;
     private String keyPoint;
-    private RouteDTO routeCod;
     private String city;
 
     public PointInterestDTO(){
         setId(getNewUUID());
         setKeyPoint(EMPTY);
-        setRouteCod(routeCod);
         setCity(EMPTY);
     }
 
-    public PointInterestDTO(UUID id, String keyPoint, RouteDTO routeCod, String city) {
+    public PointInterestDTO(UUID id, String keyPoint, String city) {
         setId(id);
         setKeyPoint(keyPoint);
-        setRouteCod(routeCod);
         setCity(city);
 
     }
 
-    public static final PointInterestDTO create(final UUID id, final String keyPoint,final RouteDTO routeCod, final String city){
-        return new PointInterestDTO(id, keyPoint,routeCod,city);
+    public static final PointInterestDTO create(final UUID id, final String keyPoint, final String city){
+        return new PointInterestDTO(id, keyPoint,city);
+    }
+    
+    public static final PointInterestDTO create(final String id, final String keyPoint, final String city){
+        return new PointInterestDTO(getUUIDFromString(id), keyPoint,city);
     }
     
 	public static final String getUUIDAsString(final UUID value) {
@@ -46,14 +47,8 @@ public class PointInterestDTO {
     	return keyPoint;
     }
 
-    public void setKeyPoint(final String keyPoint) {this.keyPoint = applyTrim(keyPoint);}
-
-    public RouteDTO getRouteCod() {
-        return routeCod;
-    }
-
-    public void setRouteCod(final RouteDTO routeCod) {
-        this.routeCod = getDefaultIfNull(routeCod, routeCod);
+    public void setKeyPoint(final String keyPoint) {
+    	this.keyPoint = applyTrim(keyPoint);
     }
 
     public String getCity() {return city;}

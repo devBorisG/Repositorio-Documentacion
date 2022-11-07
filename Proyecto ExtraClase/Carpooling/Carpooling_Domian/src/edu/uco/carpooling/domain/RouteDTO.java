@@ -12,6 +12,7 @@ import static edu.uco.carpooling.domain.builder.DriverPerVehicleDTOBuilder.getDr
 import static edu.uco.carpooling.domain.builder.RouteStatusDTOBuilder.getRouteStatusDTOBuilder;
 import static edu.uco.carpooling.domain.builder.PointInterestDTOBuilder.getPointInterestDTOBuilder;
 import static edu.uco.carpooling.crosscutting.helper.ObjectHelper.getDefaultIfNull;
+import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getUUIDFromString;
 
 public class RouteDTO {
 	
@@ -45,6 +46,12 @@ public class RouteDTO {
 			final RouteStatusDTO routeStatus, final DriverPerVehicleDTO driverPerVehicleDTO, final PointInterestDTO pointInterest,
 			final DetailRouteDTO detailRouteDTO) {
 		return new RouteDTO(id,quota,routeStatus, driverPerVehicleDTO, pointInterest, detailRouteDTO);
+	}
+	
+	public static final RouteDTO create(final String id,final int quota,
+			final RouteStatusDTO routeStatus, final DriverPerVehicleDTO driverPerVehicleDTO, final PointInterestDTO pointInterest,
+			final DetailRouteDTO detailRouteDTO) {
+		return new RouteDTO(getUUIDFromString(id),quota,routeStatus, driverPerVehicleDTO, pointInterest, detailRouteDTO);
 	}
 
 	public static final String getUUIDAsString(final UUID value) {

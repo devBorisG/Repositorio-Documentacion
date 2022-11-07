@@ -13,7 +13,7 @@ import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getUUIDAsString;
 public class UserDTO {
 
 	private UUID id;
-	private int dni;
+	private String dni;
 	private String firstName;
 	private String secondName;
 	private String firstSurname;
@@ -24,7 +24,7 @@ public class UserDTO {
 	
 	public UserDTO() {
 		setId(getNewUUID());
-		setDni(ZERO);
+		setDni(EMPTY);
 		setFirstName(EMPTY);
 		setSecondName(EMPTY);
 		setFirstSurname(EMPTY);
@@ -34,7 +34,7 @@ public class UserDTO {
 		setCompanyEmail(EMPTY);
 	}
 
-	public UserDTO(final UUID id,final int dni,final String firstName,final String secondName,final String firstSurname,final String secondSurname,
+	public UserDTO(final UUID id,final String dni,final String firstName,final String secondName,final String firstSurname,final String secondSurname,
 			final String password,final int phone,final String emailCompany) {
 		setId(id);
 		setDni(dni);
@@ -55,12 +55,12 @@ public class UserDTO {
 		this.id = getDefaultUUID(id);
 	}
 
-	public int getDni() {
+	public String getDni() {
 		return dni;
 	}
 
-	public final void setDni(final int dni) {
-		this.dni = isLessThan(dni, ZERO)? ZERO : dni;
+	public final void setDni(final String dni) {
+		this.dni = applyTrim(dni);
 	}
 
 	public String getFirstName() {

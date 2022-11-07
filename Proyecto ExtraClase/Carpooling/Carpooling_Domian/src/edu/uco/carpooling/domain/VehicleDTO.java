@@ -6,61 +6,55 @@ import java.util.UUID;
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getDefaultUUID;
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getNewUUID;
 
-import static edu.uco.carpooling.crosscutting.helper.BooleanHelper.getDefaultBoolean;
-import static edu.uco.carpooling.crosscutting.helper.BooleanHelper.BFALSE;
-
 import static edu.uco.carpooling.crosscutting.helper.StringHelper.applyTrim;
 import static edu.uco.carpooling.crosscutting.helper.StringHelper.EMPTY;
 
 import static edu.uco.carpooling.crosscutting.helper.NumberHelper.isLessThan;
 import static edu.uco.carpooling.crosscutting.helper.NumberHelper.ZERO;
+import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getUUIDFromString;
+import static edu.uco.carpooling.domain.builder.DriverDTOBuilder.getDriverDTOBuilder;
+
 
 public class VehicleDTO {
 	
 	private UUID id;
-	private boolean state;
-	private String registration ;
 	private int model;
 	private String brand;
 	private String lineup;
 	private String plate;
+	private DriverDTO owner;
 	private int capacity;
 	
 	public VehicleDTO() {
 		setId(getNewUUID());
-		setState(BFALSE);
-		setRegistration(EMPTY);
-		setModel(ZERO);
 		setBrand(EMPTY);
 		setLineup(EMPTY);
 		setPlate(EMPTY);
 		setCapacity(ZERO);
+		setModel(ZERO);
+		setOwner(getDriverDTOBuilder().build());
 	}
 
-	public VehicleDTO(UUID id, boolean state, String registration, int model, String brand, String lineup, String plate,
-			int capacity) {
+	public VehicleDTO(UUID id,int model, String brand, String lineup, String plate,
+			DriverDTO owner,int capacity) {
 		setId(id);
-		setState(state);
-		setRegistration(registration);
 		setModel(model);
 		setBrand(brand);
 		setLineup(lineup);
 		setPlate(plate);
+		setOwner(owner);
 		setCapacity(capacity);
 	}
 	
-	public static final VehicleDTO create(UUID id, boolean state, String registration, int model, String brand, String lineup, String plate,
+	public static final VehicleDTO create(UUID id, int model, String brand, String lineup, String plate,
+			DriverDTO owner,int capacity) {
+		return new VehicleDTO(id,model,brand,lineup,plate,owner,capacity);
+	}
+	
+	public static final VehicleDTO create(final String id,final int model,final String brand, 
+			final String lineup,final String plate, final DriverDTO owner,
 			int capacity) {
-		return new VehicleDTO(
-					id,
-					state,
-					registration,
-					model,
-					brand,
-					lineup,
-					plate,
-					capacity
-				);
+		return new VehicleDTO(getUUIDFromString(id), model,brand,lineup,plate,owner,capacity);
 	}
 
 	public UUID getId() {
@@ -69,22 +63,6 @@ public class VehicleDTO {
 
 	public final void setId(final UUID id) {
 		this.id = getDefaultUUID(id);
-	}
-
-	public boolean isState() {
-		return state;
-	}
-
-	public final void setState(final boolean state) {
-		this.state = getDefaultBoolean(state);
-	}
-
-	public String getRegistration() {
-		return registration;
-	}
-
-	public final void setRegistration(final String registration) {
-		this.registration = applyTrim(registration);
 	}
 
 	public int getModel() {
@@ -127,5 +105,12 @@ public class VehicleDTO {
 		this.capacity = isLessThan(capacity, ZERO)? ZERO: capacity;
 	}
 	
-	
+
+	public DriverDTO getOwner() {
+		return owner;
+	}
+
+	public void setOwner(DriverDTO owner) {
+		this.owner = owner;
+	}
 }
