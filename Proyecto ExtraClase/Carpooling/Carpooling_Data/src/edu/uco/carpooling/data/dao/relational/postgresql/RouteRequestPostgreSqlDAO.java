@@ -107,18 +107,18 @@ public class RouteRequestPostgreSqlDAO extends DAORelational implements RouteReq
 			var setWhere = true;
 					
 			if (!UUIDHelper.isDefaultUUID(routeRequest.getId())) {
-				sqlBuilder.append("WHERE Bu.id = ? ");
+				sqlBuilder.append("WHERE RR.id = ? ");
 				setWhere = false;
 				parameters.add(routeRequest.getIdAsString());
 			}
 			
 			if (!UUIDHelper.isDefaultUUID(routeRequest.getCustomer().getId())) {
-				sqlBuilder.append(setWhere ? "WHERE ": "AND ").append("Bu.idYear = ? ");
+				sqlBuilder.append(setWhere ? "WHERE ": "AND ").append("RR.IdCustomer = ? ");
 				parameters.add(routeRequest.getCustomer().getIdAsString());
 			}
 			
 			if (!UUIDHelper.isDefaultUUID(routeRequest.getStatus().getId())) {
-				sqlBuilder.append(setWhere ? "WHERE ": "AND ").append("Bu.idPerson = ? ");
+				sqlBuilder.append(setWhere ? "WHERE ": "AND ").append("RR.IdStatus = ? ");
 				parameters.add(routeRequest.getStatus().getIdAsString());
 			}
 		}

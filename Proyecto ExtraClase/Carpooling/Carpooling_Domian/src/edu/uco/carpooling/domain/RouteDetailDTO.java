@@ -1,31 +1,48 @@
 package edu.uco.carpooling.domain;
 
 import java.sql.Date;
+import java.sql.Time;
 import java.util.UUID;
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getDefaultUUID;
-import static edu.uco.carpooling.crosscutting.helper.DateHelper.getDefaultDate;
+import static edu.uco.carpooling.crosscutting.helper.TimeHelper.getDefaultTimeIfNull;
 import static edu.uco.carpooling.crosscutting.helper.DateHelper.getDefaulDate;
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getNewUUID;
+import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getUUIDFromString;
+import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getUUIDAsString;
+import static edu.uco.carpooling.crosscutting.helper.DateHelper.getDefaultDate;
+import static edu.uco.carpooling.crosscutting.helper.TimeHelper.TIME;
 import static edu.uco.carpooling.crosscutting.helper.DateHelper.DEFAULT_DATE;
 
 public class RouteDetailDTO {
 	
 	private UUID id;
-	private Date creationTime;
-	private Date endTime;
+	private Time creationTime;
+	private Time endTime;
 	private Date date;
 	
 	public RouteDetailDTO() {
 		setId(getNewUUID());
-		setCreationTime(DEFAULT_DATE);
-		setEndTime(DEFAULT_DATE);
+		setCreationTime(TIME);
+		setEndTime(TIME);
+		setDate(DEFAULT_DATE);
 	}
 	
-	public RouteDetailDTO(final UUID id,final Date creationTime,final Date endTime,
+	public RouteDetailDTO(final UUID id,final Time creationTime,final Time endTime,
 			final Date date) {
 		setId(id);
 		setCreationTime(creationTime);
 		setEndTime(endTime);
+		setDate(date);
+	}
+	
+	public static final RouteDetailDTO create (final UUID id,final Time creationTime,
+			final Time endTime, final Date date) {
+		return new RouteDetailDTO(id, creationTime, endTime, date);
+	}
+	
+	public static final RouteDetailDTO create (final String id,final Time creationTime,
+			final Time endTime, final Date date) {
+		return new RouteDetailDTO(getUUIDFromString(id), creationTime, endTime, date);
 	}
 	
 	public UUID getId() {
@@ -34,17 +51,17 @@ public class RouteDetailDTO {
 	public final void setId(final UUID id) {
 		this.id = getDefaultUUID(id);
 	}
-	public Date getCreationTime() {
+	public Time getCreationTime() {
 		return creationTime;
 	}
-	public final void setCreationTime(final Date creationTime) {
-		this.creationTime = getDefaulDate(creationTime, getDefaultDate(creationTime));
+	public final void setCreationTime(final Time creationTime) {
+		this.creationTime = getDefaultTimeIfNull(creationTime);
 	}
-	public Date getEndTime() {
+	public Time getEndTime() {
 		return endTime;
 	}
-	public final void setEndTime(final Date endTime) {
-		this.endTime = getDefaulDate(endTime, getDefaultDate(endTime));
+	public final void setEndTime(final Time endTime) {
+		this.endTime = getDefaultTimeIfNull(endTime);
 	}
 	public Date getDate() {
 		return date;
@@ -53,8 +70,7 @@ public class RouteDetailDTO {
 		this.date = getDefaulDate(date, getDefaultDate(date));
 	}
 	
-	public static final RouteDetailDTO create (final UUID id,final Date creationTime,
-			final Date endTime, final Date date) {
-		return new RouteDetailDTO(id, creationTime, endTime, date);
+	public final String getIdAsString() {
+		return getUUIDAsString(getId());
 	}
 }

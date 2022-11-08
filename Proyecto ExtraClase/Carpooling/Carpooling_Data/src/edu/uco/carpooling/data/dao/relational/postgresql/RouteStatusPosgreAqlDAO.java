@@ -91,12 +91,12 @@ public class RouteStatusPosgreAqlDAO extends DAORelational implements RouteStatu
 			}
 			
 			if (!BooleanHelper.getDefaultBoolean(status.isStatus())) {
-				sqlBuilder.append(setWhere ? "WHERE ": "AND ").append("Bu.idYear = ? ");
+				sqlBuilder.append(setWhere ? "WHERE ": "AND ").append("St.status = ? ");
 				parameters.add(status.isStatus());
 			}
 			
 			if (!StringHelper.isEmpty(status.getValueDefault())) {
-				sqlBuilder.append(setWhere ? "WHERE ": "AND ").append("Bu.idPerson = ? ");
+				sqlBuilder.append(setWhere ? "WHERE ": "AND ").append("St.Messages = ? ");
 				parameters.add(status.getValueDefault());
 			}
 		}

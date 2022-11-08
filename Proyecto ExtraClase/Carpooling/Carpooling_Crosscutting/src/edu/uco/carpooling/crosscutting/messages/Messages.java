@@ -186,4 +186,25 @@ public class Messages {
 	 	public static final String TECHNICAL_PROBLEM_FILL_ROUTE_STATUS_DTO = "There was a problem filling routeStatusDTO from the resultSet ";
 	}
 	
+	public static class DetailRoutePostgreSqlDAO{
+	 	private DetailRoutePostgreSqlDAO(){
+	 		super();	
+	 	}	
+	 	
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_DETAIL_ROUTE = "There was an unexpected problem trying to create the detail route in SQLServerDaoFactory with id= ";
+	 	public static final String TECHNICAL_PROBLEM_CREATE_DETAIL_ROUTE  = "There was a problem trying to create the detail route in SQLServerDaoFactory with id= ";
+	 	public static final String TECHNICAL_PROBLEM_UPDATE_DETAIL_ROUTE  = "There was a problem trying to update the detail route in SQLServerDaoFactory with id= ";
+	 	public static final String TECHNICAL_PROBLEM_DELETE_DETAIL_ROUTE  = "There was a problem trying to delete the detail route in SQLServerDaoFactory with id= ";
+	 	public static final String TECHNICAL_PROBLEM_FILL_RESULTS = "There was a problem recovering results from the select ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS = "There was an unexpected problem trying recovering results from the select ";
+	 	public static final String TECHNICAL_PROBLEM_FILL_ROUTE_DETAIL_ROUTE_DTO = "There was a problem filling detailRouteDTO from the resultSet ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_DETAIL_ROUTE_DTO = "There was an unexpected problem trying fill detailRouteDTO from the resultSet ";
+	 	public static final String TECHNICAL_PROBLEM_EXECUTE_QUERY = "There was a problem trying to excute query to find the specific detail Route";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_EXECEUTE_QUERY = "There was an unexpected problem trying to execute query to find the specific detail Route";
+	 	public static final String TECHNICAL_PROBLEM_SET_PARAMETER_VALUES_QUERY = "There was a problem trying to set the parameters values to the query";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMETER_VALUES_QUERY = "There was an unexpected problem trying to set the parameters values to the query";
+	 	public static final String TECHNICAL_PROBLEM_PREPARED_STAMENT = "There was a problem trying to prepared the sql stament the parameters";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STAMENT = "There was an unexpected problem trying to prepared the sql stament the parameters";
+	 	public static final String TECHNICAL_PROBLEM_FILL_ROUTE_STATUS_DTO = "There was a problem filling routeStatusDTO from the resultSet ";
+	}
 }
