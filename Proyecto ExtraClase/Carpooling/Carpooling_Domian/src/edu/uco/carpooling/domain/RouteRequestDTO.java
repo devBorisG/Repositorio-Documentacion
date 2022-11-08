@@ -1,7 +1,7 @@
 package edu.uco.carpooling.domain;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
+import java.sql.Date;
+import java.sql.Time;
 import java.util.UUID;
 
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getDefaultUUID;
@@ -13,12 +13,13 @@ import static edu.uco.carpooling.crosscutting.helper.StringHelper.EMPTY;
 import static edu.uco.carpooling.domain.builder.CustomerDTOBuilder.getUserDTOBuilder;
 import static edu.uco.carpooling.domain.builder.RouteStatusDTOBuilder.getRouteStatusDTOBuilder;
 import static edu.uco.carpooling.crosscutting.helper.StringHelper.applyTrim;
+import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getUUIDFromString;
 
 public class RouteRequestDTO {
 
 	private UUID id;
-	private LocalTime serviceRequestTime;
-	private LocalDate serviceRequestDate;
+	private Time serviceRequestTime;
+	private Date serviceRequestDate;
 	private CustomerDTO customer;
 	private RouteStatusDTO status;
 	private String routeRequestOrigin;
@@ -34,8 +35,8 @@ public class RouteRequestDTO {
 		setStatus(getRouteStatusDTOBuilder().build());
 	}
 	
-	public  RouteRequestDTO (final UUID id,final LocalTime serviceRequesTime,
-			final LocalDate serviceRequestDate,final CustomerDTO customer,
+	public  RouteRequestDTO (final UUID id,final Time serviceRequesTime,
+			final Date serviceRequestDate,final CustomerDTO customer,
 			final RouteStatusDTO status,final String routeRequestOrigin,
 			final String routeRequestEnd) {
 		setId(id);
@@ -47,12 +48,24 @@ public class RouteRequestDTO {
 		setCustomer(customer);
 	}
 	
-	public static final RouteRequestDTO create(final UUID id,final LocalTime serviceRequesTime,
-			final LocalDate serviceRequestDate,final CustomerDTO customer,
+	public static final RouteRequestDTO create(final UUID id,final Time serviceRequesTime,
+			final Date serviceRequestDate,final CustomerDTO customer,
 			final RouteStatusDTO status,final String routeRequestOrigin,
 			final String routeRequestEnd) {
 		return new RouteRequestDTO(id, serviceRequesTime, serviceRequestDate, customer, 
 				status, routeRequestOrigin, routeRequestEnd);
+	}
+	
+	public static final RouteRequestDTO create(final String id,final Time serviceRequesTime,
+			final Date serviceRequestDate,final CustomerDTO customer,
+			final RouteStatusDTO status,final String routeRequestOrigin,
+			final String routeRequestEnd) {
+		return new RouteRequestDTO(getUUIDFromString(id), serviceRequesTime, serviceRequestDate, customer, 
+				status, routeRequestOrigin, routeRequestEnd);
+	}
+	
+	public static final String getUUIDAsString(final UUID value) {
+		return getDefaultUUID(value).toString();
 	}
 	
 	public UUID getId() {
@@ -61,16 +74,16 @@ public class RouteRequestDTO {
 	public void setId(final UUID id) {
 		this.id = getDefaultUUID(id);
 	}
-	public LocalTime getServiceRequestTime() {
+	public Time getServiceRequestTime() {
 		return serviceRequestTime;
 	}
-	public void setServiceRequestTime(final LocalTime serviceRequestTime) {
+	public void setServiceRequestTime(final Time serviceRequestTime) {
 		this.serviceRequestTime = getDefaultTimeIfNull(serviceRequestTime);
 	}
-	public LocalDate getServiceRequestDate() {
+	public Date getServiceRequestDate() {
 		return serviceRequestDate;
 	}
-	public void setServiceRequestDate(final LocalDate serviceRequestDate) {
+	public void setServiceRequestDate(final Date serviceRequestDate) {
 		this.serviceRequestDate = getDefaultDate(serviceRequestDate);
 	}
 	public CustomerDTO getCustomer() {
@@ -98,4 +111,7 @@ public class RouteRequestDTO {
 		this.routeRequestEnd = applyTrim(routeRequestEnd);
 	}
 	
+	public final String getIdAsString() {
+		return getUUIDAsString(getId());
+	}
 }

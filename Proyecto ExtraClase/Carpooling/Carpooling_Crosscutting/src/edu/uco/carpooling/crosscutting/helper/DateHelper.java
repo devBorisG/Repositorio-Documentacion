@@ -7,7 +7,7 @@ import static edu.uco.carpooling.crosscutting.helper.ObjectHelper.getDefaultIfNu
 
 public class DateHelper {
 	
-	public static final Date DEFAULT_DATE = Date.valueOf(LocalDate.now());
+	public static final Date DEFAULT_DATE = Date.valueOf(LocalDate.of(0, 0, 0));
 	
 	private DateHelper() {
 		super();

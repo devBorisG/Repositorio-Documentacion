@@ -26,7 +26,7 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 
 		try (final var preparedStatement = getConnection().prepareCall(sql)) {
 			preparedStatement.setString(1, user.getIdAsString());
-			preparedStatement.setInt(2, user.getDni());
+			preparedStatement.setString(2, user.getDni());
 			preparedStatement.setString(3, user.getFirstName());
 			preparedStatement.setString(4, user.getSecondName());
 			preparedStatement.setString(5, user.getFirstSurname());

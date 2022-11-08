@@ -1,7 +1,7 @@
 package edu.uco.carpooling.domain.builder;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
+import java.sql.Date;
+import java.sql.Time;
 import java.util.UUID;
 
 import edu.uco.carpooling.domain.CustomerDTO;
@@ -12,8 +12,8 @@ import edu.uco.carpooling.domain.RouteStatusDTO;
 
 public class RouterequestDTOBuilder {
 	private UUID id;
-	private LocalTime serviceRequestTime;
-	private LocalDate serviceRequestDate;
+	private Time serviceRequestTime;
+	private Date serviceRequestDate;
 	private CustomerDTO customer;
 	private RouteStatusDTO status;
 	private String routeRequestOrigin;
@@ -30,10 +30,10 @@ public class RouterequestDTOBuilder {
 	public void setId(UUID id) {
 		this.id = id;
 	}
-	public void setServiceRequestTime(LocalTime serviceRequestTime) {
+	public void setServiceRequestTime(Time serviceRequestTime) {
 		this.serviceRequestTime = serviceRequestTime;
 	}
-	public void setServiceRequestDate(LocalDate serviceRequestDate) {
+	public void setServiceRequestDate(Date serviceRequestDate) {
 		this.serviceRequestDate = serviceRequestDate;
 	}
 	public void setCustomer(CustomerDTO customer) {

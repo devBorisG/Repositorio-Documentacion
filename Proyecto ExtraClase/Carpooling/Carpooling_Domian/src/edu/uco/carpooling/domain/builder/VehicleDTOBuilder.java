@@ -2,18 +2,18 @@ package edu.uco.carpooling.domain.builder;
 
 import java.util.UUID;
 
+import edu.uco.carpooling.domain.DriverDTO;
 import edu.uco.carpooling.domain.VehicleDTO;
 import static edu.uco.carpooling.domain.VehicleDTO.create;
 
 public class VehicleDTOBuilder {
 
 	private UUID id;
-	private boolean state;
-	private String registration ;
 	private int model;
 	private String brand;
 	private String lineup;
 	private String plate;
+	private DriverDTO owner;
 	private int capacity;
 	
 	private VehicleDTOBuilder() {
@@ -29,14 +29,8 @@ public class VehicleDTOBuilder {
 		return this;
 	}
 
-	public final VehicleDTOBuilder setState(boolean state) {
-		this.state = state;
-		return this;
-	}
-
-	public final VehicleDTOBuilder setRegistration(String registration) {
-		this.registration = registration;
-		return this;
+	public void setOwner(DriverDTO owner) {
+		this.owner = owner;
 	}
 
 	public final VehicleDTOBuilder setModel(int model) {
@@ -65,7 +59,7 @@ public class VehicleDTOBuilder {
 	}
 	
 	public final VehicleDTO build() {
-		return create(id, state, registration, model, brand, lineup, plate, capacity);
+		return create(id,model, brand, lineup, plate, owner,capacity);
 	}
 	
 	

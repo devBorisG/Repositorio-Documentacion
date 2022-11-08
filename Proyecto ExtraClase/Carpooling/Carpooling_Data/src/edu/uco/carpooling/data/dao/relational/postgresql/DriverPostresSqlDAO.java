@@ -26,7 +26,7 @@ public final class DriverPostresSqlDAO extends DAORelational implements DriverDA
 
 		try (final var preparedStatement = getConnection().prepareStatement(sql)) {
 			preparedStatement.setString(1, driver.getIdAsString());
-			preparedStatement.setInt(2, driver.getDni());
+			preparedStatement.setString(2, driver.getDni());
 			preparedStatement.setString(3, driver.getFirstName());
 			preparedStatement.setString(4, driver.getSecondName());
 			preparedStatement.setString(5, driver.getFirstSurname());
