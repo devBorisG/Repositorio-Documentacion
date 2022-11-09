@@ -10,6 +10,7 @@ import static edu.uco.carpooling.crosscutting.helper.StringHelper.applyTrim;
 import static edu.uco.carpooling.crosscutting.helper.NumberHelper.isLessThan;
 import static edu.uco.carpooling.domain.builder.DriverDTOBuilder.getDriverDTOBuilder;
 import static edu.uco.carpooling.crosscutting.helper.ObjectHelper.getDefaultIfNull;
+import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getUUIDFromString;;
 
 public class QualificationDTO {
 	
@@ -22,12 +23,24 @@ public class QualificationDTO {
         setId(getNewUUID());
         setScore(ZERO);
         setComment(EMPTY);
-        setUser(getDriverDTOBuilder().build());
+        setDriver(getDriverDTOBuilder().build());
     }
 
     public static final QualificationDTO create(final UUID id,final double score,final String comment, final DriverDTO driver){
         return new QualificationDTO(id,score,comment,driver);
     }
+    
+    public static final QualificationDTO create(final String id,final double score,final String comment, final DriverDTO driver){
+        return new QualificationDTO(getUUIDFromString(id),score,comment,driver);
+    }
+    
+	public static final String getUUIDAsString(final UUID value) {
+		return getDefaultUUID(value).toString();
+	}
+	
+	public static final String getIntAsString(final int value) {
+		return Integer.toString(value);
+	}
 
     public UUID getId() {
         return id;
@@ -53,11 +66,15 @@ public class QualificationDTO {
         this.comment = applyTrim(comment);
     }
 
-    public DriverDTO driver() {
+    public DriverDTO getdriver() {
         return driver;
     }
 
-    public void setUser(DriverDTO driver) {
+    public final void setDriver(final DriverDTO driver) {
         this.driver = getDefaultIfNull(driver, getDriverDTOBuilder().build());
     }
+	
+	public final String getIdAsString() {
+		return getUUIDAsString(getId());
+	}
 }

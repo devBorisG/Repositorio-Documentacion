@@ -11,13 +11,11 @@ import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getUUIDFromStrin
 public class DriverDTO extends UserDTO{
 		
 	private String licenseNumber;
-	private String expedition;
 	private AuthorizedCategoryDTO authorizedCategory;
 
 	public DriverDTO(final UUID id, final String dni, final String firstName, final String secondName,
 			final String firstSurname, final String secondSurname, final String password,
-			final int phone, final String companyEmail,final String licenseNumber,
-			final String expedition,final AuthorizedCategoryDTO authorizedCategory) {
+			final int phone, final String companyEmail,final String licenseNumber) {
 		setId(getDefaultUUID(id));
 		setDni(dni);
 		setFirstName(firstName);
@@ -28,8 +26,6 @@ public class DriverDTO extends UserDTO{
 		setPhone(phone);
 		setCompanyEmail(companyEmail);
 		setLicenseNumber(licenseNumber);
-		setExpedition(expedition);
-		setAuthorizedCategory(authorizedCategory);
 	}
 	
 	public DriverDTO() {
@@ -42,24 +38,29 @@ public class DriverDTO extends UserDTO{
 		setPhone(ZERO);
 		setCompanyEmail(EMPTY);
 		setLicenseNumber(EMPTY);
-		setExpedition(EMPTY);
 		setAuthorizedCategory(getAuthorizedCategoryDTOBuilder().build());
 	}
 	
 	public static final DriverDTO create (final UUID id, final String dni, final String firstName, final String secondName,
 			final String firstSurname, final String secondSurname, final String password,
-			final int phone, final String companyEmail,final String licenseNumber,
-			final String expedition,final AuthorizedCategoryDTO authorizedCategory) {
+			final int phone, final String companyEmail,final String licenseNumber,final AuthorizedCategoryDTO authorizedCategory) {
 		return new DriverDTO(id,dni,firstName,secondName,firstSurname,secondSurname,password,phone,companyEmail,
-				licenseNumber,expedition,authorizedCategory);
+				licenseNumber);
 	}
 	
 	public static final DriverDTO create (final String id, final String dni, final String firstName, final String secondName,
 			final String firstSurname, final String secondSurname, final String password,
-			final int phone, final String companyEmail,final String licenseNumber,
-			final String expedition,final AuthorizedCategoryDTO authorizedCategory) {
+			final int phone, final String companyEmail,final String licenseNumber,final AuthorizedCategoryDTO authorizedCategory) {
 		return new DriverDTO(getUUIDFromString(id),dni,firstName,secondName,firstSurname,secondSurname,password,phone,companyEmail,
-				licenseNumber,expedition,authorizedCategory);
+				licenseNumber);
+	}
+	
+	public static final String getUUIDAsString(final UUID value) {
+		return getDefaultUUID(value).toString();
+	}
+	
+	public static final String getIntAsString(final int value) {
+		return Integer.toString(value);
 	}
 
 	public String getLicenseNumber() {
@@ -69,21 +70,15 @@ public class DriverDTO extends UserDTO{
 	public void setLicenseNumber(String licenseNumber) {
 		this.licenseNumber = licenseNumber;
 	}
-
-	public String getExpedition() {
-		return expedition;
-	}
-
-	public void setExpedition(String expedition) {
-		this.expedition = expedition;
-	}
-
 	public AuthorizedCategoryDTO getAuthorizedCategory() {
 		return authorizedCategory;
 	}
 
 	public void setAuthorizedCategory(AuthorizedCategoryDTO authorizedCategory) {
 		this.authorizedCategory = authorizedCategory;
+	}
+	public final String getIdAsString() {
+		return getUUIDAsString(getId());
 	}
 	
 }

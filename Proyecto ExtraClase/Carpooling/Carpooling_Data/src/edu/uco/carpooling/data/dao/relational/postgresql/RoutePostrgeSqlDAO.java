@@ -15,7 +15,6 @@ import edu.uco.carpooling.domain.AuthorizedCategoryDTO;
 import edu.uco.carpooling.domain.DetailRouteDTO;
 import edu.uco.carpooling.domain.DriverDTO;
 import edu.uco.carpooling.domain.DriverPerVehicleDTO;
-import edu.uco.carpooling.domain.PointInterestDTO;
 import edu.uco.carpooling.domain.RouteDTO;
 import edu.uco.carpooling.domain.RouteStatusDTO;
 import edu.uco.carpooling.domain.VehicleDTO;
@@ -35,7 +34,7 @@ public class RoutePostrgeSqlDAO extends DAORelational implements RouteDAO{
 	@Override
 	public final void create(final RouteDTO route) {
 		final var sql = "INSESRT INTO ROUTE(id,quota,driverPerVehicle,detailRoute,"
-				+ "pointInterest,routeStatus VALUES(?,?,?,?,?,?)";
+				+ "routeStatus VALUES(?,?,?,?,?,)";
 		
 		try (final var preparedStatement = getConnection().prepareStatement(sql)){
 			preparedStatement.setString(1, route.getIdAsString());
@@ -43,7 +42,6 @@ public class RoutePostrgeSqlDAO extends DAORelational implements RouteDAO{
 			preparedStatement.setString(3, route.getRouteStatus().getIdAsString());
 			preparedStatement.setString(4, route.getDriverPerVehicleDTO().getIdAsString());
 			preparedStatement.setString(5, route.getDetailRouteDTO().getIdAsString());
-			preparedStatement.setString(6, route.getPointInterest().getIdAsString());
 			
 			preparedStatement.executeUpdate();
 			
@@ -139,11 +137,6 @@ public class RoutePostrgeSqlDAO extends DAORelational implements RouteDAO{
 					parameters.add(route.getDetailRouteDTO().getIdAsString());
 			}
 			
-			if (!UUIDHelper.isDefaultUUID(route.getPointInterest().getId())) {
-					sqlBuilder.append(setWhere ? "WHERE ": "AND ").append("RO.IdPointInterest");
-					parameters.add(route.getPointInterest().getIdAsString());
-			}
-			
 			if (!UUIDHelper.isDefaultUUID(route.getRouteStatus().getId())) {
 					sqlBuilder.append(setWhere ? "WHERE ": "AND ").append("RO.IdRouteStatus");
 					parameters.add(route.getRouteStatus().getIdAsString());
@@ -202,7 +195,7 @@ public class RoutePostrgeSqlDAO extends DAORelational implements RouteDAO{
 	private final RouteDTO fillRouteDTO(final ResultSet resultSet) {
 		try {
 			return RouteDTO.create(resultSet.getString("idRoute"), resultSet.getInt("quotas"),
-					fillRouteStatusDTO(resultSet),fillDriverPerVehicleDTO(resultSet),fillPointInterestDTO(resultSet),
+					fillRouteStatusDTO(resultSet),fillDriverPerVehicleDTO(resultSet),
 					fillDetailRouteDTO(resultSet));
 		} catch (final SQLException exception) {
 			throw DataCarpoolingException.createTechnicalException(Messages.RouteqlServerDAO.TECHNICAL_PROBLEM_FILL_ROUTE_DTO, exception);
@@ -219,17 +212,6 @@ public class RoutePostrgeSqlDAO extends DAORelational implements RouteDAO{
 			throw DataCarpoolingException.createTechnicalException(Messages.RouteqlServerDAO.TECHNICAL_PROBLEM_FILL_DETAIL_ROUTE_DTO, exception);
 		} catch (final Exception exception) {
 			throw DataCarpoolingException.createTechnicalException(Messages.RouteqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_DETAIL_ROUTE_DTO, exception);
-		}
-	}
-	
-	private final PointInterestDTO fillPointInterestDTO(final ResultSet resultSet) {
-		try {
-			return PointInterestDTO.create(resultSet.getString("IdPointInterest"), resultSet.getString("KeyPoints"), 
-					resultSet.getString("City"));
-		} catch (final SQLException exception) {
-			throw DataCarpoolingException.createTechnicalException(Messages.RouteqlServerDAO.TECHNICAL_PROBLEM_FILL_POINT_INTEREST_DTO, exception);
-		} catch (final Exception exception) {
-			throw DataCarpoolingException.createTechnicalException(Messages.RouteqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_POINT_INTEREST_DTO, exception);
 		}
 	}
 	
@@ -255,32 +237,31 @@ public class RoutePostrgeSqlDAO extends DAORelational implements RouteDAO{
 		}
 	}
 	
-	private final VehicleDTO fillVehicleDTO(final ResultSet resultSet) {
-		try {
-			return VehicleDTO.create(resultSet.getString("IdVehicle"),resultSet.getInt("Model"), 
-					resultSet.getString("Brand"), resultSet.getString("LineUp"), 
-					resultSet.getString("Plate"), fillDriverDTO(resultSet), resultSet.getInt("Capacity"));
-		} catch (final SQLException exception) {
-			throw DataCarpoolingException.createTechnicalException(Messages.RouteqlServerDAO.TECHNICAL_PROBLEM_FILL_VEHICLE_DTO, exception);
-		} catch (final Exception exception) {
-			throw DataCarpoolingException.createTechnicalException(Messages.RouteqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_VEHICLE_DTO, exception);
-		}
-	}
+    private final VehicleDTO fillVehicleDTO(final ResultSet resultSet) {
+        try {
+            return VehicleDTO.create(resultSet.getString("IdVehicle"),resultSet.getString("plate"),
+                    fillDriverDTO(resultSet),
+                    resultSet.getInt("capacity"),resultSet.getString("numEnrollment"));
+        } catch (final SQLException exception) {
+            throw DataCarpoolingException.createTechnicalException(Messages.DriverPerVehiclePostgresSqlDAO.TECHNICAL_PROBLEM_FILL_DRIVER_PER_VEHICLE_DTO, exception);
+        } catch (final Exception exception) {
+            throw DataCarpoolingException.createTechnicalException(Messages.DriverPerVehiclePostgresSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_DRIVER_PER_VEHICLE_DTO, exception);
+        }
+    }
 	
-	private final DriverDTO fillDriverDTO(final ResultSet resultSet) {
-		try {
-			return DriverDTO.create(resultSet.getString("IdDirver"), resultSet.getString("dni"), 
+    private final DriverDTO fillDriverDTO(final ResultSet resultSet) {
+        try {
+        	return DriverDTO.create(resultSet.getString("IdDirver"), resultSet.getString("dni"), 
 					resultSet.getString("FirstName"), resultSet.getString("SecondName"), 
 					resultSet.getString("FirstSurname"),resultSet.getString("SecondSurname"),
 					resultSet.getString("Password"),resultSet.getInt("Phone"),
-					resultSet.getString("Email"),resultSet.getString("License"),
-					resultSet.getString("ExpeditionCity"),fillAuthorizedCategoryDTO(resultSet));
-		} catch (final SQLException exception) {
-			throw DataCarpoolingException.createTechnicalException(Messages.RouteqlServerDAO.TECHNICAL_PROBLEM_FILL_DRIVER_DTO, exception);
-		} catch (final Exception exception) {
-			throw DataCarpoolingException.createTechnicalException(Messages.RouteqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_DRIVER_DTO, exception);
-		}
-	}
+					resultSet.getString("Email"),resultSet.getString("License"),fillAuthorizedCategoryDTO(resultSet));
+        } catch (final SQLException exception) {
+            throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestSqlServerDAO.TECHNICAL_PROBLEM_FILL_CUSTOMER_DTO, exception);
+        } catch (final Exception exception) {
+            throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_CUSTOMER_DTO, exception);
+        }
+    }
 	
 	private final AuthorizedCategoryDTO fillAuthorizedCategoryDTO(final ResultSet resultSet) {
 		try {
@@ -301,9 +282,8 @@ public class RoutePostrgeSqlDAO extends DAORelational implements RouteDAO{
 		try (final var preparedStatement = getConnection().prepareStatement(sql)){
 			preparedStatement.setString(1, route.getDriverPerVehicleDTO().getIdAsString());
 			preparedStatement.setString(2, route.getDetailRouteDTO().getIdAsString());
-			preparedStatement.setString(3, route.getPointInterest().getIdAsString());
-			preparedStatement.setString(4, route.getRouteStatus().getIdAsString());
-			preparedStatement.setString(5, route.getIdAsString());
+			preparedStatement.setString(3, route.getRouteStatus().getIdAsString());
+			preparedStatement.setString(4, route.getIdAsString());
 			
 			preparedStatement.executeUpdate();
 		} catch (final SQLException exception) {

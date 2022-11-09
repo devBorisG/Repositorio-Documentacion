@@ -14,8 +14,10 @@ import edu.uco.carpooling.crosscutting.helper.UUIDHelper;
 import edu.uco.carpooling.crosscutting.messages.Messages;
 import edu.uco.carpooling.data.dao.QualificationDAO;
 import edu.uco.carpooling.data.dao.relational.DAORelational;
-import edu.uco.carpooling.domain.CustomerDTO;
+import edu.uco.carpooling.domain.AuthorizedCategoryDTO;
+import edu.uco.carpooling.domain.DriverDTO;
 import edu.uco.carpooling.domain.QualificationDTO;
+import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getUUIDAsString;;
 
 public class QualificationPostgresSqlDAO extends DAORelational implements QualificationDAO {
 
@@ -33,8 +35,7 @@ public class QualificationPostgresSqlDAO extends DAORelational implements Qualif
             preparedStatement.setString(1, qualification.getIdAsString());
             preparedStatement.setDouble(2, qualification.getScore());
             preparedStatement.setString(3, qualification.getComment());
-//           REVISAR
-            preparedStatement.setString(4, qualification.getUser().getIdAsString());
+            preparedStatement.setString(4, qualification.getdriver().getIdAsString());
 
             preparedStatement.executeUpdate();
         } catch (final SQLException exception) {
@@ -98,9 +99,9 @@ public class QualificationPostgresSqlDAO extends DAORelational implements Qualif
                 parameters.add(qualification.getIdAsString());
             }
 
-            if (!UUIDHelper.isDefaultUUID(qualification.getUser().getId())) {
+            if (!UUIDHelper.isDefaultUUID(qualification.getdriver().getId())) {
                 sqlBuilder.append(setWhere ? "WHERE ": "AND ").append("Us.IdUser = ? ");
-                parameters.add(qualification.setUser().getIdAsString());
+                parameters.add(qualification.getdriver().getIdAsString());
             }
 
         }
@@ -143,7 +144,7 @@ public class QualificationPostgresSqlDAO extends DAORelational implements Qualif
             var results = new ArrayList<QualificationDTO>();
 
             while(resultSet.next()) {
-                results.add(fillRouteRequestDTO(resultSet));
+                results.add(fillQualificationDTO(resultSet));
             }
             return results;
         } catch (final DataCarpoolingException exception) {
@@ -154,42 +155,42 @@ public class QualificationPostgresSqlDAO extends DAORelational implements Qualif
             throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS, exception);
         }
     }
-
-    private final QualificationDTO fillRouteRequestDTO(final ResultSet resultSet) {
+    
+    private final DriverDTO fillDriver(final ResultSet resultSet) {
         try {
-
-            return QualificationDTO.create(resultSet.getString("idRequest"),
-                    resultSet.getDouble("score"),
-                    resultSet.getString("comment"),
-                    fillUser(resultSet));
-
-        } catch (final SQLException exception) {
-            throw DataCarpoolingException.createTechnicalException(Messages.RouteqlServerDAO.TECHNICAL_PROBLEM_FILL_ROUTE_DTO, exception);
-        } catch (final Exception exception) {
-            throw DataCarpoolingException.createTechnicalException(Messages.RouteqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_ROUTE_DTO, exception);
-        }
-    }
-    private final CustomerDTO fillCustomer(final ResultSet resultSet) {
-        try {
-
-            return CustomerDTO.create(resultSet.getString("IdCustomer"), resultSet.getString("dniCustomer"),
-                    resultSet.getString("FirstNameCutomer"), resultSet.getString("SecondNameCustomer"),
-                    resultSet.getString("FirstSurnameCustomer"), resultSet.getString("SecondSurnameCustomer"),
-                    resultSet.getString("Password"),resultSet.getInt("Phone"),
-                    resultSet.getString("Email"));
-
+        	return DriverDTO.create(resultSet.getString("IdDirver"), resultSet.getString("dni"), 
+					resultSet.getString("FirstName"), resultSet.getString("SecondName"), 
+					resultSet.getString("FirstSurname"),resultSet.getString("SecondSurname"),
+					resultSet.getString("Password"),resultSet.getInt("Phone"),
+					resultSet.getString("Email"),resultSet.getString("License"),fillAuthorizedCategoryDTO(resultSet));
         } catch (final SQLException exception) {
             throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestSqlServerDAO.TECHNICAL_PROBLEM_FILL_CUSTOMER_DTO, exception);
         } catch (final Exception exception) {
             throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_CUSTOMER_DTO, exception);
         }
     }
-
-
-
-
-
-
+    
+	private final AuthorizedCategoryDTO fillAuthorizedCategoryDTO(final ResultSet resultSet) {
+		try {
+			return AuthorizedCategoryDTO.create(resultSet.getString("IdCategory"),
+					resultSet.getString("NameCategory"),resultSet.getDate("Validity"));
+		} catch (final SQLException exception) {
+			throw DataCarpoolingException.createTechnicalException(Messages.RouteqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_AUTHORIZED_CATEGOTY_DTO, exception);			
+		} catch (final Exception exception) {
+			throw DataCarpoolingException.createTechnicalException(Messages.RouteqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_AUTHORIZED_CATEGOTY_DTO, exception);
+		}
+	}
+	
+	private final QualificationDTO fillQualificationDTO(final ResultSet resultSet) {
+		try {
+			return QualificationDTO.create(resultSet.getString("id"),resultSet.getInt("Score"),
+					resultSet.getString("Comment"), fillDriver(resultSet));
+		} catch (final SQLException exception) {
+			throw DataCarpoolingException.createTechnicalException(Messages.RouteqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_AUTHORIZED_CATEGOTY_DTO, exception);			
+		} catch (final Exception exception) {
+			throw DataCarpoolingException.createTechnicalException(Messages.RouteqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_AUTHORIZED_CATEGOTY_DTO, exception);
+		}
+	}
 
     @Override
     public void update(QualificationDTO qualification) {
@@ -199,8 +200,7 @@ public class QualificationPostgresSqlDAO extends DAORelational implements Qualif
             preparedStatement.setString(1, qualification.getIdAsString());
             preparedStatement.setDouble(2, qualification.getScore());
             preparedStatement.setString(3, qualification.getComment());
-//            get id as strign revisar
-            preparedStatement.setString(4, qualification.getUser().getIdAsString());
+            preparedStatement.setString(4, qualification.getdriver().getIdAsString());
 
             preparedStatement.executeUpdate();
 

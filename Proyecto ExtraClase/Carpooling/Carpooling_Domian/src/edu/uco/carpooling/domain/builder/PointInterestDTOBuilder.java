@@ -3,6 +3,8 @@ package edu.uco.carpooling.domain.builder;
 import java.util.UUID;
 
 import edu.uco.carpooling.domain.PointInterestDTO;
+import edu.uco.carpooling.domain.RouteDTO;
+
 import static edu.uco.carpooling.domain.PointInterestDTO.create;
 
 public class PointInterestDTOBuilder {
@@ -11,6 +13,7 @@ public class PointInterestDTOBuilder {
     private UUID id;
     private String keyPoint;
     private String City;
+    private RouteDTO route;
 
     private PointInterestDTOBuilder(){
         super();
@@ -33,6 +36,10 @@ public class PointInterestDTOBuilder {
     }
     
     public final PointInterestDTO build() {
-    	return create(id, keyPoint, City);
+    	return create(id, keyPoint, City, route);
     }
+
+	public void setRoute(RouteDTO route) {
+		this.route = route;
+	}
 }

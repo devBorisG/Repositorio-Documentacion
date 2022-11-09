@@ -14,47 +14,38 @@ import static edu.uco.carpooling.crosscutting.helper.NumberHelper.ZERO;
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getUUIDFromString;
 import static edu.uco.carpooling.domain.builder.DriverDTOBuilder.getDriverDTOBuilder;
 
-
 public class VehicleDTO {
 	
 	private UUID id;
-	private int model;
-	private String brand;
-	private String lineup;
 	private String plate;
 	private DriverDTO owner;
 	private int capacity;
-	
+	private String numberEnrollment;
+
 	public VehicleDTO() {
 		setId(getNewUUID());
-		setBrand(EMPTY);
-		setLineup(EMPTY);
 		setPlate(EMPTY);
 		setCapacity(ZERO);
-		setModel(ZERO);
 		setOwner(getDriverDTOBuilder().build());
+		setNumberEnrollment(EMPTY);
 	}
 
-	public VehicleDTO(UUID id,int model, String brand, String lineup, String plate,
-			DriverDTO owner,int capacity) {
+	public VehicleDTO(UUID id,DriverDTO owner,int capacity,final String numberEnrollment) {
 		setId(id);
-		setModel(model);
-		setBrand(brand);
-		setLineup(lineup);
 		setPlate(plate);
 		setOwner(owner);
 		setCapacity(capacity);
+		setNumberEnrollment(numberEnrollment);
 	}
 	
-	public static final VehicleDTO create(UUID id, int model, String brand, String lineup, String plate,
-			DriverDTO owner,int capacity) {
-		return new VehicleDTO(id,model,brand,lineup,plate,owner,capacity);
+	public static final VehicleDTO create(final UUID id,final String plate,final DriverDTO owner,final int capacity
+			,final String numberEnrollment) {
+		return new VehicleDTO(id,owner,capacity,numberEnrollment);
 	}
 	
-	public static final VehicleDTO create(final String id,final int model,final String brand, 
-			final String lineup,final String plate, final DriverDTO owner,
-			int capacity) {
-		return new VehicleDTO(getUUIDFromString(id), model,brand,lineup,plate,owner,capacity);
+	public static final VehicleDTO create(final String id,final String plate, final DriverDTO owner,
+			int capacity,final String numberEnrollment) {
+		return new VehicleDTO(getUUIDFromString(id),owner,capacity,numberEnrollment);
 	}
 	
 	public static final String getUUIDAsString(final UUID value) {
@@ -71,30 +62,6 @@ public class VehicleDTO {
 
 	public final void setId(final UUID id) {
 		this.id = getDefaultUUID(id);
-	}
-
-	public int getModel() {
-		return model;
-	}
-
-	public final void setModel(final int model) {
-		this.model = isLessThan(model, ZERO)? ZERO : model;
-	}
-
-	public String getBrand() {
-		return brand;
-	}
-
-	public final void setBrand(final String brand) {
-		this.brand = applyTrim(brand);
-	}
-
-	public String getLineup() {
-		return lineup;
-	}
-
-	public final void setLineup(final String line) {
-		this.lineup = applyTrim(line);
 	}
 
 	public String getPlate() {
@@ -121,6 +88,15 @@ public class VehicleDTO {
 	public void setOwner(DriverDTO owner) {
 		this.owner = owner;
 	}
+	
+	public String getNumberEnrollment() {
+		return numberEnrollment;
+	}
+
+	public final void setNumberEnrollment(final String numberEnrollment) {
+		this.numberEnrollment = applyTrim(numberEnrollment);
+	}
+
 	
 	public final String getIdAsString() {
 		return getUUIDAsString(getId());

@@ -9,12 +9,10 @@ import static edu.uco.carpooling.domain.VehicleDTO.create;
 public class VehicleDTOBuilder {
 
 	private UUID id;
-	private int model;
-	private String brand;
-	private String lineup;
-	private String plate;
 	private DriverDTO owner;
+	private String plate;
 	private int capacity;
+	private String numberEnrollment;
 	
 	private VehicleDTOBuilder() {
 		super();
@@ -32,34 +30,23 @@ public class VehicleDTOBuilder {
 	public void setOwner(DriverDTO owner) {
 		this.owner = owner;
 	}
-
-	public final VehicleDTOBuilder setModel(int model) {
-		this.model = model;
-		return this;
-	}
-
-	public final VehicleDTOBuilder setBrand(String brand) {
-		this.brand = brand;
-		return this;
-	}
-
-	public final VehicleDTOBuilder setLineup(String lineup) {
-		this.lineup = lineup;
-		return this;
-	}
-
-	public final VehicleDTOBuilder setPlate(String plate) {
-		this.plate = plate;
-		return this;
-	}
-
+	
 	public final VehicleDTOBuilder setCapacity(int capacity) {
 		this.capacity = capacity;
 		return this;
 	}
+
+	public void setNumberEnrollment(String numberEnrollment) {
+		this.numberEnrollment = numberEnrollment;
+	}
+	
+
+	public void setPalte(String plate) {
+		this.plate = plate;
+	}
 	
 	public final VehicleDTO build() {
-		return create(id,model, brand, lineup, plate, owner,capacity);
+		return create(id,plate, owner,capacity,numberEnrollment);
 	}
 	
 	

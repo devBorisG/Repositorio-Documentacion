@@ -173,39 +173,27 @@ public class DriverPerVehiclePostgresSqlDAO extends DAORelational implements Dri
 
     private final VehicleDTO fillVehicleDTO(final ResultSet resultSet) {
         try {
-            return VehicleDTO.create(resultSet.getString("IdVehicle"),
-                    resultSet.getString("registration"),
-                    resultSet.getInt("model"),
-                    resultSet.getString("brand"),
-                    resultSet.getString("lineup"),
-                    resultSet.getString("plate"),
-                    resultSet.getInt("capacity"));
+            return VehicleDTO.create(resultSet.getString("IdVehicle"),resultSet.getString("plate"),
+                    fillDriverDTO(resultSet),
+                    resultSet.getInt("capacity"),resultSet.getString("numEnrollment"));
         } catch (final SQLException exception) {
             throw DataCarpoolingException.createTechnicalException(Messages.DriverPerVehiclePostgresSqlDAO.TECHNICAL_PROBLEM_FILL_DRIVER_PER_VEHICLE_DTO, exception);
         } catch (final Exception exception) {
             throw DataCarpoolingException.createTechnicalException(Messages.DriverPerVehiclePostgresSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_DRIVER_PER_VEHICLE_DTO, exception);
         }
     }
-
+    
     private final DriverDTO fillDriverDTO(final ResultSet resultSet) {
         try {
-            return DriverDTO.create(resultSet.getString("idDirver"),
-                    resultSet.getString("dni"),
-                    resultSet.getString("firstName"),
-                    resultSet.getString("secondName"),
-                    resultSet.getString("firstSurname"),
-                    resultSet.getString("secondSurname"),
-                    resultSet.getString("password"),
-                    resultSet.getInt("Phone"),
-                    resultSet.getString("companyEmail"),
-                    resultSet.getString("referencePoint"),
-                    resultSet.getString(""),  //Revisar cual colimna
-                    fillAuthorizedCategoryDTO(resultSet));
-
+        	return DriverDTO.create(resultSet.getString("IdDirver"), resultSet.getString("dni"), 
+					resultSet.getString("FirstName"), resultSet.getString("SecondName"), 
+					resultSet.getString("FirstSurname"),resultSet.getString("SecondSurname"),
+					resultSet.getString("Password"),resultSet.getInt("Phone"),
+					resultSet.getString("Email"),resultSet.getString("License"),fillAuthorizedCategoryDTO(resultSet));
         } catch (final SQLException exception) {
-            throw DataCarpoolingException.createTechnicalException(Messages.DriverPerVehiclePostgresSqlDAO.TECHNICAL_PROBLEM_FILL_DRIVER_PER_VEHICLE_DTO, exception);
+            throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestSqlServerDAO.TECHNICAL_PROBLEM_FILL_CUSTOMER_DTO, exception);
         } catch (final Exception exception) {
-            throw DataCarpoolingException.createTechnicalException(Messages.DriverPerVehiclePostgresSqlDAO.TECHNICAL_PROBLEM_FILL_DRIVER_PER_VEHICLE_DTO, exception);
+            throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_CUSTOMER_DTO, exception);
         }
     }
 

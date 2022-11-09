@@ -15,7 +15,7 @@ public class RouterequestDTOBuilder {
 	private Time serviceRequestTime;
 	private Date serviceRequestDate;
 	private CustomerDTO customer;
-	private RouteStatusDTO status;
+	private String status;
 	private String routeRequestOrigin;
 	private String routeRequestEnd;
 	
@@ -39,7 +39,7 @@ public class RouterequestDTOBuilder {
 	public void setCustomer(CustomerDTO customer) {
 		this.customer = customer;
 	}
-	public void setStatus(RouteStatusDTO status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
 	public void setRouteRequestOrigin(String routeRequestOrigin) {

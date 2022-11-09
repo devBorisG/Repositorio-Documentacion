@@ -8,7 +8,6 @@ import static edu.uco.carpooling.crosscutting.helper.NumberHelper.isLessThan;
 import static edu.uco.carpooling.crosscutting.helper.NumberHelper.ZERO;
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getDefaultUUID;
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getNewUUID;
-import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getUUIDAsString;
 
 public class UserDTO {
 
@@ -118,9 +117,4 @@ public class UserDTO {
 	public final void setCompanyEmail(final String companyEmail) {
 		this.companyEmail = applyTrim(companyEmail);
 	}
-	
-	public final String getIdAsString() {
-		return getUUIDAsString(getId());
-	}
-	
 }

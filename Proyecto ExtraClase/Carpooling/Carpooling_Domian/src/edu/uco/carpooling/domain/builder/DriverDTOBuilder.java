@@ -18,7 +18,6 @@ public class DriverDTOBuilder {
 	private int phone;
 	private String companyEmail;
 	private String licenseNumber;
-	private String expedition;
 	private AuthorizedCategoryDTO authorizedCategory;
 	
 	private DriverDTOBuilder() {
@@ -78,18 +77,13 @@ public class DriverDTOBuilder {
 		this.licenseNumber = licenseNumber;
 		return this;
 	}
-
-	public DriverDTOBuilder setExpedition(String expedition) {
-		this.expedition = expedition;
-		return this;
-	}
-
+	
 	public DriverDTOBuilder setAuthorizedCategory(AuthorizedCategoryDTO authorizedCategory) {
 		this.authorizedCategory = authorizedCategory;
 		return this;
 	}
 	
 	public final DriverDTO build() {
-		return create(id, dni, firstName, secondName, firstSurname, secondSurname, password, phone, companyEmail,licenseNumber,expedition,authorizedCategory);
+		return create(id, dni, firstName, secondName, firstSurname, secondSurname, password, phone, companyEmail,licenseNumber,authorizedCategory);
 	}
 }
