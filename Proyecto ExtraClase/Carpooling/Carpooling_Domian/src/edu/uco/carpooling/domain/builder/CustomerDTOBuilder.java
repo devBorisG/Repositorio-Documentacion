@@ -1,6 +1,5 @@
 package edu.uco.carpooling.domain.builder;
 
-import java.time.LocalDate;
 import java.util.UUID;
 
 import edu.uco.carpooling.domain.CustomerDTO;
@@ -9,16 +8,14 @@ import static edu.uco.carpooling.domain.CustomerDTO.create;
 public class CustomerDTOBuilder {
 	
 	private UUID id;
-	private int dni;
+	private String dni;
 	private String firstName;
 	private String secondName;
 	private String firstSurname;
 	private String secondSurname;
 	private String password;
-	private LocalDate born;
 	private int phone;
 	private String companyEmail;
-	private String referencePoint;
 	
 	private CustomerDTOBuilder() {
 		super();
@@ -33,7 +30,7 @@ public class CustomerDTOBuilder {
 		return this;
 	}
 
-	public final CustomerDTOBuilder setDni(int dni) {
+	public final CustomerDTOBuilder setDni(String dni) {
 		this.dni = dni;
 		return this;
 	}
@@ -63,11 +60,6 @@ public class CustomerDTOBuilder {
 		return this;
 	}
 
-	public final CustomerDTOBuilder setBorn(LocalDate born) {
-		this.born = born;
-		return this;
-	}
-
 	public final CustomerDTOBuilder setPhone(int phone) {
 		this.phone = phone;
 		return this;
@@ -77,13 +69,8 @@ public class CustomerDTOBuilder {
 		this.companyEmail = companyEmail;
 		return this;
 	}
-
-	public final CustomerDTOBuilder setReferencePoint(String referencePoint) {
-		this.referencePoint = referencePoint;
-		return this;
-	}
 	
 	public final CustomerDTO build() {
-		return create(id, dni, firstName, secondName, firstSurname, secondSurname, password, born, phone, companyEmail, referencePoint);
+		return create(id, dni, firstName, secondName, firstSurname, secondSurname, password, phone, companyEmail);
 	}
 }

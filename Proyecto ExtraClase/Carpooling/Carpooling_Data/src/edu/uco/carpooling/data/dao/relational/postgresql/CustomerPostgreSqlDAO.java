@@ -21,19 +21,18 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 
 	@Override
 	public final void create(final CustomerDTO user) {
-		final var sql = "INSERT INTO Customer(id, dni, firstName,secondName,firstSurname,secondSurname, password, referencePoint, born "
-				+ "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		final var sql = "INSERT INTO Customer(id, dni, firstName,secondName,firstSurname,secondSurname, password, referencePoint"
+				+ "VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
 
 		try (final var preparedStatement = getConnection().prepareCall(sql)) {
 			preparedStatement.setString(1, user.getIdAsString());
-			preparedStatement.setInt(2, user.getDni());
+			preparedStatement.setString(2, user.getDni());
 			preparedStatement.setString(3, user.getFirstName());
 			preparedStatement.setString(4, user.getSecondName());
 			preparedStatement.setString(5, user.getFirstSurname());
 			preparedStatement.setString(6, user.getSecondSurname());
 			preparedStatement.setString(7, user.getPassword());
 			preparedStatement.setString(8, user.getReferencePoint());
-			preparedStatement.setDate(9, user.getBorn());
 
 			insertPhone(user.getIdAsString(), user.getPhone());
 			insertCompanyEmail(user.getIdAsString(), user.getCompanyEmail());

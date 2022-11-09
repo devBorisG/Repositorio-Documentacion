@@ -94,4 +94,177 @@ public class Messages {
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_DELETE_CUSTOMER = "There was an unexpected problem trying delete customer in CustomerPostgreSql";
 	
 	}
+	
+	public static class UUIDHelper{
+		private UUIDHelper() {
+			super();
+		}
+		
+		public static final String TECHICAL_UUID_FROM_STRING_INAVLID ="The UUID to covert does not have a valied";
+		public static final String TECNICAL_UUID_FROM_STRING_UNEXPECTED_ERROR = "There was an unexpected exception trying to convert a UUID from String";
+	}
+	
+	public static class RouteqlServerDAO{
+	 	private RouteqlServerDAO(){
+	 		super();	
+	 	}	
+	 	
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_ROUTE = "There was an unexpected problem trying to create the route in SQLServerDaoFactory with id= ";
+	 	public static final String TECHNICAL_PROBLEM_CREATE_ROUTE = "There was a problem trying to create the route in SQLServerDaoFactory with id= ";
+	 	public static final String TECHNICAL_PROBLEM_UPDATE_ROUTE = "There was a problem trying to update the route in SQLServerDaoFactory with id= ";
+	 	public static final String TECHNICAL_PROBLEM_DELETE_ROUTE = "There was a problem trying to delete the route in SQLServerDaoFactory with id= ";
+	 	public static final String TECHNICAL_PROBLEM_FILL_RESULTS = "There was a problem recovering results from the select ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS = "There was an unexpected problem trying recovering results from the select ";
+	 	public static final String TECHNICAL_PROBLEM_FILL_ROUTE_DTO = "There was a problem filling routeDTO from the resultSet ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_ROUTE_DTO = "There was an unexpected problem trying fill routeDTO from the resultSet ";
+	 	public static final String TECHNICAL_PROBLEM_EXECUTE_QUERY = "There was a problem trying to excute query to find the specific route";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_EXECEUTE_QUERY = "There was an unexpected problem trying to execute query to finad the specific routes";
+	 	public static final String TECHNICAL_PROBLEM_SET_PARAMETER_VALUES_QUERY = "There was a problem trying to set the parameters values to the query";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMETER_VALUES_QUERY = "There was an unexpected problem trying to set the parameters values to the query";
+	 	public static final String TECHNICAL_PROBLEM_PREPARED_STAMENT = "There was a problem trying to prepared the sql stament the parameters";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STAMENT = "There was an unexpected problem trying to prepared the sql stament the parameters";
+	 	public static final String TECHNICAL_PROBLEM_FILL_ROUTESTATUS_DTO = "There was a problem filling routeStatusDTO from the resultSet ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_ROUTESTATUS_DTO = "There was an unexpected problem trying fill routeStatusDTO from the resultSet ";
+	 	public static final String TECHNICAL_PROBLEM_FILL_DRIVER_DTO = "There was a problem filling DriverDTO from the resultSet ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_DRIVER_DTO = "There was an unexpected problem trying fill DriverDTO from the resultSet ";
+	 	public static final String TECHNICAL_PROBLEM_FILL_AUTHORIZED_CATEGOTY_DTO = "There was a problem filling authorizedCategoryDTO from the resultSet ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_AUTHORIZED_CATEGOTY_DTO = "There was an unexpected problem trying fill authorizedCategoryDTO from the resultSet ";
+	 	public static final String TECHNICAL_PROBLEM_FILL_VEHICLE_DTO = "There was a problem filling vehicleDTO from the resultSet ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_VEHICLE_DTO = "There was an unexpected problem trying fill vehicleDTO from the resultSet ";
+	 	public static final String TECHNICAL_PROBLEM_FILL_DRIVERPERVEHICLE_DTO = "There was a problem filling driverPervehicleDTO from the resultSet ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_DRIVERPERVEHICLE_DTO = "There was an unexpected problem trying fill driverPervehicleDTO from the resultSet ";
+	 	public static final String TECHNICAL_PROBLEM_FILL_POINT_INTEREST_DTO = "There was a problem filling pointInterestDTO from the resultSet ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_POINT_INTEREST_DTO = "There was an unexpected problem trying fill pointInterestDTO from the resultSet ";
+	 	public static final String TECHNICAL_PROBLEM_FILL_DETAIL_ROUTE_DTO = "There was a problem filling detailRouteDTO from the resultSet ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_DETAIL_ROUTE_DTO = "There was an unexpected problem trying fill detailRouteDTO from the resultSet ";
+	}
+	
+	public static class RouteRequestSqlServerDAO{
+	 	private RouteRequestSqlServerDAO(){
+	 		super();	
+	 	}	
+	 	
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_ROUTE_REQUEST = "There was an unexpected problem trying to create the route request in SQLServerDaoFactory with id= ";
+	 	public static final String TECHNICAL_PROBLEM_CREATE_ROUTE_REQUEST = "There was a problem trying to create the routeRequest in SQLServerDaoFactory with id= ";
+	 	public static final String TECHNICAL_PROBLEM_UPDATE_ROUTE_REQUEST = "There was a problem trying to update the routeRequest in SQLServerDaoFactory with id= ";
+	 	public static final String TECHNICAL_PROBLEM_DELETE_ROUTE_REQUEST = "There was a problem trying to delete the routeRequest in SQLServerDaoFactory with id= ";
+	 	public static final String TECHNICAL_PROBLEM_FILL_RESULTS = "There was a problem recovering results from the select ";
+	 	public static final String TECHNICAL_PROBLEM_FILL_CUSTOMER_DTO = "here was a problem filling CustomerDTO from the resultSet ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_CUSTOMER_DTO= "There was an unexpected problem trying fill CustomerDTO from the resultSet ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS = "There was an unexpected problem trying recovering results from the select ";
+	 	public static final String TECHNICAL_PROBLEM_FILL_ROUTE_REQUEST_REQUEST_DTO = "There was a problem filling routerequestDTO from the resultSet ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_ROUTE_REQUEST_DTO = "There was an unexpected problem trying fill routerequestDTO from the resultSet ";
+	 	public static final String TECHNICAL_PROBLEM_EXECUTE_QUERY = "There was a problem trying to excute query to find the specific route request";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_EXECEUTE_QUERY = "There was an unexpected problem trying to execute query to find the specific route request";
+	 	public static final String TECHNICAL_PROBLEM_SET_PARAMETER_VALUES_QUERY = "There was a problem trying to set the parameters values to the query";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMETER_VALUES_QUERY = "There was an unexpected problem trying to set the parameters values to the query";
+	 	public static final String TECHNICAL_PROBLEM_PREPARED_STAMENT = "There was a problem trying to prepared the sql stament the parameters";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STAMENT = "There was an unexpected problem trying to prepared the sql stament the parameters";
+	 	public static final String TECHNICAL_PROBLEM_FILL_ROUTESTATUS_DTO = "There was a problem filling routeStatusDTO from the resultSet ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_ROUTESTATUS_DTO = "There was an unexpected problem trying fill routeStatusDTO from the resultSet ";
+	}
+	
+	public static class RouteStatusPosgreAqlDAO{
+	 	private RouteStatusPosgreAqlDAO(){
+	 		super();	
+	 	}	
+	 	
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_ROUTE_STATUS = "There was an unexpected problem trying to create the route status in SQLServerDaoFactory with id= ";
+	 	public static final String TECHNICAL_PROBLEM_CREATE_ROUTE_STATUS = "There was a problem trying to create the routeStatus in SQLServerDaoFactory with id= ";
+	 	public static final String TECHNICAL_PROBLEM_UPDATE_ROUTE_STATUS = "There was a problem trying to update the routeStatus in SQLServerDaoFactory with id= ";
+	 	public static final String TECHNICAL_PROBLEM_DELETE_ROUTE_STATUS = "There was a problem trying to delete the routeStatus in SQLServerDaoFactory with id= ";
+	 	public static final String TECHNICAL_PROBLEM_FILL_RESULTS = "There was a problem recovering results from the select ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS = "There was an unexpected problem trying recovering results from the select ";
+	 	public static final String TECHNICAL_PROBLEM_FILL_ROUTE_ROUTE_STATUS_DTO = "There was a problem filling routerstatusDTO from the resultSet ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_ROUTE_STATUS_DTO = "There was an unexpected problem trying fill routerstatusDTO from the resultSet ";
+	 	public static final String TECHNICAL_PROBLEM_EXECUTE_QUERY = "There was a problem trying to excute query to find the specific route status";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_EXECEUTE_QUERY = "There was an unexpected problem trying to execute query to find the specific route status";
+	 	public static final String TECHNICAL_PROBLEM_SET_PARAMETER_VALUES_QUERY = "There was a problem trying to set the parameters values to the query";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMETER_VALUES_QUERY = "There was an unexpected problem trying to set the parameters values to the query";
+	 	public static final String TECHNICAL_PROBLEM_PREPARED_STAMENT = "There was a problem trying to prepared the sql stament the parameters";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STAMENT = "There was an unexpected problem trying to prepared the sql stament the parameters";
+	 	public static final String TECHNICAL_PROBLEM_FILL_ROUTE_STATUS_DTO = "There was a problem filling routeStatusDTO from the resultSet ";
+	}
+	
+	public static class DetailRoutePostgreSqlDAO{
+	 	private DetailRoutePostgreSqlDAO(){
+	 		super();	
+	 	}	
+	 	
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_DETAIL_ROUTE = "There was an unexpected problem trying to create the detail route in SQLServerDaoFactory with id= ";
+	 	public static final String TECHNICAL_PROBLEM_CREATE_DETAIL_ROUTE  = "There was a problem trying to create the detail route in SQLServerDaoFactory with id= ";
+	 	public static final String TECHNICAL_PROBLEM_UPDATE_DETAIL_ROUTE  = "There was a problem trying to update the detail route in SQLServerDaoFactory with id= ";
+	 	public static final String TECHNICAL_PROBLEM_DELETE_DETAIL_ROUTE  = "There was a problem trying to delete the detail route in SQLServerDaoFactory with id= ";
+	 	public static final String TECHNICAL_PROBLEM_FILL_RESULTS = "There was a problem recovering results from the select ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS = "There was an unexpected problem trying recovering results from the select ";
+	 	public static final String TECHNICAL_PROBLEM_FILL_ROUTE_DETAIL_ROUTE_DTO = "There was a problem filling detailRouteDTO from the resultSet ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_DETAIL_ROUTE_DTO = "There was an unexpected problem trying fill detailRouteDTO from the resultSet ";
+	 	public static final String TECHNICAL_PROBLEM_EXECUTE_QUERY = "There was a problem trying to excute query to find the specific detail Route";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_EXECEUTE_QUERY = "There was an unexpected problem trying to execute query to find the specific detail Route";
+	 	public static final String TECHNICAL_PROBLEM_SET_PARAMETER_VALUES_QUERY = "There was a problem trying to set the parameters values to the query";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMETER_VALUES_QUERY = "There was an unexpected problem trying to set the parameters values to the query";
+	 	public static final String TECHNICAL_PROBLEM_PREPARED_STAMENT = "There was a problem trying to prepared the sql stament the parameters";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STAMENT = "There was an unexpected problem trying to prepared the sql stament the parameters";
+	 	public static final String TECHNICAL_PROBLEM_FILL_ROUTE_STATUS_DTO = "There was a problem filling routeStatusDTO from the resultSet ";
+	}
+	
+	public static class DriverPerVehiclePostgresSqlDAO{
+        public DriverPerVehiclePostgresSqlDAO(){super();}
+
+	 	public static final String TECHNICAL_PROBLEM_CREATE_DRIVER_PER_VEHICLE  = "There was a problem trying to create the driver per vehicle in SQLServerDaoFactory with id= ";
+	 	public static final String TECHNICAL_PROBLEM_UPDATE_DRIVER_PER_VEHICLE  = "There was a problem trying to update the driver per vehicle in SQLServerDaoFactory with id= ";
+	 	public static final String TECHNICAL_PROBLEM_DELETE_DRIVER_PER_VEHICLE  = "There was a problem trying to delete the driver per vehicle in SQLServerDaoFactory with id= ";
+	 	public static final String TECHNICAL_PROBLEM_FILL_RESULTS = "There was a problem recovering results from the select ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS = "There was an unexpected problem trying recovering results from the select ";
+	 	public static final String TECHNICAL_PROBLEM_FILL_DRIVER_PER_VEHICLE_DTO = "There was a problem filling authotizedcategoryDTO from the resultSet ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_DRIVER_PER_VEHICLE_DTO = "There was an unexpected problem trying fill driverpervehicleDTO from the resultSet ";
+	 	public static final String TECHNICAL_PROBLEM_EXECUTE_QUERY = "There was a problem trying to excute query to find the specific driver per vehicle";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_EXECEUTE_QUERY = "There was an unexpected problem trying to execute query to find the specific driver per vehicle";
+	 	public static final String TECHNICAL_PROBLEM_SET_PARAMETER_VALUES_QUERY = "There was a problem trying to set the parameters values to the query";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMETER_VALUES_QUERY = "There was an unexpected problem trying to set the parameters values to the query";
+	 	public static final String TECHNICAL_PROBLEM_PREPARED_STAMENT = "There was a problem trying to prepared the sql stament the parameters";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STAMENT = "There was an unexpected problem trying to prepared the sql stament the parameters";
+	 	public static final String TECHNICAL_PROBLEM_FILL_ROUTE_STATUS_DTO = "There was a problem filling authotizedcategoryDTO from the resultSet ";
+	}
+	
+	public static class AuthotizedCategoryPostgresSqlDAOPostgresSqlDAO{
+        public AuthotizedCategoryPostgresSqlDAOPostgresSqlDAO(){super();}
+
+	 	public static final String TECHNICAL_PROBLEM_CREATE_AUTHORIZED_CATEGORY  = "There was a problem trying to create the authotized category in SQLServerDaoFactory with id= ";
+	 	public static final String TECHNICAL_PROBLEM_UPDATE_AUTHORIZED_CATEGORY  = "There was a problem trying to update the authotized category in SQLServerDaoFactory with id= ";
+	 	public static final String TECHNICAL_PROBLEM_DELETE_AUTHORIZED_CATEGORY  = "There was a problem trying to delete the authotized category in SQLServerDaoFactory with id= ";
+	 	public static final String TECHNICAL_PROBLEM_FILL_RESULTS = "There was a problem recovering results from the select ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS = "There was an unexpected problem trying recovering results from the select ";
+	 	public static final String TECHNICAL_PROBLEM_FILL_AUTHORIZED_CATEGORY_AUTHORIZED_CATEGORY_DTO = "There was a problem filling authotizedcategoryDTO from the resultSet ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_AUTHORIZED_CATEGORY_DTO = "There was an unexpected problem trying fill authotizedcategoryDTO from the resultSet ";
+	 	public static final String TECHNICAL_PROBLEM_EXECUTE_QUERY = "There was a problem trying to excute query to find the specific detail Route";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_EXECEUTE_QUERY = "There was an unexpected problem trying to execute query to find the specific authotized category";
+	 	public static final String TECHNICAL_PROBLEM_SET_PARAMETER_VALUES_QUERY = "There was a problem trying to set the parameters values to the query";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMETER_VALUES_QUERY = "There was an unexpected problem trying to set the parameters values to the query";
+	 	public static final String TECHNICAL_PROBLEM_PREPARED_STAMENT = "There was a problem trying to prepared the sql stament the parameters";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STAMENT = "There was an unexpected problem trying to prepared the sql stament the parameters";
+	 	public static final String TECHNICAL_PROBLEM_FILL_ROUTE_STATUS_DTO = "There was a problem filling authotizedcategoryDTO from the resultSet ";
+	}
+	
+	public static class PointInterestPostgresSqlDAO{
+	 	private PointInterestPostgresSqlDAO(){
+	 		super();	
+	 	}	
+	 	
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_POINT_INTEREST = "There was an unexpected problem trying to create the point interest in SQLServerDaoFactory with id= ";
+	 	public static final String TECHNICAL_PROBLEM_CREATE_POINT_INTEREST  = "There was a problem trying to create the point interest in SQLServerDaoFactory with id= ";
+	 	public static final String TECHNICAL_PROBLEM_UPDATE_POINT_INTEREST = "There was a problem trying to update the point interest in SQLServerDaoFactory with id= ";
+	 	public static final String TECHNICAL_PROBLEM_DELETE_POINT_INTEREST  = "There was a problem trying to delete the point interest in SQLServerDaoFactory with id= ";
+	 	public static final String TECHNICAL_PROBLEM_FILL_RESULTS = "There was a problem recovering results from the select ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS = "There was an unexpected problem trying recovering results from the select ";
+	 	public static final String TECHNICAL_PROBLEM_FILL_ROUTE_POINT_INTEREST_DTO = "There was a problem filling pointInterestDTO from the resultSet ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_POINT_INTEREST_DTO = "There was an unexpected problem trying fill pointInterestDTO from the resultSet ";
+	 	public static final String TECHNICAL_PROBLEM_EXECUTE_QUERY = "There was a problem trying to excute query to find the specific detail Route";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_EXECEUTE_QUERY = "There was an unexpected problem trying to execute query to find the specific point interest";
+	 	public static final String TECHNICAL_PROBLEM_SET_PARAMETER_VALUES_QUERY = "There was a problem trying to set the parameters values to the query";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMETER_VALUES_QUERY = "There was an unexpected problem trying to set the parameters values to the query";
+	 	public static final String TECHNICAL_PROBLEM_PREPARED_STAMENT = "There was a problem trying to prepared the sql stament the parameters";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STAMENT = "There was an unexpected problem trying to prepared the sql stament the parameters";
+	 	public static final String TECHNICAL_PROBLEM_FILL_ROUTE_STATUS_DTO = "There was a problem filling routeStatusDTO from the resultSet ";
+	}
 }

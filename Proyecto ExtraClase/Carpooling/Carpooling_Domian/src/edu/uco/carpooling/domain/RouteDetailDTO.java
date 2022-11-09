@@ -1,35 +1,48 @@
 package edu.uco.carpooling.domain;
 
-import java.time.LocalDate;
+import java.sql.Date;
+import java.sql.Time;
 import java.util.UUID;
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getDefaultUUID;
-import static edu.uco.carpooling.crosscutting.helper.DateHelper.getDefaultDate;
+import static edu.uco.carpooling.crosscutting.helper.TimeHelper.getDefaultTimeIfNull;
 import static edu.uco.carpooling.crosscutting.helper.DateHelper.getDefaulDate;
-import static edu.uco.carpooling.crosscutting.helper.ObjectHelper.getDefaultIfNull;
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getNewUUID;
-import static edu.uco.carpooling.crosscutting.helper.DateHelper.NOTHING;
+import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getUUIDFromString;
+import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getUUIDAsString;
+import static edu.uco.carpooling.crosscutting.helper.DateHelper.getDefaultDate;
+import static edu.uco.carpooling.crosscutting.helper.TimeHelper.TIME;
+import static edu.uco.carpooling.crosscutting.helper.DateHelper.DEFAULT_DATE;
 
 public class RouteDetailDTO {
 	
 	private UUID id;
-	private LocalDate creationTime;
-	private LocalDate endTime;
-	private LocalDate date;
-	private RouteDTO route;
+	private Time creationTime;
+	private Time endTime;
+	private Date date;
 	
 	public RouteDetailDTO() {
 		setId(getNewUUID());
-		setCreationTime(NOTHING);
-		setEndTime(NOTHING);
-		setRoute(route);//Poner constructor
+		setCreationTime(TIME);
+		setEndTime(TIME);
+		setDate(DEFAULT_DATE);
 	}
 	
-	public RouteDetailDTO(final UUID id,final LocalDate creationTime,LocalDate endTime,
-			final LocalDate date, final RouteDTO route) {
+	public RouteDetailDTO(final UUID id,final Time creationTime,final Time endTime,
+			final Date date) {
 		setId(id);
 		setCreationTime(creationTime);
-		setEndTime(creationTime);
-		setRoute(route);//Cambiar el parametro
+		setEndTime(endTime);
+		setDate(date);
+	}
+	
+	public static final RouteDetailDTO create (final UUID id,final Time creationTime,
+			final Time endTime, final Date date) {
+		return new RouteDetailDTO(id, creationTime, endTime, date);
+	}
+	
+	public static final RouteDetailDTO create (final String id,final Time creationTime,
+			final Time endTime, final Date date) {
+		return new RouteDetailDTO(getUUIDFromString(id), creationTime, endTime, date);
 	}
 	
 	public UUID getId() {
@@ -38,40 +51,26 @@ public class RouteDetailDTO {
 	public final void setId(final UUID id) {
 		this.id = getDefaultUUID(id);
 	}
-	public LocalDate getCreationTime() {
+	public Time getCreationTime() {
 		return creationTime;
 	}
-	public final void setCreationTime(final LocalDate creationTime) {
-		this.creationTime = getDefaulDate(creationTime, getDefaultDate(creationTime));
+	public final void setCreationTime(final Time creationTime) {
+		this.creationTime = getDefaultTimeIfNull(creationTime);
 	}
-	public LocalDate getEndTime() {
+	public Time getEndTime() {
 		return endTime;
 	}
-	public final void setEndTime(final LocalDate endTime) {
-		this.endTime = getDefaulDate(endTime, getDefaultDate(endTime));
+	public final void setEndTime(final Time endTime) {
+		this.endTime = getDefaultTimeIfNull(endTime);
 	}
-	public LocalDate getDate() {
+	public Date getDate() {
 		return date;
 	}
-	public final void setDate(final LocalDate date) {
+	public final void setDate(final Date date) {
 		this.date = getDefaulDate(date, getDefaultDate(date));
 	}
-	public RouteDTO getRoute() {
-		return route;
-	}	
 	
-	public final void setRoute(final RouteDTO route) {
-		Object x = null;//realizar cambios 
-		this.route = (RouteDTO) getDefaultIfNull(route, x/*builder de ruta*/);
+	public final String getIdAsString() {
+		return getUUIDAsString(getId());
 	}
-	
-	public static final RouteDetailDTO create (final UUID id,final LocalDate creationTime,
-			final LocalDate endTime, final LocalDate date, final RouteDTO route) {
-		return new RouteDetailDTO(id, creationTime, endTime, date, route);
-	}
-	
-	/*public static final RouteDetail create (final UUID id,final LocalDate creationTime,
-			final LocalDate endTime, final LocalDate date, final RouteDTO route) {
-		
-	}*/
 }

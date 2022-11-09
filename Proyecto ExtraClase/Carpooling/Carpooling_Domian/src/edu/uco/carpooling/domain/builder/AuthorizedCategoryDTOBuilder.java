@@ -1,4 +1,6 @@
-import java.time.LocalDate;
+package edu.uco.carpooling.domain.builder;
+
+import java.sql.Date;
 import java.util.UUID;
 
 import static edu.uco.carpooling.domain.AuthorizedCategoryDTO.create;
@@ -11,7 +13,7 @@ public class AuthorizedCategoryDTOBuilder {
 
     private String category;
 
-    private LocalDate validity;
+    private Date validity;
 
     private AuthorizedCategoryDTOBuilder(){super();}
 
@@ -27,12 +29,13 @@ public class AuthorizedCategoryDTOBuilder {
         this.category = category;
     }
 
-    public void setValidity(LocalDate validity) {
+    public void setValidity(Date validity) {
         this.validity = validity;
     }
 
     public final AuthorizedCategoryDTO build(){
-        return create(id,category,validity);
-    }
+    	return create(id,category,validity);
+    	}
 
 }
+
