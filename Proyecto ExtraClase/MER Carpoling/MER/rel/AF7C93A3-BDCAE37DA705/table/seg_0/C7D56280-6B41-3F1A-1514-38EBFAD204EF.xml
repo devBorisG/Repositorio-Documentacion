@@ -1,0 +1,168 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C7D56280-6B41-3F1A-1514-38EBFAD204EF" name="Vehicle">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-15 23:49:28 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<ordsAlias>table_4</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="C2471370-25FD-EE33-0B24-A40AF3976ADD">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-16 00:07:52 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>36</dataTypeSize>
+<ownDataTypeParameters>36,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="plate" id="0278A640-BC2B-77A2-242A-D70A68DC6C0C">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-16 00:04:57 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="capacity" id="1127BCD6-A870-EF08-CFBD-0A1531BC22A9">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-16 00:04:57 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="registration" id="B307D53D-25DF-C05D-706C-6AFF62BD9905">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-16 00:04:57 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VehicleType_id" id="591DB58F-D2B5-0E34-E611-4FA868EA87BA">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-16 02:00:00 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>36</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="54AB3F25-E1DF-7AB5-C318-4D1E256F3322" referredColumn="45042D65-1F28-F895-7738-FD6CF0B553B3"/>
+</associations>
+</Column>
+<Column name="Lineup_id" id="87634D36-6266-38E7-81ED-0620E7925C9D">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-16 03:51:24 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>36</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="997DCC77-FD51-3717-9C63-145FC8EF533F" referredColumn="DA4AE4F9-F3F7-37D3-8CA9-486DA18A45DD"/>
+</associations>
+</Column>
+<Column name="Brand_id" id="C7FBFAC1-85AD-8006-C69D-F2FA392E3C3F">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-16 03:51:33 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>36</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0864001F-5427-563C-EB3E-E8DE33CAB67F" referredColumn="C8E3E102-97CB-B66C-7736-D57D5FA87E3B"/>
+</associations>
+</Column>
+<Column name="Model_id" id="D6B11226-AAA9-803D-D33E-B93EE48D65C5">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-16 03:51:37 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>36</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F3304BF8-044A-ECAF-A7B2-ACA1E562C5E1" referredColumn="780C1C23-0701-2786-F9E3-53944D4A44D7"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6C50530D-499E-E552-61FC-A84726963663" name="Vehicle_PK">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-16 00:04:57 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C2471370-25FD-EE33-0B24-A40AF3976ADD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F267AAB9-507F-9E4B-5034-F7FE0BC75C19" name="Vehicle_VehicleType_FK">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-16 02:00:00 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="591DB58F-D2B5-0E34-E611-4FA868EA87BA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="276A03D8-4086-05BB-2DC6-39FD6FD7314B" name="Vehicle_Lineup_FK">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-16 03:51:24 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="87634D36-6266-38E7-81ED-0620E7925C9D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2CC5E6E5-D544-D5C0-9144-0C5A3A9392DE" name="Vehicle_Brand_FK">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-16 03:51:33 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C7FBFAC1-85AD-8006-C69D-F2FA392E3C3F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BBA30538-C99E-07A0-FE2E-A279ED51823B" name="Vehicle_Model_FK">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-16 03:51:37 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D6B11226-AAA9-803D-D33E-B93EE48D65C5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

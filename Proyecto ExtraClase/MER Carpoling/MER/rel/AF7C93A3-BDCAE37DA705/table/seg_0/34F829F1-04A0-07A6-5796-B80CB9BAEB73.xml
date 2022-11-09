@@ -1,0 +1,99 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="34F829F1-04A0-07A6-5796-B80CB9BAEB73" name="Route">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-15 23:50:05 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<ordsAlias>table_8</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="A23382F2-4411-E960-84BA-5FAE68A6E92F">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-16 01:16:35 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>36</dataTypeSize>
+<ownDataTypeParameters>36,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="quota" id="33ADE7AE-2CD1-A67E-56E5-F76C2F370511">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-16 01:16:35 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="createHour" id="AF8C9931-7325-54B8-EFCE-BAD30C05AC64">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-16 01:16:35 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="finishHour" id="AF8686A6-0F8A-9D13-730B-AC48A8A291E1">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-16 01:16:35 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="state" id="374CC494-8732-9899-CA33-15D02C8EBE05">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-16 01:16:35 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="startRoute" id="D750B6D1-E7A1-688A-031E-C4A7EA679373">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-16 01:16:35 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="endRoute" id="4CDF359A-DC3C-C238-8714-6C6C307D5453">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-16 01:16:35 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B3038573-1441-B739-873E-6954583EFAA9" name="Route_PK">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-16 01:16:35 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A23382F2-4411-E960-84BA-5FAE68A6E92F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
