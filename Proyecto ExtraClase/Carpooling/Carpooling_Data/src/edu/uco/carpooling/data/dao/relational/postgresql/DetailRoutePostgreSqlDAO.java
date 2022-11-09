@@ -74,8 +74,8 @@ public class DetailRoutePostgreSqlDAO extends DAORelational implements DetailRou
 	
 	private final void createSelectFrom(final StringBuilder sqlBuilder) {
 		sqlBuilder.append("SELECT      DR.Id AS IdDetailRoute,");
-		sqlBuilder.append("            DR.CreationHour AS Begin,");
-		sqlBuilder.append("            DR.EndHour AS End");
+		sqlBuilder.append("            DR.startHour AS Begin,");
+		sqlBuilder.append("            DR.endingHour AS End");
 		sqlBuilder.append("            DR.Date AS Date,");
 		sqlBuilder.append("FROM        DetailRoute DR");
 	}
@@ -91,7 +91,7 @@ public class DetailRoutePostgreSqlDAO extends DAORelational implements DetailRou
 			}
 			
 			if (!DateHelper.isDefaultDate(routeDetail.getDate())) {
-				sqlBuilder.append(setWhere ? "WHERE ": "AND ").append(" = ? ");
+				sqlBuilder.append(setWhere ? "WHERE ": "AND ").append("DR.Date= ? ");
 				parameters.add(routeDetail.getDate());
 			}
 		}

@@ -40,10 +40,10 @@ public class RoutePostrgeSqlDAO extends DAORelational implements RouteDAO{
 		try (final var preparedStatement = getConnection().prepareStatement(sql)){
 			preparedStatement.setString(1, route.getIdAsString());
 			preparedStatement.setString(2, route.getQuotaAsStrin());
-			preparedStatement.setString(2, route.getDriverPerVehicleDTO().getIdAsString());
-			preparedStatement.setString(3, route.getDetailRouteDTO().getIdAsString());
-			preparedStatement.setString(4, route.getPointInterest().getIdAsString());
-			preparedStatement.setString(5, route.getRouteStatus().getIdAsString());
+			preparedStatement.setString(3, route.getRouteStatus().getIdAsString());
+			preparedStatement.setString(4, route.getDriverPerVehicleDTO().getIdAsString());
+			preparedStatement.setString(5, route.getDetailRouteDTO().getIdAsString());
+			preparedStatement.setString(6, route.getPointInterest().getIdAsString());
 			
 			preparedStatement.executeUpdate();
 			

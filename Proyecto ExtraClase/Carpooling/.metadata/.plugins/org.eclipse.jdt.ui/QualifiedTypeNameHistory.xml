@@ -2,4 +2,9 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="java.sql.Time"/>
     <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.domain.DetailRouteDTO"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.domain.AuthorizedCategoryDTO"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.crosscutting.messages.Messages.AuthotizedCategoryPostgresSqlDAOPostgresSqlDAO"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.domain.PointInterestDTO"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.crosscutting.helper.UUIDHelper"/>
 </qualifiedTypeNameHistroy>

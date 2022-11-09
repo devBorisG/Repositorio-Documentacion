@@ -10,13 +10,13 @@ import java.sql.SQLException;
 
 import edu.uco.carpooling.crosscutting.exception.DataCarpoolingException;
 import edu.uco.carpooling.crosscutting.helper.ObjectHelper;
+import edu.uco.carpooling.crosscutting.helper.StringHelper;
 import edu.uco.carpooling.crosscutting.helper.UUIDHelper;
 import edu.uco.carpooling.crosscutting.messages.Messages;
 import edu.uco.carpooling.data.dao.RouteRequestDAO;
 import edu.uco.carpooling.data.dao.relational.DAORelational;
 import edu.uco.carpooling.domain.CustomerDTO;
 import edu.uco.carpooling.domain.RouteRequestDTO;
-import edu.uco.carpooling.domain.RouteStatusDTO;
 
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getUUIDAsString;
 
@@ -28,16 +28,17 @@ public class RouteRequestPostgreSqlDAO extends DAORelational implements RouteReq
 
 	@Override
 	public final void create(final RouteRequestDTO routeRequest) {
-		final var sql = "INSERT INTO ROUTEREQUEST(idRequets,RequestHour,RequestDate,Customer,BeginRequest,EndRequest,Status)"
+		final var sql = "INSERT INTO ROUTEREQUEST(id,routeOrigin,routeDestination,status,date,HourRequest,Customer_id)"
 				+ "VALUES(?,?,?,?,?,?,?)";
 		
 		try (final var preparedStatement = getConnection().prepareStatement(sql)) {
 			preparedStatement.setString(1, routeRequest.getIdAsString());
-			preparedStatement.setTime(2, routeRequest.getServiceRequestTime());
-			preparedStatement.setDate(3, routeRequest.getServiceRequestDate());
-			preparedStatement.setString(4, routeRequest.getCustomer().getIdAsString());
-			preparedStatement.setString(5, routeRequest.getRouterequesOrigin());
-			preparedStatement.setString(6, routeRequest.getRouterequesEnd());
+			preparedStatement.setString(2, routeRequest.getRouterequesOrigin());
+			preparedStatement.setString(3, routeRequest.getRouterequesEnd());
+			preparedStatement.setDate(4, routeRequest.getServiceRequestDate());
+			preparedStatement.setTime(5, routeRequest.getServiceRequestTime());
+			preparedStatement.setString(6, routeRequest.getCustomer().getIdAsString());
+			preparedStatement.setString(7, routeRequest.getCustomer().getIdAsString());
 			
 			preparedStatement.executeUpdate();
 		} catch (final SQLException exception) {
@@ -117,9 +118,9 @@ public class RouteRequestPostgreSqlDAO extends DAORelational implements RouteReq
 				parameters.add(routeRequest.getCustomer().getIdAsString());
 			}
 			
-			if (!UUIDHelper.isDefaultUUID(routeRequest.getStatus().getId())) {
+			if (!StringHelper.isEmpty(routeRequest.getStatus())) {
 				sqlBuilder.append(setWhere ? "WHERE ": "AND ").append("RR.IdStatus = ? ");
-				parameters.add(routeRequest.getStatus().getIdAsString());
+				parameters.add(routeRequest.getStatus());
 			}
 		}
 	}
@@ -176,8 +177,8 @@ public class RouteRequestPostgreSqlDAO extends DAORelational implements RouteReq
 	private final RouteRequestDTO fillRouteRequestDTO(final ResultSet resultSet) {
 		try {
 			
-			return RouteRequestDTO.create(resultSet.getString("idRequest"), resultSet.getTime("Time"),
-					resultSet.getDate("Date"),fillCustomer(resultSet),fillRouteStatusDTO(resultSet),
+			return RouteRequestDTO.create(resultSet.getString("id"), resultSet.getTime("Time"),
+					resultSet.getDate("Date"),fillCustomer(resultSet), resultSet.getString("status"),
 					resultSet.getString("BeginRoute"), resultSet.getString("EndRoute"));
 		
 		} catch (final SQLException exception) {
@@ -200,17 +201,6 @@ public class RouteRequestPostgreSqlDAO extends DAORelational implements RouteReq
 			throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestSqlServerDAO.TECHNICAL_PROBLEM_FILL_CUSTOMER_DTO, exception);
 		} catch (final Exception exception) {
 			throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_CUSTOMER_DTO, exception);
-		}
-	}
-	
-	private final RouteStatusDTO fillRouteStatusDTO(final ResultSet resultSet) {
-		try {
-			return RouteStatusDTO.create(resultSet.getString("IdRouteStatus"), resultSet.getBoolean("Status"), 
-					resultSet.getString("valueDefault"));
-		} catch (final SQLException exception) {
-			throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestSqlServerDAO.TECHNICAL_PROBLEM_FILL_ROUTESTATUS_DTO, exception);
-		} catch (final Exception exception) {
-			throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_ROUTESTATUS_DTO, exception);
 		}
 	}
 	

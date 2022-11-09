@@ -11,7 +11,6 @@ import static edu.uco.carpooling.crosscutting.helper.DateHelper.getDefaultDate;
 import static edu.uco.carpooling.crosscutting.helper.ObjectHelper.getDefaultIfNull;
 import static edu.uco.carpooling.crosscutting.helper.StringHelper.EMPTY;
 import static edu.uco.carpooling.domain.builder.CustomerDTOBuilder.getUserDTOBuilder;
-import static edu.uco.carpooling.domain.builder.RouteStatusDTOBuilder.getRouteStatusDTOBuilder;
 import static edu.uco.carpooling.crosscutting.helper.StringHelper.applyTrim;
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getUUIDFromString;
 
@@ -21,7 +20,7 @@ public class RouteRequestDTO {
 	private Time serviceRequestTime;
 	private Date serviceRequestDate;
 	private CustomerDTO customer;
-	private RouteStatusDTO status;
+	private String status;
 	private String routeRequestOrigin;
 	private String routeRequestEnd;
 	
@@ -32,12 +31,12 @@ public class RouteRequestDTO {
 		setRouterequesEnd(EMPTY);
 		setRouterequesOrigin(EMPTY);
 		setCustomer(getUserDTOBuilder().build());
-		setStatus(getRouteStatusDTOBuilder().build());
+		setStatus(EMPTY);
 	}
 	
 	public  RouteRequestDTO (final UUID id,final Time serviceRequesTime,
 			final Date serviceRequestDate,final CustomerDTO customer,
-			final RouteStatusDTO status,final String routeRequestOrigin,
+			final String status,final String routeRequestOrigin,
 			final String routeRequestEnd) {
 		setId(id);
 		setServiceRequestTime(serviceRequesTime);
@@ -50,7 +49,7 @@ public class RouteRequestDTO {
 	
 	public static final RouteRequestDTO create(final UUID id,final Time serviceRequesTime,
 			final Date serviceRequestDate,final CustomerDTO customer,
-			final RouteStatusDTO status,final String routeRequestOrigin,
+			final String status,final String routeRequestOrigin,
 			final String routeRequestEnd) {
 		return new RouteRequestDTO(id, serviceRequesTime, serviceRequestDate, customer, 
 				status, routeRequestOrigin, routeRequestEnd);
@@ -58,7 +57,7 @@ public class RouteRequestDTO {
 	
 	public static final RouteRequestDTO create(final String id,final Time serviceRequesTime,
 			final Date serviceRequestDate,final CustomerDTO customer,
-			final RouteStatusDTO status,final String routeRequestOrigin,
+			final String status,final String routeRequestOrigin,
 			final String routeRequestEnd) {
 		return new RouteRequestDTO(getUUIDFromString(id), serviceRequesTime, serviceRequestDate, customer, 
 				status, routeRequestOrigin, routeRequestEnd);
@@ -92,11 +91,11 @@ public class RouteRequestDTO {
 	public void setCustomer(final CustomerDTO customer) {
 		this.customer = getDefaultIfNull(customer, getUserDTOBuilder().build());
 	}
-	public RouteStatusDTO getStatus() {
+	public String getStatus() {
 		return status;
 	}
-	public void setStatus(final RouteStatusDTO status) {
-		this.status = getDefaultIfNull(status, getRouteStatusDTOBuilder().build());
+	public void setStatus(final String status) {
+		this.status = applyTrim(routeRequestEnd);
 	}
 	public String getRouterequesOrigin() {
 		return routeRequestOrigin;

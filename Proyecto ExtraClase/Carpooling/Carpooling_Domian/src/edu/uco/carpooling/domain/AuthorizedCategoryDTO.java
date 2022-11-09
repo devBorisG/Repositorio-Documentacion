@@ -35,6 +35,14 @@ public class AuthorizedCategoryDTO {
     public static final AuthorizedCategoryDTO create(final String id,final String category,final Date validity) {
         return new AuthorizedCategoryDTO(getUUIDFromString(id),category,validity);
     }
+    
+    public static final String getUUIDAsString(final UUID value) {
+		return getDefaultUUID(value).toString();
+	}
+	
+	public static final String getIntAsString(final int value) {
+		return Integer.toString(value);
+	}
 
     public final void setId(final UUID id) {
         this.id = getDefaultUUID(id);
@@ -59,4 +67,8 @@ public class AuthorizedCategoryDTO {
     public final Date getValidity() {
         return validity;
     }
+    
+    public final String getIdAsString() {
+		return getUUIDAsString(getId());
+	}
 }

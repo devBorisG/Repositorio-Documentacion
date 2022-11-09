@@ -56,6 +56,14 @@ public class VehicleDTO {
 			int capacity) {
 		return new VehicleDTO(getUUIDFromString(id), model,brand,lineup,plate,owner,capacity);
 	}
+	
+	public static final String getUUIDAsString(final UUID value) {
+		return getDefaultUUID(value).toString();
+	}
+	
+	public static final String getIntAsString(final int value) {
+		return Integer.toString(value);
+	}
 
 	public UUID getId() {
 		return id;
@@ -112,5 +120,9 @@ public class VehicleDTO {
 
 	public void setOwner(DriverDTO owner) {
 		this.owner = owner;
+	}
+	
+	public final String getIdAsString() {
+		return getUUIDAsString(getId());
 	}
 }
