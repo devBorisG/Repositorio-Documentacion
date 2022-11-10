@@ -64,10 +64,6 @@ public class Messages {
 		
 		public static final String TECHNICAL_PROBLEM_CREATE_DRIVER = "There was a problem trying create driver in DriverPostgreSql with id=";
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_DRIVER = "There was an unexpected problem trying create driver in DriverPostgreSql";
-		public static final String TECHNICAL_PROBLEM_CREATE_PHONE_TO_DRIVER = "There was a problem trying create phone for driver in DriverPostgreSql with id=";
-		public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_PHONE_TO_DRIVER = "There was an unexpected problem trying create phone for driver in DriverPostgreSql";
-		public static final String TECHNICAL_PROBLEM_CREATE_EMAIL_TO_DRIVER = "There was a problem trying create email for driver in DriverPostgreSql with id=";
-		public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_EMAIL_TO_DRIVER = "There was an unexpected problem trying create email for driver in DriverPostgreSql";
 		public static final String TECHNICAL_PROBLEM_UPDATE_DRIVER = "There was a problem trying update driver in DriverPostgreSql with id=";
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_DRIVER = "There was an unexpected problem trying update driver in DriverPostgreSql";
 		public static final String TECHNICAL_PROBLEM_DELETE_DRIVER = "There was a problem trying delete driver in DriverPostgreSql with id=";
@@ -84,11 +80,7 @@ public class Messages {
 		
 		public static final String TECHNICAL_PROBLEM_CREATE_CUSTOMER = "There was a problem trying create customer in CustomerPostgreSql with id=";
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_CUSTOMER = "There was an unexpected problem trying create customer in CustomerPostgreSql";
-		public static final String TECHNICAL_PROBLEM_CREATE_PHONE_TO_CUSTOMER = "There was a problem trying create phone for customer in CustomerPostgreSql with id=";
-		public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_PHONE_TO_CUSTOMER = "There was an unexpected problem trying create phone for customer in CustomerPostgreSql";
-		public static final String TECHNICAL_PROBLEM_CREATE_EMAIL_TO_CUSTOMER = "There was a problem trying create email for customer in CustomerPostgreSql with id=";
-		public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_EMAIL_TO_CUSTOMER = "There was an unexpected problem trying create email for customer in CustomerPostgreSql";
-		public static final String TECHNICAL_PROBLEM_UPDATE_CUTOMER = "There was a problem trying update customer in CustomerPostgreSql with id=";
+		public static final String TECHNICAL_PROBLEM_UPDATE_CUSTOMER = "There was a problem trying update customer in CustomerPostgreSql with id=";
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_CUSTOMER = "There was an unexpected problem trying update customer in CustomerPostgreSql";
 		public static final String TECHNICAL_PROBLEM_DELETE_CUSTOMER = "There was a problem trying delete customer in CustomerPostgreSql with id=";
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_DELETE_CUSTOMER = "There was an unexpected problem trying delete customer in CustomerPostgreSql";
