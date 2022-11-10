@@ -101,6 +101,15 @@ public class Messages {
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_PERSON = "There was an unexpected problem trying update person in PersonSqlServer";
 		public static final String TECHNICAL_PROBLEM_DELETE_PERSON = "There was a problem trying delete person in PersonSqlServer with id=";
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_DELETE_PERSON = "There was an unexpected problem trying delete person in PersonSqlServer";
+		public static final String TECHNICALPROBLEM_FILL_PERSONDTO = "There was an unexpected problem trying to fill PersonDTO from the resultset ";
+		public static final String TECHNICALPROBLEM_FILL_PERSONDTO_UNEXPECTED_PROBLEM = "There was an unexpected problem trying to fill PersonDTO from the resultset ";
+		public static final String TECHNICAL_PROBLEM_PREPARED_STATEMENT = "There was a problem trying prepare the sql statement";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STATEMENT = "There was an unexpected problem trying prepare the sql statement";
+		public static final String TECHNICAL_PROBLEM_EXECUTE_QUERY = "There was a problem trying to execute query to find the specific persons";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_EXECUTE_QUERY = "There was an unexpected problem trying to execute query to find the specific persons";
+		public static final String TECHNICAL_PROBLEM_FILL_RESULTS = "There was a problem recovering results from the select";
+		public static final String TECHNICAL_PROBLEM_FILL_RESULTS_UNEXPECTED_ERROR = "There was an unexpected problem trying recovering results from the select";
+		
 	}
 	
 	public static class YearSqlServerDAO{
@@ -115,7 +124,16 @@ public class Messages {
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_YEAR = "There was an unexpected problem trying update year in YearSqlServer";
 		public static final String TECHNICAL_PROBLEM_DELETE_YEAR = "There was a problem trying delete year in YearSqlServer with id=";
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_DELETE_YEAR = "There was an unexpected problem trying delete year in YearSqlServer";
-	
+		public static final String TECHNICALPROBLEM_FILL_YEARDTO = "There was an unexpected problem trying to fill YearDTO from the resultset ";
+		public static final String TECHNICALPROBLEM_FILL_YEARDTO_UNEXPECTED_PROBLEM = "There was an unexpected problem trying to fill YearDTO from the resultset ";
+		public static final String TECHNICAL_PROBLEM_PREPARED_STATEMENT = "There was a problem trying prepare the sql statement";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STATEMENT = "There was an unexpected problem trying prepare the sql statement";
+		public static final String TECHNICAL_PROBLEM_EXECUTE_QUERY = "There was a problem trying to execute query to find the specific years";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_EXECUTE_QUERY = "There was an unexpected problem trying to execute query to find the specific years";
+		public static final String TECHNICAL_PROBLEM_FILL_RESULTS = "There was a problem recovering results from the select";
+		public static final String TECHNICAL_PROBLEM_FILL_RESULTS_UNEXPECTED_ERROR = "There was an unexpected problem trying recovering results from the select";
+		
+		
 	}
 	
 	public static class UUIDHelper{
