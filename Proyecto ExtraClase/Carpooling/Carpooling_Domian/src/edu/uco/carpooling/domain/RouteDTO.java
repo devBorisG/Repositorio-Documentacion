@@ -10,25 +10,23 @@ import static edu.uco.carpooling.crosscutting.helper.NumberHelper.ZERO;
 import static edu.uco.carpooling.domain.builder.DetailRouteDTOBuilder.getDetailRouteDTOBuilder;
 import static edu.uco.carpooling.domain.builder.DriverPerVehicleDTOBuilder.getDriverPerVehicleDTOBuilder;
 import static edu.uco.carpooling.domain.builder.RouteStatusDTOBuilder.getRouteStatusDTOBuilder;
-import static edu.uco.carpooling.domain.builder.PointInterestDTOBuilder.getPointInterestDTOBuilder;
 import static edu.uco.carpooling.crosscutting.helper.ObjectHelper.getDefaultIfNull;
+import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getUUIDFromString;
 
 public class RouteDTO {
 	
 	private UUID id;
 	private int quota;
 	private DriverPerVehicleDTO driverPerVehicleDTO;
-	private PointInterestDTO pointInterest;
 	private DetailRouteDTO detailRouteDTO;
 	private RouteStatusDTO routeStatus;
 
 	public RouteDTO(final UUID id,final int quota,final RouteStatusDTO routeStatus,final DriverPerVehicleDTO driverPerVehicleDTO,
-			final PointInterestDTO pointInterest,final DetailRouteDTO detailRouteDTO) {
+			final DetailRouteDTO detailRouteDTO) {
 		setId(getDefaultUUID(id));
 		setQuota(quota);
 		setRouteStatus(routeStatus);
 		setDetailRouteDTO(detailRouteDTO);
-		setPointInterest(pointInterest);
 		setDriverPerVehicleDTO(driverPerVehicleDTO);
 	}
 	
@@ -38,15 +36,27 @@ public class RouteDTO {
 		setDriverPerVehicleDTO(getDriverPerVehicleDTOBuilder().build());
 		setDetailRouteDTO(getDetailRouteDTOBuilder().build());
 		setRouteStatus(getRouteStatusDTOBuilder().build());
-		setPointInterest(getPointInterestDTOBuilder().build());
 	}
 	
 	public static final RouteDTO create(final UUID id,final int quota,
-			final RouteStatusDTO routeStatus, final DriverPerVehicleDTO driverPerVehicleDTO, final PointInterestDTO pointInterest,
+			final RouteStatusDTO routeStatus, final DriverPerVehicleDTO driverPerVehicleDTO,
 			final DetailRouteDTO detailRouteDTO) {
-		return new RouteDTO(id,quota,routeStatus, driverPerVehicleDTO, pointInterest, detailRouteDTO);
+		return new RouteDTO(id,quota,routeStatus, driverPerVehicleDTO,detailRouteDTO);
+	}
+	
+	public static final RouteDTO create(final String id,final int quota,
+			final RouteStatusDTO routeStatus, final DriverPerVehicleDTO driverPerVehicleDTO,
+			final DetailRouteDTO detailRouteDTO) {
+		return new RouteDTO(getUUIDFromString(id),quota,routeStatus, driverPerVehicleDTO, detailRouteDTO);
 	}
 
+	public static final String getUUIDAsString(final UUID value) {
+		return getDefaultUUID(value).toString();
+	}
+	
+	public static final String getIntAsString(final int value) {
+		return Integer.toString(value);
+	}
 	
 	public UUID getId() {
 		return id;
@@ -78,19 +88,19 @@ public class RouteDTO {
 		this.driverPerVehicleDTO = getDefaultIfNull(driverPerVehicleDTO, getDriverPerVehicleDTOBuilder().build());
 	}
 
-	public PointInterestDTO getPointInterest() {
-		return pointInterest;
-	}
-
-	public void setPointInterest(PointInterestDTO pointInterest) {
-		this.pointInterest = getDefaultIfNull(pointInterest, getPointInterestDTOBuilder().build());
-	}
-	
 	public DetailRouteDTO getDetailRouteDTO() {
 		return detailRouteDTO;
 	}
 
 	public void setDetailRouteDTO(DetailRouteDTO detailRouteDTO) {
 		this.detailRouteDTO = getDefaultIfNull(detailRouteDTO, getDetailRouteDTOBuilder().build());
+	}
+	
+	public final String getIdAsString() {
+		return getUUIDAsString(getId());
+	}
+	
+	public final String getQuotaAsStrin() {
+		return getIntAsString(getQuota());
 	}
 }

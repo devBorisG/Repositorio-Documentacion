@@ -2,6 +2,7 @@ package edu.uco.carpooling.domain;
 
 import java.util.UUID;
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getNewUUID;
+import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getUUIDFromString;
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getDefaultUUID;
 import static edu.uco.carpooling.crosscutting.helper.ObjectHelper.getDefaultIfNull;
 import static edu.uco.carpooling.domain.builder.DriverDTOBuilder.getDriverDTOBuilder;
@@ -28,6 +29,14 @@ public class DriverPerVehicleDTO {
     public static final DriverPerVehicleDTO create(final UUID id, final DriverDTO driver,final VehicleDTO vehicle){
         return new DriverPerVehicleDTO(id, driver , vehicle);
     }
+    
+    public static final DriverPerVehicleDTO create(final String id, final DriverDTO driver,final VehicleDTO vehicle){
+        return new DriverPerVehicleDTO(getUUIDFromString(id), driver , vehicle);
+    }
+    
+	public static final String getUUIDAsString(final UUID value) {
+		return getDefaultUUID(value).toString();
+	}
 
     public UUID getId() {
         return id;
@@ -52,4 +61,7 @@ public class DriverPerVehicleDTO {
     public void setVehicle(final VehicleDTO vehicle) {
         this.vehicle = getDefaultIfNull(vehicle, getVehicleDTOBuilder().build() );
     }
+	public final String getIdAsString() {
+		return getUUIDAsString(getId());
+	}
 }

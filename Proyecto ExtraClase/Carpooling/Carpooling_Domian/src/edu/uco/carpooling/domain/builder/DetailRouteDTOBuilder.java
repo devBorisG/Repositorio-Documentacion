@@ -1,19 +1,17 @@
 package edu.uco.carpooling.domain.builder;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
+import java.sql.Date;
+import java.sql.Time;
 import java.util.UUID;
 
 import edu.uco.carpooling.domain.DetailRouteDTO;
-import edu.uco.carpooling.domain.RouteDTO;
 
 public class DetailRouteDTOBuilder {
 	
 	private UUID id;
-	private RouteDTO route;
-	private LocalTime creationTime;
-	private LocalTime endTime;
-	private LocalDate date;
+	private Time creationTime;
+	private Time endTime;
+	private Date date;
 	
 	private DetailRouteDTOBuilder() {
 		super();
@@ -26,24 +24,20 @@ public class DetailRouteDTOBuilder {
 	public void setId(UUID id) {
 		this.id = id;
 	}
-
-	public void setRoute(RouteDTO route) {
-		this.route = route;
-	}
-
-	public void setCreationTime(LocalTime creationTime) {
+	
+	public void setCreationTime(Time creationTime) {
 		this.creationTime = creationTime;
 	}
 
-	public void setEndTime(LocalTime endTime) {
+	public void setEndTime(Time endTime) {
 		this.endTime = endTime;
 	}
 
-	public void setDate(LocalDate date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 
 	public final DetailRouteDTO build() {
-		return DetailRouteDTO.create(id, route, creationTime, endTime, date);
+		return DetailRouteDTO.create(id,creationTime, endTime, date);
 	}
 }

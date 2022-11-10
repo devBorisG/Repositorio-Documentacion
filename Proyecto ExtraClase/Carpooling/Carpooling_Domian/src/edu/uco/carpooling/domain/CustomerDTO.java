@@ -1,9 +1,9 @@
 package edu.uco.carpooling.domain;
 
-import java.time.LocalDate;
 import java.util.UUID;
 import static edu.uco.carpooling.crosscutting.helper.StringHelper.applyTrim;
 import static edu.uco.carpooling.crosscutting.helper.StringHelper.EMPTY;
+import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getUUIDFromString;
 
 public class CustomerDTO extends UserDTO {
 
@@ -13,16 +13,15 @@ public class CustomerDTO extends UserDTO {
 		setReferencePoint(EMPTY);
 	}
 
-	public CustomerDTO(final UUID id, final int dni, final String firstName, final String secondName,
-			final String firstSurname, final String secondSurname, final String password, final LocalDate born,
-			final int phone, final String companyEmail, final String referencePoint) {
-		super(id, dni, firstName, secondName, firstSurname, secondSurname, password, born, phone, companyEmail);
-		setReferencePoint(referencePoint);
+	public CustomerDTO(final UUID id, final String dni, final String firstName, final String secondName,
+			final String firstSurname, final String secondSurname, final String password,
+			final int phone, final String companyEmail) {
+		super(id, dni, firstName, secondName, firstSurname, secondSurname, password, phone, companyEmail);
 	}
 	
-	public static final CustomerDTO create (final UUID id, final int dni, final String firstName, final String secondName,
-			final String firstSurname, final String secondSurname, final String password, final LocalDate born,
-			final int phone, final String companyEmail, final String referencePoint) {
+	public static final CustomerDTO create (final UUID id, final String dni, final String firstName, final String secondName,
+			final String firstSurname, final String secondSurname, final String password,
+			final int phone, final String companyEmail) {
 		return new CustomerDTO(
 					id,
 					dni,
@@ -31,11 +30,15 @@ public class CustomerDTO extends UserDTO {
 					firstSurname,
 					secondSurname,
 					password,
-					born,
 					phone,
-					companyEmail,
-					referencePoint
+					companyEmail
 				);
+	}
+	
+	public static final CustomerDTO create (final String id, final String dni, final String firstName, final String secondName,
+			final String firstSurname, final String secondSurname, final String password,
+			final int phone, final String companyEmail) {
+		return new CustomerDTO(getUUIDFromString(id),dni,firstName,secondName,firstSurname,secondSurname,password,phone,companyEmail);
 	}
 
 	public String getReferencePoint() {
