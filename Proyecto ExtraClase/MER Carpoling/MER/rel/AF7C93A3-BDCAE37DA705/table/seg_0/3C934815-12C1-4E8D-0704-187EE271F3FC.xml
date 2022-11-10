@@ -29,21 +29,6 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Customer_id" id="92B6CCEC-1897-B6B9-34EB-ADCB78147DD4">
-<createdBy>DAVID</createdBy>
-<createdTime>2022-09-16 01:39:53 UTC</createdTime>
-<ownerDesignName>MER</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>36</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="1967D1E1-3E2A-8B3D-5AE7-B293DED63A60" referredColumn="8084A672-779D-5B33-3A86-09C22BE8B502"/>
-</associations>
-</Column>
 <Column name="Driver_id" id="8B924589-475F-8869-8516-3E9202519B64">
 <createdBy>DAVID</createdBy>
 <createdTime>2022-09-16 01:42:53 UTC</createdTime>
@@ -70,16 +55,6 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="5B842D84-4132-1E23-2B7E-CE226D07E8B3"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="3F7B5725-9914-2091-88FE-21449A884E5C" name="Score_Customer_FK">
-<createdBy>DAVID</createdBy>
-<createdTime>2022-09-16 01:39:53 UTC</createdTime>
-<ownerDesignName>MER</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="92B6CCEC-1897-B6B9-34EB-ADCB78147DD4"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="4FCC2DA1-0278-5A63-FB39-9714708D0020" name="Score_Driver_FK">

@@ -1,0 +1,70 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CC6D2DB8-85CB-1D28-26EA-086705F70DD9" name="DetailRoute">
+<createdBy>Federico</createdBy>
+<createdTime>2022-11-10 21:05:27 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<ordsAlias>table_17</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="A339EAF5-5789-ACA0-3F17-80610000286C">
+<createdBy>Federico</createdBy>
+<createdTime>2022-11-10 21:06:23 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>36</dataTypeSize>
+<ownDataTypeParameters>36,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="creationHour" id="F139C871-E9C3-A42F-FE15-5A735F9D7809">
+<createdBy>Federico</createdBy>
+<createdTime>2022-11-10 21:06:23 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT046</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,2,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="endHour" id="5C8722AB-DE7F-7542-853F-980DD93DFAAF">
+<createdBy>Federico</createdBy>
+<createdTime>2022-11-10 21:06:23 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT046</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,2,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="date" id="82CB537E-E840-C60F-E578-5CEF89106183">
+<createdBy>Federico</createdBy>
+<createdTime>2022-11-10 21:06:23 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C528E955-DB6C-AD1A-092E-BBD9423E2FA9" name="DetailRoute_PK">
+<createdBy>Federico</createdBy>
+<createdTime>2022-11-10 21:06:23 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A339EAF5-5789-ACA0-3F17-80610000286C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
