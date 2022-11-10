@@ -2,6 +2,7 @@ package edu.uco.budget.data.dao.relational.sqlserver;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -38,7 +39,10 @@ public class YearSqlServerDAO extends DAORelational implements YearDAO {
 
 	@Override
 	public final List<YearDTO> find(final YearDTO year) {
-		// TODO Auto-generated method stub
+		var results = new ArrayList<YearDTO>();
+		final var sqlBuilder = new StringBuilder();
+		
+		sqlBuilder.append("SELECT ")
 		return null;
 	}
 

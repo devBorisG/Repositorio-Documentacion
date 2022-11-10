@@ -72,6 +72,21 @@ public class Messages {
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_BUDGET = "There was an unexpected problem trying update budget in BudgetSqlServer";
 		public static final String TECHNICAL_PROBLEM_DELETE_BUDGET = "There was a problem trying delete budget in BudgetSqlServer with id=";
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_DELETE_BUDGET = "There was an unexpected problem trying delete budget in BudgetSqlServer";
+		public static final String TECHNICAL_PROBLEM_FILL_RESULTS = "There was a problem recovering results from the select";
+		public static final String TECHNICAL_PROBLEM_FILL_RESULTS_UNEXPECTED_ERROR = "There was an unexpected problem trying recovering results from the select";
+		public static final String TECHNICALPROBLEM_FILL_BUDGEDTO = "There was an unexpected problem trying to fill BudgetDTO from the resultset ";
+		public static final String TECHNICALPROBLEM_FILL_BUDGEDTO_UNEXPECTED_PROBLEM = "There was an unexpected problem trying to fill BudgetDTO from the resultset ";
+		public static final String TECHNICALPROBLEM_FILL_YEARDTO = "There was an unexpected problem trying to fill YearDTO from the resultset ";
+		public static final String TECHNICALPROBLEM_FILL_YEARDTO_UNEXPECTED_PROBLEM = "There was an unexpected problem trying to fill YearDTO from the resultset ";
+		public static final String TECHNICALPROBLEM_FILL_PERSONDTO = "There was an unexpected problem trying to fill PersonDTO from the resultset ";
+		public static final String TECHNICALPROBLEM_FILL_PERSONDTO_UNEXPECTED_PROBLEM = "There was an unexpected problem trying to fill PersonDTO from the resultset ";
+		public static final String TECHNICAL_PROBLEM_EXECUTE_QUERY = "There was a problem trying to execute query to find the specific budgets";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_EXECUTE_QUERY = "There was an unexpected problem trying to execute query to find the specific budgets";
+		public static final String TECHNICAL_PROBLEM_SET_PARAMETERS_VALUES = "There was a problem trying to set the parameters values to the query";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMETERS_VALUES = "There was an unexpecteds problem trying to set the parameters values to the query";
+		public static final String TECHNICAL_PROBLEM_PREPARED_STATEMENT = "There was a problem trying prepare the sql statement";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STATEMENT = "There was an unexpected problem trying prepare the sql statement";
+		
 	}
 	
 	public static class PersonSqlServerDAO{
@@ -101,5 +116,16 @@ public class Messages {
 		public static final String TECHNICAL_PROBLEM_DELETE_YEAR = "There was a problem trying delete year in YearSqlServer with id=";
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_DELETE_YEAR = "There was an unexpected problem trying delete year in YearSqlServer";
 	
+	}
+	
+	public static class UUIDHelper{
+		
+		private UUIDHelper() {
+			super();
+		}
+		
+		public static final String TECHNICAL_UUID_FROM_STRING_INVALID = "The UUID to convert does not have a valid format";
+		public static final String TECHNICAL_UUID_FROM_STRING_INVALID_UNEXPECTED_ERROR = "The was an unexpected error trying to convert a UUID from String";
+
 	}
 }
