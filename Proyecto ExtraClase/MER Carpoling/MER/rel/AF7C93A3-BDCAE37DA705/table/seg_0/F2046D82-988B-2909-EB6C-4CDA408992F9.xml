@@ -62,7 +62,7 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="User_id" id="BBA9F371-E562-154D-91FD-3B6F4E2B79EC">
+<Column name="idUser" id="BBA9F371-E562-154D-91FD-3B6F4E2B79EC">
 <createdBy>Federico</createdBy>
 <createdTime>2022-11-10 21:20:12 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>
@@ -90,7 +90,7 @@
 <colUsage columnID="1A84B473-8973-E3F0-4A50-0E38CDFFDB1F"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="2497EE89-2E6E-9265-A66D-B0555F15B0DF" name="RouteRequest_User_FK">
+<ind_PK_UK id="2497EE89-2E6E-9265-A66D-B0555F15B0DF" name="RouteRequestUserFK">
 <createdBy>Federico</createdBy>
 <createdTime>2022-11-10 21:20:12 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>

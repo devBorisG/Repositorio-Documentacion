@@ -55,7 +55,7 @@
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="C528E955-DB6C-AD1A-092E-BBD9423E2FA9" name="DetailRoute_PK">
+<ind_PK_UK id="C528E955-DB6C-AD1A-092E-BBD9423E2FA9" name="DetailRoutePK">
 <createdBy>Federico</createdBy>
 <createdTime>2022-11-10 21:06:23 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>

@@ -35,7 +35,7 @@
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="717CF7E7-DB3C-EB8E-FA18-3BBDDEB10283" name="Driver_PK">
+<ind_PK_UK id="717CF7E7-DB3C-EB8E-FA18-3BBDDEB10283" name="DriverPK">
 <createdBy>DAVID</createdBy>
 <createdTime>2022-09-15 23:56:00 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>
@@ -46,7 +46,7 @@
 <colUsage columnID="B081099D-1944-8736-D13E-4026FC148B32"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="70A4322E-143B-AD9D-5983-7F51A12D403A" name="Driver_User_FK">
+<ind_PK_UK id="70A4322E-143B-AD9D-5983-7F51A12D403A" name="DriverUserFK">
 <createdBy>DAVID</createdBy>
 <createdTime>2022-11-09 06:08:06 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>
