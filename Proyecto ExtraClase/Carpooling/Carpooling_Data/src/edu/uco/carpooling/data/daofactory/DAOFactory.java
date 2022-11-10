@@ -15,7 +15,11 @@ public abstract class DAOFactory {
 
 		switch (factory) {
 		case POSTGRESQL: {
-			daoFactory = new PostgreSqlDAOFactory();
+			try {
+				daoFactory = new PostgreSqlDAOFactory();
+			} catch (Exception exception) {
+				throw DataCarpoolingException.createTechnicalException(Messages.SqlConnectionHelper.TECHNICAL_CONNECTION_IS_NULL, exception);
+			}
 			break;
 		}
 		case MONGO_DB: {

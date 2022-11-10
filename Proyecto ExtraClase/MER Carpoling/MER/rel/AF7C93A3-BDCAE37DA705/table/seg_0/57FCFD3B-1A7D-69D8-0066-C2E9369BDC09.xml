@@ -1,0 +1,61 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="57FCFD3B-1A7D-69D8-0066-C2E9369BDC09" name="Customer">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-15 23:49:25 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<ordsAlias>table_3</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="8084A672-779D-5B33-3A86-09C22BE8B502">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-16 00:41:02 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>36</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="01A2CE94-81DD-6850-F862-66F18938CB94" referredColumn="DDAA15FD-130D-FAEE-C0BB-767AD024CA7F"/>
+</associations>
+</Column>
+<Column name="referencePoint" id="F27DCD53-CAB5-5C9C-EB93-5F7A4772DEF3">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-15 23:59:11 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="63CCE1D9-B867-568D-00FF-1D9FF5A583B3" name="Customer_PK">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-15 23:59:48 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8084A672-779D-5B33-3A86-09C22BE8B502"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="09884D81-E429-307E-6563-10EF9047AE2C" name="Customer_User_FK">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-09 06:08:26 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8084A672-779D-5B33-3A86-09C22BE8B502"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

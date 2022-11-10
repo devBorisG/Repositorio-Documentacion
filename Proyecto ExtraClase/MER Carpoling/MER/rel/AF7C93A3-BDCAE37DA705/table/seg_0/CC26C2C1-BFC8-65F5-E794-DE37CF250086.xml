@@ -1,0 +1,46 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CC26C2C1-BFC8-65F5-E794-DE37CF250086" name="Model">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-16 03:39:09 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<ordsAlias>table_21</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="780C1C23-0701-2786-F9E3-53944D4A44D7">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-16 03:50:57 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>36</dataTypeSize>
+<ownDataTypeParameters>36,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="year" id="3C5216B1-672D-DB38-9A46-8F6AC2CC4597">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-16 03:50:57 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D9900D72-6A4D-A2BA-0B7E-C9ED254888BD" name="Model_PK">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-16 03:50:57 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="780C1C23-0701-2786-F9E3-53944D4A44D7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

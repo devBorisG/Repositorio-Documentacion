@@ -1,50 +1,40 @@
 package edu.uco.carpooling.domain;
 
-import java.sql.Date;
 import java.util.UUID;
-
 
 import static edu.uco.carpooling.crosscutting.helper.StringHelper.applyTrim;
 import static edu.uco.carpooling.crosscutting.helper.StringHelper.EMPTY;
-
 import static edu.uco.carpooling.crosscutting.helper.NumberHelper.isLessThan;
 import static edu.uco.carpooling.crosscutting.helper.NumberHelper.ZERO;
-
-import static edu.uco.carpooling.crosscutting.helper.DateHelper.getDefaultDate;
-import static edu.uco.carpooling.crosscutting.helper.DateHelper.NOTHING;
-
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getDefaultUUID;
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getNewUUID;
-import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getUUIDAsString;
 
 public class UserDTO {
 
 	private UUID id;
-	private int dni;
+	private String dni;
 	private String firstName;
 	private String secondName;
 	private String firstSurname;
 	private String secondSurname;
 	private String password;
-	private Date born;
 	private int phone;
 	private String companyEmail;
 	
 	public UserDTO() {
 		setId(getNewUUID());
-		setDni(ZERO);
+		setDni(EMPTY);
 		setFirstName(EMPTY);
 		setSecondName(EMPTY);
 		setFirstSurname(EMPTY);
 		setSecondSurname(EMPTY);
 		setPassword(EMPTY);
-		setBorn(NOTHING);
 		setPhone(ZERO);
 		setCompanyEmail(EMPTY);
 	}
 
-	public UserDTO(final UUID id,final int dni,final String firstName,final String secondName,final String firstSurname,final String secondSurname,
-			final String password,final Date born,final int phone,final String emailCompany) {
+	public UserDTO(final UUID id,final String dni,final String firstName,final String secondName,final String firstSurname,final String secondSurname,
+			final String password,final int phone,final String emailCompany) {
 		setId(id);
 		setDni(dni);
 		setFirstName(firstName);
@@ -52,7 +42,6 @@ public class UserDTO {
 		setFirstSurname(firstSurname);
 		setSecondSurname(secondSurname);
 		setPassword(password);
-		setBorn(born);
 		setPhone(phone);
 		setCompanyEmail(emailCompany);
 	}
@@ -65,12 +54,12 @@ public class UserDTO {
 		this.id = getDefaultUUID(id);
 	}
 
-	public int getDni() {
+	public String getDni() {
 		return dni;
 	}
 
-	public final void setDni(final int dni) {
-		this.dni = isLessThan(dni, ZERO)? ZERO : dni;
+	public final void setDni(final String dni) {
+		this.dni = applyTrim(dni);
 	}
 
 	public String getFirstName() {
@@ -113,14 +102,6 @@ public class UserDTO {
 		this.password = applyTrim(password);
 	}
 
-	public Date getBorn() {
-		return born;
-	}
-
-	public final void setBorn(final Date born) {
-		this.born = getDefaultDate(born);
-	}
-
 	public int getPhone() {
 		return phone;
 	}
@@ -136,9 +117,4 @@ public class UserDTO {
 	public final void setCompanyEmail(final String companyEmail) {
 		this.companyEmail = applyTrim(companyEmail);
 	}
-	
-	public final String getIdAsString() {
-		return getUUIDAsString(getId());
-	}
-	
 }

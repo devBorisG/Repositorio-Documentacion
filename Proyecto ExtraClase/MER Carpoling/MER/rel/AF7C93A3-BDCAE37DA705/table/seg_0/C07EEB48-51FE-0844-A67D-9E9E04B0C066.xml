@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C07EEB48-51FE-0844-A67D-9E9E04B0C066" name="Driver">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-15 23:49:21 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<ordsAlias>table_2</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="B081099D-1944-8736-D13E-4026FC148B32">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-16 00:42:46 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>36</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3FBB0BF5-DD46-532F-D6B1-CD5FAAA0984E" referredColumn="DDAA15FD-130D-FAEE-C0BB-767AD024CA7F"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="717CF7E7-DB3C-EB8E-FA18-3BBDDEB10283" name="Driver_PK">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-15 23:56:00 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B081099D-1944-8736-D13E-4026FC148B32"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="70A4322E-143B-AD9D-5983-7F51A12D403A" name="Driver_User_FK">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-09 06:08:06 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B081099D-1944-8736-D13E-4026FC148B32"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

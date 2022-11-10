@@ -9,8 +9,7 @@ import static edu.uco.budget.crosscutting.helper.ObjectHelper.getDefaultIfNull;
 
 //*THIS IS THE FATHER TO THE OTHERS EXCEPTIONS*
 
-//default?
-class BudgetCustomException extends RuntimeException{
+public class BudgetCustomException extends RuntimeException{
 	
 	
 	private static final long serialVersionUID = -2614577065081710653L;

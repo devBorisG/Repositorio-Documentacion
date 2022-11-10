@@ -7,18 +7,29 @@ import static edu.uco.carpooling.crosscutting.helper.ObjectHelper.getDefaultIfNu
 
 public class DateHelper {
 	
-	public static final Date NOTHING = Date.valueOf(LocalDate.of(1, 1, 1));
+	public static final Date DEFAULT_DATE = Date.valueOf(LocalDate.of(0, 0, 0));
 	
 	private DateHelper() {
 		super();
 	}
 	
+	public static final Date getNewDate() {
+		Date date;
+		do{
+			date = Date.valueOf(LocalDate.now());
+			} while(isDefaultDate(date));
+			return date;
+	}
+	
 	public static final Date getDefaulDate(Date value, Date defaultValue) {
-		return getDefaultIfNull(value, defaultValue);
+		return getDefaultIfNull(value, DEFAULT_DATE);
 	}
 	
 	public static final Date getDefaultDate(Date value) {
-		return getDefaulDate(value, NOTHING);
+		return getDefaulDate(value, DEFAULT_DATE);
 	}
 	
+	public static final boolean isDefaultDate(final Date value) {
+		return DEFAULT_DATE.equals(value);
+	}
 }
