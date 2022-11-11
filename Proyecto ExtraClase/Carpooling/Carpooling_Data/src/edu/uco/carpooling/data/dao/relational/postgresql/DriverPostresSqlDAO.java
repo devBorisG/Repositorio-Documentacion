@@ -26,13 +26,12 @@ package edu.uco.carpooling.data.dao.relational.postgresql;
 	
 			try (final var preparedStatement = getConnection().prepareStatement(sql)) {
 				preparedStatement.setString(1, driver.getIdAsString());
-				preparedStatement.setInt(2, driver.getDni());
+				preparedStatement.setString(2, driver.getDni());
 				preparedStatement.setString(3, driver.getFirstName());
 				preparedStatement.setString(4, driver.getSecondName());
 				preparedStatement.setString(5, driver.getFirstSurname());
 				preparedStatement.setString(6, driver.getSecondSurname());
 				preparedStatement.setString(7, driver.getPassword());
-				preparedStatement.setDate(8, driver.getBorn());
 	
 				preparedStatement.executeUpdate();
 				
@@ -66,6 +65,7 @@ package edu.uco.carpooling.data.dao.relational.postgresql;
 				preparedStatement.setString(3, driver.getFirstSurname());
 				preparedStatement.setString(4, driver.getSecondSurname());
 				preparedStatement.setString(5, driver.getPassword());
+				preparedStatement.setString(6, driver.getIdAsString());
 	
 				preparedStatement.executeUpdate();
 			} catch (final SQLException exception) {
