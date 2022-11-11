@@ -19,7 +19,7 @@
 <ownDataTypeParameters>36,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Description" id="CE86491B-6C7E-A867-5805-424064A89FF0">
+<Column name="description" id="CE86491B-6C7E-A867-5805-424064A89FF0">
 <createdBy>Federico</createdBy>
 <createdTime>2022-11-10 18:19:33 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>
@@ -32,7 +32,7 @@
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="B5BF64AA-6C61-2892-EBE9-8E14D4056C0F" name="PersonType_PK">
+<ind_PK_UK id="B5BF64AA-6C61-2892-EBE9-8E14D4056C0F" name="PersonTypePK">
 <createdBy>Federico</createdBy>
 <createdTime>2022-11-10 18:19:33 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>

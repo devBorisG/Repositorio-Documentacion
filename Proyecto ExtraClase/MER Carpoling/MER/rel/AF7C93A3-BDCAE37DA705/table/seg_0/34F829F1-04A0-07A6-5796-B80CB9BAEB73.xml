@@ -82,9 +82,9 @@
 <ownDataTypeParameters>100,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="RouteRequest_id" id="36BBE864-97BD-8684-94A5-AFE357C12C35">
-<createdBy>Federico</createdBy>
-<createdTime>2022-11-10 21:00:16 UTC</createdTime>
+<Column name="idDetailInterestPointRoute" id="BA24A785-0CCC-0767-7B5D-F62125FBF382">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-11 03:31:46 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -94,12 +94,12 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="C973381A-1A75-AB73-CE96-123415DBDA59" referredColumn="1A84B473-8973-E3F0-4A50-0E38CDFFDB1F"/>
+<colAssociation fkAssociation="BDAFB66B-2C72-4BF7-D47C-936E8DADDB5C" referredColumn="9F105D9F-F6B3-ACC8-0D88-95544C3CB58A"/>
 </associations>
 </Column>
-<Column name="DriverVehicle_Vehicle_id" id="04FC0880-E6E4-5FD4-3A09-954E23852F67">
-<createdBy>Federico</createdBy>
-<createdTime>2022-11-10 21:01:32 UTC</createdTime>
+<Column name="idInterestPoint" id="33C78CDC-AD80-F295-B077-91DD3CE01E90">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-11 03:58:24 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -109,42 +109,12 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="97B66773-FC5C-CAC1-0DD5-41E385C55655" referredColumn="8E78CF2E-A432-FB09-A0D0-E4018BE1BBFB"/>
-</associations>
-</Column>
-<Column name="DriverVehicle_Driver_id" id="7B71C38F-FCE2-252E-255C-54F193F6C844">
-<createdBy>Federico</createdBy>
-<createdTime>2022-11-10 21:01:32 UTC</createdTime>
-<ownerDesignName>MER</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>36</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="97B66773-FC5C-CAC1-0DD5-41E385C55655" referredColumn="D2A64ECE-A871-D1A6-E3E0-CFD5B584BFCB"/>
-</associations>
-</Column>
-<Column name="DetailRoute_id" id="A6CD1C3C-6CE5-4D2D-C62F-59F569C65506">
-<createdBy>Federico</createdBy>
-<createdTime>2022-11-10 21:06:34 UTC</createdTime>
-<ownerDesignName>MER</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>36</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="D617BF96-33FB-7B5D-4614-2CD6F2D24536" referredColumn="A339EAF5-5789-ACA0-3F17-80610000286C"/>
+<colAssociation fkAssociation="CF43509C-E762-35CE-E19D-1E6C95E3A5AA" referredColumn="92EBBE9A-865F-5997-DF76-F29E00399B29"/>
 </associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="B3038573-1441-B739-873E-6954583EFAA9" name="Route_PK">
+<ind_PK_UK id="B3038573-1441-B739-873E-6954583EFAA9" name="RoutePK">
 <createdBy>DAVID</createdBy>
 <createdTime>2022-09-16 01:16:35 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>
@@ -155,35 +125,24 @@
 <colUsage columnID="A23382F2-4411-E960-84BA-5FAE68A6E92F"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="04B2068C-A0A2-209A-BFFB-3E643C3F49EB" name="Route_RouteRequest_FK">
-<createdBy>Federico</createdBy>
-<createdTime>2022-11-10 21:00:16 UTC</createdTime>
+<ind_PK_UK id="1D382103-6739-B8B5-7250-498BEDA69226" name="RouteDetailInterestPointRouteFK">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-11 03:31:46 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="36BBE864-97BD-8684-94A5-AFE357C12C35"/>
+<colUsage columnID="BA24A785-0CCC-0767-7B5D-F62125FBF382"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="7DB4FBAE-8349-C622-1376-22D60E29B5D9" name="Route_DriverVehicle_FK">
-<createdBy>Federico</createdBy>
-<createdTime>2022-11-10 21:01:32 UTC</createdTime>
+<ind_PK_UK id="38E90C28-24A2-CCC4-5F75-50088C2EE873" name="RouteInterestPointFK">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-11 03:58:24 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="04FC0880-E6E4-5FD4-3A09-954E23852F67"/>
-<colUsage columnID="7B71C38F-FCE2-252E-255C-54F193F6C844"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="A3B27B13-8683-1867-8637-8A2A6C843458" name="Route_DetailRoute_FK">
-<createdBy>Federico</createdBy>
-<createdTime>2022-11-10 21:06:34 UTC</createdTime>
-<ownerDesignName>MER</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="A6CD1C3C-6CE5-4D2D-C62F-59F569C65506"/>
+<colUsage columnID="33C78CDC-AD80-F295-B077-91DD3CE01E90"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

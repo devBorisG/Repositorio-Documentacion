@@ -15,8 +15,7 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>36</dataTypeSize>
-<ownDataTypeParameters>36,,</ownDataTypeParameters>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="creationHour" id="F139C871-E9C3-A42F-FE15-5A735F9D7809">
@@ -53,9 +52,24 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="idMyRoute" id="6BE3A9DE-8936-7A14-F8A7-D0BCA77DC11F">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-11 04:04:16 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>36</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="680A933A-0E1F-98F1-1170-B6F8E7D301AC" referredColumn="CD7F4497-B524-DE2A-C187-FC38B790CD9E"/>
+</associations>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="C528E955-DB6C-AD1A-092E-BBD9423E2FA9" name="DetailRoute_PK">
+<ind_PK_UK id="C528E955-DB6C-AD1A-092E-BBD9423E2FA9" name="DetailRoutePK">
 <createdBy>Federico</createdBy>
 <createdTime>2022-11-10 21:06:23 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>
@@ -64,6 +78,26 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="A339EAF5-5789-ACA0-3F17-80610000286C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BD2B99F0-944D-9A3B-5102-349392F263FC" name="DetailRouteRouteIDX">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-11 04:04:32 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6BE3A9DE-8936-7A14-F8A7-D0BCA77DC11F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="45E661A8-2D52-E98E-00BC-EE9847E157F6" name="DetailRouteMyRouteFK">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-11 04:04:16 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6BE3A9DE-8936-7A14-F8A7-D0BCA77DC11F"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

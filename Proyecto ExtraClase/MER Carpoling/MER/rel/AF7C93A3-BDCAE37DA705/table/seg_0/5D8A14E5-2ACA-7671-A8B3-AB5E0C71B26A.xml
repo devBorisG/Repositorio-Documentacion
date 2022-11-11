@@ -1,16 +1,16 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C066ED70-2A44-40F4-5942-0C1DEB69678A" name="DriverVehicle">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5D8A14E5-2ACA-7671-A8B3-AB5E0C71B26A" name="RouteRequestMyRoute">
 <createdBy>DAVID</createdBy>
-<createdTime>2022-09-16 01:34:49 UTC</createdTime>
+<createdTime>2022-11-11 04:01:36 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>
-<ordsAlias>table_15</ordsAlias>
+<ordsAlias>table_18</ordsAlias>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="idVehicle" id="8E78CF2E-A432-FB09-A0D0-E4018BE1BBFB">
+<Column name="idRouteRequest" id="33EAA643-3075-F03A-BD69-8EA22F66A037">
 <createdBy>DAVID</createdBy>
-<createdTime>2022-09-16 01:44:52 UTC</createdTime>
+<createdTime>2022-11-11 04:01:55 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -20,12 +20,12 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="0AD59433-C4ED-B5C7-912C-49AE79797A60" referredColumn="C2471370-25FD-EE33-0B24-A40AF3976ADD"/>
+<colAssociation fkAssociation="2D915668-781A-A376-11F7-FC02986A9EDF" referredColumn="1A84B473-8973-E3F0-4A50-0E38CDFFDB1F"/>
 </associations>
 </Column>
-<Column name="idDriver" id="D2A64ECE-A871-D1A6-E3E0-CFD5B584BFCB">
+<Column name="idMyRoute" id="4A5F08C0-BC34-E492-8C75-EFA4ED199B5D">
 <createdBy>DAVID</createdBy>
-<createdTime>2022-09-16 01:44:45 UTC</createdTime>
+<createdTime>2022-11-11 04:04:00 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -35,52 +35,41 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="D91D4690-EE80-EFF1-1CE5-BFF10D85FDDF" referredColumn="B081099D-1944-8736-D13E-4026FC148B32"/>
+<colAssociation fkAssociation="57F15163-3956-5443-518D-C3B61148F3C0" referredColumn="CD7F4497-B524-DE2A-C187-FC38B790CD9E"/>
 </associations>
-</Column>
-<Column name="state" id="C59D57FF-6FA5-256E-5219-8BE4AC2702E6">
-<createdBy>DAVID</createdBy>
-<createdTime>2022-09-16 01:36:04 UTC</createdTime>
-<ownerDesignName>MER</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT025</logicalDatatype>
-<dataTypeSize>1</dataTypeSize>
-<ownDataTypeParameters>1,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="78BB7825-2F3B-4769-667C-217FA78F89D6" name="DrivervehiclePK">
+<ind_PK_UK id="2F5883E8-BBFD-AC08-F3C0-27E2E9567344" name="RouteRequestMyRoutePK">
 <createdBy>DAVID</createdBy>
-<createdTime>2022-09-16 01:36:04 UTC</createdTime>
+<createdTime>2022-11-11 04:08:47 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="8E78CF2E-A432-FB09-A0D0-E4018BE1BBFB"/>
-<colUsage columnID="D2A64ECE-A871-D1A6-E3E0-CFD5B584BFCB"/>
+<colUsage columnID="33EAA643-3075-F03A-BD69-8EA22F66A037"/>
+<colUsage columnID="4A5F08C0-BC34-E492-8C75-EFA4ED199B5D"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="6465D8E1-78BC-09A5-D183-5375330CB5EA" name="DriverVehicleDriverFK">
+<ind_PK_UK id="4ABB5633-E7EC-5546-0CE7-7A0D3F5CA322" name="RouteRequestMyRouteRouteRequestFK">
 <createdBy>DAVID</createdBy>
-<createdTime>2022-09-16 01:44:45 UTC</createdTime>
+<createdTime>2022-11-11 04:01:55 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="D2A64ECE-A871-D1A6-E3E0-CFD5B584BFCB"/>
+<colUsage columnID="33EAA643-3075-F03A-BD69-8EA22F66A037"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="D3B68FDA-41DC-0EE5-3FD1-33EBA9EDC7DD" name="DriverVehicleVehicleFK">
+<ind_PK_UK id="EA418A76-7AB3-5146-CFBA-55DBAD143EE8" name="RouteRequestMyRouteMyRouteFK">
 <createdBy>DAVID</createdBy>
-<createdTime>2022-09-16 01:44:52 UTC</createdTime>
+<createdTime>2022-11-11 04:04:00 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="8E78CF2E-A432-FB09-A0D0-E4018BE1BBFB"/>
+<colUsage columnID="4A5F08C0-BC34-E492-8C75-EFA4ED199B5D"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

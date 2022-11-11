@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="97B66773-FC5C-CAC1-0DD5-41E385C55655" containerWithKeyObject="34F829F1-04A0-07A6-5796-B80CB9BAEB73" localFKIndex="7DB4FBAE-8349-C622-1376-22D60E29B5D9" name="Route_DriverVehicle_FK">
-<createdBy>Federico</createdBy>
-<createdTime>2022-11-10 21:01:32 UTC</createdTime>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="172B285B-EFA9-8E61-C20F-19F479A959F8" containerWithKeyObject="E708D1C4-22EC-C0A9-FBA3-B6501F4DCE16" localFKIndex="A8834E47-7953-5CE0-970D-FBDCC5BEAD49" name="MyRouteDriverVehicleFK">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-11 04:05:05 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>
 <referredTableLongName>DriverVehicle</referredTableLongName>
 <deleteRule>NO ACTION</deleteRule>
@@ -9,7 +9,7 @@
 <keyObject>78BB7825-2F3B-4769-667C-217FA78F89D6</keyObject>
 <referredKeyID>78BB7825-2F3B-4769-667C-217FA78F89D6</referredKeyID>
 <mandatory>true</mandatory>
-<refColNames>Vehicle_id,Driver_id</refColNames>
+<refColNames>idVehicle,idDriver</refColNames>
 <transferable>true</transferable>
 <rely>false</rely>
 <columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
