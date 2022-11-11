@@ -97,7 +97,7 @@
 <colAssociation fkAssociation="C973381A-1A75-AB73-CE96-123415DBDA59" referredColumn="1A84B473-8973-E3F0-4A50-0E38CDFFDB1F"/>
 </associations>
 </Column>
-<Column name="idDriverVehicleVehicle" id="04FC0880-E6E4-5FD4-3A09-954E23852F67">
+<Column name="idDVVehicle" id="04FC0880-E6E4-5FD4-3A09-954E23852F67">
 <createdBy>Federico</createdBy>
 <createdTime>2022-11-10 21:01:32 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>
@@ -112,7 +112,7 @@
 <colAssociation fkAssociation="97B66773-FC5C-CAC1-0DD5-41E385C55655" referredColumn="8E78CF2E-A432-FB09-A0D0-E4018BE1BBFB"/>
 </associations>
 </Column>
-<Column name="idDriverVehicleDriver" id="7B71C38F-FCE2-252E-255C-54F193F6C844">
+<Column name="idDVDriver" id="7B71C38F-FCE2-252E-255C-54F193F6C844">
 <createdBy>Federico</createdBy>
 <createdTime>2022-11-10 21:01:32 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>

@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="D91D4690-EE80-EFF1-1CE5-BFF10D85FDDF" containerWithKeyObject="C066ED70-2A44-40F4-5942-0C1DEB69678A" localFKIndex="6465D8E1-78BC-09A5-D183-5375330CB5EA" name="DriverVehicleDriverFK">
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="067871F8-9E89-8FA0-F102-E82A46F7EC4F" containerWithKeyObject="D7DDE75C-67EC-3392-F8CE-1673F646BED6" localFKIndex="D8980C06-E1B8-CADC-94A5-E8FDE7CEFF6D" name="AutorizedCategories_Driver_FK">
 <createdBy>DAVID</createdBy>
-<createdTime>2022-09-16 01:44:45 UTC</createdTime>
+<createdTime>2022-11-11 01:46:17 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>
 <referredTableLongName>Driver</referredTableLongName>
 <deleteRule>NO ACTION</deleteRule>

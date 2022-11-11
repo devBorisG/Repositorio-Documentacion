@@ -22,7 +22,7 @@
 <colAssociation fkAssociation="3FBB0BF5-DD46-532F-D6B1-CD5FAAA0984E" referredColumn="DDAA15FD-130D-FAEE-C0BB-767AD024CA7F"/>
 </associations>
 </Column>
-<Column name="NumeroLicencia " id="711467EC-28AB-4948-69F0-A165D56AE7F2">
+<Column name="licenseNumber" id="711467EC-28AB-4948-69F0-A165D56AE7F2">
 <createdBy>Federico</createdBy>
 <createdTime>2022-11-10 20:04:10 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>
