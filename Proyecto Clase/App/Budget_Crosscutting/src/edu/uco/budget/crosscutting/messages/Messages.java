@@ -146,4 +146,16 @@ public class Messages {
 		public static final String TECHNICAL_UUID_FROM_STRING_INVALID_UNEXPECTED_ERROR = "The was an unexpected error trying to convert a UUID from String";
 
 	}
+	
+	public static class CreateBudgetUseCaseImpl{
+		
+		private CreateBudgetUseCaseImpl() {
+			super();
+		}
+		
+		public static final String BUSSINES_PERSON_DOES_NOT_EXIST = "The person for whom the budget was to be created does not exist.";
+		public static final String BUSSINES_BUDGET_EXIST = "It alredy exists a budget for person and year.";
+	}
+	
+	
 }
