@@ -1,7 +1,7 @@
 package edu.uco.carpooling.domain;
 
 import java.util.UUID;
-import static edu.uco.carpooling.crosscutting.helper.UUIDHelper. getDefaultUUID;
+import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getDefaultUUID;
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getNewUUID;
 import static edu.uco.carpooling.crosscutting.helper.StringHelper.EMPTY;
 import static edu.uco.carpooling.crosscutting.helper.NumberHelper.ZERO;
@@ -13,21 +13,6 @@ public class DriverDTO extends UserDTO{
 	private String licenseNumber;
 	private AuthorizedCategoryDTO authorizedCategory;
 
-	public DriverDTO(final UUID id, final String dni, final String firstName, final String secondName,
-			final String firstSurname, final String secondSurname, final String password,
-			final int phone, final String companyEmail,final String licenseNumber) {
-		setId(getDefaultUUID(id));
-		setDni(dni);
-		setFirstName(firstName);
-		setSecondName(secondName);
-		setFirstSurname(firstSurname);
-		setSecondSurname(secondSurname);
-		setPassword(password);
-		setPhone(phone);
-		setCompanyEmail(companyEmail);
-		setLicenseNumber(licenseNumber);
-	}
-	
 	public DriverDTO() {
 		setId(getNewUUID());
 		setFirstName(EMPTY);
@@ -41,18 +26,35 @@ public class DriverDTO extends UserDTO{
 		setAuthorizedCategory(getAuthorizedCategoryDTOBuilder().build());
 	}
 	
+	public DriverDTO(final UUID id, final String dni, final String firstName, final String secondName,
+			final String firstSurname, final String secondSurname, final String password,
+			final int phone, final String companyEmail,final String licenseNumber, final AuthorizedCategoryDTO authorizedCategory) {
+		setId(getDefaultUUID(id));
+		setDni(dni);
+		setFirstName(firstName);
+		setSecondName(secondName);
+		setFirstSurname(firstSurname);
+		setSecondSurname(secondSurname);
+		setPassword(password);
+		setPhone(phone);
+		setCompanyEmail(companyEmail);
+		setLicenseNumber(licenseNumber);
+		setAuthorizedCategory(authorizedCategory);
+	}
+	
+	
 	public static final DriverDTO create (final UUID id, final String dni, final String firstName, final String secondName,
 			final String firstSurname, final String secondSurname, final String password,
 			final int phone, final String companyEmail,final String licenseNumber,final AuthorizedCategoryDTO authorizedCategory) {
 		return new DriverDTO(id,dni,firstName,secondName,firstSurname,secondSurname,password,phone,companyEmail,
-				licenseNumber);
+				licenseNumber,authorizedCategory);
 	}
 	
 	public static final DriverDTO create (final String id, final String dni, final String firstName, final String secondName,
 			final String firstSurname, final String secondSurname, final String password,
 			final int phone, final String companyEmail,final String licenseNumber,final AuthorizedCategoryDTO authorizedCategory) {
 		return new DriverDTO(getUUIDFromString(id),dni,firstName,secondName,firstSurname,secondSurname,password,phone,companyEmail,
-				licenseNumber);
+				licenseNumber,authorizedCategory);
 	}
 	
 	public static final String getUUIDAsString(final UUID value) {

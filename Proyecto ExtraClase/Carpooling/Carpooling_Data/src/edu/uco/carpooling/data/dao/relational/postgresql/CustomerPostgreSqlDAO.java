@@ -27,14 +27,12 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 
 		try (final var preparedStatement = getConnection().prepareCall(sql)) {
 			preparedStatement.setString(1, customer.getIdAsString());
-			preparedStatement.setInt(2, customer.getDni());
+			preparedStatement.setString(2, customer.getDni());
 			preparedStatement.setString(3, customer.getFirstName());
 			preparedStatement.setString(4, customer.getSecondName());
 			preparedStatement.setString(5, customer.getFirstSurname());
 			preparedStatement.setString(6, customer.getSecondSurname());
 			preparedStatement.setString(7, customer.getPassword());
-			preparedStatement.setString(8, customer.getReferencePoint());
-			preparedStatement.setDate(9, customer.getBorn());
 			
 			preparedStatement.executeUpdate();
 			
@@ -60,7 +58,7 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 	@Override
 	public final void update(final CustomerDTO user) {
 		final var sql = "UPDATE Customer SET \"firstName\" = ?," + "\"secondName\" = ?," + "\"firstSurname\" = ?,"
-				+ "\"secondSurname\" = ?," + "password = ?," + "\"referencePoint\" = ?" + "WHERE id = ?";
+				+ "\"secondSurname\" = ?," + "password = ?," + "WHERE id = ?";
 
 		try (final var preparedStatement = getConnection().prepareStatement(sql)) {
 			final var preparedStatementPhone = updatePhone(user.getIdAsString(), user.getPhone());
@@ -71,8 +69,7 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 			preparedStatement.setString(3, user.getFirstSurname());
 			preparedStatement.setString(4, user.getSecondSurname());
 			preparedStatement.setString(5, user.getPassword());
-			preparedStatement.setString(6, user.getReferencePoint());
-			preparedStatement.setString(7, user.getIdAsString());
+			preparedStatement.setString(6, user.getIdAsString());
 			
 			
 			preparedStatement.executeUpdate();
