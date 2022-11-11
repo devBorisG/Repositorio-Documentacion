@@ -14,7 +14,7 @@
   - Restricciones de Negocio
 - [Diagrama de clase](Arquitectura-Referencia.md)
 - [Tarjetas CRS](Plataforma-Tecnológica.md)
-- [Modelado de datos](Plataforma-Tecnológica.md)
+- [Modelado de datos](https://github.com/devBorisG/Repositorio-Documentacion/files/9992585/Datos.simulados.ultimo.final.xlsx)
 - *Diseño Detallado*
   - <details><summary>Vista Funcional</summary>
        [Modelado De Dominio](Vista Funcional/Modelado-Dominio.md)
