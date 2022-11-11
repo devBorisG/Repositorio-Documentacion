@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="5E1750F5-45AB-0B50-3BF0-7CBEDCA473EA" containerWithKeyObject="5FF410D6-3597-BD01-C2EA-A2A49F1F4795" localFKIndex="90FD975F-CC2B-386C-83BA-B6CBDBB3DBBE" name="PuntoInteres_Route_FK">
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="E1C8E80D-9413-A49C-E9E6-932C2B4BFD8B" containerWithKeyObject="E708D1C4-22EC-C0A9-FBA3-B6501F4DCE16" localFKIndex="8EA13D0F-E427-76E3-E5F9-A4C3D7FA266C" name="MyRouteRouteFK">
 <createdBy>DAVID</createdBy>
-<createdTime>2022-11-11 02:01:47 UTC</createdTime>
+<createdTime>2022-11-11 03:35:09 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>
 <referredTableLongName>Route</referredTableLongName>
 <deleteRule>NO ACTION</deleteRule>

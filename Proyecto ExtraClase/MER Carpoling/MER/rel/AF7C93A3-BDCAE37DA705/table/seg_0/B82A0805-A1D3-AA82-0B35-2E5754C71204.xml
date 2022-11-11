@@ -32,7 +32,7 @@
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="BECB4392-A458-8DD5-DAA7-48E490FEDCA2" name="Country_PK">
+<ind_PK_UK id="BECB4392-A458-8DD5-DAA7-48E490FEDCA2" name="CountryPK">
 <createdBy>DAVID</createdBy>
 <createdTime>2022-11-11 00:50:54 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>

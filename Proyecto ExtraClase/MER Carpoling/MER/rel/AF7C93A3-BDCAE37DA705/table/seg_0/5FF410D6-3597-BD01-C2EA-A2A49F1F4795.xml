@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5FF410D6-3597-BD01-C2EA-A2A49F1F4795" name="PuntoInteres">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5FF410D6-3597-BD01-C2EA-A2A49F1F4795" name="InterestPoint">
 <createdBy>DAVID</createdBy>
 <createdTime>2022-11-11 01:56:23 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>
@@ -19,7 +19,7 @@
 <ownDataTypeParameters>36,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="puntoInteres" id="2BE37FE9-351A-7DC6-15E9-85C64E55D562">
+<Column name="interestPoint" id="2BE37FE9-351A-7DC6-15E9-85C64E55D562">
 <createdBy>DAVID</createdBy>
 <createdTime>2022-11-11 02:01:32 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>
@@ -30,9 +30,9 @@
 <ownDataTypeParameters>100,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Route_id" id="735FA2BC-04BD-724F-154A-E30C7BFD4F30">
+<Column name="idCity" id="11D0E79D-D25B-5B79-0BC6-32C81F0F3C23">
 <createdBy>DAVID</createdBy>
-<createdTime>2022-11-11 02:01:47 UTC</createdTime>
+<createdTime>2022-11-11 03:23:37 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -42,27 +42,12 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="5E1750F5-45AB-0B50-3BF0-7CBEDCA473EA" referredColumn="A23382F2-4411-E960-84BA-5FAE68A6E92F"/>
-</associations>
-</Column>
-<Column name="Town_id" id="73FD27BF-171F-4C77-214C-AF338F68A32A">
-<createdBy>DAVID</createdBy>
-<createdTime>2022-11-11 02:10:17 UTC</createdTime>
-<ownerDesignName>MER</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>36</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="5E18D853-5E57-0F18-6683-98ED86E5C749" referredColumn="C32FD5E2-3884-7106-92CA-A1E218BA85F0"/>
+<colAssociation fkAssociation="5422E57F-850C-5E56-7415-7F2DB17866AD" referredColumn="6687CFC3-0081-2BD3-DDDB-967E33DC5821"/>
 </associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="CA364F24-1FC7-1AD6-B191-64BD0B9DF380" name="PuntoInteres_PK">
+<ind_PK_UK id="CA364F24-1FC7-1AD6-B191-64BD0B9DF380" name="PuntoInteresPK">
 <createdBy>DAVID</createdBy>
 <createdTime>2022-11-11 02:01:32 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>
@@ -73,24 +58,14 @@
 <colUsage columnID="92EBBE9A-865F-5997-DF76-F29E00399B29"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="90FD975F-CC2B-386C-83BA-B6CBDBB3DBBE" name="PuntoInteres_Route_FK">
+<ind_PK_UK id="24A297E4-E899-B973-BBE2-022106157A1E" name="InterestPointCityFK">
 <createdBy>DAVID</createdBy>
-<createdTime>2022-11-11 02:01:47 UTC</createdTime>
+<createdTime>2022-11-11 03:23:37 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="735FA2BC-04BD-724F-154A-E30C7BFD4F30"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="5CF1AADC-C79A-E9CB-2FCA-6F332063F9FA" name="PuntoInteres_Town_FK">
-<createdBy>DAVID</createdBy>
-<createdTime>2022-11-11 02:10:17 UTC</createdTime>
-<ownerDesignName>MER</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="73FD27BF-171F-4C77-214C-AF338F68A32A"/>
+<colUsage columnID="11D0E79D-D25B-5B79-0BC6-32C81F0F3C23"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>
