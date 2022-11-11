@@ -3,7 +3,7 @@
 ## Contenido
 
 - [Modelo de dominio](Visión.md)
-- [Event Storming](https://miro.com/app/board/uXjVPcZplpQ=/)
+- [Event storming](https://miro.com/app/board/uXjVPcZplpQ=/)
 - [MER](Drivers-Arquitectónicos.md)
   - <details><summary>Atributos de calidad</summary>
         1. Priorización de atributos<Br>
