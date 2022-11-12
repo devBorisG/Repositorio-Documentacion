@@ -2,7 +2,7 @@ package edu.uco.budget.service.usecase.year;
 
 import edu.uco.budget.domain.YearDTO;
 
-public interface CreateYearUseCase {
+public interface FindNextYearUseCase {
 
-	void execute(YearDTO year);
+	YearDTO execute();
 }
