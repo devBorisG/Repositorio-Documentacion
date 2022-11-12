@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5D8A14E5-2ACA-7671-A8B3-AB5E0C71B26A" name="RouteRequestMyRoute">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-11 04:01:36 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<ordsAlias>table_18</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="idRouteRequest" id="33EAA643-3075-F03A-BD69-8EA22F66A037">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-11 04:01:55 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>36</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2D915668-781A-A376-11F7-FC02986A9EDF" referredColumn="1A84B473-8973-E3F0-4A50-0E38CDFFDB1F"/>
+</associations>
+</Column>
+<Column name="idMyRoute" id="4A5F08C0-BC34-E492-8C75-EFA4ED199B5D">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-11 04:04:00 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>36</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="57F15163-3956-5443-518D-C3B61148F3C0" referredColumn="CD7F4497-B524-DE2A-C187-FC38B790CD9E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2F5883E8-BBFD-AC08-F3C0-27E2E9567344" name="RouteRequestMyRoutePK">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-11 04:08:47 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="33EAA643-3075-F03A-BD69-8EA22F66A037"/>
+<colUsage columnID="4A5F08C0-BC34-E492-8C75-EFA4ED199B5D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4ABB5633-E7EC-5546-0CE7-7A0D3F5CA322" name="RouteRequestMyRouteRouteRequestFK">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-11 04:01:55 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="33EAA643-3075-F03A-BD69-8EA22F66A037"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EA418A76-7AB3-5146-CFBA-55DBAD143EE8" name="RouteRequestMyRouteMyRouteFK">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-11 04:04:00 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4A5F08C0-BC34-E492-8C75-EFA4ED199B5D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

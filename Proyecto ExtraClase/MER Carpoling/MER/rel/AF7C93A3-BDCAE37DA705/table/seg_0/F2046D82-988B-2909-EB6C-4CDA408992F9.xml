@@ -62,9 +62,9 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Route_id" id="3F60EDF1-A5BE-C2CE-4A24-EF2678394B15">
-<createdBy>DAVID</createdBy>
-<createdTime>2022-09-16 05:19:06 UTC</createdTime>
+<Column name="idUser" id="BBA9F371-E562-154D-91FD-3B6F4E2B79EC">
+<createdBy>Federico</createdBy>
+<createdTime>2022-11-10 21:20:12 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -74,12 +74,12 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="8BA91205-6067-C835-8565-4AD5A093A7E8" referredColumn="A23382F2-4411-E960-84BA-5FAE68A6E92F"/>
+<colAssociation fkAssociation="F3334D86-FE49-F141-21F3-98E6C145D76F" referredColumn="DDAA15FD-130D-FAEE-C0BB-767AD024CA7F"/>
 </associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="5F50EA15-1214-4E1C-1C06-C7C87BAE128C" name="RouteRequest_PK">
+<ind_PK_UK id="5F50EA15-1214-4E1C-1C06-C7C87BAE128C" name="RouteRequestPK">
 <createdBy>DAVID</createdBy>
 <createdTime>2022-09-16 01:24:26 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>
@@ -90,14 +90,14 @@
 <colUsage columnID="1A84B473-8973-E3F0-4A50-0E38CDFFDB1F"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="240B6078-DCA9-7F40-AAA3-DC789BF37334" name="RouteRequest_Route_FK">
-<createdBy>DAVID</createdBy>
-<createdTime>2022-09-16 05:19:06 UTC</createdTime>
+<ind_PK_UK id="2497EE89-2E6E-9265-A66D-B0555F15B0DF" name="RouteRequestUserFK">
+<createdBy>Federico</createdBy>
+<createdTime>2022-11-10 21:20:12 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="3F60EDF1-A5BE-C2CE-4A24-EF2678394B15"/>
+<colUsage columnID="BBA9F371-E562-154D-91FD-3B6F4E2B79EC"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

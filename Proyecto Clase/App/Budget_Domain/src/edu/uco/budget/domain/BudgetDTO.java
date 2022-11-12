@@ -8,9 +8,9 @@ import java.util.UUID;
 import static edu.uco.budget.crosscutting.helper.UUIDHelper.getUUIDAsString;
 
 import static edu.uco.budget.crosscutting.helper.UUIDHelper.getDefaultUUID;
-import static edu.uco.budget.crosscutting.helper.UUIDHelper.getNewUUID;
 
 import static edu.uco.budget.crosscutting.helper.ObjectHelper.getDefaultIfNull;
+import static edu.uco.budget.crosscutting.helper.UUIDHelper.getUUIDFromString;
 
 public class BudgetDTO {
 	
@@ -19,7 +19,7 @@ public class BudgetDTO {
 	private YearDTO year;
 	
 	public BudgetDTO() {
-		setId(getNewUUID());
+		setId(getDefaultUUID(id));
 		setPerson(getPersonDTOBuilder().build());
 		setYear(getYearDTOBuilder().build());
 	}
@@ -33,6 +33,10 @@ public class BudgetDTO {
 
 	public static final BudgetDTO create(final UUID id,final PersonDTO person,final YearDTO year) {
 		return new BudgetDTO(id, person,year);
+	}
+	
+	public static final BudgetDTO create(final String id,final PersonDTO person,final YearDTO year) {
+		return new BudgetDTO(getUUIDFromString(id), person,year);
 	}
 
 	public UUID getId() {

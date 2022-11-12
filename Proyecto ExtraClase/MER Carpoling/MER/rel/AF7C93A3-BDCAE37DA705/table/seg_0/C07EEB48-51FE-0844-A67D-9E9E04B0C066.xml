@@ -16,15 +16,41 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>36</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>36,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
 <colAssociation fkAssociation="3FBB0BF5-DD46-532F-D6B1-CD5FAAA0984E" referredColumn="DDAA15FD-130D-FAEE-C0BB-767AD024CA7F"/>
 </associations>
 </Column>
+<Column name="licenseNumber" id="711467EC-28AB-4948-69F0-A165D56AE7F2">
+<createdBy>Federico</createdBy>
+<createdTime>2022-11-10 20:04:10 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="AutorizedCategories_id" id="1E7AE6FF-F2CA-A0D3-4A11-51B1D0CD8B9F">
+<createdBy>Federico</createdBy>
+<createdTime>2022-11-11 11:49:17 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>36</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A75DFAED-33F1-6A1C-0627-819E791632C9" referredColumn="56E75F05-A039-6EB4-5766-ABF5D2DB5695"/>
+</associations>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="717CF7E7-DB3C-EB8E-FA18-3BBDDEB10283" name="Driver_PK">
+<ind_PK_UK id="717CF7E7-DB3C-EB8E-FA18-3BBDDEB10283" name="DriverPK">
 <createdBy>DAVID</createdBy>
 <createdTime>2022-09-15 23:56:00 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>
@@ -35,7 +61,7 @@
 <colUsage columnID="B081099D-1944-8736-D13E-4026FC148B32"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="70A4322E-143B-AD9D-5983-7F51A12D403A" name="Driver_User_FK">
+<ind_PK_UK id="70A4322E-143B-AD9D-5983-7F51A12D403A" name="DriverUserFK">
 <createdBy>DAVID</createdBy>
 <createdTime>2022-11-09 06:08:06 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>
@@ -43,6 +69,16 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="B081099D-1944-8736-D13E-4026FC148B32"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CB902C93-4ACC-CE8E-3403-5F64C8D3670C" name="Driver_AutorizedCategories_FK">
+<createdBy>Federico</createdBy>
+<createdTime>2022-11-11 11:49:17 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1E7AE6FF-F2CA-A0D3-4A11-51B1D0CD8B9F"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

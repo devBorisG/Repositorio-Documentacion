@@ -29,9 +29,9 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Customer_id" id="92B6CCEC-1897-B6B9-34EB-ADCB78147DD4">
-<createdBy>DAVID</createdBy>
-<createdTime>2022-09-16 01:39:53 UTC</createdTime>
+<Column name="MyRoute_id" id="EC857990-2E84-010E-7079-EB2419753EAA">
+<createdBy>Federico</createdBy>
+<createdTime>2022-11-11 11:48:50 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -41,27 +41,12 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="1967D1E1-3E2A-8B3D-5AE7-B293DED63A60" referredColumn="8084A672-779D-5B33-3A86-09C22BE8B502"/>
-</associations>
-</Column>
-<Column name="Driver_id" id="8B924589-475F-8869-8516-3E9202519B64">
-<createdBy>DAVID</createdBy>
-<createdTime>2022-09-16 01:42:53 UTC</createdTime>
-<ownerDesignName>MER</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>36</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="29AB6360-0906-F8D8-A554-75A85667AB0E" referredColumn="B081099D-1944-8736-D13E-4026FC148B32"/>
+<colAssociation fkAssociation="8E8C865E-95FC-C0EF-5C2B-4D4ED8B4A3D0" referredColumn="CD7F4497-B524-DE2A-C187-FC38B790CD9E"/>
 </associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="ED01593D-A57D-F246-F80B-3F22DFC476F8" name="Score_PK">
+<ind_PK_UK id="ED01593D-A57D-F246-F80B-3F22DFC476F8" name="ScorePK">
 <createdBy>DAVID</createdBy>
 <createdTime>2022-09-16 01:08:16 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>
@@ -72,24 +57,14 @@
 <colUsage columnID="5B842D84-4132-1E23-2B7E-CE226D07E8B3"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="3F7B5725-9914-2091-88FE-21449A884E5C" name="Score_Customer_FK">
-<createdBy>DAVID</createdBy>
-<createdTime>2022-09-16 01:39:53 UTC</createdTime>
+<ind_PK_UK id="63A602EF-8E98-0AF4-09FE-8B30484E7153" name="Score_MyRoute_FK">
+<createdBy>Federico</createdBy>
+<createdTime>2022-11-11 11:48:50 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="92B6CCEC-1897-B6B9-34EB-ADCB78147DD4"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="4FCC2DA1-0278-5A63-FB39-9714708D0020" name="Score_Driver_FK">
-<createdBy>DAVID</createdBy>
-<createdTime>2022-09-16 01:42:53 UTC</createdTime>
-<ownerDesignName>MER</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="8B924589-475F-8869-8516-3E9202519B64"/>
+<colUsage columnID="EC857990-2E84-010E-7079-EB2419753EAA"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

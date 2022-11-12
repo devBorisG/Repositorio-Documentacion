@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="7461E1A2-803A-8935-69DA-E069E6C26A9A" containerWithKeyObject="95F5CFF3-8ED3-C7F1-D544-A33165581747" localFKIndex="5311ADDB-03C9-425B-40B2-CBC217A88AE8" name="DetailInterestPointRouteInterestPointFK">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-11 03:58:40 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<referredTableLongName>InterestPoint</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>5FF410D6-3597-BD01-C2EA-A2A49F1F4795</referredTableID>
+<keyObject>CA364F24-1FC7-1AD6-B191-64BD0B9DF380</keyObject>
+<referredKeyID>CA364F24-1FC7-1AD6-B191-64BD0B9DF380</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
