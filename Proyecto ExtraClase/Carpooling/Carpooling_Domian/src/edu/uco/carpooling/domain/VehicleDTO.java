@@ -1,4 +1,4 @@
-package edu.uco.carpooling.domain;
+lemepackage edu.uco.carpooling.domain;
 
 import java.util.UUID;
 
