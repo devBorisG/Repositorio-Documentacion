@@ -41,21 +41,6 @@
 <ownDataTypeParameters>100,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Driver_id" id="49DED2FF-70C6-4AC2-244E-62148A5D1369">
-<createdBy>DAVID</createdBy>
-<createdTime>2022-11-11 01:46:17 UTC</createdTime>
-<ownerDesignName>MER</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>36</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="067871F8-9E89-8FA0-F102-E82A46F7EC4F" referredColumn="B081099D-1944-8736-D13E-4026FC148B32"/>
-</associations>
-</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="529B0947-890B-E711-5503-7DAE68DFEC62" name="AutorizedCategories_PK">
@@ -67,16 +52,6 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="56E75F05-A039-6EB4-5766-ABF5D2DB5695"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="D8980C06-E1B8-CADC-94A5-E8FDE7CEFF6D" name="AutorizedCategories_Driver_FK">
-<createdBy>DAVID</createdBy>
-<createdTime>2022-11-11 01:46:17 UTC</createdTime>
-<ownerDesignName>MER</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="49DED2FF-70C6-4AC2-244E-62148A5D1369"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

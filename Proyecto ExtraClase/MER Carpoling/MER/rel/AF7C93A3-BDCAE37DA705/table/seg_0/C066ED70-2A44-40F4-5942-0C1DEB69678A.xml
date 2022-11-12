@@ -38,17 +38,6 @@
 <colAssociation fkAssociation="D91D4690-EE80-EFF1-1CE5-BFF10D85FDDF" referredColumn="B081099D-1944-8736-D13E-4026FC148B32"/>
 </associations>
 </Column>
-<Column name="state" id="C59D57FF-6FA5-256E-5219-8BE4AC2702E6">
-<createdBy>DAVID</createdBy>
-<createdTime>2022-09-16 01:36:04 UTC</createdTime>
-<ownerDesignName>MER</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT025</logicalDatatype>
-<dataTypeSize>1</dataTypeSize>
-<ownDataTypeParameters>1,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="78BB7825-2F3B-4769-667C-217FA78F89D6" name="DrivervehiclePK">
