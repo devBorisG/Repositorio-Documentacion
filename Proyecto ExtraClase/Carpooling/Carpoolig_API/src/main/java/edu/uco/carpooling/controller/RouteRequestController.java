@@ -20,7 +20,7 @@ import edu.uco.carpooling.domain.RouteRequestDTO;
 @RequestMapping("/carpooling/routerequest")
 public class RouteRequestController {
 
-	public CreateRouteRequest createRouteRequest = new CreateRouteRequestImpl();
+	public CreateRouteRequestCommand createRouteRequest = new CreateRouteRequestCommandImpl();
 	
 	public ResponseEntity<Response<RouteRequestDTO>> create(@RequestBody RouteRequestDTO routeRequest){
 		
