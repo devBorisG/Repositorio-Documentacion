@@ -32,15 +32,13 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 			preparedStatement.setString(5, user.getFirstSurname());
 			preparedStatement.setString(6, user.getSecondSurname());
 			preparedStatement.setString(7, user.getPassword());
-			preparedStatement.setString(8, user.getReferencePoint());
 
 			insertPhone(user.getIdAsString(), user.getPhone());
 			insertCompanyEmail(user.getIdAsString(), user.getCompanyEmail());
 			
 			preparedStatement.executeUpdate();
 		} catch (final SQLException exception) {
-			final String message = Messages.CustomerPostgreSqlDAO.TECHNICAL_PROBLEM_CREATE_CUSTOMER
-					.concat(user.getIdAsString());
+			final String message = Messages.CustomerPostgreSqlDAO.TECHNICAL_PROBLEM_CREATE_CUSTOMER;
 			throw DataCarpoolingException.createTechnicalException(message, exception);
 		} catch (final Exception exception) {
 			throw DataCarpoolingException.createTechnicalException(
@@ -66,12 +64,10 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 			preparedStatement.setString(3, user.getFirstSurname());
 			preparedStatement.setString(4, user.getSecondSurname());
 			preparedStatement.setString(5, user.getPassword());
-			preparedStatement.setString(6, user.getReferencePoint());
 			
 			preparedStatement.executeUpdate();
 		} catch (final SQLException exception) {
-			final String message = Messages.CustomerPostgreSqlDAO.TECHNICAL_PROBLEM_UPDATE_CUTOMER
-					.concat(user.getIdAsString());
+			final String message = Messages.CustomerPostgreSqlDAO.TECHNICAL_PROBLEM_UPDATE_CUTOMER;
 			throw DataCarpoolingException.createTechnicalException(message, exception);
 		} catch (final Exception exception) {
 			throw DataCarpoolingException.createTechnicalException(

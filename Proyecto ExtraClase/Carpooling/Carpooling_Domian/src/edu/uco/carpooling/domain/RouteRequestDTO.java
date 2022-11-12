@@ -13,6 +13,9 @@ import static edu.uco.carpooling.crosscutting.helper.StringHelper.EMPTY;
 import static edu.uco.carpooling.domain.builder.CustomerDTOBuilder.getUserDTOBuilder;
 import static edu.uco.carpooling.crosscutting.helper.StringHelper.applyTrim;
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getUUIDFromString;
+import static edu.uco.carpooling.crosscutting.helper.DateHelper.DEFAULT_DATE;
+import static edu.uco.carpooling.crosscutting.helper.TimeHelper.TIME;
+import edu.uco.carpooling.crosscutting.helper.UUIDHelper;
 
 public class RouteRequestDTO {
 
@@ -24,13 +27,23 @@ public class RouteRequestDTO {
 	private String routeRequestOrigin;
 	private String routeRequestEnd;
 	
-	public RouteRequestDTO() {
+	/*public RouteRequestDTO() {
 		setId(getNewUUID());
 		setServiceRequestDate(getServiceRequestDate());
 		setServiceRequestTime(getServiceRequestTime());
 		setRouterequesEnd(EMPTY);
 		setRouterequesOrigin(EMPTY);
 		setCustomer(getUserDTOBuilder().build());
+		setStatus(EMPTY);
+	}*/
+	
+	public RouteRequestDTO() {
+		setId(getNewUUID());
+		setServiceRequestDate(DEFAULT_DATE);
+		setServiceRequestTime(TIME);
+		setRouterequesOrigin(EMPTY);
+		setRouterequesEnd(EMPTY);
+		setCustomer(null);
 		setStatus(EMPTY);
 	}
 	
@@ -61,6 +74,10 @@ public class RouteRequestDTO {
 			final String routeRequestEnd) {
 		return new RouteRequestDTO(getUUIDFromString(id), serviceRequesTime, serviceRequestDate, customer, 
 				status, routeRequestOrigin, routeRequestEnd);
+	}
+	
+	public static final RouteRequestDTO create(final UUID id) {
+		return new RouteRequestDTO(id, TIME, DEFAULT_DATE, null, EMPTY, EMPTY, EMPTY);
 	}
 	
 	public static final String getUUIDAsString(final UUID value) {
@@ -112,5 +129,13 @@ public class RouteRequestDTO {
 	
 	public final String getIdAsString() {
 		return getUUIDAsString(getId());
+	}
+	
+	public boolean exist() {
+		return !UUIDHelper.isDefaultUUID(id);
+	}
+	
+	public boolean notExist() {
+		return !exist();
 	}
 }
