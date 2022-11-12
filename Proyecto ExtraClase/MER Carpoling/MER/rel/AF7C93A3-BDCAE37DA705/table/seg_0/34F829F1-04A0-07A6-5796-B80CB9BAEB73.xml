@@ -19,48 +19,7 @@
 <ownDataTypeParameters>36,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="quota" id="33ADE7AE-2CD1-A67E-56E5-F76C2F370511">
-<createdBy>DAVID</createdBy>
-<createdTime>2022-09-16 01:16:35 UTC</createdTime>
-<ownerDesignName>MER</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="createHour" id="AF8C9931-7325-54B8-EFCE-BAD30C05AC64">
-<createdBy>DAVID</createdBy>
-<createdTime>2022-09-16 01:16:35 UTC</createdTime>
-<ownerDesignName>MER</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT007</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="finishHour" id="AF8686A6-0F8A-9D13-730B-AC48A8A291E1">
-<createdBy>DAVID</createdBy>
-<createdTime>2022-09-16 01:16:35 UTC</createdTime>
-<ownerDesignName>MER</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT007</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="state" id="374CC494-8732-9899-CA33-15D02C8EBE05">
-<createdBy>DAVID</createdBy>
-<createdTime>2022-09-16 01:16:35 UTC</createdTime>
-<ownerDesignName>MER</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT025</logicalDatatype>
-<dataTypeSize>1</dataTypeSize>
-<ownDataTypeParameters>1,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="startRoute" id="D750B6D1-E7A1-688A-031E-C4A7EA679373">
+<Column name="puntoInicio" id="D750B6D1-E7A1-688A-031E-C4A7EA679373">
 <createdBy>DAVID</createdBy>
 <createdTime>2022-09-16 01:16:35 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>
@@ -82,9 +41,47 @@
 <ownDataTypeParameters>100,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="idDetailInterestPointRoute" id="BA24A785-0CCC-0767-7B5D-F62125FBF382">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-11 03:31:46 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>36</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BDAFB66B-2C72-4BF7-D47C-936E8DADDB5C" referredColumn="9F105D9F-F6B3-ACC8-0D88-95544C3CB58A"/>
+</associations>
+</Column>
+<Column name="idInterestPoint" id="33C78CDC-AD80-F295-B077-91DD3CE01E90">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-11 03:58:24 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>36</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CF43509C-E762-35CE-E19D-1E6C95E3A5AA" referredColumn="92EBBE9A-865F-5997-DF76-F29E00399B29"/>
+</associations>
+</Column>
+<Column name="puntoFin" id="57741E01-3DD6-5A69-6922-F92527300592">
+<createdBy>Federico</createdBy>
+<createdTime>2022-11-11 11:53:00 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="B3038573-1441-B739-873E-6954583EFAA9" name="Route_PK">
+<ind_PK_UK id="B3038573-1441-B739-873E-6954583EFAA9" name="RoutePK">
 <createdBy>DAVID</createdBy>
 <createdTime>2022-09-16 01:16:35 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>
@@ -93,6 +90,26 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="A23382F2-4411-E960-84BA-5FAE68A6E92F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1D382103-6739-B8B5-7250-498BEDA69226" name="RouteDetailInterestPointRouteFK">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-11 03:31:46 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BA24A785-0CCC-0767-7B5D-F62125FBF382"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="38E90C28-24A2-CCC4-5F75-50088C2EE873" name="RouteInterestPointFK">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-11 03:58:24 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="33C78CDC-AD80-F295-B077-91DD3CE01E90"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

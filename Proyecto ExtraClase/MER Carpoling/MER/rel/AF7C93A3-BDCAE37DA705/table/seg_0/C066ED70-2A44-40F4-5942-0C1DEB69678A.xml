@@ -8,7 +8,7 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="Vehicle_id" id="8E78CF2E-A432-FB09-A0D0-E4018BE1BBFB">
+<Column name="idVehicle" id="8E78CF2E-A432-FB09-A0D0-E4018BE1BBFB">
 <createdBy>DAVID</createdBy>
 <createdTime>2022-09-16 01:44:52 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>
@@ -23,7 +23,7 @@
 <colAssociation fkAssociation="0AD59433-C4ED-B5C7-912C-49AE79797A60" referredColumn="C2471370-25FD-EE33-0B24-A40AF3976ADD"/>
 </associations>
 </Column>
-<Column name="Driver_id" id="D2A64ECE-A871-D1A6-E3E0-CFD5B584BFCB">
+<Column name="idDriver" id="D2A64ECE-A871-D1A6-E3E0-CFD5B584BFCB">
 <createdBy>DAVID</createdBy>
 <createdTime>2022-09-16 01:44:45 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>
@@ -38,20 +38,9 @@
 <colAssociation fkAssociation="D91D4690-EE80-EFF1-1CE5-BFF10D85FDDF" referredColumn="B081099D-1944-8736-D13E-4026FC148B32"/>
 </associations>
 </Column>
-<Column name="state" id="C59D57FF-6FA5-256E-5219-8BE4AC2702E6">
-<createdBy>DAVID</createdBy>
-<createdTime>2022-09-16 01:36:04 UTC</createdTime>
-<ownerDesignName>MER</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT025</logicalDatatype>
-<dataTypeSize>1</dataTypeSize>
-<ownDataTypeParameters>1,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="78BB7825-2F3B-4769-667C-217FA78F89D6" name="Drivervehicle_PK">
+<ind_PK_UK id="78BB7825-2F3B-4769-667C-217FA78F89D6" name="DrivervehiclePK">
 <createdBy>DAVID</createdBy>
 <createdTime>2022-09-16 01:36:04 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>
@@ -63,7 +52,7 @@
 <colUsage columnID="D2A64ECE-A871-D1A6-E3E0-CFD5B584BFCB"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="6465D8E1-78BC-09A5-D183-5375330CB5EA" name="DriverVehicle_Driver_FK">
+<ind_PK_UK id="6465D8E1-78BC-09A5-D183-5375330CB5EA" name="DriverVehicleDriverFK">
 <createdBy>DAVID</createdBy>
 <createdTime>2022-09-16 01:44:45 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>
@@ -73,7 +62,7 @@
 <colUsage columnID="D2A64ECE-A871-D1A6-E3E0-CFD5B584BFCB"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="D3B68FDA-41DC-0EE5-3FD1-33EBA9EDC7DD" name="DriverVehicle_Vehicle_FK">
+<ind_PK_UK id="D3B68FDA-41DC-0EE5-3FD1-33EBA9EDC7DD" name="DriverVehicleVehicleFK">
 <createdBy>DAVID</createdBy>
 <createdTime>2022-09-16 01:44:52 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>

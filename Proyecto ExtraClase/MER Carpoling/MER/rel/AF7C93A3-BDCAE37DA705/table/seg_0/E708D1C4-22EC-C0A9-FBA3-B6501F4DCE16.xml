@@ -1,0 +1,112 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E708D1C4-22EC-C0A9-FBA3-B6501F4DCE16" name="MyRoute">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-11 03:33:18 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<ordsAlias>table_17</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="CD7F4497-B524-DE2A-C187-FC38B790CD9E">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-11 04:03:56 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>36</dataTypeSize>
+<ownDataTypeParameters>36,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="idRoute" id="BC5DB4C0-8483-25AF-BFA3-56352FE0A07B">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-11 03:35:09 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>36</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E1C8E80D-9413-A49C-E9E6-932C2B4BFD8B" referredColumn="A23382F2-4411-E960-84BA-5FAE68A6E92F"/>
+</associations>
+</Column>
+<Column name="idVehicle" id="E9CA8C1B-9467-61CC-C0C2-1B9A7ADBC6E3">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-11 04:05:05 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>36</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="172B285B-EFA9-8E61-C20F-19F479A959F8" referredColumn="8E78CF2E-A432-FB09-A0D0-E4018BE1BBFB"/>
+</associations>
+</Column>
+<Column name="idDriver" id="E265382B-1509-4A6F-55B6-A0658F27DDBA">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-11 04:05:05 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>36</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="172B285B-EFA9-8E61-C20F-19F479A959F8" referredColumn="D2A64ECE-A871-D1A6-E3E0-CFD5B584BFCB"/>
+</associations>
+</Column>
+<Column name="cupos" id="DCF9C250-6861-4AB2-719B-080CF30D535A">
+<createdBy>Federico</createdBy>
+<createdTime>2022-11-11 11:53:37 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7CDACD5D-5E09-DA24-3D6B-72AAEE1E6432" name="MyRoutePK">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-11 04:03:56 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CD7F4497-B524-DE2A-C187-FC38B790CD9E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8EA13D0F-E427-76E3-E5F9-A4C3D7FA266C" name="MyRouteRouteFK">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-11 03:35:09 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BC5DB4C0-8483-25AF-BFA3-56352FE0A07B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A8834E47-7953-5CE0-970D-FBDCC5BEAD49" name="MyRouteDriverVehicleFK">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-11 04:05:05 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E9CA8C1B-9467-61CC-C0C2-1B9A7ADBC6E3"/>
+<colUsage columnID="E265382B-1509-4A6F-55B6-A0658F27DDBA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
