@@ -221,6 +221,19 @@ public class Messages {
 	 	public static final String TECHNICAL_PROBLEM_FILL_ROUTE_STATUS_DTO = "There was a problem filling authotizedcategoryDTO from the resultSet ";
 	}
 	
+	public static class VehiclePosgreSqlDao{
+		private VehiclePosgreSqlDao() {
+			super();
+		}
+
+		public static final String TECHNICAL_PROBLEM_CREATE_VEHICLE = "There was a problem trying to create the Vehicle in PostgreSqlDao with id= ";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_VEHICLE = "The was an unexpected error trying to create Vehicle in PostgreSqlDao";
+		public static final String TECHNICAL__PROBLEM_DELETE_VEHICLE = "The was a problem trying to delete the vehicle in PostgreSqlDao with id= ";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_DELETE_VEHICLE = "The was a problem trying to delete the vehicle in PostgreSqlDao";
+
+		
+	}
+	
 	public static class AuthotizedCategoryPostgresSqlDAOPostgresSqlDAO{
         public AuthotizedCategoryPostgresSqlDAOPostgresSqlDAO(){super();}
 
@@ -269,8 +282,6 @@ public class Messages {
 		
 	 	public static final String BUSSINES_CUSTOMER_DOES_NOT_EXIST = "El cliente que desea buscar no existe";
 	 	public static final String BUSSINES_ROUTE_REQUEST_DOES_EXIST = "la peticion ruta ya feu creada";
-		
-		
 		
 	}
 }
