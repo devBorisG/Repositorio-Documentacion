@@ -1,9 +1,9 @@
-package edu.uco.carpooling.service.business.routeequest.implementation;
+package edu.uco.carpooling.service.business.usecase.routerequest.implementation;
 
 import edu.uco.carpooling.domain.CustomerDTO;
 import edu.uco.carpooling.domain.RouteRequestDTO;
 import edu.uco.carpooling.service.business.customer.implementation.FindCustomerByIdImpl;
-import edu.uco.carpooling.service.business.routerequest.CreateRouteRequestUseCase;
+import edu.uco.carpooling.service.business.usecase.routerequest.CreateRouteRequestUseCase;
 import edu.uco.carpooling.crosscutting.exception.UseCaseCustomException;
 import edu.uco.carpooling.crosscutting.messages.Messages;
 import edu.uco.carpooling.crosscutting.helper.UUIDHelper;

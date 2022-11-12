@@ -1,4 +1,4 @@
-package edu.uco.carpooling.service.business.routerequest;
+package edu.uco.carpooling.service.business.usecase.routerequest;
 
 import java.util.UUID;
 

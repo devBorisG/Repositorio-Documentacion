@@ -1,4 +1,4 @@
-package edu.uco.carpooling.service.business.routerequest;
+package edu.uco.carpooling.service.business.usecase.routerequest;
 
 import edu.uco.carpooling.domain.RouteRequestDTO;
 
