@@ -10,10 +10,6 @@ public interface DriverPerVehicleDAO {
 	
     void create (DriverPerVehicleDTO driverPerVehicle);
 
-    List<DriverPerVehicleDTO> find(DriverPerVehicleDTO driverPerVehicle);
-
-    void update(DriverPerVehicleDTO driverPerVehicle);
-
     void delete(UUID id) throws SQLException;
 
 }

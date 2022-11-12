@@ -1,19 +1,15 @@
 package edu.uco.carpooling.domain.builder;
 
-import java.util.UUID;
-
 import edu.uco.carpooling.domain.DriverDTO;
 import edu.uco.carpooling.domain.DriverPerVehicleDTO;
 import edu.uco.carpooling.domain.VehicleDTO;
-import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getDefaultUUID;
 import static edu.uco.carpooling.domain.DriverPerVehicleDTO.create;
 
 
 public class DriverPerVehicleDTOBuilder {
-
-    private UUID id;
     private DriverDTO driver;
     private VehicleDTO vehicle;
+    private String state;
 
     private DriverPerVehicleDTOBuilder() {
     	super();
@@ -23,13 +19,6 @@ public class DriverPerVehicleDTOBuilder {
         return new DriverPerVehicleDTOBuilder();
     }
 
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = getDefaultUUID(id);
-    }
 
     public void setDriver(DriverDTO driver) {
         this.driver = driver;
@@ -39,7 +28,15 @@ public class DriverPerVehicleDTOBuilder {
         this.vehicle = vehicle;
     }
     
-    public final DriverPerVehicleDTO build() {
-    	return create(id,driver,vehicle);
+    public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public final DriverPerVehicleDTO build() {
+    	return create(driver,vehicle,state);
     }
 }

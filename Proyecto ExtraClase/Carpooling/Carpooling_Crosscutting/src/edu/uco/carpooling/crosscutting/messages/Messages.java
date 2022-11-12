@@ -203,9 +203,11 @@ public class Messages {
 	public static class DriverPerVehiclePostgresSqlDAO{
         public DriverPerVehiclePostgresSqlDAO(){super();}
 
-	 	public static final String TECHNICAL_PROBLEM_CREATE_DRIVER_PER_VEHICLE  = "There was a problem trying to create the driver per vehicle in SQLServerDaoFactory with id= ";
+	 	public static final String TECHNICAL_PROBLEM_CREATE_DRIVER_PER_VEHICLE  = "There was a problem trying to create the driver per vehicle in SQLServerDaoFactory with idVehicle= ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_DRIVER_PER_VEHICLE = "There was an unexpected problem trying to create driver per vehivle in PostgreSQLDaoFactory";
 	 	public static final String TECHNICAL_PROBLEM_UPDATE_DRIVER_PER_VEHICLE  = "There was a problem trying to update the driver per vehicle in SQLServerDaoFactory with id= ";
-	 	public static final String TECHNICAL_PROBLEM_DELETE_DRIVER_PER_VEHICLE  = "There was a problem trying to delete the driver per vehicle in SQLServerDaoFactory with id= ";
+	 	public static final String TECHNICAL_PROBLEM_DELETE_DRIVER_PER_VEHICLE  = "There was a problem trying to delete the driver per vehicle in PostgreSQLDaoFactory with idDriver= ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_DELETE_DRIVER_PER_VEHICLE = "The was an unexpected error tryinf to delete driver per vehicle in PostgreSQLDapFactory";
 	 	public static final String TECHNICAL_PROBLEM_FILL_RESULTS = "There was a problem recovering results from the select ";
 	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS = "There was an unexpected problem trying recovering results from the select ";
 	 	public static final String TECHNICAL_PROBLEM_FILL_DRIVER_PER_VEHICLE_DTO = "There was a problem filling authotizedcategoryDTO from the resultSet ";
