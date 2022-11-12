@@ -33,6 +33,9 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 			preparedStatement.setString(5, customer.getFirstSurname());
 			preparedStatement.setString(6, customer.getSecondSurname());
 			preparedStatement.setString(7, customer.getPassword());
+
+			insertPhone(customer.getIdAsString(), customer.getPhone());
+			insertCompanyEmail(customer.getIdAsString(), customer.getCompanyEmail());
 			
 			preparedStatement.executeUpdate();
 			

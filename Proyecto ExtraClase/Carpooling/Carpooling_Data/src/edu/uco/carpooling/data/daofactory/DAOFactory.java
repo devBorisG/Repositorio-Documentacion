@@ -6,6 +6,7 @@ import edu.uco.carpooling.data.dao.DriverDAO;
 import edu.uco.carpooling.data.dao.CustomerDAO;
 import edu.uco.carpooling.data.dao.VehicleDAO;
 import edu.uco.carpooling.data.enumeration.DAOFactoryType;
+import edu.uco.carpooling.data.dao.RouteRequestDAO;
 
 public abstract class DAOFactory {
 
@@ -60,6 +61,8 @@ public abstract class DAOFactory {
 	public abstract VehicleDAO getVehicleDAO();
 
 	public abstract DriverDAO getDriverDAO();
+	
+	public abstract RouteRequestDAO getRouteRequestDTO();
 
 	// TODO create others getDAO
 }
