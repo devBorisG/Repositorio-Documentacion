@@ -15,6 +15,8 @@ import edu.uco.carpooling.controller.validator.Validator;
 import edu.uco.carpooling.crosscutting.exception.CarpoolingCustomException;
 import edu.uco.carpooling.crosscutting.messages.Message;
 import edu.uco.carpooling.domain.RouteRequestDTO;
+import edu.uco.carpooling.service.command.CreateRouteRequestCommand;
+import edu.uco.carpooling.service.command.implementation.CreateRouteRequestCommandImpl;
 
 @RestController
 @RequestMapping("/carpooling/routerequest")
@@ -32,7 +34,7 @@ public class RouteRequestController {
 			List<Message> messages = validator.validate(routeRequest);
 			
 			if (messages.isEmpty()) {
-				createRouteRequest.execute(RouteRequest);
+				createRouteRequest.execute(routeRequest);
 			}
 			
 			final List<RouteRequestDTO> data = new ArrayList<>();

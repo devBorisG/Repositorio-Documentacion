@@ -259,4 +259,16 @@ public class Messages {
 	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STAMENT = "There was an unexpected problem trying to prepared the sql stament the parameters";
 	 	public static final String TECHNICAL_PROBLEM_FILL_ROUTE_STATUS_DTO = "There was a problem filling routeStatusDTO from the resultSet ";
 	}
+	
+	public static class CreateRouteRequestUseCaseImpl{
+		private CreateRouteRequestUseCaseImpl() {
+			super();
+		}
+		
+	 	public static final String BUSSINES_CUSTOMER_DOES_NOT_EXIST = "El cliente que desea buscar no existe";
+	 	public static final String BUSSINES_ROUTE_REQUEST_DOES_EXIST = "la peticion ruta ya feu creada";
+		
+		
+		
+	}
 }

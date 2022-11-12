@@ -28,16 +28,17 @@ public class RouteRequestPostgreSqlDAO extends DAORelational implements RouteReq
 
 	@Override
 	public final void create(final RouteRequestDTO routeRequest) {
-		final var sql = "INSERT INTO ROUTEREQUEST(id,routeOrigin,routeDestination,status,date,HourRequest,Customer_id)"
+		final var sql = "INSERT INTO ROUTEREQUEST(id,routeOrigin,routeDestination,condirmedRoute,date,idUser,requestHour)"
 				+ "VALUES(?,?,?,?,?,?,?)";
 		
 		try (final var preparedStatement = getConnection().prepareStatement(sql)) {
 			preparedStatement.setString(1, routeRequest.getIdAsString());
 			preparedStatement.setString(2, routeRequest.getRouterequesOrigin());
 			preparedStatement.setString(3, routeRequest.getRouterequesEnd());
-			preparedStatement.setDate(4, routeRequest.getServiceRequestDate());
-			preparedStatement.setTime(5, routeRequest.getServiceRequestTime());
+			preparedStatement.setString(4, routeRequest.getStatus());
+			preparedStatement.setDate(5, routeRequest.getServiceRequestDate());
 			preparedStatement.setString(6, routeRequest.getCustomer().getIdAsString());
+			preparedStatement.setTime(7, routeRequest.getServiceRequestTime());
 			
 			preparedStatement.executeUpdate();
 		} catch (final SQLException exception) {
