@@ -5,7 +5,7 @@ import static edu.uco.carpooling.crosscutting.helper.StringHelper.applyTrim;
 import static edu.uco.carpooling.crosscutting.helper.StringHelper.isEmpty;
 import static edu.uco.carpooling.crosscutting.helper.ObjectHelper.getDefaultIfNull;
 
-class CarpoolingCustomException extends RuntimeException{
+public class CarpoolingCustomException extends RuntimeException{
 
 	private static final long serialVersionUID = -1248346293196099172L;
 	private String userMessage;
