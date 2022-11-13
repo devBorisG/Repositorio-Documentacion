@@ -19,15 +19,13 @@ public class CreateRouteRequestCommandImpl implements CreateRouteRequestCommand{
 			factory.initTransaction();
 			useCase.create(routeRequest);
 			factory.confirmTransaction();
-		} catch (CarpoolingCustomException e) {
+		} catch (CarpoolingCustomException exception) {
 			factory.cancelTransaction();
-			throw e;
-		} catch (Exception e) {
+			throw exception;
+		} catch (Exception exception) {
 			factory.cancelTransaction();
 		} finally {
 			factory.closeConnection();
-		}
-		
+		}	
 	}
-
 }

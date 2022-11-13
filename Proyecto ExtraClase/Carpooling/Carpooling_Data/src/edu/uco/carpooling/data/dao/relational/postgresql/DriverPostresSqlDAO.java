@@ -10,14 +10,7 @@ package edu.uco.carpooling.data.dao.relational.postgresql;
 	import edu.uco.carpooling.data.dao.DriverDAO;
 	import edu.uco.carpooling.data.dao.relational.DAORelational;
 	import edu.uco.carpooling.domain.DriverDTO;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 	import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getRandomUUIDAsString;
->>>>>>> main
-=======
-	import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getRandomUUIDAsString;
->>>>>>> main
 	import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getUUIDAsString;
 	
 	public final class DriverPostresSqlDAO extends DAORelational implements DriverDAO {
@@ -41,18 +34,12 @@ package edu.uco.carpooling.data.dao.relational.postgresql;
 				preparedStatement.setString(7, driver.getPassword());
 	
 				preparedStatement.executeUpdate();
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 				
 				insertPhone(driver.getIdAsString(), driver.getPhone());
 				insertCompanyEmail(driver.getIdAsString(), driver.getCompanyEmail());
->>>>>>> main
-=======
 				
 				insertPhone(driver.getIdAsString(), driver.getPhone());
 				insertCompanyEmail(driver.getIdAsString(), driver.getCompanyEmail());
->>>>>>> main
 			} catch (final SQLException exception) {
 				final String message = Messages.DriverPostgreSqlDAO.TECHNICAL_PROBLEM_CREATE_DRIVER
 						.concat(driver.getIdAsString());
@@ -110,11 +97,6 @@ package edu.uco.carpooling.data.dao.relational.postgresql;
 				throw DataCarpoolingException.createTechnicalException(
 						Messages.DriverPostgreSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_DELETE_DRIVER, exception);
 			}
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> main
 		}
 	
 		private final void insertPhone(final String idAsString, final int phone) {
@@ -155,9 +137,5 @@ package edu.uco.carpooling.data.dao.relational.postgresql;
 				throw DataCarpoolingException.createTechnicalException(
 						Messages.DriverPostgreSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_CREATE_DRIVER, exception);
 			}
-<<<<<<< HEAD
->>>>>>> main
-=======
->>>>>>> main
 		}
 	}

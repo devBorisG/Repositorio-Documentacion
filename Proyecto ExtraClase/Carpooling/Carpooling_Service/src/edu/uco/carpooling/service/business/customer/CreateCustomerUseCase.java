@@ -4,5 +4,5 @@ import edu.uco.carpooling.domain.CustomerDTO;
 
 public interface CreateCustomerUseCase {
 
-	void execute(CustomerDTO user);
+	void create(CustomerDTO user);
 }
