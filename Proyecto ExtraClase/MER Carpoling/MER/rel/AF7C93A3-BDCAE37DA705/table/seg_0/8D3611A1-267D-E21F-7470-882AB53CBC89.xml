@@ -1,4 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
+<<<<<<< HEAD
 <<<<<<<< HEAD:Proyecto ExtraClase/MER Carpoling/MER/rel/AF7C93A3-BDCAE37DA705/table/seg_0/D7DDE75C-67EC-3392-F8CE-1673F646BED6.xml
 <Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D7DDE75C-67EC-3392-F8CE-1673F646BED6" name="AutorizedCategories">
 <createdBy>DAVID</createdBy>
@@ -6,16 +7,22 @@
 <ownerDesignName>MER</ownerDesignName>
 <ordsAlias>table_10</ordsAlias>
 ========
+=======
+>>>>>>> main
 <Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8D3611A1-267D-E21F-7470-882AB53CBC89" name="PersonType">
 <createdBy>Federico</createdBy>
 <createdTime>2022-11-10 18:13:15 UTC</createdTime>
 <ownerDesignName>MER</ownerDesignName>
 <ordsAlias>table_16</ordsAlias>
+<<<<<<< HEAD
 >>>>>>>> main:Proyecto ExtraClase/MER Carpoling/MER/rel/AF7C93A3-BDCAE37DA705/table/seg_0/8D3611A1-267D-E21F-7470-882AB53CBC89.xml
+=======
+>>>>>>> main
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<<<<<<< HEAD
 <<<<<<<< HEAD:Proyecto ExtraClase/MER Carpoling/MER/rel/AF7C93A3-BDCAE37DA705/table/seg_0/D7DDE75C-67EC-3392-F8CE-1673F646BED6.xml
 <Column name="id" id="56E75F05-A039-6EB4-5766-ABF5D2DB5695">
 <createdBy>DAVID</createdBy>
@@ -25,6 +32,11 @@
 <createdBy>Federico</createdBy>
 <createdTime>2022-11-10 18:19:33 UTC</createdTime>
 >>>>>>>> main:Proyecto ExtraClase/MER Carpoling/MER/rel/AF7C93A3-BDCAE37DA705/table/seg_0/8D3611A1-267D-E21F-7470-882AB53CBC89.xml
+=======
+<Column name="id" id="B34C9FD7-667A-F36D-DFD2-45A79D133CC5">
+<createdBy>Federico</createdBy>
+<createdTime>2022-11-10 18:19:33 UTC</createdTime>
+>>>>>>> main
 <ownerDesignName>MER</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -33,6 +45,7 @@
 <ownDataTypeParameters>36,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<<<<<<< HEAD
 <<<<<<<< HEAD:Proyecto ExtraClase/MER Carpoling/MER/rel/AF7C93A3-BDCAE37DA705/table/seg_0/D7DDE75C-67EC-3392-F8CE-1673F646BED6.xml
 <Column name="category" id="7D5BDC0E-0437-EDCD-CB64-95D13D13A095">
 <createdBy>DAVID</createdBy>
@@ -42,10 +55,16 @@
 <createdBy>Federico</createdBy>
 <createdTime>2022-11-10 18:19:33 UTC</createdTime>
 >>>>>>>> main:Proyecto ExtraClase/MER Carpoling/MER/rel/AF7C93A3-BDCAE37DA705/table/seg_0/8D3611A1-267D-E21F-7470-882AB53CBC89.xml
+=======
+<Column name="description" id="CE86491B-6C7E-A867-5805-424064A89FF0">
+<createdBy>Federico</createdBy>
+<createdTime>2022-11-10 18:19:33 UTC</createdTime>
+>>>>>>> main
 <ownerDesignName>MER</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
+<<<<<<< HEAD
 <<<<<<<< HEAD:Proyecto ExtraClase/MER Carpoling/MER/rel/AF7C93A3-BDCAE37DA705/table/seg_0/D7DDE75C-67EC-3392-F8CE-1673F646BED6.xml
 <dataTypeSize>100</dataTypeSize>
 <ownDataTypeParameters>100,,</ownDataTypeParameters>
@@ -64,10 +83,15 @@
 <dataTypeSize>50</dataTypeSize>
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 >>>>>>>> main:Proyecto ExtraClase/MER Carpoling/MER/rel/AF7C93A3-BDCAE37DA705/table/seg_0/8D3611A1-267D-E21F-7470-882AB53CBC89.xml
+=======
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+>>>>>>> main
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<<<<<<< HEAD
 <<<<<<<< HEAD:Proyecto ExtraClase/MER Carpoling/MER/rel/AF7C93A3-BDCAE37DA705/table/seg_0/D7DDE75C-67EC-3392-F8CE-1673F646BED6.xml
 <ind_PK_UK id="529B0947-890B-E711-5503-7DAE68DFEC62" name="AutorizedCategories_PK">
 <createdBy>DAVID</createdBy>
@@ -77,16 +101,25 @@
 <createdBy>Federico</createdBy>
 <createdTime>2022-11-10 18:19:33 UTC</createdTime>
 >>>>>>>> main:Proyecto ExtraClase/MER Carpoling/MER/rel/AF7C93A3-BDCAE37DA705/table/seg_0/8D3611A1-267D-E21F-7470-882AB53CBC89.xml
+=======
+<ind_PK_UK id="B5BF64AA-6C61-2892-EBE9-8E14D4056C0F" name="PersonTypePK">
+<createdBy>Federico</createdBy>
+<createdTime>2022-11-10 18:19:33 UTC</createdTime>
+>>>>>>> main
 <ownerDesignName>MER</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
+<<<<<<< HEAD
 <<<<<<<< HEAD:Proyecto ExtraClase/MER Carpoling/MER/rel/AF7C93A3-BDCAE37DA705/table/seg_0/D7DDE75C-67EC-3392-F8CE-1673F646BED6.xml
 <colUsage columnID="56E75F05-A039-6EB4-5766-ABF5D2DB5695"/>
 ========
 <colUsage columnID="B34C9FD7-667A-F36D-DFD2-45A79D133CC5"/>
 >>>>>>>> main:Proyecto ExtraClase/MER Carpoling/MER/rel/AF7C93A3-BDCAE37DA705/table/seg_0/8D3611A1-267D-E21F-7470-882AB53CBC89.xml
+=======
+<colUsage columnID="B34C9FD7-667A-F36D-DFD2-45A79D133CC5"/>
+>>>>>>> main
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

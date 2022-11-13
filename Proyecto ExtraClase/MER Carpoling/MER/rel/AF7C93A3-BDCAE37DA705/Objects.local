@@ -1,9 +1,12 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <oracle.dbtools.crest.model.design.relational.RelationalDesign>
 <<<<<<< HEAD
+<<<<<<< HEAD
    <object objectType="Table" objectID="18E63745-480F-2DA8-8AC8-2C888638BE53" name="City" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="AF7C93A3-51F4-9398-E909-BDCAE37DA705" propertySourceId="" propertyTargetId=""/>
    <object objectType="Table" objectID="34F829F1-04A0-07A6-5796-B80CB9BAEB73" name="Route" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="AF7C93A3-51F4-9398-E909-BDCAE37DA705" propertySourceId="" propertyTargetId=""/>
 =======
+=======
+>>>>>>> main
    <object objectType="Table" objectID="D7DDE75C-67EC-3392-F8CE-1673F646BED6" name="AutorizedCategories" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="AF7C93A3-51F4-9398-E909-BDCAE37DA705" propertySourceId="" propertyTargetId=""/>
    <object objectType="Table" objectID="18E63745-480F-2DA8-8AC8-2C888638BE53" name="City" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="AF7C93A3-51F4-9398-E909-BDCAE37DA705" propertySourceId="" propertyTargetId=""/>
    <object objectType="Table" objectID="B82A0805-A1D3-AA82-0B35-2E5754C71204" name="Country" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="AF7C93A3-51F4-9398-E909-BDCAE37DA705" propertySourceId="" propertyTargetId=""/>
@@ -33,6 +36,7 @@
    <object objectType="Table" objectID="C12F561C-EBD9-D33C-EA82-575A29E3F2AE" name="Department" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="AF7C93A3-51F4-9398-E909-BDCAE37DA705" propertySourceId="" propertyTargetId=""/>
    <object objectType="Table" objectID="C7D56280-6B41-3F1A-1514-38EBFAD204EF" name="Vehicle" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="AF7C93A3-51F4-9398-E909-BDCAE37DA705" propertySourceId="" propertyTargetId=""/>
 <<<<<<< HEAD
+<<<<<<< HEAD
    <object objectType="Table" objectID="CC6D2DB8-85CB-1D28-26EA-086705F70DD9" name="DetailRoute" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="AF7C93A3-51F4-9398-E909-BDCAE37DA705" propertySourceId="" propertyTargetId=""/>
    <object objectType="Table" objectID="D7DDE75C-67EC-3392-F8CE-1673F646BED6" name="AutorizedCategories" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="AF7C93A3-51F4-9398-E909-BDCAE37DA705" propertySourceId="" propertyTargetId=""/>
    <object objectType="Table" objectID="E708D1C4-22EC-C0A9-FBA3-B6501F4DCE16" name="MyRoute" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="AF7C93A3-51F4-9398-E909-BDCAE37DA705" propertySourceId="" propertyTargetId=""/>
@@ -56,6 +60,8 @@
    <object objectType="FKIndexAssociation" objectID="E1C8E80D-9413-A49C-E9E6-932C2B4BFD8B" name="MyRouteRouteFK" containerID="E708D1C4-22EC-C0A9-FBA3-B6501F4DCE16" refContainerID="34F829F1-04A0-07A6-5796-B80CB9BAEB73" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" propertyParentId="AF7C93A3-51F4-9398-E909-BDCAE37DA705" propertySourceId="34F829F1-04A0-07A6-5796-B80CB9BAEB73" propertyTargetId="E708D1C4-22EC-C0A9-FBA3-B6501F4DCE16"/>
    <object objectType="FKIndexAssociation" objectID="F3334D86-FE49-F141-21F3-98E6C145D76F" name="RouteRequestUserFK" containerID="F2046D82-988B-2909-EB6C-4CDA408992F9" refContainerID="356120DA-ECFE-6591-1935-FE72CBEBE062" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" propertyParentId="AF7C93A3-51F4-9398-E909-BDCAE37DA705" propertySourceId="356120DA-ECFE-6591-1935-FE72CBEBE062" propertyTargetId="F2046D82-988B-2909-EB6C-4CDA408992F9"/>
 =======
+=======
+>>>>>>> main
    <object objectType="FKIndexAssociation" objectID="0EB75F57-B1B5-928C-EADF-8A0C0C7E36D9" name="CityDepartmentFK" seqName="seg_0" containerID="18E63745-480F-2DA8-8AC8-2C888638BE53" refContainerID="C12F561C-EBD9-D33C-EA82-575A29E3F2AE" propertyClassName="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" propertyParentId="AF7C93A3-51F4-9398-E909-BDCAE37DA705" propertySourceId="C12F561C-EBD9-D33C-EA82-575A29E3F2AE" propertyTargetId="18E63745-480F-2DA8-8AC8-2C888638BE53"/>
    <object objectType="FKIndexAssociation" objectID="1E6FC419-FD34-EDC7-C2EE-29DE9B281B97" name="DepartmentCountryFK" seqName="seg_0" containerID="C12F561C-EBD9-D33C-EA82-575A29E3F2AE" refContainerID="B82A0805-A1D3-AA82-0B35-2E5754C71204" propertyClassName="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" propertyParentId="AF7C93A3-51F4-9398-E909-BDCAE37DA705" propertySourceId="B82A0805-A1D3-AA82-0B35-2E5754C71204" propertyTargetId="C12F561C-EBD9-D33C-EA82-575A29E3F2AE"/>
    <object objectType="FKIndexAssociation" objectID="7461E1A2-803A-8935-69DA-E069E6C26A9A" name="DetailInterestPointRouteInterestPointFK" seqName="seg_0" containerID="95F5CFF3-8ED3-C7F1-D544-A33165581747" refContainerID="5FF410D6-3597-BD01-C2EA-A2A49F1F4795" propertyClassName="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" propertyParentId="AF7C93A3-51F4-9398-E909-BDCAE37DA705" propertySourceId="5FF410D6-3597-BD01-C2EA-A2A49F1F4795" propertyTargetId="95F5CFF3-8ED3-C7F1-D544-A33165581747"/>
@@ -75,5 +81,8 @@
    <object objectType="FKIndexAssociation" objectID="F3334D86-FE49-F141-21F3-98E6C145D76F" name="RouteRequestUserFK" seqName="seg_0" containerID="F2046D82-988B-2909-EB6C-4CDA408992F9" refContainerID="356120DA-ECFE-6591-1935-FE72CBEBE062" propertyClassName="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" propertyParentId="AF7C93A3-51F4-9398-E909-BDCAE37DA705" propertySourceId="356120DA-ECFE-6591-1935-FE72CBEBE062" propertyTargetId="F2046D82-988B-2909-EB6C-4CDA408992F9"/>
    <object objectType="FKIndexAssociation" objectID="8E8C865E-95FC-C0EF-5C2B-4D4ED8B4A3D0" name="Score_MyRoute_FK" seqName="seg_0" containerID="3C934815-12C1-4E8D-0704-187EE271F3FC" refContainerID="E708D1C4-22EC-C0A9-FBA3-B6501F4DCE16" propertyClassName="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" propertyParentId="AF7C93A3-51F4-9398-E909-BDCAE37DA705" propertySourceId="E708D1C4-22EC-C0A9-FBA3-B6501F4DCE16" propertyTargetId="3C934815-12C1-4E8D-0704-187EE271F3FC"/>
    <object objectType="FKIndexAssociation" objectID="DD199D0D-0ABF-2C54-84DE-7F1B48D8641F" name="UserPersonTypeFK" seqName="seg_0" containerID="356120DA-ECFE-6591-1935-FE72CBEBE062" refContainerID="8D3611A1-267D-E21F-7470-882AB53CBC89" propertyClassName="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" propertyParentId="AF7C93A3-51F4-9398-E909-BDCAE37DA705" propertySourceId="8D3611A1-267D-E21F-7470-882AB53CBC89" propertyTargetId="356120DA-ECFE-6591-1935-FE72CBEBE062"/>
+<<<<<<< HEAD
+>>>>>>> main
+=======
 >>>>>>> main
 </oracle.dbtools.crest.model.design.relational.RelationalDesign>

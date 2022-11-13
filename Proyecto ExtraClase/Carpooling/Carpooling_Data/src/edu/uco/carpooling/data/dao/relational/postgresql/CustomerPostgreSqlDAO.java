@@ -23,8 +23,12 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 	@Override
 	public final void create(final CustomerDTO customer) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		final var sql = "INSERT INTO \"Customer\"(id, dni, \"firstName\",\"secondName\","
 				+ "\"firstSurname\",\"secondSurname\", password, \"phone\",\"companyEmail\""
+=======
+		final var sql = "INSERT INTO \"Customer\"(id, dni, \"firstName\",\"secondName\",\"firstSurname\",\"secondSurname\", password, \"referencePoint\", born "
+>>>>>>> main
 =======
 		final var sql = "INSERT INTO \"Customer\"(id, dni, \"firstName\",\"secondName\",\"firstSurname\",\"secondSurname\", password, \"referencePoint\", born "
 >>>>>>> main
@@ -39,6 +43,7 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 			preparedStatement.setString(6, customer.getSecondSurname());
 			preparedStatement.setString(7, customer.getPassword());
 <<<<<<< HEAD
+<<<<<<< HEAD
 			preparedStatement.setInt(8, customer.getPhone());
 			preparedStatement.setString(9, customer.getCompanyEmail());
 
@@ -46,6 +51,9 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 			
 =======
 
+=======
+
+>>>>>>> main
 			insertPhone(customer.getIdAsString(), customer.getPhone());
 			insertCompanyEmail(customer.getIdAsString(), customer.getCompanyEmail());
 			
@@ -53,6 +61,9 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 			
 			insertPhone(customer.getIdAsString(), customer.getPhone());
 			insertCompanyEmail(customer.getIdAsString(), customer.getCompanyEmail());
+<<<<<<< HEAD
+>>>>>>> main
+=======
 >>>>>>> main
 		} catch (final SQLException exception) {
 			final String message = Messages.CustomerPostgreSqlDAO.TECHNICAL_PROBLEM_CREATE_CUSTOMER
@@ -76,6 +87,7 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 
 	@Override
 <<<<<<< HEAD
+<<<<<<< HEAD
 	public final void update(final CustomerDTO customer) {
 		final var sql = "UPDATE User SET \"firstName\" = ?," + "\"secondName\" = ?," + "\"firstSurname\" = ?,"
 				+ "\"secondSurname\" = ?," + "password = ?," + "\"phone\" = ?," + "companyEmail = ?," + "WHERE id = ?";
@@ -97,6 +109,13 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 				+ "\"secondSurname\" = ?," + "password = ?," + "WHERE id = ?";
 
 		try (final var preparedStatement = getConnection().prepareStatement(sql)) {
+=======
+	public final void update(final CustomerDTO user) {
+		final var sql = "UPDATE Customer SET \"firstName\" = ?," + "\"secondName\" = ?," + "\"firstSurname\" = ?,"
+				+ "\"secondSurname\" = ?," + "password = ?," + "WHERE id = ?";
+
+		try (final var preparedStatement = getConnection().prepareStatement(sql)) {
+>>>>>>> main
 			final var preparedStatementPhone = updatePhone(user.getIdAsString(), user.getPhone());
 			updateCompanyEmail(user.getIdAsString(), user.getCompanyEmail());
 			
@@ -107,6 +126,9 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 			preparedStatement.setString(5, user.getPassword());
 			preparedStatement.setString(6, user.getIdAsString());
 			
+<<<<<<< HEAD
+>>>>>>> main
+=======
 >>>>>>> main
 			
 			preparedStatement.executeUpdate();
@@ -114,7 +136,11 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 		} catch (final SQLException exception) {
 			final String message = Messages.CustomerPostgreSqlDAO.TECHNICAL_PROBLEM_UPDATE_CUSTOMER
 <<<<<<< HEAD
+<<<<<<< HEAD
 					.concat(customer.getIdAsString());
+=======
+					.concat(user.getIdAsString());
+>>>>>>> main
 =======
 					.concat(user.getIdAsString());
 >>>>>>> main
@@ -133,6 +159,7 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 
 		try (final var preparedStatement = getConnection().prepareStatement(sql)){
 			
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 			deletePhone(idAsString);
@@ -189,6 +216,125 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 			throw DataCarpoolingException.createTechnicalException(
 					Messages.CustomerPostgreSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_CREATE_CUSTOMER, exception);
 		}
+	}
+	
+	private final PreparedStatement updatePhone(final String idAsString, final int phone) {
+		final var sql = "UPDATE \"Phone\" SET phone = ? WHERE \"Customer_id\" = ?";
+		
+		try (final var preparedStatement = getConnection().prepareStatement(sql)){
+			preparedStatement.setInt(1, phone);
+			preparedStatement.setString(2, idAsString);
+			
+			return preparedStatement;
+		} catch (final SQLException exception) {
+			final String message = Messages.CustomerPostgreSqlDAO.TECHNICAL_PROBLEM_UPDATE_CUSTOMER
+					.concat(idAsString);
+			throw DataCarpoolingException.createTechnicalException(message, exception);
+		} catch (final Exception exception) {
+			throw DataCarpoolingException.createTechnicalException(
+					Messages.CustomerPostgreSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_CUSTOMER, exception);
+		}
+	}
+	
+	private final void updateCompanyEmail(final String idAsString, final String email) {
+		final var sql = "UPDATE \"CompanyEmail\" SET email = ? WHERE \"Customer_id\" = ?";
+		
+		try (final var preparedStatement = getConnection().prepareStatement(sql)){
+			preparedStatement.setString(1, email);
+			preparedStatement.setString(2, idAsString);
+			
+			preparedStatement.executeUpdate();
+		} catch (final SQLException exception) {
+			final String message = Messages.CustomerPostgreSqlDAO.TECHNICAL_PROBLEM_UPDATE_CUSTOMER
+					.concat(idAsString);
+			throw DataCarpoolingException.createTechnicalException(message, exception);
+		} catch (final Exception exception) {
+			throw DataCarpoolingException.createTechnicalException(
+					Messages.CustomerPostgreSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_CUSTOMER, exception);
+		}
+		
+	}
+	
+	private final void deletePhone(final String idAsString) {
+		final var sql = "DELETE FROM \"Phone\" WHERE \"Customer_id\"= ?";
+		
+		try(final var preparedStatement = getConnection().prepareStatement(sql)){
+=======
+			deletePhone(idAsString);
+			deleteCompanyEmail(idAsString);
+			
+>>>>>>> main
+			preparedStatement.setString(1, idAsString);
+			
+			preparedStatement.executeUpdate();
+		} catch (final SQLException exception) {
+			final String message = Messages.CustomerPostgreSqlDAO.TECHNICAL_PROBLEM_DELETE_CUSTOMER.concat(idAsString);
+			throw DataCarpoolingException.createTechnicalException(message, exception);
+		} 
+		
+		catch (final Exception exception) {
+			throw DataCarpoolingException.createTechnicalException(
+					Messages.CustomerPostgreSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_DELETE_CUSTOMER, exception);
+		}
+		
+	}
+<<<<<<< HEAD
+	
+	private final void deleteCompanyEmail(final String idAsString) {
+		final var sql = "DELETE FROM \"CompanyEmail\" WHERE \"Customer_id\"= ?";
+		
+		try(final var preparedStatement = getConnection().prepareStatement(sql)){
+			preparedStatement.setString(1, idAsString);
+			
+			preparedStatement.executeUpdate();
+		} catch (final SQLException exception) {
+			final String message = Messages.CustomerPostgreSqlDAO.TECHNICAL_PROBLEM_DELETE_CUSTOMER.concat(idAsString);
+=======
+
+	private final void insertPhone(final String idAsString, final int phone) {
+		final var sql = "INSERT INTO \"Phone\"(id, phone, \"Customer_id\") " + "VALUES (?, ?, ?)";
+
+		try (final var preparedStatement = getConnection().prepareStatement(sql)) {
+			preparedStatement.setString(1, getRandomUUIDAsString());
+			preparedStatement.setInt(2, phone);
+			preparedStatement.setString(3, idAsString);
+			
+			preparedStatement.executeUpdate();
+		} catch (final SQLException exception) {
+			final String message = Messages.CustomerPostgreSqlDAO.TECHNICAL_PROBLEM_CREATE_CUSTOMER
+					.concat(idAsString);
+>>>>>>> main
+			throw DataCarpoolingException.createTechnicalException(message, exception);
+		} 
+		
+		catch (final Exception exception) {
+			throw DataCarpoolingException.createTechnicalException(
+<<<<<<< HEAD
+					Messages.CustomerPostgreSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_DELETE_CUSTOMER, exception);
+=======
+					Messages.CustomerPostgreSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_CREATE_CUSTOMER, exception);
+		}
+	}
+
+	private final void insertCompanyEmail(final String idAsString, final String email) {
+		final var sql = "INSERT INTO \"CompanyEmail\"(id, email, \"Customer_id\")" + "VALUES(?, ?, ?)";
+
+		try (final var preparedStatement = getConnection().prepareStatement(sql)) {
+			preparedStatement.setString(1, getRandomUUIDAsString());
+			preparedStatement.setString(2, email);
+			preparedStatement.setString(3, idAsString);
+			
+			preparedStatement.executeUpdate();
+		} catch (final SQLException exception) {
+			final String message = Messages.CustomerPostgreSqlDAO.TECHNICAL_PROBLEM_CREATE_CUSTOMER
+					.concat(idAsString);
+			throw DataCarpoolingException.createTechnicalException(message, exception);
+		} catch (final Exception exception) {
+			throw DataCarpoolingException.createTechnicalException(
+					Messages.CustomerPostgreSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_CREATE_CUSTOMER, exception);
+>>>>>>> main
+		}
+		
 	}
 	
 	private final PreparedStatement updatePhone(final String idAsString, final int phone) {

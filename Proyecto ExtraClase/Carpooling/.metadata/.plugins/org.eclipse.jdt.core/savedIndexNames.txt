@@ -1,5 +1,6 @@
 INDEX VERSION 1.131+C:\Users\Federico\U\Doo\Carpooling\Repositorio-Documentacion\Proyecto ExtraClase\Carpooling\.metadata\.plugins\org.eclipse.jdt.core
 <<<<<<< HEAD
+<<<<<<< HEAD
 3870929857.index
 1851883456.index
 2062204050.index
@@ -95,6 +96,32 @@ INDEX VERSION 1.131+C:\Users\Federico\U\Doo\Carpooling\Repositorio-Documentacion
 1231919055.index
 3538884630.index
 3815150397.index
+=======
+3057475778.index
+1753537078.index
+5480583.index
+3870929857.index
+3496258168.index
+337603964.index
+2738129863.index
+3075020574.index
+978078643.index
+2204620877.index
+208883933.index
+1472229139.index
+2876179138.index
+1776047396.index
+1499759635.index
+1708908758.index
+2321091056.index
+2905525530.index
+2861687680.index
+1865797976.index
+638888823.index
+1231919055.index
+3538884630.index
+3815150397.index
+>>>>>>> main
 418486730.index
 3261080660.index
 3291656908.index
@@ -139,4 +166,7 @@ INDEX VERSION 1.131+C:\Users\Federico\U\Doo\Carpooling\Repositorio-Documentacion
 1795031115.index
 2176889352.index
 2259646079.index
+<<<<<<< HEAD
+>>>>>>> main
+=======
 >>>>>>> main

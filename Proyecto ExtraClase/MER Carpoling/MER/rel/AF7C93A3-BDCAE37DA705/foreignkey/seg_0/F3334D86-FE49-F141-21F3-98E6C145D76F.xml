@@ -1,13 +1,22 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
+<<<<<<< HEAD
+<<<<<<<< HEAD:Proyecto ExtraClase/MER Carpoling/MER/rel/AF7C93A3-BDCAE37DA705/foreignkey/seg_0/F3334D86-FE49-F141-21F3-98E6C145D76F.xml
 <<<<<<<< HEAD:Proyecto ExtraClase/MER Carpoling/MER/rel/AF7C93A3-BDCAE37DA705/foreignkey/seg_0/F3334D86-FE49-F141-21F3-98E6C145D76F.xml
 <FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="F3334D86-FE49-F141-21F3-98E6C145D76F" containerWithKeyObject="F2046D82-988B-2909-EB6C-4CDA408992F9" localFKIndex="2497EE89-2E6E-9265-A66D-B0555F15B0DF" name="RouteRequestUserFK">
 <createdBy>Federico</createdBy>
 <createdTime>2022-11-10 21:20:12 UTC</createdTime>
 ========
+========
+>>>>>>>> main:Proyecto ExtraClase/MER Carpoling/MER/rel/AF7C93A3-BDCAE37DA705/foreignkey/seg_0/3FBB0BF5-DD46-532F-D6B1-CD5FAAA0984E.xml
 <FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="3FBB0BF5-DD46-532F-D6B1-CD5FAAA0984E" containerWithKeyObject="C07EEB48-51FE-0844-A67D-9E9E04B0C066" localFKIndex="70A4322E-143B-AD9D-5983-7F51A12D403A" name="DriverUserFK">
 <createdBy>DAVID</createdBy>
 <createdTime>2022-11-09 06:08:06 UTC</createdTime>
 >>>>>>>> main:Proyecto ExtraClase/MER Carpoling/MER/rel/AF7C93A3-BDCAE37DA705/foreignkey/seg_0/3FBB0BF5-DD46-532F-D6B1-CD5FAAA0984E.xml
+=======
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="F3334D86-FE49-F141-21F3-98E6C145D76F" containerWithKeyObject="F2046D82-988B-2909-EB6C-4CDA408992F9" localFKIndex="2497EE89-2E6E-9265-A66D-B0555F15B0DF" name="RouteRequestUserFK">
+<createdBy>Federico</createdBy>
+<createdTime>2022-11-10 21:20:12 UTC</createdTime>
+>>>>>>> main
 <ownerDesignName>MER</ownerDesignName>
 <referredTableLongName>User</referredTableLongName>
 <deleteRule>NO ACTION</deleteRule>
