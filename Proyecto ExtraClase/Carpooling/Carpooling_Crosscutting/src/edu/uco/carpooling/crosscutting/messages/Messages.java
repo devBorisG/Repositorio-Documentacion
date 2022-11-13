@@ -203,9 +203,11 @@ public class Messages {
 	public static class DriverPerVehiclePostgresSqlDAO{
         public DriverPerVehiclePostgresSqlDAO(){super();}
 
-	 	public static final String TECHNICAL_PROBLEM_CREATE_DRIVER_PER_VEHICLE  = "There was a problem trying to create the driver per vehicle in SQLServerDaoFactory with id= ";
+	 	public static final String TECHNICAL_PROBLEM_CREATE_DRIVER_PER_VEHICLE  = "There was a problem trying to create the driver per vehicle in SQLServerDaoFactory with idVehicle= ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_DRIVER_PER_VEHICLE = "There was an unexpected problem trying to create driver per vehivle in PostgreSQLDaoFactory";
 	 	public static final String TECHNICAL_PROBLEM_UPDATE_DRIVER_PER_VEHICLE  = "There was a problem trying to update the driver per vehicle in SQLServerDaoFactory with id= ";
-	 	public static final String TECHNICAL_PROBLEM_DELETE_DRIVER_PER_VEHICLE  = "There was a problem trying to delete the driver per vehicle in SQLServerDaoFactory with id= ";
+	 	public static final String TECHNICAL_PROBLEM_DELETE_DRIVER_PER_VEHICLE  = "There was a problem trying to delete the driver per vehicle in PostgreSQLDaoFactory with idDriver= ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_DELETE_DRIVER_PER_VEHICLE = "The was an unexpected error tryinf to delete driver per vehicle in PostgreSQLDapFactory";
 	 	public static final String TECHNICAL_PROBLEM_FILL_RESULTS = "There was a problem recovering results from the select ";
 	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS = "There was an unexpected problem trying recovering results from the select ";
 	 	public static final String TECHNICAL_PROBLEM_FILL_DRIVER_PER_VEHICLE_DTO = "There was a problem filling authotizedcategoryDTO from the resultSet ";
@@ -217,6 +219,19 @@ public class Messages {
 	 	public static final String TECHNICAL_PROBLEM_PREPARED_STAMENT = "There was a problem trying to prepared the sql stament the parameters";
 	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STAMENT = "There was an unexpected problem trying to prepared the sql stament the parameters";
 	 	public static final String TECHNICAL_PROBLEM_FILL_ROUTE_STATUS_DTO = "There was a problem filling authotizedcategoryDTO from the resultSet ";
+	}
+	
+	public static class VehiclePosgreSqlDao{
+		private VehiclePosgreSqlDao() {
+			super();
+		}
+
+		public static final String TECHNICAL_PROBLEM_CREATE_VEHICLE = "There was a problem trying to create the Vehicle in PostgreSqlDao with id= ";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_VEHICLE = "The was an unexpected error trying to create Vehicle in PostgreSqlDao";
+		public static final String TECHNICAL__PROBLEM_DELETE_VEHICLE = "The was a problem trying to delete the vehicle in PostgreSqlDao with id= ";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_DELETE_VEHICLE = "The was a problem trying to delete the vehicle in PostgreSqlDao";
+
+		
 	}
 	
 	public static class AuthotizedCategoryPostgresSqlDAOPostgresSqlDAO{
@@ -267,8 +282,6 @@ public class Messages {
 		
 	 	public static final String BUSSINES_CUSTOMER_DOES_NOT_EXIST = "El cliente que desea buscar no existe";
 	 	public static final String BUSSINES_ROUTE_REQUEST_DOES_EXIST = "la peticion ruta ya feu creada";
-		
-		
 		
 	}
 }
