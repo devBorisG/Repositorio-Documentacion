@@ -57,6 +57,10 @@ public class DriverDTO extends UserDTO{
 				licenseNumber,authorizedCategory);
 	}
 	
+	public static final DriverDTO create (final UUID id) {
+		return new DriverDTO(id, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, ZERO, EMPTY, EMPTY, null);
+	}
+	
 	public static final String getUUIDAsString(final UUID value) {
 		return getDefaultUUID(value).toString();
 	}

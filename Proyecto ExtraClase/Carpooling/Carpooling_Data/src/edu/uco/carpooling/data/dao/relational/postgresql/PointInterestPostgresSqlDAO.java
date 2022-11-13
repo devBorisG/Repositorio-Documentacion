@@ -232,9 +232,9 @@ public class PointInterestPostgresSqlDAO extends DAORelational implements PointI
 					resultSet.getString("Password"),resultSet.getInt("Phone"),
 					resultSet.getString("Email"),resultSet.getString("License"),fillAuthorizedCategoryDTO(resultSet));
         } catch (final SQLException exception) {
-            throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestSqlServerDAO.TECHNICAL_PROBLEM_FILL_CUSTOMER_DTO, exception);
+            throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestPostgreSQLDAO.TECHNICAL_PROBLEM_FILL_CUSTOMER_DTO, exception);
         } catch (final Exception exception) {
-            throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_CUSTOMER_DTO, exception);
+            throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestPostgreSQLDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_CUSTOMER_DTO, exception);
         }
     }
 

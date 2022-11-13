@@ -7,4 +7,5 @@
     <fullyQualifiedTypeName name="edu.uco.carpooling.crosscutting.messages.Messages.AuthotizedCategoryPostgresSqlDAOPostgresSqlDAO"/>
     <fullyQualifiedTypeName name="edu.uco.carpooling.domain.PointInterestDTO"/>
     <fullyQualifiedTypeName name="edu.uco.carpooling.crosscutting.helper.UUIDHelper"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.crosscutting.messages.Messages.RouteRequestPostgreSQLDAO"/>
 </qualifiedTypeNameHistroy>
