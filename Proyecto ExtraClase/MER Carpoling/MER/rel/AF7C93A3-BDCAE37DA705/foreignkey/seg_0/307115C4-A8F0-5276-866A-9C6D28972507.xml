@@ -1,7 +1,13 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
+<<<<<<<< HEAD:Proyecto ExtraClase/MER Carpoling/MER/rel/AF7C93A3-BDCAE37DA705/foreignkey/seg_0/307115C4-A8F0-5276-866A-9C6D28972507.xml
 <FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="307115C4-A8F0-5276-866A-9C6D28972507" containerWithKeyObject="C07EEB48-51FE-0844-A67D-9E9E04B0C066" localFKIndex="2A9C1C8C-C744-F1DA-9268-19BF3F97B03E" name="Driver_User_FK">
 <createdBy>Federico</createdBy>
 <createdTime>2022-11-12 20:47:02 UTC</createdTime>
+========
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="F3334D86-FE49-F141-21F3-98E6C145D76F" containerWithKeyObject="F2046D82-988B-2909-EB6C-4CDA408992F9" localFKIndex="2497EE89-2E6E-9265-A66D-B0555F15B0DF" name="RouteRequestUserFK">
+<createdBy>Federico</createdBy>
+<createdTime>2022-11-10 21:20:12 UTC</createdTime>
+>>>>>>>> main:Proyecto ExtraClase/MER Carpoling/MER/rel/AF7C93A3-BDCAE37DA705/foreignkey/seg_0/F3334D86-FE49-F141-21F3-98E6C145D76F.xml
 <ownerDesignName>MER</ownerDesignName>
 <referredTableLongName>User</referredTableLongName>
 <deleteRule>NO ACTION</deleteRule>

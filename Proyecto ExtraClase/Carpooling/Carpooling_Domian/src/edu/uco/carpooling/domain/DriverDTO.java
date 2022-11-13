@@ -55,10 +55,13 @@ public class DriverDTO extends UserDTO{
 			final int phone, final String companyEmail,final String licenseNumber,final AuthorizedCategoryDTO authorizedCategory) {
 		return new DriverDTO(getUUIDFromString(id),dni,firstName,secondName,firstSurname,secondSurname,password,phone,companyEmail,
 				licenseNumber,authorizedCategory);
+<<<<<<< HEAD
 	}
 	
 	public static final DriverDTO create (final UUID id) {
 		return new DriverDTO(id, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, ZERO, EMPTY, EMPTY, null);
+=======
+>>>>>>> main
 	}
 	
 	public static final String getUUIDAsString(final UUID value) {

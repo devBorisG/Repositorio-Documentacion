@@ -106,6 +106,21 @@
 <ownDataTypeParameters>200,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="personTypeid" id="885EA2A4-A232-18CF-B0AE-FE86300A0451">
+<createdBy>Federico</createdBy>
+<createdTime>2022-11-10 19:58:19 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>36</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DD199D0D-0ABF-2C54-84DE-7F1B48D8641F" referredColumn="B34C9FD7-667A-F36D-DFD2-45A79D133CC5"/>
+</associations>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="5F606926-7BB1-2D18-0F3C-A69B0562392D" name="User_PK">
@@ -117,6 +132,16 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="DDAA15FD-130D-FAEE-C0BB-767AD024CA7F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3B518197-3C8E-00D2-33BB-FC57F3189A97" name="UserPersonTypeFK">
+<createdBy>Federico</createdBy>
+<createdTime>2022-11-10 19:58:19 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="885EA2A4-A232-18CF-B0AE-FE86300A0451"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>
