@@ -17,6 +17,7 @@ public class DriverPerVehicleDTO {
         setDriver(getDriverDTOBuilder().build());
         setVehicle(getVehicleDTOBuilder().build());
     }
+
     public DriverPerVehicleDTO(final DriverDTO driver,final VehicleDTO vehicle,final String state) {
         setDriver(driver);
         setVehicle(vehicle);
