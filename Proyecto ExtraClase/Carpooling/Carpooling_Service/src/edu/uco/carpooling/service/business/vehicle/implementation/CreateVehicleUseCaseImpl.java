@@ -7,6 +7,8 @@ import edu.uco.carpooling.crosscutting.helper.UUIDHelper;
 import edu.uco.carpooling.crosscutting.messages.Messages;
 import edu.uco.carpooling.data.daofactory.DAOFactory;
 import edu.uco.carpooling.domain.DriverDTO;
+import edu.uco.carpooling.service.business.driverpervehicle.CreateDriverPerVehicleUseCase;
+import edu.uco.carpooling.service.business.driverpervehicle.implementation.CreateDriverPerVehicleUseCaseImpl;
 import edu.uco.carpooling.domain.VehicleDTO;
 import edu.uco.carpooling.service.business.driver.FindDriverByIdUseCase;
 import edu.uco.carpooling.service.business.driver.implementation.FindDriverByIdUseCaseImpl;
@@ -22,6 +24,7 @@ public class CreateVehicleUseCaseImpl implements CreateVehicleUseCase {
 	private final FormatPlate formatPlateUseCase;
 	private final FormatNumEnrollment formatNumEnrollment;
 	private final FindVehiclePlate findVehicleUseCase;
+	private final CreateDriverPerVehicleUseCase createDriverPerVehicleUseCase;
 	
 	public CreateVehicleUseCaseImpl(DAOFactory factory) {
 		this.factory = factory;
@@ -29,6 +32,8 @@ public class CreateVehicleUseCaseImpl implements CreateVehicleUseCase {
 		formatPlateUseCase = new FormatPlateImpl();
 		formatNumEnrollment = new FormatNumEnrollmentImpl();
 		findVehicleUseCase = new FindVehiclePlateImpl(factory);
+		createDriverPerVehicleUseCase = new CreateDriverPerVehicleUseCaseImpl(factory);
+
 	}
 
 	@Override
@@ -36,13 +41,14 @@ public class CreateVehicleUseCaseImpl implements CreateVehicleUseCase {
 		final DriverDTO driver = findDriver(vehicle.getOwner().getId());
 		formatPlateUseCase.execute(vehicle.getPlate());
 		formatNumEnrollment.execute(vehicle.getNumberEnrollment());
-		validateIfVehicleExist(vehicle);
+		validateIfVehicleExist(vehicle.getPlate());
 		vehicle.setOwner(driver);
 		vehicle.setId(UUIDHelper.getNewUUID());
 		factory.getVehicleDAO().create(vehicle);
+		createDriverPerVehicleUseCase.execute(vehicle);
 	}
 	
-	private final DriverDTO findDriver(UUID id) {
+	private final DriverDTO findDriver(final UUID id) {
 		final DriverDTO driver = findDriverById.execute(id);
 
 		if (driver.notExist()) {
@@ -53,8 +59,10 @@ public class CreateVehicleUseCaseImpl implements CreateVehicleUseCase {
 		return driver;
 	}
 	
-	private final void validateIfVehicleExist(final VehicleDTO vehicle) {
-		if(!findVehicleUseCase.execute(vehicle).isEmpty()) {
+	private final void validateIfVehicleExist(final String plate) {
+		final VehicleDTO vehicle = findVehicleUseCase.execute(plate);
+
+		if(vehicle.exist()) {
 			throw ServiceCarpoolingException.createUserException(Messages.CreateVehicleUseCaseImpl.BUSSINES_VEHICLE_EXIST);
 		}
 	}

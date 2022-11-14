@@ -5,7 +5,6 @@ import java.util.UUID;
 import edu.uco.carpooling.crosscutting.helper.ObjectHelper;
 import edu.uco.carpooling.crosscutting.helper.StringHelper;
 import edu.uco.carpooling.crosscutting.helper.UUIDHelper;
-import edu.uco.carpooling.domain.builder.AuthorizedCategoryDTOBuilder;
 
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getDefaultUUID;
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getNewUUID;

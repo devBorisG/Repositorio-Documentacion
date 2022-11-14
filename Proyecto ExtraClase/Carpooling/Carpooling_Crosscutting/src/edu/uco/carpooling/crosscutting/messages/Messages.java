@@ -115,7 +115,7 @@ public class Messages {
 		public static final String TECHNICAL_PROBLEM_PREPARED_STAMENT = "There was a problem trying to prepared the sql stament the parameters";
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STAMENT = "There was an unexpected problem trying to prepared the sql stament the parameters";
 		public static final String TECHNICAL_PROBLEM_FILL_ROUTE_STATUS_DTO = "There was a problem filling authotizedcategoryDTO from the resultSet ";
-	
+	}
 	public static class RouteqlServerDAO{
 	 	private RouteqlServerDAO(){
 	 		super();	
@@ -220,7 +220,6 @@ public class Messages {
 	 	public static final String TECHNICAL_PROBLEM_FILL_ROUTE_STATUS_DTO = "There was a problem filling routeStatusDTO from the resultSet ";
 	}
 
-	}
 
 	public static class VehiclePosgreSqlDao {
 		private VehiclePosgreSqlDao() {
@@ -309,48 +308,6 @@ public class Messages {
 		public static final String BUSSINES_VEHICLE_EXIST = "Is alredy exists a vehicle in the application, please, try add other vehicle";
 	}
 
-	public static class AuthotizedCategoryPostgresSqlDAOPostgresSqlDAO{
-        public AuthotizedCategoryPostgresSqlDAOPostgresSqlDAO(){super();}
-
-	 	public static final String TECHNICAL_PROBLEM_CREATE_AUTHORIZED_CATEGORY  = "There was a problem trying to create the authotized category in PostgreSQLDaoFactory with id= ";
-	 	public static final String TECHNICAL_PROBLEM_UPDATE_AUTHORIZED_CATEGORY  = "There was a problem trying to update the authotized category in PostgreSQLDaoFactory with id= ";
-	 	public static final String TECHNICAL_PROBLEM_DELETE_AUTHORIZED_CATEGORY  = "There was a problem trying to delete the authotized category in PostgreSQLDaoFactory with id= ";
-	 	public static final String TECHNICAL_PROBLEM_FILL_RESULTS = "There was a problem recovering results from the select ";
-	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS = "There was an unexpected problem trying recovering results from the select ";
-	 	public static final String TECHNICAL_PROBLEM_FILL_AUTHORIZED_CATEGORY_AUTHORIZED_CATEGORY_DTO = "There was a problem filling authotizedcategoryDTO from the resultSet ";
-	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_AUTHORIZED_CATEGORY_DTO = "There was an unexpected problem trying fill authotizedcategoryDTO from the resultSet ";
-	 	public static final String TECHNICAL_PROBLEM_EXECUTE_QUERY = "There was a problem trying to excute query to find the specific detail Route";
-	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_EXECEUTE_QUERY = "There was an unexpected problem trying to execute query to find the specific authotized category";
-	 	public static final String TECHNICAL_PROBLEM_SET_PARAMETER_VALUES_QUERY = "There was a problem trying to set the parameters values to the query";
-	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMETER_VALUES_QUERY = "There was an unexpected problem trying to set the parameters values to the query";
-	 	public static final String TECHNICAL_PROBLEM_PREPARED_STAMENT = "There was a problem trying to prepared the sql stament the parameters";
-	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STAMENT = "There was an unexpected problem trying to prepared the sql stament the parameters";
-	 	public static final String TECHNICAL_PROBLEM_FILL_ROUTE_STATUS_DTO = "There was a problem filling authotizedcategoryDTO from the resultSet ";
-	}
-	
-	public static class PointInterestPostgresSqlDAO{
-	 	private PointInterestPostgresSqlDAO(){
-	 		super();	
-	 	}	
-	 	
-	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_POINT_INTEREST = "There was an unexpected problem trying to create the point interest in PostgreSQLDaoFactory with id= ";
-	 	public static final String TECHNICAL_PROBLEM_CREATE_POINT_INTEREST  = "There was a problem trying to create the point interest in PostgreSQLDaoFactory with id= ";
-	 	public static final String TECHNICAL_PROBLEM_UPDATE_POINT_INTEREST = "There was a problem trying to update the point interest in PostgreSQLDaoFactory with id= ";
-	 	public static final String TECHNICAL_PROBLEM_DELETE_POINT_INTEREST  = "There was a problem trying to delete the point interest in PostgreSQLDaoFactory with id= ";
-	 	public static final String TECHNICAL_PROBLEM_FILL_RESULTS = "There was a problem recovering results from the select ";
-	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS = "There was an unexpected problem trying recovering results from the select ";
-	 	public static final String TECHNICAL_PROBLEM_FILL_ROUTE_POINT_INTEREST_DTO = "There was a problem filling pointInterestDTO from the resultSet ";
-	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_POINT_INTEREST_DTO = "There was an unexpected problem trying fill pointInterestDTO from the resultSet ";
-	 	public static final String TECHNICAL_PROBLEM_EXECUTE_QUERY = "There was a problem trying to excute query to find the specific detail Route";
-	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_EXECEUTE_QUERY = "There was an unexpected problem trying to execute query to find the specific point interest";
-	 	public static final String TECHNICAL_PROBLEM_SET_PARAMETER_VALUES_QUERY = "There was a problem trying to set the parameters values to the query";
-	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMETER_VALUES_QUERY = "There was an unexpected problem trying to set the parameters values to the query";
-	 	public static final String TECHNICAL_PROBLEM_PREPARED_STAMENT = "There was a problem trying to prepared the sql stament the parameters";
-	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STAMENT = "There was an unexpected problem trying to prepared the sql stament the parameters";
-	 	public static final String TECHNICAL_PROBLEM_FILL_ROUTE_STATUS_DTO = "There was a problem filling routeStatusDTO from the resultSet ";
-
-	}
-  
   	public static class CreateVehicleCommandImpl {
 		private CreateVehicleCommandImpl() {
 			super();

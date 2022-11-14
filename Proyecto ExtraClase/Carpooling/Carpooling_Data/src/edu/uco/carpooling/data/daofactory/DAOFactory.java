@@ -3,6 +3,7 @@ package edu.uco.carpooling.data.daofactory;
 import edu.uco.carpooling.crosscutting.exception.DataCarpoolingException;
 import edu.uco.carpooling.crosscutting.messages.Messages;
 import edu.uco.carpooling.data.dao.DriverDAO;
+import edu.uco.carpooling.data.dao.DriverPerVehicleDAO;
 import edu.uco.carpooling.data.dao.CustomerDAO;
 import edu.uco.carpooling.data.dao.VehicleDAO;
 import edu.uco.carpooling.data.enumeration.DAOFactoryType;
@@ -63,6 +64,8 @@ public abstract class DAOFactory {
 	public abstract DriverDAO getDriverDAO();
 	
 	public abstract RouteRequestDAO getRouteRequestDTO();
+	
+	public abstract DriverPerVehicleDAO getDriverPerVehicleDAO();
 
 	// TODO create others getDAO
 }
