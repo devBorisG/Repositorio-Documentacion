@@ -1,9 +1,9 @@
 package edu.uco.budget.service.usecase.budget.implementation;
 
+import java.util.List;
 import java.util.UUID;
 
 import edu.uco.budget.crosscutting.exception.ServiceBudgetException;
-import edu.uco.budget.crosscutting.helper.UUIDHelper;
 import edu.uco.budget.crosscutting.messages.Messages;
 import edu.uco.budget.data.daofactory.DAOFactory;
 import edu.uco.budget.domain.BudgetDTO;
@@ -38,11 +38,16 @@ public final class CreateBudgetUseCaseImpl implements CreateBudgetUseCase {
 		// 2. Que la persona exista
 		final PersonDTO person = finPerson(budget.getPerson().getId());
 		// 3. Que no existe un presupuesto para el mismo usuario el mismo año
+
 		budget.setYear(year);
 		budget.setPerson(person);
-		validateIfBudgetExist(budget);
-		
-		budget.setId(UUIDHelper.getNewUUID());
+
+		List<BudgetDTO> results = findBudgetUseCase.execute(budget);
+
+		if (!results.isEmpty()) {
+			throw ServiceBudgetException.createUserException(Messages.CreateBudgetUseCaseImpl.BUSSINES_BUDGET_EXIST);
+		}
+
 		factory.getBudgetDAO().create(budget);
 	}
 
@@ -57,10 +62,4 @@ public final class CreateBudgetUseCaseImpl implements CreateBudgetUseCase {
 		return person;
 	}
 
-	private final void validateIfBudgetExist(final BudgetDTO budget) {
-
-		if (!findBudgetUseCase.execute(budget).isEmpty()) {
-			throw ServiceBudgetException.createUserException(Messages.CreateBudgetUseCaseImpl.BUSSINES_BUDGET_EXIST);
-		}
-	}
 }
