@@ -367,7 +367,8 @@ public class Messages {
 		public static final String SUCCESS_CREATE_VEHICLE = "The vehicle has been created succesfully";
 		public static final String ERROR_CREATE_VEHICLE = "There was an error trying to create the vehicle, please try again...";
 		public static final String FATAL_CREATE_VEHICLE = "There was an unexpected error trying to create thge vehicle, please try again...";
-	
+	}
+		
 	public static class CreateDriverPerVehicleUseCaseImpl{
 		private CreateDriverPerVehicleUseCaseImpl() {
 			super();

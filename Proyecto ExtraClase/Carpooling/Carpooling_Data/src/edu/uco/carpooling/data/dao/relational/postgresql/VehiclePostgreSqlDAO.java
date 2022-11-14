@@ -78,7 +78,7 @@ public final class VehiclePostgreSqlDAO extends DAORelational implements Vehicle
 
 	private List<VehicleDTO> preparedAndExecuteQuery(StringBuilder sqlBuilder, VehicleDTO vehicle) {
 		try (final var preparedStatement = getConnection().prepareStatement(sqlBuilder.toString())) {
-			preparedStatement.setString(1, vehicle.getPlate());
+			preparedStatement.setString(1, vehicle.getIdAsString());
 			return executeQuery(preparedStatement);
 		} catch (DataCarpoolingException exception) {
 			throw exception;
