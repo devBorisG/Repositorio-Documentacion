@@ -9,9 +9,7 @@ public interface VehicleDAO {
 
 	void create(VehicleDTO vehicle);
 	
-	List<VehicleDTO> find(VehicleDTO vehicle);
-	
-	void update(VehicleDTO vehicle);
+	List<VehicleDTO> findPlate(VehicleDTO vehicle);
 	
 	void delete(UUID id);
 }

@@ -64,5 +64,4 @@ public class CustomerDTO extends UserDTO {
 	public boolean notExist() {
 		return !exist();
 	}
-	
 }

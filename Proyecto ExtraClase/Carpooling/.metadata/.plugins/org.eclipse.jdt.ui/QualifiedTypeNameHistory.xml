@@ -6,5 +6,10 @@
     <fullyQualifiedTypeName name="edu.uco.carpooling.domain.AuthorizedCategoryDTO"/>
     <fullyQualifiedTypeName name="edu.uco.carpooling.crosscutting.messages.Messages.AuthotizedCategoryPostgresSqlDAOPostgresSqlDAO"/>
     <fullyQualifiedTypeName name="edu.uco.carpooling.domain.PointInterestDTO"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.crosscutting.messages.Messages.RouteRequestPostgreSQLDAO"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.data.dao.relational.DAORelational"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.data.dao.DriverDAO"/>
     <fullyQualifiedTypeName name="edu.uco.carpooling.crosscutting.helper.UUIDHelper"/>
+    <fullyQualifiedTypeName name="java.sql.SQLException"/>
 </qualifiedTypeNameHistroy>

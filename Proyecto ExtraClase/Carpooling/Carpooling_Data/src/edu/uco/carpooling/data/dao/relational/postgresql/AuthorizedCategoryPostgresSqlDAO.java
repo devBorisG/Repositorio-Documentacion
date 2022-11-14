@@ -140,7 +140,7 @@ public class AuthorizedCategoryPostgresSqlDAO extends DAORelational implements A
         try {
             return AuthorizedCategoryDTO.create(resultSet.getString("idCategory"),
                     resultSet.getString("category"),
-                    resultSet.getDate("date"));
+                    resultSet.getString("vality"));
         } catch (final SQLException exception) {
             throw DataCarpoolingException.createTechnicalException(Messages.DriverPerVehiclePostgresSqlDAO.TECHNICAL_PROBLEM_FILL_DRIVER_PER_VEHICLE_DTO, exception);
         } catch (final Exception exception) {
