@@ -226,11 +226,7 @@ public class PointInterestPostgresSqlDAO extends DAORelational implements PointI
 	
     private final DriverDTO fillDriverDTO(final ResultSet resultSet) {
         try {
-        	return DriverDTO.create(resultSet.getString("IdDirver"), resultSet.getString("dni"), 
-					resultSet.getString("FirstName"), resultSet.getString("SecondName"), 
-					resultSet.getString("FirstSurname"),resultSet.getString("SecondSurname"),
-					resultSet.getString("Password"),resultSet.getInt("Phone"),
-					resultSet.getString("Email"),resultSet.getString("License"),fillAuthorizedCategoryDTO(resultSet));
+        	return DriverDTO.create(resultSet.getString("IdDirver"),resultSet.getString("License"),fillAuthorizedCategoryDTO(resultSet));
         } catch (final SQLException exception) {
             throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestPostgreSQLDAO.TECHNICAL_PROBLEM_FILL_CUSTOMER_DTO, exception);
         } catch (final Exception exception) {
@@ -242,7 +238,7 @@ public class PointInterestPostgresSqlDAO extends DAORelational implements PointI
         try {
             return AuthorizedCategoryDTO.create(resultSet.getString("idCategory"),
                     resultSet.getString("category"),
-                    resultSet.getDate("date"));
+                    resultSet.getString("date"));
         } catch (final SQLException exception) {
             throw DataCarpoolingException.createTechnicalException(Messages.DriverPerVehiclePostgresSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_DRIVER_PER_VEHICLE_DTO, exception);
         } catch (final Exception exception) {

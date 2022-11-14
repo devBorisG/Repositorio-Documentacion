@@ -158,11 +158,7 @@ public class QualificationPostgresSqlDAO extends DAORelational implements Qualif
     
     private final DriverDTO fillDriver(final ResultSet resultSet) {
         try {
-        	return DriverDTO.create(resultSet.getString("IdDirver"), resultSet.getString("dni"), 
-					resultSet.getString("FirstName"), resultSet.getString("SecondName"), 
-					resultSet.getString("FirstSurname"),resultSet.getString("SecondSurname"),
-					resultSet.getString("Password"),resultSet.getInt("Phone"),
-					resultSet.getString("Email"),resultSet.getString("License"),fillAuthorizedCategoryDTO(resultSet));
+        	return DriverDTO.create(resultSet.getString("IdDirver"),resultSet.getString("License"),fillAuthorizedCategoryDTO(resultSet));
         } catch (final SQLException exception) {
             throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestPostgreSQLDAO.TECHNICAL_PROBLEM_FILL_CUSTOMER_DTO, exception);
         } catch (final Exception exception) {
@@ -173,7 +169,7 @@ public class QualificationPostgresSqlDAO extends DAORelational implements Qualif
 	private final AuthorizedCategoryDTO fillAuthorizedCategoryDTO(final ResultSet resultSet) {
 		try {
 			return AuthorizedCategoryDTO.create(resultSet.getString("IdCategory"),
-					resultSet.getString("NameCategory"),resultSet.getDate("Validity"));
+					resultSet.getString("NameCategory"),resultSet.getString("Validity"));
 		} catch (final SQLException exception) {
 			throw DataCarpoolingException.createTechnicalException(Messages.RouteqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_AUTHORIZED_CATEGOTY_DTO, exception);			
 		} catch (final Exception exception) {
