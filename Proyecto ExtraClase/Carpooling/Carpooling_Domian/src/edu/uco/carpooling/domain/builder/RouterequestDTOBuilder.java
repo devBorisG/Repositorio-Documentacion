@@ -8,7 +8,6 @@ import edu.uco.carpooling.domain.CustomerDTO;
 import edu.uco.carpooling.domain.RouteRequestDTO;
 
 import static edu.uco.carpooling.domain.RouteRequestDTO.create;
-import edu.uco.carpooling.domain.RouteStatusDTO;
 
 public class RouterequestDTOBuilder {
 	private UUID id;

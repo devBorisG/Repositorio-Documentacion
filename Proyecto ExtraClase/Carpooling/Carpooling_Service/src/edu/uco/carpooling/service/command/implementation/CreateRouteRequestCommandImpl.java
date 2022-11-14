@@ -19,6 +19,7 @@ public class CreateRouteRequestCommandImpl implements CreateRouteRequestCommand{
 			factory.initTransaction();
 			useCase.create(routeRequest);
 			factory.confirmTransaction();
+<<<<<<< HEAD
 		} catch (CarpoolingCustomException e) {
 			factory.cancelTransaction();
 			throw e;
@@ -30,4 +31,15 @@ public class CreateRouteRequestCommandImpl implements CreateRouteRequestCommand{
 		
 	}
 
+=======
+		} catch (CarpoolingCustomException exception) {
+			factory.cancelTransaction();
+			throw exception;
+		} catch (Exception exception) {
+			factory.cancelTransaction();
+		} finally {
+			factory.closeConnection();
+		}	
+	}
+>>>>>>> dev_federico
 }
