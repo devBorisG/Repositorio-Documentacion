@@ -4,7 +4,7 @@ import java.util.List;
 
 import edu.uco.carpooling.domain.VehicleDTO;
 
-public interface FindVehicleUseCase {
+public interface FindVehiclePlate {
 	
 	List<VehicleDTO> execute(VehicleDTO vehicle);
 }

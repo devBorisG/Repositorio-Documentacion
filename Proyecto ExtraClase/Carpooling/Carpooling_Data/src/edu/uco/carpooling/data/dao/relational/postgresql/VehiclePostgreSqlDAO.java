@@ -12,7 +12,7 @@ import java.util.UUID;
 
 import edu.uco.carpooling.crosscutting.exception.DataCarpoolingException;
 import edu.uco.carpooling.crosscutting.helper.ObjectHelper;
-import edu.uco.carpooling.crosscutting.helper.UUIDHelper;
+import edu.uco.carpooling.crosscutting.helper.StringHelper;
 import edu.uco.carpooling.crosscutting.messages.Messages;
 import edu.uco.carpooling.data.dao.VehicleDAO;
 import edu.uco.carpooling.data.dao.relational.DAORelational;
@@ -66,7 +66,7 @@ public final class VehiclePostgreSqlDAO extends DAORelational implements Vehicle
 	}
 
 	@Override
-	public final List<VehicleDTO> find(final VehicleDTO vehicle) {
+	public final List<VehicleDTO> findPlate(final VehicleDTO vehicle) {
 		final var sqlBuilder = new StringBuilder();
 
 		createSelectFrom(sqlBuilder);
@@ -140,8 +140,9 @@ public final class VehiclePostgreSqlDAO extends DAORelational implements Vehicle
 	}
 
 	private final void createWhere(final StringBuilder sqlBuilder, final VehicleDTO vehicle) {
-		if (!ObjectHelper.isNull(vehicle) && !UUIDHelper.isDefaultUUID(vehicle.getId())) {
-			sqlBuilder.append("WHERE id = ?");
+		
+		if (!ObjectHelper.isNull(vehicle) && !StringHelper.isEmpty(vehicle.getPlate())) {
+			sqlBuilder.append("WHERE plate = ?");
 		}
 	}
 

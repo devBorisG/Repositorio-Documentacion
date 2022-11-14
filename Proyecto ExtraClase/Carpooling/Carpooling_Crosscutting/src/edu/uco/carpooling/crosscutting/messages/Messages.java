@@ -317,4 +317,14 @@ public class Messages {
 		public static final String USER_PROBLEM_CREATE_VEHICLE = "The vehicle could not be created, please try again";
 		public static final String USER_UNEXPECTED_PROBLEM_CREATE_VEHICLE  = "An unexpected problem occurred, please try again";
 	}
+	
+	public static class VehicleController{
+		private VehicleController() {
+			super();
+		}
+		public static final String SUCCESS_CREATE_VEHICLE = "The vehicle has been created succesfully";
+		public static final String ERROR_CREATE_VEHICLE = "There was an error trying to create the vehicle, please try again...";
+		public static final String FATAL_CREATE_VEHICLE = "There was an unexpected error trying to create thge vehicle, please try again...";
+
+	}
 }

@@ -11,7 +11,7 @@ import edu.uco.carpooling.domain.VehicleDTO;
 import edu.uco.carpooling.service.business.driver.FindDriverByIdUseCase;
 import edu.uco.carpooling.service.business.driver.implementation.FindDriverByIdUseCaseImpl;
 import edu.uco.carpooling.service.business.vehicle.CreateVehicleUseCase;
-import edu.uco.carpooling.service.business.vehicle.FindVehicleUseCase;
+import edu.uco.carpooling.service.business.vehicle.FindVehiclePlate;
 import edu.uco.carpooling.service.business.vehicle.FormatNumEnrollment;
 import edu.uco.carpooling.service.business.vehicle.FormatPlate;
 
@@ -21,14 +21,14 @@ public class CreateVehicleUseCaseImpl implements CreateVehicleUseCase {
 	private final FindDriverByIdUseCase findDriverById;
 	private final FormatPlate formatPlateUseCase;
 	private final FormatNumEnrollment formatNumEnrollment;
-	private final FindVehicleUseCase findVehicleUseCase;
+	private final FindVehiclePlate findVehicleUseCase;
 	
 	public CreateVehicleUseCaseImpl(DAOFactory factory) {
 		this.factory = factory;
 		findDriverById = new FindDriverByIdUseCaseImpl(factory);
 		formatPlateUseCase = new FormatPlateImpl();
 		formatNumEnrollment = new FormatNumEnrollmentImpl();
-		findVehicleUseCase = new FindVehicleUseCaseImpl(factory);
+		findVehicleUseCase = new FindVehiclePlateImpl(factory);
 	}
 
 	@Override

@@ -10,7 +10,7 @@ import edu.uco.carpooling.service.business.vehicle.CreateVehicleUseCase;
 import edu.uco.carpooling.service.business.vehicle.implementation.CreateVehicleUseCaseImpl;
 import edu.uco.carpooling.service.command.CreateVehicleCommand;
 
-public class CreateVehicleCommandImpl implements CreateVeh	icleCommand {
+public class CreateVehicleCommandImpl implements CreateVehicleCommand {
 
 	private final DAOFactory factory = DAOFactory.getDAOFactory(DAOFactoryType.POSTGRESQL);
 	private final CreateVehicleUseCase useCase = new CreateVehicleUseCaseImpl(factory);
