@@ -2,9 +2,10 @@ package edu.uco.carpooling.domain;
 
 import java.util.UUID;
 
+import edu.uco.carpooling.crosscutting.helper.UUIDHelper;
+import edu.uco.carpooling.domain.builder.DriverDTOBuilder;
 
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getDefaultUUID;
-import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getNewUUID;
 
 import static edu.uco.carpooling.crosscutting.helper.StringHelper.applyTrim;
 import static edu.uco.carpooling.crosscutting.helper.StringHelper.EMPTY;
@@ -15,7 +16,7 @@ import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getUUIDFromStrin
 import static edu.uco.carpooling.domain.builder.DriverDTOBuilder.getDriverDTOBuilder;
 
 public class VehicleDTO {
-	
+
 	private UUID id;
 	private String plate;
 	private DriverDTO owner;
@@ -23,35 +24,39 @@ public class VehicleDTO {
 	private String numberEnrollment;
 
 	public VehicleDTO() {
-		setId(getNewUUID());
+		setId(getDefaultUUID(id));
 		setPlate(EMPTY);
-		setCapacity(ZERO);
 		setOwner(getDriverDTOBuilder().build());
+		setCapacity(ZERO);
 		setNumberEnrollment(EMPTY);
 	}
 
-	public VehicleDTO(UUID id,DriverDTO owner,int capacity,final String numberEnrollment) {
+	public VehicleDTO(UUID id, String plate, DriverDTO owner, int capacity, final String numberEnrollment) {
 		setId(id);
 		setPlate(plate);
 		setOwner(owner);
 		setCapacity(capacity);
 		setNumberEnrollment(numberEnrollment);
 	}
-	
-	public static final VehicleDTO create(final UUID id,final String plate,final DriverDTO owner,final int capacity
-			,final String numberEnrollment) {
-		return new VehicleDTO(id,owner,capacity,numberEnrollment);
+
+	public static final VehicleDTO create(final UUID id, final String plate, final DriverDTO owner, final int capacity,
+			final String numberEnrollment) {
+		return new VehicleDTO(id, plate, owner, capacity, numberEnrollment);
 	}
-	
-	public static final VehicleDTO create(final String id,final String plate, final DriverDTO owner,
-			int capacity,final String numberEnrollment) {
-		return new VehicleDTO(getUUIDFromString(id),owner,capacity,numberEnrollment);
+
+	public static final VehicleDTO create(final String plate) {
+		return new VehicleDTO(getDefaultUUID(null), plate, DriverDTOBuilder.getDriverDTOBuilder().build(), ZERO, EMPTY);
 	}
-	
+
+	public static final VehicleDTO create(final String id, final String plate, final DriverDTO owner, int capacity,
+			final String numberEnrollment) {
+		return new VehicleDTO(getUUIDFromString(id), plate, owner, capacity, numberEnrollment);
+	}
+
 	public static final String getUUIDAsString(final UUID value) {
 		return getDefaultUUID(value).toString();
 	}
-	
+
 	public static final String getIntAsString(final int value) {
 		return Integer.toString(value);
 	}
@@ -77,9 +82,8 @@ public class VehicleDTO {
 	}
 
 	public final void setCapacity(final int capacity) {
-		this.capacity = isLessThan(capacity, ZERO)? ZERO: capacity;
+		this.capacity = isLessThan(capacity, ZERO) ? ZERO : capacity;
 	}
-	
 
 	public DriverDTO getOwner() {
 		return owner;
@@ -88,7 +92,7 @@ public class VehicleDTO {
 	public void setOwner(DriverDTO owner) {
 		this.owner = owner;
 	}
-	
+
 	public String getNumberEnrollment() {
 		return numberEnrollment;
 	}
@@ -97,8 +101,16 @@ public class VehicleDTO {
 		this.numberEnrollment = applyTrim(numberEnrollment);
 	}
 
-	
 	public final String getIdAsString() {
 		return getUUIDAsString(getId());
 	}
+
+	public boolean exist() {
+		return !UUIDHelper.isDefaultUUID(id);
+	}
+	
+	public boolean notExist() {
+		return !exist();
+	}
+	
 }

@@ -26,11 +26,10 @@ public class DriverPerVehiclePostgresSqlDAO extends DAORelational implements Dri
 
 	@Override
 	public void create(DriverPerVehicleDTO driverPerVehicle) {
-		final var sql = "INSERT INTO \"DriverVehicle\"(\"idVehicle\",\"idDriver\",state) + VALUES(?,?,?)";
+		final var sql = "INSERT INTO \"DriverVehicle\"(\"idVehicle\",\"idDriver\") + VALUES(?,?)";
 		try (final var preparedStatement = getConnection().prepareStatement(sql)) {
 			preparedStatement.setString(1, driverPerVehicle.getDriver().getIdAsString());
 			preparedStatement.setString(2, driverPerVehicle.getVehicle().getIdAsString());
-			preparedStatement.setString(3, driverPerVehicle.getState());
 
 			preparedStatement.executeUpdate();
 		} catch (final SQLException exception) {
