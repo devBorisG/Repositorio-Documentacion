@@ -1,6 +1,12 @@
 package edu.uco.carpooling.domain;
 
 import java.util.UUID;
+
+import edu.uco.carpooling.crosscutting.helper.ObjectHelper;
+import edu.uco.carpooling.crosscutting.helper.StringHelper;
+import edu.uco.carpooling.crosscutting.helper.UUIDHelper;
+import edu.uco.carpooling.domain.builder.AuthorizedCategoryDTOBuilder;
+
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getDefaultUUID;
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getNewUUID;
 import static edu.uco.carpooling.crosscutting.helper.StringHelper.EMPTY;
@@ -50,6 +56,11 @@ public class DriverDTO extends UserDTO{
 				licenseNumber,authorizedCategory);
 	}
 	
+	public static final DriverDTO create (final UUID id) {
+		return new DriverDTO(id,EMPTY,EMPTY,EMPTY,EMPTY,EMPTY,EMPTY,ZERO,EMPTY,
+				EMPTY,AuthorizedCategoryDTOBuilder.getAuthorizedCategoryDTOBuilder().build());
+	}
+	
 	public static final DriverDTO create (final String id, final String dni, final String firstName, final String secondName,
 			final String firstSurname, final String secondSurname, final String password,
 			final int phone, final String companyEmail,final String licenseNumber,final AuthorizedCategoryDTO authorizedCategory) {
@@ -69,18 +80,25 @@ public class DriverDTO extends UserDTO{
 		return licenseNumber;
 	}
 
-	public void setLicenseNumber(String licenseNumber) {
-		this.licenseNumber = licenseNumber;
+	public final void setLicenseNumber(final String licenseNumber) {
+		this.licenseNumber = StringHelper.applyTrim(licenseNumber);
 	}
 	public AuthorizedCategoryDTO getAuthorizedCategory() {
 		return authorizedCategory;
 	}
 
 	public void setAuthorizedCategory(AuthorizedCategoryDTO authorizedCategory) {
-		this.authorizedCategory = authorizedCategory;
+		this.authorizedCategory = ObjectHelper.getDefaultIfNull(authorizedCategory, getAuthorizedCategoryDTOBuilder().build());
 	}
 	public final String getIdAsString() {
 		return getUUIDAsString(getId());
 	}
 	
+	public boolean exist() {
+		return !UUIDHelper.isDefaultUUID(getId());
+	}
+	
+	public boolean notExist() {
+		return !exist();
+	}
 }

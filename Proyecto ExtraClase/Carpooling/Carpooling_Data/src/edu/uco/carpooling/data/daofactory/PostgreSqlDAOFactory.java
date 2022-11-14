@@ -38,7 +38,6 @@ final class PostgreSqlDAOFactory extends DAOFactory {
 			throw DataCarpoolingException.createTechnicalException(
 					Messages.PostgreSqlDAOFactory.TECHNICAL_OPEN_CONNECTION_UNEXPECTED_ERROR, exception);
 		}
-
 	}
 
 	@Override
