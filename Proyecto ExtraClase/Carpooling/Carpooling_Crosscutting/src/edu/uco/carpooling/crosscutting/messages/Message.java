@@ -11,11 +11,7 @@ public class Message {
 	
 	public Message() {
 		setLevel(MessageLevel.FATAL);
-<<<<<<< HEAD
-		setContent(content);
-=======
 		setContent(StringHelper.EMPTY);
->>>>>>> dev_federico
 	}
 	
 	public Message(MessageLevel level, String content) {
@@ -47,12 +43,7 @@ public class Message {
 	public static Message createSuccessMessage(final String content) {
 		return new Message(MessageLevel.SUCCESS, content);
 	}
-
-<<<<<<< HEAD
-	public void setLevel(MessageLevel level) {
-=======
 	public void setLevel(final MessageLevel level) {
->>>>>>> dev_federico
 		this.level = ObjectHelper.getDefaultIfNull(level, MessageLevel.FATAL);
 	}
 

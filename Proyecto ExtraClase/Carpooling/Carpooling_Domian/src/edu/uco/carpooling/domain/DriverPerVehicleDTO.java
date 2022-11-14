@@ -18,14 +18,14 @@ public class DriverPerVehicleDTO {
         setVehicle(getVehicleDTOBuilder().build());
     }
 
-    public DriverPerVehicleDTO(final DriverDTO driver,final VehicleDTO vehicle,final String state) {
+    public DriverPerVehicleDTO(final String state,final DriverDTO driver,final VehicleDTO vehicle) {
         setDriver(driver);
         setVehicle(vehicle);
         setState(state);
     }
     
-    public static final DriverPerVehicleDTO create(final DriverDTO driver,final VehicleDTO vehicle, final String state){
-        return new DriverPerVehicleDTO(driver , vehicle, state);
+    public static final DriverPerVehicleDTO create(final String string,final DriverDTO driverDTO, final VehicleDTO vehicleDTO){
+        return new DriverPerVehicleDTO(string , driverDTO, vehicleDTO);
     }
 
     public DriverDTO getDriver() {
@@ -51,4 +51,6 @@ public class DriverPerVehicleDTO {
 	public final void setState(final String state) {
 		this.state = applyTrim(state);
 	}
+	
+	
 }

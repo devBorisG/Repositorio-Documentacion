@@ -40,7 +40,7 @@ public class RoutePostrgeSqlDAO extends DAORelational implements RouteDAO{
 			preparedStatement.setString(1, route.getIdAsString());
 			preparedStatement.setString(2, route.getQuotaAsStrin());
 			preparedStatement.setString(3, route.getRouteStatus().getIdAsString());
-			preparedStatement.setString(4, route.getDriverPerVehicleDTO().getIdAsString());
+			//preparedStatement.setString(4, route.getDriverPerVehicleDTO().getIdAsString());
 			preparedStatement.setString(5, route.getDetailRouteDTO().getIdAsString());
 			
 			preparedStatement.executeUpdate();
@@ -127,10 +127,10 @@ public class RoutePostrgeSqlDAO extends DAORelational implements RouteDAO{
 					parameters.add(route.getIdAsString());
 			}
 			
-			if (!UUIDHelper.isDefaultUUID(route.getDriverPerVehicleDTO().getId())) {
+			/*if (!UUIDHelper.isDefaultUUID(route.getDriverPerVehicleDTO().getId())) {
 					sqlBuilder.append(setWhere ? "WHERE ": "AND ").append("Ro.IdDriverVehicle");
 					parameters.add(route.getDriverPerVehicleDTO().getIdAsString());
-			}
+			}*/
 			
 			if (!UUIDHelper.isDefaultUUID(route.getDetailRouteDTO().getId())) {
 					sqlBuilder.append(setWhere ? "WHERE ": "AND ").append("RO.IdDetailRoute");
@@ -276,7 +276,7 @@ public class RoutePostrgeSqlDAO extends DAORelational implements RouteDAO{
 				+ "idPointInterest = ?,idRouteStatus = ? WHERE = id = ?";
 		
 		try (final var preparedStatement = getConnection().prepareStatement(sql)){
-			preparedStatement.setString(1, route.getDriverPerVehicleDTO().getIdAsString());
+			//preparedStatement.setString(1, route.getDriverPerVehicleDTO().getIdAsString());
 			preparedStatement.setString(2, route.getDetailRouteDTO().getIdAsString());
 			preparedStatement.setString(3, route.getRouteStatus().getIdAsString());
 			preparedStatement.setString(4, route.getIdAsString());
