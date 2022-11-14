@@ -22,7 +22,7 @@ import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getUUIDAsString;
 
 public class RouteRequestPostgreSqlDAO extends DAORelational implements RouteRequestDAO{
 
-	protected RouteRequestPostgreSqlDAO(Connection connection) {
+	public RouteRequestPostgreSqlDAO(Connection connection) {
 		super(connection);
 	}
 
@@ -42,7 +42,7 @@ public class RouteRequestPostgreSqlDAO extends DAORelational implements RouteReq
 			
 			preparedStatement.executeUpdate();
 		} catch (final SQLException exception) {
-			String message = Messages.RouteRequestSqlServerDAO.TECHNICAL_PROBLEM_CREATE_ROUTE_REQUEST.concat(routeRequest.getIdAsString());
+			String message = Messages.RouteRequestSqlServerDAO.TECHNICAL_PROBLEM_CREATE_ROUTE_REQUEST.concat(routeRequest.getIdAsString()).concat(exception.getMessage());
 			throw DataCarpoolingException.createTechnicalException(message, exception);
 		} catch (final Exception exception) {
 			throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_CREATE_ROUTE_REQUEST, exception);

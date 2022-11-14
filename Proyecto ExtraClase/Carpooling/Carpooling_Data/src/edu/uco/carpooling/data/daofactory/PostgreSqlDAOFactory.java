@@ -15,6 +15,8 @@ import edu.uco.carpooling.data.dao.VehicleDAO;
 import edu.uco.carpooling.data.dao.relational.postgresql.DriverPostresSqlDAO;
 import edu.uco.carpooling.data.dao.relational.postgresql.CustomerPostgreSqlDAO;
 import edu.uco.carpooling.data.dao.relational.postgresql.VehiclePostgreSqlDAO;
+import edu.uco.carpooling.data.dao.relational.postgresql.RouteRequestPostgreSqlDAO;
+
 
 final class PostgreSqlDAOFactory extends DAOFactory {
 
@@ -112,9 +114,8 @@ final class PostgreSqlDAOFactory extends DAOFactory {
 	}
 
 	@Override
-	public RouteRequestDAO getRouteRequestDTO() {
-		// TODO Auto-generated method stub
-		return null;
+	public RouteRequestDAO getRouteRequestDAO() {
+		return new RouteRequestPostgreSqlDAO(connection);
 	}
 
 }

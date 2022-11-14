@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,6 +25,7 @@ public class RouteRequestController {
 
 	public CreateRouteRequestCommand createRouteRequest = new CreateRouteRequestCommandImpl();
 	
+	@PostMapping("/")
 	public ResponseEntity<Response<RouteRequestDTO>> create(@RequestBody RouteRequestDTO routeRequest){
 		
 		final Response<RouteRequestDTO> response = new Response<>();
@@ -35,26 +37,29 @@ public class RouteRequestController {
 			
 			if (messages.isEmpty()) {
 				createRouteRequest.execute(routeRequest);
+				final List<RouteRequestDTO> data = new ArrayList<>();
+				data.add(routeRequest);
+				response.setData(data);
+				response.addSuccessMessages("Route Request has been create succssefully");
+			}else {
+				httpStatus = HttpStatus.BAD_REQUEST;
+				response.setMessages(messages);
 			}
 			
-			final List<RouteRequestDTO> data = new ArrayList<>();
-			data.add(routeRequest);
-			response.setData(data);
 			
-			response.addSuccessMessages("Route Request has been create succssefully");
 		} catch (final CarpoolingCustomException exception) {
 			if(exception.isTechnicalException()) {
 				response.addErrorMessages("There was an error trying to create Route Request. Please try again...");
-			} else {
 				httpStatus = HttpStatus.BAD_REQUEST;
 				response.addErrorMessages(exception.getMessage());
 			}
 		
-			exception.printStackTrace();
+			//exception.printStackTrace();
 		}
 		
 		catch (final Exception exception) {
 			httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
+			response.addFatalMessages(exception.getMessage());
 			response.addFatalMessages("There was a unexpected error trying to create Route Request. Please try again...");
 			
 			exception.printStackTrace();

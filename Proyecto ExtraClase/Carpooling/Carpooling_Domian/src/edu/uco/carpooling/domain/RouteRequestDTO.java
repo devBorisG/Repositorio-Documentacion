@@ -15,6 +15,8 @@ import static edu.uco.carpooling.crosscutting.helper.StringHelper.applyTrim;
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getUUIDFromString;
 import static edu.uco.carpooling.crosscutting.helper.DateHelper.DEFAULT_DATE;
 import static edu.uco.carpooling.crosscutting.helper.TimeHelper.TIME;
+
+import edu.uco.carpooling.crosscutting.helper.DateHelper;
 import edu.uco.carpooling.crosscutting.helper.UUIDHelper;
 
 public class RouteRequestDTO {
@@ -37,16 +39,6 @@ public class RouteRequestDTO {
 		setStatus(EMPTY);
 	}*/
 	
-	public RouteRequestDTO() {
-		setId(getNewUUID());
-		setServiceRequestDate(DEFAULT_DATE);
-		setServiceRequestTime(TIME);
-		setRouterequesOrigin(EMPTY);
-		setRouterequesEnd(EMPTY);
-		setCustomer(null);
-		setStatus(EMPTY);
-	}
-	
 	public  RouteRequestDTO (final UUID id,final Time serviceRequesTime,
 			final Date serviceRequestDate,final CustomerDTO customer,
 			final String status,final String routeRequestOrigin,
@@ -59,6 +51,17 @@ public class RouteRequestDTO {
 		setRouterequesEnd(routeRequestEnd);
 		setCustomer(customer);
 	}
+	
+	public RouteRequestDTO() {
+		setId(getNewUUID());
+		setServiceRequestDate(DEFAULT_DATE);
+		setServiceRequestTime(TIME);
+		setRouterequesOrigin(EMPTY);
+		setRouterequesEnd(EMPTY);
+		setCustomer(null);
+		setStatus(EMPTY);
+	}
+	
 	
 	public static final RouteRequestDTO create(final UUID id,final Time serviceRequesTime,
 			final Date serviceRequestDate,final CustomerDTO customer,

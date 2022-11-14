@@ -24,8 +24,13 @@ public class CreateRouteRequestCommandImpl implements CreateRouteRequestCommand{
 			throw e;
 		} catch (Exception e) {
 			factory.cancelTransaction();
+			throw e;
 		} finally {
-			factory.closeConnection();
+			try {
+				factory.closeConnection();				
+			}catch(Exception e ) {
+				throw e;
+			}
 		}
 		
 	}
