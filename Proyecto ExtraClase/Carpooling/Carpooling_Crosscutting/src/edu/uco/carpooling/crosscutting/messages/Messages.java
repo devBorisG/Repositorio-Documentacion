@@ -327,4 +327,14 @@ public class Messages {
 		public static final String FATAL_CREATE_VEHICLE = "There was an unexpected error trying to create thge vehicle, please try again...";
 
 	}
+	
+	public static class CreateDriverPerVehicleUseCaseImpl{
+		private CreateDriverPerVehicleUseCaseImpl() {
+			super();
+		}
+		
+		public static final String BUSSINES_DRIVER_DOES_NOT_EXISTS = "The driver does not exist.";
+		public static final String BUSSINES_VEHICLE_DOES_NOT_EXISTS = "The vehicle does not exist.";
+
+	}
 }

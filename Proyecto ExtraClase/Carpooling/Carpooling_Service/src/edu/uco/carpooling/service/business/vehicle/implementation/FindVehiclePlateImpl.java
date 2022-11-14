@@ -15,8 +15,21 @@ public class FindVehiclePlateImpl implements FindVehiclePlate {
 	}
 	
 	@Override
-	public List<VehicleDTO> execute(VehicleDTO vehicle) {
-		return factory.getVehicleDAO().findPlate(vehicle);
+	public VehicleDTO execute(String plate) {
+		final VehicleDTO vehicle = VehicleDTO.create(plate);
+		VehicleDTO result = new VehicleDTO();
+		
+		final List<VehicleDTO> results = factory.getVehicleDAO().findPlate(vehicle);
+		
+		System.out.println(result.equals(results));
+		
+		if(!results.isEmpty()) {
+			result = results.get(0);
+		}
+		
+		
+		
+		return result;
 	}
 
 }
