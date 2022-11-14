@@ -17,38 +17,7 @@ public class DriverDTO extends UserDTO{
 		setLicenseNumber(EMPTY);
 		setAuthorizedCategory(getAuthorizedCategoryDTOBuilder().build());
 	}
-	
-<<<<<<< HEAD
-	public DriverDTO(final UUID id, final String dni, final String firstName, final String secondName,
-			final String firstSurname, final String secondSurname, final String password,
-			final int phone, final String companyEmail,final String licenseNumber, final AuthorizedCategoryDTO authorizedCategory) {
-		setId(getDefaultUUID(id));
-		setDni(dni);
-		setFirstName(firstName);
-		setSecondName(secondName);
-		setFirstSurname(firstSurname);
-		setSecondSurname(secondSurname);
-		setPassword(password);
-		setPhone(phone);
-		setCompanyEmail(companyEmail);
-		setLicenseNumber(licenseNumber);
-		setAuthorizedCategory(authorizedCategory);
-	}
-	
-	
-	public static final DriverDTO create (final UUID id, final String dni, final String firstName, final String secondName,
-			final String firstSurname, final String secondSurname, final String password,
-			final int phone, final String companyEmail,final String licenseNumber,final AuthorizedCategoryDTO authorizedCategory) {
-		return new DriverDTO(id,dni,firstName,secondName,firstSurname,secondSurname,password,phone,companyEmail,
-				licenseNumber,authorizedCategory);
-	}
-	
-	public static final DriverDTO create (final String id, final String dni, final String firstName, final String secondName,
-			final String firstSurname, final String secondSurname, final String password,
-			final int phone, final String companyEmail,final String licenseNumber,final AuthorizedCategoryDTO authorizedCategory) {
-		return new DriverDTO(getUUIDFromString(id),dni,firstName,secondName,firstSurname,secondSurname,password,phone,companyEmail,
-				licenseNumber,authorizedCategory);
-=======
+
 	public DriverDTO(final UUID id,final String licenseNumber, final AuthorizedCategoryDTO authorizedCategory) {
 		setId(getDefaultUUID(id));
 		setLicenseNumber(licenseNumber);
@@ -66,7 +35,6 @@ public class DriverDTO extends UserDTO{
 	
 	public static final DriverDTO create (final UUID id) {
 		return new DriverDTO(id, EMPTY, null);
->>>>>>> dev_federico
 	}
 	
 	public static final String getUUIDAsString(final UUID value) {
