@@ -12,10 +12,6 @@ public class StringHelper {
 		super();
 	}
 	
-	public static final boolean isDefaultString(String value) {
-		return EMPTY.equals(value);
-	}
-	
 	public static final String getDefaultString(String value, String defaultValue) {
 		return getDefaultIfNull(value, defaultValue);
 	}

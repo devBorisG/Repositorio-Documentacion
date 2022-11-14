@@ -8,7 +8,7 @@ import edu.uco.budget.service.usecase.budget.FindBudgetUseCase;
 
 public class FindBudgetUseCaseImpl implements FindBudgetUseCase {
 
-	private final DAOFactory factory;
+private final DAOFactory factory;
 	
 	public FindBudgetUseCaseImpl(DAOFactory factory) {
 		this.factory = factory;

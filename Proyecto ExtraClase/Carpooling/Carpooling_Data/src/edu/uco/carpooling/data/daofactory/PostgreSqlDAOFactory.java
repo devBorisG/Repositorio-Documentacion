@@ -27,9 +27,9 @@ final class PostgreSqlDAOFactory extends DAOFactory {
 
 	@Override
 	protected void openConnection() {
-		final String url = "jdbc:postgresql://localhost/carpooling";
-		final String user = "postgres";
-		final String pass = "2801";
+		final String url = "jdbc:postgresql://ec2-35-170-21-76.compute-1.amazonaws.com/df7f8n649fij8i";
+		final String user = "jqfqqgioigerua";
+		final String pass = "95c86ffbf0eee37a4676aed43dd2f6a420fb1a7d8dd332d70e4aa28b3e5b8f41";
 		try {
 			connection = DriverManager.getConnection(url,user,pass);
 		} catch (SQLException exception) {
@@ -39,6 +39,7 @@ final class PostgreSqlDAOFactory extends DAOFactory {
 			throw DataCarpoolingException.createTechnicalException(
 					Messages.PostgreSqlDAOFactory.TECHNICAL_OPEN_CONNECTION_UNEXPECTED_ERROR, exception);
 		}
+
 	}
 
 	@Override
