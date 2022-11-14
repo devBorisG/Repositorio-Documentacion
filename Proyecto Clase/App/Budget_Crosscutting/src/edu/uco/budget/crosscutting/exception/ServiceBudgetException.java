@@ -34,4 +34,6 @@ public class ServiceBudgetException extends BudgetCustomException{
 	public static final BudgetCustomException createUserException(final String userMessage) {
 		return new ServiceBudgetException(new Exception(), userMessage, EMPTY);
 	}
+	
+	
 }
