@@ -9,14 +9,6 @@ import static edu.uco.carpooling.domain.DriverDTO.create;
 public class DriverDTOBuilder {
 
 	private UUID id;
-	private String dni;
-	private String firstName;
-	private String secondName;
-	private String firstSurname;
-	private String secondSurname;
-	private String password;
-	private int phone;
-	private String companyEmail;
 	private String licenseNumber;
 	private AuthorizedCategoryDTO authorizedCategory;
 	
@@ -32,47 +24,6 @@ public class DriverDTOBuilder {
 		this.id = id;
 		return this;
 	}
-
-	public final DriverDTOBuilder setDni(String dni) {
-		this.dni = dni;
-		return this;
-	}
-
-	public final DriverDTOBuilder setFirstName(String firstName) {
-		this.firstName = firstName;
-		return this;
-	}
-
-	public final DriverDTOBuilder setSecondName(String secondName) {
-		this.secondName = secondName;
-		return this;
-	}
-
-	public final DriverDTOBuilder setFirstSurname(String firstSurname) {
-		this.firstSurname = firstSurname;
-		return this;
-	}
-
-	public final DriverDTOBuilder setSecondSurname(String secondSurname) {
-		this.secondSurname = secondSurname;
-		return this;
-	}
-
-	public final DriverDTOBuilder setPassword(String password) {
-		this.password = password;
-		return this;
-	}
-
-	public final DriverDTOBuilder setPhone(int phone) {
-		this.phone = phone;
-		return this;
-	}
-
-	public final DriverDTOBuilder setCompanyEmail(String companyEmail) {
-		this.companyEmail = companyEmail;
-		return this;
-	}
-	
 	public DriverDTOBuilder setLicenseNumber(String licenseNumber) {
 		this.licenseNumber = licenseNumber;
 		return this;
@@ -84,6 +35,6 @@ public class DriverDTOBuilder {
 	}
 	
 	public final DriverDTO build() {
-		return create(id, dni, firstName, secondName, firstSurname, secondSurname, password, phone, companyEmail,licenseNumber,authorizedCategory);
+		return create(id,licenseNumber,authorizedCategory);
 	}
 }

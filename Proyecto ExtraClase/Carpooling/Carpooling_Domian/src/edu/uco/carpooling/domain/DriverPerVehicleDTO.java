@@ -13,7 +13,7 @@ public class DriverPerVehicleDTO {
         setDriver(getDriverDTOBuilder().build());
         setVehicle(getVehicleDTOBuilder().build());
     }
-
+    
     public DriverPerVehicleDTO(final DriverDTO driver,final VehicleDTO vehicle) {
         setDriver(driver);
         setVehicle(vehicle);
@@ -21,6 +21,7 @@ public class DriverPerVehicleDTO {
     
     public static final DriverPerVehicleDTO create(final DriverDTO driver,final VehicleDTO vehicle){
         return new DriverPerVehicleDTO(driver , vehicle);
+
     }
 
     public DriverDTO getDriver() {
@@ -38,4 +39,5 @@ public class DriverPerVehicleDTO {
     public final void setVehicle(final VehicleDTO vehicle) {
         this.vehicle = getDefaultIfNull(vehicle, getVehicleDTOBuilder().build() );
     }
+
 }

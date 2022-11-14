@@ -1,38 +1,36 @@
 package edu.uco.carpooling.domain;
 
-import java.sql.Date;
 import java.util.UUID;
 
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getNewUUID;
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getUUIDFromString;
 import static edu.uco.carpooling.crosscutting.helper.StringHelper.EMPTY;
-import static edu.uco.carpooling.crosscutting.helper.DateHelper.DEFAULT_DATE;
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getDefaultUUID;
 import static edu.uco.carpooling.crosscutting.helper.StringHelper.applyTrim;
-import static edu.uco.carpooling.crosscutting.helper.DateHelper.getDefaultDate;
 
 public class AuthorizedCategoryDTO {
 
     private UUID id;
     private String category;
-    private Date validity;
+    private String validity;
 
     public AuthorizedCategoryDTO(){
         setId(getNewUUID());
         setCategory(EMPTY);
-        setValidity(DEFAULT_DATE);
+        setValidity(EMPTY);
     }
 
-    public AuthorizedCategoryDTO(final UUID id,final String category,final Date validity) {
+    public AuthorizedCategoryDTO(final UUID id,final String category,final String validity) {
         setId(id);
         setCategory(category);
         setValidity(validity);
     }
-    public static final AuthorizedCategoryDTO create(final UUID string,final String category,final Date date) {
-        return new AuthorizedCategoryDTO(string,category,date);
+    
+    public static final AuthorizedCategoryDTO create(final UUID string,final String category,final String validity) {
+        return new AuthorizedCategoryDTO(string,category,validity);
     }
     
-    public static final AuthorizedCategoryDTO create(final String id,final String category,final Date validity) {
+    public static final AuthorizedCategoryDTO create(final String id,final String category,final String validity) {
         return new AuthorizedCategoryDTO(getUUIDFromString(id),category,validity);
     }
     
@@ -60,11 +58,11 @@ public class AuthorizedCategoryDTO {
         return category;
     }
 
-    public final void setValidity(final Date validity) {
-        this.validity = getDefaultDate(validity);
+    public final void setValidity(final String validity) {
+        this.validity = applyTrim(validity);
     }
 
-    public final Date getValidity() {
+    public final String getValidity() {
         return validity;
     }
     

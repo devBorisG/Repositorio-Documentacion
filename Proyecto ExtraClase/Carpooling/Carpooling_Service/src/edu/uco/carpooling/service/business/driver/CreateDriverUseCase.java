@@ -4,5 +4,5 @@ import edu.uco.carpooling.domain.DriverDTO;
 
 public interface CreateDriverUseCase {
 	
-	void execute(DriverDTO driver);
+	void create(DriverDTO driver);
 }

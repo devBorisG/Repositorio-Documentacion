@@ -39,10 +39,10 @@ public class QualificationPostgresSqlDAO extends DAORelational implements Qualif
 
             preparedStatement.executeUpdate();
         } catch (final SQLException exception) {
-            String message = Messages.RouteRequestSqlServerDAO.TECHNICAL_PROBLEM_CREATE_ROUTE_REQUEST.concat(qualification.getIdAsString());
+            String message = Messages.RouteRequestPostgreSQLDAO.TECHNICAL_PROBLEM_CREATE_ROUTE_REQUEST.concat(qualification.getIdAsString());
             throw DataCarpoolingException.createTechnicalException(message, exception);
         } catch (final Exception exception) {
-            throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_CREATE_ROUTE_REQUEST, exception);
+            throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestPostgreSQLDAO.TECHNICAL_UNEXPECTED_PROBLEM_CREATE_ROUTE_REQUEST, exception);
         }
 
     }
@@ -69,9 +69,9 @@ public class QualificationPostgresSqlDAO extends DAORelational implements Qualif
         } catch (final DataCarpoolingException exception) {
             throw exception;
         } catch (final SQLException exception) {
-            throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestSqlServerDAO.TECHNICAL_PROBLEM_PREPARED_STAMENT, exception);
+            throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestPostgreSQLDAO.TECHNICAL_PROBLEM_PREPARED_STAMENT, exception);
         } catch (final Exception exception) {
-            throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMETER_VALUES_QUERY, exception);
+            throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestPostgreSQLDAO.TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMETER_VALUES_QUERY, exception);
         }
     }
 
@@ -120,9 +120,9 @@ public class QualificationPostgresSqlDAO extends DAORelational implements Qualif
         } catch (DataCarpoolingException exception) {
             throw exception;
         } catch (final SQLException exception) {
-            throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestSqlServerDAO.TECHNICAL_PROBLEM_EXECUTE_QUERY, exception);
+            throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestPostgreSQLDAO.TECHNICAL_PROBLEM_EXECUTE_QUERY, exception);
         } catch (final Exception exception) {
-            throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_EXECEUTE_QUERY, exception);
+            throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestPostgreSQLDAO.TECHNICAL_UNEXPECTED_PROBLEM_EXECEUTE_QUERY, exception);
         }
     }
 
@@ -132,9 +132,9 @@ public class QualificationPostgresSqlDAO extends DAORelational implements Qualif
                 preparedStatement.setObject(index + 1, parameters.get(index));
             }
         } catch (SQLException exception) {
-            throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestSqlServerDAO.TECHNICAL_PROBLEM_EXECUTE_QUERY, exception);
+            throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestPostgreSQLDAO.TECHNICAL_PROBLEM_EXECUTE_QUERY, exception);
         } catch (final Exception exception) {
-            throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMETER_VALUES_QUERY, exception);
+            throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestPostgreSQLDAO.TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMETER_VALUES_QUERY, exception);
         }
     }
 
@@ -150,30 +150,26 @@ public class QualificationPostgresSqlDAO extends DAORelational implements Qualif
         } catch (final DataCarpoolingException exception) {
             throw exception;
         } catch (final SQLException exception) {
-            throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestSqlServerDAO.TECHNICAL_PROBLEM_FILL_RESULTS, exception);
+            throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestPostgreSQLDAO.TECHNICAL_PROBLEM_FILL_RESULTS, exception);
         } catch (final Exception exception) {
-            throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS, exception);
+            throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestPostgreSQLDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS, exception);
         }
     }
     
     private final DriverDTO fillDriver(final ResultSet resultSet) {
         try {
-        	return DriverDTO.create(resultSet.getString("IdDirver"), resultSet.getString("dni"), 
-					resultSet.getString("FirstName"), resultSet.getString("SecondName"), 
-					resultSet.getString("FirstSurname"),resultSet.getString("SecondSurname"),
-					resultSet.getString("Password"),resultSet.getInt("Phone"),
-					resultSet.getString("Email"),resultSet.getString("License"),fillAuthorizedCategoryDTO(resultSet));
+        	return DriverDTO.create(resultSet.getString("IdDirver"),resultSet.getString("License"),fillAuthorizedCategoryDTO(resultSet));
         } catch (final SQLException exception) {
-            throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestSqlServerDAO.TECHNICAL_PROBLEM_FILL_CUSTOMER_DTO, exception);
+            throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestPostgreSQLDAO.TECHNICAL_PROBLEM_FILL_CUSTOMER_DTO, exception);
         } catch (final Exception exception) {
-            throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_CUSTOMER_DTO, exception);
+            throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestPostgreSQLDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_CUSTOMER_DTO, exception);
         }
     }
     
 	private final AuthorizedCategoryDTO fillAuthorizedCategoryDTO(final ResultSet resultSet) {
 		try {
 			return AuthorizedCategoryDTO.create(resultSet.getString("IdCategory"),
-					resultSet.getString("NameCategory"),resultSet.getDate("Validity"));
+					resultSet.getString("NameCategory"),resultSet.getString("Validity"));
 		} catch (final SQLException exception) {
 			throw DataCarpoolingException.createTechnicalException(Messages.RouteqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_AUTHORIZED_CATEGOTY_DTO, exception);			
 		} catch (final Exception exception) {
@@ -205,10 +201,10 @@ public class QualificationPostgresSqlDAO extends DAORelational implements Qualif
             preparedStatement.executeUpdate();
 
         } catch (final SQLException exception) {
-            String message = Messages.RouteRequestSqlServerDAO.TECHNICAL_PROBLEM_UPDATE_ROUTE_REQUEST.concat(qualification.getIdAsString());
+            String message = Messages.RouteRequestPostgreSQLDAO.TECHNICAL_PROBLEM_UPDATE_ROUTE_REQUEST.concat(qualification.getIdAsString());
             throw DataCarpoolingException.createTechnicalException(message, exception);
         } catch (final Exception exception) {
-            throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_EXECEUTE_QUERY, exception);
+            throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestPostgreSQLDAO.TECHNICAL_UNEXPECTED_PROBLEM_EXECEUTE_QUERY, exception);
         }
 
     }
@@ -223,10 +219,10 @@ public class QualificationPostgresSqlDAO extends DAORelational implements Qualif
 
             preparedStatement.executeUpdate();
         } catch (final SQLException exception) {
-            String message = Messages.RouteRequestSqlServerDAO.TECHNICAL_PROBLEM_UPDATE_ROUTE_REQUEST;
+            String message = Messages.RouteRequestPostgreSQLDAO.TECHNICAL_PROBLEM_UPDATE_ROUTE_REQUEST;
             throw DataCarpoolingException.createTechnicalException(message, exception);
         } catch (final Exception exception) {
-            throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_EXECEUTE_QUERY, exception);
+            throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestPostgreSQLDAO.TECHNICAL_UNEXPECTED_PROBLEM_EXECEUTE_QUERY, exception);
         }
     }
 }
