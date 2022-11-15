@@ -2,6 +2,7 @@ package edu.uco.carpooling.domain;
 
 import java.sql.Date;
 import java.sql.Time;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getDefaultUUID;
@@ -19,6 +20,7 @@ import static edu.uco.carpooling.crosscutting.helper.TimeHelper.TIME;
 import edu.uco.carpooling.crosscutting.helper.DateHelper;
 import edu.uco.carpooling.crosscutting.helper.UUIDHelper;
 
+
 public class RouteRequestDTO {
 
 	private UUID id;
@@ -29,15 +31,16 @@ public class RouteRequestDTO {
 	private String routeRequestOrigin;
 	private String routeRequestEnd;
 	
-	/*public RouteRequestDTO() {
+	
+	public RouteRequestDTO() {
 		setId(getNewUUID());
-		setServiceRequestDate(getServiceRequestDate());
-		setServiceRequestTime(getServiceRequestTime());
-		setRouterequesEnd(EMPTY);
-		setRouterequesOrigin(EMPTY);
-		setCustomer(getUserDTOBuilder().build());
+		setServiceRequestDate(DEFAULT_DATE);
+		setServiceRequestTime(TIME);
+		setCustomer(null);
 		setStatus(EMPTY);
-	}*/
+		setRouterequesOrigin(EMPTY);
+		setRouterequesEnd(EMPTY);
+	}
 	
 	public  RouteRequestDTO (final UUID id,final Time serviceRequesTime,
 			final Date serviceRequestDate,final CustomerDTO customer,
@@ -46,22 +49,11 @@ public class RouteRequestDTO {
 		setId(id);
 		setServiceRequestTime(serviceRequesTime);
 		setServiceRequestDate(serviceRequestDate);
+		setCustomer(customer);
 		setStatus(status);
 		setRouterequesOrigin(routeRequestOrigin);
 		setRouterequesEnd(routeRequestEnd);
-		setCustomer(customer);
 	}
-	
-	public RouteRequestDTO() {
-		setId(getNewUUID());
-		setServiceRequestDate(DEFAULT_DATE);
-		setServiceRequestTime(TIME);
-		setRouterequesOrigin(EMPTY);
-		setRouterequesEnd(EMPTY);
-		setCustomer(null);
-		setStatus(EMPTY);
-	}
-	
 	
 	public static final RouteRequestDTO create(final UUID id,final Time serviceRequesTime,
 			final Date serviceRequestDate,final CustomerDTO customer,
@@ -114,19 +106,19 @@ public class RouteRequestDTO {
 	public String getStatus() {
 		return status;
 	}
-	public void setStatus(final String status) {
+	public final void setStatus(final String status) {
 		this.status = applyTrim(routeRequestEnd);
 	}
 	public String getRouterequesOrigin() {
 		return routeRequestOrigin;
 	}
-	public void setRouterequesOrigin(final String routeRequestOrigin) {
+	public final void setRouterequesOrigin(final String routeRequestOrigin) {
 		this.routeRequestOrigin = applyTrim(routeRequestOrigin);
 	}
 	public String getRouterequesEnd() {
 		return routeRequestEnd;
 	}
-	public void setRouterequesEnd(final String routeRequestEnd) {
+	public final void setRouterequesEnd(final String routeRequestEnd) {
 		this.routeRequestEnd = applyTrim(routeRequestEnd);
 	}
 	

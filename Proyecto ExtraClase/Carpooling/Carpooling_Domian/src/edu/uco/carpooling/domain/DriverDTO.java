@@ -20,13 +20,21 @@ public class DriverDTO extends UserDTO{
 		setLicenseNumber(EMPTY);
 		setAuthorizedCategory(getAuthorizedCategoryDTOBuilder().build());
 	}
+	
+	public DriverDTO(final String id,final String licenseNumber, final AuthorizedCategoryDTO authorizedCategory,
+			String dni,final String firstName,final String secondName,final String firstSurname,final String secondSurname,
+			final String password,final int phone,final String emailCompany) {
+		super(UUIDHelper.getUUIDFromString(id), dni,firstName, secondName, firstSurname, secondSurname, password, phone, emailCompany);
+		setId(getDefaultUUID(UUIDHelper.getUUIDFromString(id)));
+		setLicenseNumber(licenseNumber);
+		setAuthorizedCategory(authorizedCategory);
+	}
 
 	public DriverDTO(final UUID id,final String licenseNumber, final AuthorizedCategoryDTO authorizedCategory) {
 		setId(getDefaultUUID(id));
 		setLicenseNumber(licenseNumber);
 		setAuthorizedCategory(authorizedCategory);
 	}
-	
 	
 	public static final DriverDTO create (final UUID id,final String licenseNumber,final AuthorizedCategoryDTO authorizedCategory) {
 		return new DriverDTO(id,licenseNumber,authorizedCategory);

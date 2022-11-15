@@ -63,7 +63,6 @@ public class RouteRequestPostgreSqlDAO extends DAORelational implements RouteReq
 		
 		creatSelectFrom(sqlBuilder);
 		creatWhere(sqlBuilder, routeRequest, parameters);
-		createOrderBy(sqlBuilder);
 		
 		return prepareAndExecuteQuery(sqlBuilder, parameters);
 	}
@@ -85,28 +84,24 @@ public class RouteRequestPostgreSqlDAO extends DAORelational implements RouteReq
 	}
 	
 	private final void creatSelectFrom(final StringBuilder sqlBuilder) {
-		sqlBuilder.append("SELECT     RR.Id AS IdRouteRequest");
-		sqlBuilder.append("           RR.RequestHour AS Hour");
-		sqlBuilder.append("           RR.RequestDate AS Date");
-		sqlBuilder.append("           RR.Customer AS NameCustomer");
-		sqlBuilder.append("           RR.BeginRequest AS BeginRoute");
-		sqlBuilder.append("           RR.EndRequest AS EndRoute");
-		sqlBuilder.append("           RR.Status AS Status");
-		sqlBuilder.append("           Us.dni AS Numberdni");
-		sqlBuilder.append("           Us.firstName AS firstNameCustomer");
-		sqlBuilder.append("           Us.secondName AS secondNameCustomer");
-		sqlBuilder.append("           Us.firstSurname AS firstSurnameCustomer");
-		sqlBuilder.append("           Us.secondSurname AS secondSurnameCustomer");
-		sqlBuilder.append("           Us.password AS passwordCustomer");
-		sqlBuilder.append("           Us.phone AS phoneCustomer");
-		sqlBuilder.append("           Us.companyEmail AS companyEmailCustomer");
-		sqlBuilder.append("           St.status AS statusRequest");
-		sqlBuilder.append("           St.valueDefault AS Messages");
-		sqlBuilder.append("FROM       RouteRequest RR");
-		sqlBuilder.append("INNER JOIN User Us");
-		sqlBuilder.append("ON         Us.Id = RR.IdCustomer");
-		sqlBuilder.append("INNER JOIN Status ST");
-		sqlBuilder.append("ON         ST.id = RR.IdStatus");
+		sqlBuilder.append("SELECT     RR.id AS id,");
+		sqlBuilder.append(" RR.hour AS hour,");
+		sqlBuilder.append(" RR.date AS date,");
+		sqlBuilder.append(" RR.iduser AS iduser,");
+		sqlBuilder.append(" RR.routeorigin AS routeorigin,");
+		sqlBuilder.append(" RR.routedestination AS routedestination,");
+		sqlBuilder.append(" RR.confirmedroute AS confirmedroute,");
+		sqlBuilder.append(" Us.dni AS dni,");
+		sqlBuilder.append(" Us.firstname AS firstname,");
+		sqlBuilder.append(" Us.secondname AS secondname,");
+		sqlBuilder.append(" Us.firstsurname AS firstsurname,");
+		sqlBuilder.append(" Us.secondsurname AS secondsurname,");
+		sqlBuilder.append(" Us.password AS password,");
+		sqlBuilder.append(" Us.phone AS phone,");
+		sqlBuilder.append(" Us.companyemail AS email");
+		sqlBuilder.append(" FROM       public.routerequest RR");
+		sqlBuilder.append(" INNER JOIN public.user Us");
+		sqlBuilder.append(" ON Us.id = RR.iduser");
 	}
 
 	private final void creatWhere(final StringBuilder sqlBuilder, final RouteRequestDTO routeRequest, final List<Object> parameters) {
@@ -120,20 +115,15 @@ public class RouteRequestPostgreSqlDAO extends DAORelational implements RouteReq
 			}
 			
 			if (!UUIDHelper.isDefaultUUID(routeRequest.getCustomer().getId())) {
-				sqlBuilder.append(setWhere ? "WHERE ": "AND ").append("RR.IdCustomer = ? ");
+				sqlBuilder.append(setWhere ? "WHERE ": "AND ").append("RR.iduser = ? ");
 				parameters.add(routeRequest.getCustomer().getIdAsString());
 			}
 			
 			if (!StringHelper.isEmpty(routeRequest.getStatus())) {
-				sqlBuilder.append(setWhere ? "WHERE ": "AND ").append("RR.IdStatus = ? ");
+				sqlBuilder.append(setWhere ? "WHERE ": "AND ").append("RR.ststus = ? ");
 				parameters.add(routeRequest.getStatus());
 			}
 		}
-	}
-	
-	private void  createOrderBy(final StringBuilder sqlBuilder) {
-		sqlBuilder.append("ORDER BY   Us.dni ASC,");
-		sqlBuilder.append("           ST.status ASC");	
 	}
 	
 	private final List<RouteRequestDTO> executeQuery (PreparedStatement preparedStatement){
@@ -144,9 +134,11 @@ public class RouteRequestPostgreSqlDAO extends DAORelational implements RouteReq
 		} catch (DataCarpoolingException exception) {
 			throw exception;
 		} catch (final SQLException exception) {
-			throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestPostgreSQLDAO.TECHNICAL_PROBLEM_EXECUTE_QUERY, exception);
+			throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestPostgreSQLDAO.TECHNICAL_PROBLEM_EXECUTE_QUERY
+					.concat(". More info: ").concat(exception.getMessage()), exception);
 		} catch (final Exception exception) {
-			throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestPostgreSQLDAO.TECHNICAL_UNEXPECTED_PROBLEM_EXECEUTE_QUERY, exception);
+			throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestPostgreSQLDAO.TECHNICAL_UNEXPECTED_PROBLEM_EXECEUTE_QUERY
+					.concat(". More info: ").concat(exception.getMessage()), exception);
 		}
 	}
 	
@@ -197,11 +189,11 @@ public class RouteRequestPostgreSqlDAO extends DAORelational implements RouteReq
 	private final CustomerDTO fillCustomer(final ResultSet resultSet) {
 		try {
 			
-				return CustomerDTO.create(resultSet.getString("id"), StringHelper.EMPTY, 
-						StringHelper.EMPTY, StringHelper.EMPTY, 
-						StringHelper.EMPTY, StringHelper.EMPTY, 
-						StringHelper.EMPTY,0, 
-						StringHelper.EMPTY);
+				return CustomerDTO.create(resultSet.getString("iduser"), resultSet.getString("dni"), 
+						resultSet.getString("firstname"), resultSet.getString("secondname"), 
+						resultSet.getString("firstsurname"), resultSet.getString("secondsurname"), 
+						resultSet.getString("password"),resultSet.getInt("phone"), 
+						resultSet.getString("email"));
 						
 		} catch (final SQLException exception) {
 			throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestPostgreSQLDAO.TECHNICAL_PROBLEM_FILL_CUSTOMER_DTO, exception);

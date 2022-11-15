@@ -10,6 +10,7 @@ public interface CustomerDAO {
 	void create(CustomerDTO user);
 	
 	List<CustomerDTO> find(CustomerDTO user);
+	List<CustomerDTO> findById(String id);
 	
 	void update(CustomerDTO user);
 	
