@@ -87,11 +87,11 @@ public class DriverController {
 			GetDriverByIdCommand command = new GetDriverByIdCommandImpl();
 			List<DriverDTO> dto = command.getById(id);
 			if(dto.isEmpty()) {
-				throw DataCarpoolingException.createTechnicalException("No driver found");
+				throw DataCarpoolingException.createTechnicalException(Messages.DriverController.CONTROLLER_ERROR_TRY_FOUND_DRIVER_BYID);
 			}else {
 				response.setData(dto);
 				httpStatus = HttpStatus.OK;
-				response.addSuccessMessages("Success");				
+				response.addSuccessMessages(Messages.DriverController.CONTROLLER_SUCCES_FOUND_DRIVER_BYID);				
 			}
 		} catch(CarpoolingCustomException e) {
 			response.addErrorMessages(e.getMessage());

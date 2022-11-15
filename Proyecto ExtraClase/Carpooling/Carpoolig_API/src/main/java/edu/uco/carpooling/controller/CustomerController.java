@@ -86,11 +86,11 @@ public class CustomerController {
 			GetCustomerByIdCommand command = new GetCustomerByIdCommandImpl();
 			List<CustomerDTO> dto = command.getById(id);
 			if(dto.isEmpty()) {
-				throw DataCarpoolingException.createTechnicalException("No customer found");
+				throw DataCarpoolingException.createTechnicalException(Messages.CustomerController.CONTROLLER_ERROR_TRY_FOUND_CUSTOMER_BYID);
 			}else {
 				response.setData(dto);
 				httpStatus = HttpStatus.OK;
-				response.addSuccessMessages("Success");				
+				response.addSuccessMessages(Messages.CustomerController.CONTROLLER_SUCCES_FOUND_CUSTOMER_BYID);				
 			}
 		} catch(CarpoolingCustomException e) {
 			response.addErrorMessages(e.getMessage());
