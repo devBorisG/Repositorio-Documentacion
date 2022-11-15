@@ -2,9 +2,10 @@ package edu.uco.carpooling.domain;
 
 import java.util.UUID;
 
+import edu.uco.carpooling.crosscutting.helper.UUIDHelper;
+import edu.uco.carpooling.domain.builder.DriverDTOBuilder;
 
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getDefaultUUID;
-import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getNewUUID;
 
 import static edu.uco.carpooling.crosscutting.helper.StringHelper.applyTrim;
 import static edu.uco.carpooling.crosscutting.helper.StringHelper.EMPTY;
@@ -23,29 +24,33 @@ public class VehicleDTO {
 	private String numberEnrollment;
 
 	public VehicleDTO() {
-		setId(getNewUUID());
+		setId(getDefaultUUID(id));
 		setPlate(EMPTY);
 		setCapacity(ZERO);
 		setOwner(getDriverDTOBuilder().build());
 		setNumberEnrollment(EMPTY);
 	}
 
-	public VehicleDTO(UUID id,DriverDTO owner,int capacity,final String numberEnrollment) {
+	public VehicleDTO(UUID id,DriverDTO owner,int capacity,final String numberEnrollment, final String plate) {
 		setId(id);
-		setPlate(plate);
 		setOwner(owner);
 		setCapacity(capacity);
 		setNumberEnrollment(numberEnrollment);
+		setPlate(plate);
 	}
 	
 	public static final VehicleDTO create(final UUID id,final String plate,final DriverDTO owner,final int capacity
 			,final String numberEnrollment) {
-		return new VehicleDTO(id,owner,capacity,numberEnrollment);
+		return new VehicleDTO(id,owner,capacity,numberEnrollment, plate);
+	}
+	
+	public static final VehicleDTO create(final String plate) {
+		return new VehicleDTO(getDefaultUUID(null), DriverDTOBuilder.getDriverDTOBuilder().build(), ZERO, EMPTY, plate);
 	}
 	
 	public static final VehicleDTO create(final String id,final String plate, final DriverDTO owner,
 			int capacity,final String numberEnrollment) {
-		return new VehicleDTO(getUUIDFromString(id),owner,capacity,numberEnrollment);
+		return new VehicleDTO(getUUIDFromString(id),owner,capacity,numberEnrollment,plate);
 	}
 	
 	public static final String getUUIDAsString(final UUID value) {
@@ -101,4 +106,13 @@ public class VehicleDTO {
 	public final String getIdAsString() {
 		return getUUIDAsString(getId());
 	}
+	
+	public boolean exist() {
+		return !UUIDHelper.isDefaultUUID(id);
+	}
+
+	public boolean notExist() {
+		return !exist();
+	}
+	
 }
