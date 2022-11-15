@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import edu.uco.carpooling.controller.response.Response;
-import edu.uco.carpooling.controller.validator.CreateDriverValidator;
 import edu.uco.carpooling.controller.validator.Validator;
+import edu.uco.carpooling.controller.validator.driver.CreateDriverValidator;
 import edu.uco.carpooling.crosscutting.exception.CarpoolingCustomException;
 import edu.uco.carpooling.crosscutting.messages.Message;
 import edu.uco.carpooling.crosscutting.messages.Messages;

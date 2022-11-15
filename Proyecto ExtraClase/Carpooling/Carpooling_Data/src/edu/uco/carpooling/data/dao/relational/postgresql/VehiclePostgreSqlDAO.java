@@ -27,7 +27,7 @@ public final class VehiclePostgreSqlDAO extends DAORelational implements Vehicle
 
 	@Override
 	public final void create(final VehicleDTO vehicle) {
-		final var sql = "INSERT INTO \"Vehicle\"(id, plate, capacity, \"numEnrollment\") VALUES (?,?,?,?)";
+		final var sql = "INSERT INTO vehicle(id, plate, capacity, numenrollment) VALUES (?,?,?,?)";
 
 		try (final var preparedStatement = getConnection().prepareStatement(sql)) {
 			preparedStatement.setString(1, vehicle.getIdAsString());
@@ -48,7 +48,7 @@ public final class VehiclePostgreSqlDAO extends DAORelational implements Vehicle
 
 	@Override
 	public final void delete(final UUID id) {
-		final var sql = "DELETE FROM \"Driver\" WHERE id= ?";
+		final var sql = "DELETE FROM vehicle WHERE id= ?";
 		final var idAsString = getUUIDAsString(id);
 
 		try (final var preparedStatement = getConnection().prepareStatement(sql)) {
@@ -146,8 +146,8 @@ public final class VehiclePostgreSqlDAO extends DAORelational implements Vehicle
 		sqlBuilder.append("SELECT id AS IdVehicle, ");
 		sqlBuilder.append("plate AS Plate, ");
 		sqlBuilder.append("capacity AS Capacity, ");
-		sqlBuilder.append("\"numEnrollment\" AS NumberEnrollment ");
-		sqlBuilder.append("FROM \"Vehicle\" ");
+		sqlBuilder.append("numenrollment AS NumberEnrollment ");
+		sqlBuilder.append("FROM vehicle ");
 	}
 
 }

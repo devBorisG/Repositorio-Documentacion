@@ -14,23 +14,17 @@ import edu.uco.carpooling.service.business.driver.FindDriverByIdUseCase;
 import edu.uco.carpooling.service.business.driver.implementation.FindDriverByIdUseCaseImpl;
 import edu.uco.carpooling.service.business.vehicle.CreateVehicleUseCase;
 import edu.uco.carpooling.service.business.vehicle.FindVehiclePlate;
-import edu.uco.carpooling.service.business.vehicle.FormatNumEnrollment;
-import edu.uco.carpooling.service.business.vehicle.FormatPlate;
 
 public class CreateVehicleUseCaseImpl implements CreateVehicleUseCase {
 
 	private final DAOFactory factory;
 	private final FindDriverByIdUseCase findDriverById;
-	private final FormatPlate formatPlateUseCase;
-	private final FormatNumEnrollment formatNumEnrollment;
 	private final FindVehiclePlate findVehicleUseCase;
 	private final CreateDriverPerVehicleUseCase createDriverPerVehicleUseCase;
 	
 	public CreateVehicleUseCaseImpl(DAOFactory factory) {
 		this.factory = factory;
 		findDriverById = new FindDriverByIdUseCaseImpl(factory);
-		formatPlateUseCase = new FormatPlateImpl();
-		formatNumEnrollment = new FormatNumEnrollmentImpl();
 		findVehicleUseCase = new FindVehiclePlateImpl(factory);
 		createDriverPerVehicleUseCase = new CreateDriverPerVehicleUseCaseImpl(factory);
 
@@ -39,8 +33,6 @@ public class CreateVehicleUseCaseImpl implements CreateVehicleUseCase {
 	@Override
 	public final void execute(final VehicleDTO vehicle) {
 		final DriverDTO driver = findDriver(vehicle.getOwner().getId());
-		formatPlateUseCase.execute(vehicle.getPlate());
-		formatNumEnrollment.execute(vehicle.getNumberEnrollment());
 		validateIfVehicleExist(vehicle.getPlate());
 		vehicle.setOwner(driver);
 		vehicle.setId(UUIDHelper.getNewUUID());

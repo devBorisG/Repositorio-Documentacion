@@ -67,7 +67,7 @@ public final class SqlConnectionHelper {
 						Messages.SqlConnectionHelper.TECHNICAL_CONNECTION_IS_CLOSED_FOR_COMMIT_TRANSACTION);
 			}
 
-			connection.setAutoCommit(false);
+			connection.commit();
 
 		} catch (final CrosscuttingBudgetException exception) {
 			throw exception;
@@ -84,7 +84,7 @@ public final class SqlConnectionHelper {
 						Messages.SqlConnectionHelper.TECHNICAL_CONNECTION_IS_CLOSED_FOR_ROLLBACK_TRANSACTION);
 			}
 
-			connection.setAutoCommit(false);
+			connection.rollback();
 
 		} catch (final CrosscuttingBudgetException exception) {
 			throw exception;
