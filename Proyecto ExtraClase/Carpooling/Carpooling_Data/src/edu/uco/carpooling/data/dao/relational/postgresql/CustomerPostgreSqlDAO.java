@@ -26,8 +26,8 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 
 	@Override
 	public final void create(final CustomerDTO customer) {
-		final var sql = "INSERT INTO \"User\"(id, dni, \"firstName\",\"secondName\","
-				+ "\"firstSurname\",\"secondSurname\", password, \"phone\",\"companyEmail\")"
+		final var sql = "INSERT INTO public.user(id, dni, firstname,secondname,"
+				+ "firstsurname,secondsurname, password, phone,companyemail)"
 				+ "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 		try (final var preparedStatement = getConnection().prepareCall(sql)) {
@@ -50,7 +50,6 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 			throw DataCarpoolingException.createTechnicalException(
 					Messages.CustomerPostgreSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_CREATE_CUSTOMER, exception);
 		}
-
 	}
 
 	@Override
@@ -85,15 +84,15 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 	}
 	
 	private final void creatSelectFrom(final StringBuilder sqlBuilder) {
-		sqlBuilder.append("SELECT     U.Id AS UserId,");
+		sqlBuilder.append("SELECT     U.id AS UserId,");
 		sqlBuilder.append("           U.dni AS DniUser,");
-		sqlBuilder.append("           U.firstName AS Name,");
-		sqlBuilder.append("           U.secondName AS SecondName,");
-		sqlBuilder.append("           U.firstSurname AS FirstSurname,");
-		sqlBuilder.append("           U.SecondSurname AS SecondSurname,");
+		sqlBuilder.append("           U.firstname AS Name,");
+		sqlBuilder.append("           U.secondname AS SecondName,");
+		sqlBuilder.append("           U.firstsurname AS FirstSurname,");
+		sqlBuilder.append("           U.Secondsurname AS SecondSurname,");
 		sqlBuilder.append("           U.phone As Phone,");
-		sqlBuilder.append("           U.companyEmail AS Email");
-		sqlBuilder.append("FROM       User U");	
+		sqlBuilder.append("           U.companyemail AS Email");
+		sqlBuilder.append("FROM       user U");	
 	}
 	
 	private final void creatWhere(final StringBuilder sqlBuilder, final CustomerDTO user, final List<Object> parameters) {
@@ -105,7 +104,7 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 	}
 	
 	private void  createOrderBy(final StringBuilder sqlBuilder) {
-		sqlBuilder.append("ORDER BY   U.firstName ASC,");
+		sqlBuilder.append("ORDER BY   U.firstsurname ASC,");
 	}
 	
 	private final List<CustomerDTO> executeQuery (PreparedStatement preparedStatement){

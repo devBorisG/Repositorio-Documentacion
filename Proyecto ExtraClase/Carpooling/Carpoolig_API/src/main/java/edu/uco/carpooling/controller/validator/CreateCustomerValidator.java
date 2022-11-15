@@ -9,6 +9,7 @@ import java.util.regex.Pattern;
 import edu.uco.carpooling.crosscutting.helper.UUIDHelper;
 import edu.uco.carpooling.crosscutting.messages.Message;
 import edu.uco.carpooling.domain.CustomerDTO;
+import edu.uco.carpooling.crosscutting.messages.Messages;
 
 public class CreateCustomerValidator implements Validator<CustomerDTO> {
 
@@ -32,7 +33,7 @@ public class CreateCustomerValidator implements Validator<CustomerDTO> {
 	
 	private void validateCustomerEmail(String customerEmail, List<Message> message) {
 		if(!ValidateEmail(customerEmail)) {
-			message.add(Message.createErrorMessage("Email is not valied"));
+			message.add(Message.createErrorMessage(Messages.ValidateCustomer.BUSSINES_CUSTOMER_DOES_NOT_EXIST));
 		}
 	}
 	
@@ -46,7 +47,7 @@ public class CreateCustomerValidator implements Validator<CustomerDTO> {
 		
 		int length = password.length();
 		if (length < 6) {
-			message.add(Message.createErrorMessage("Password is not valied"));
+			message.add(Message.createErrorMessage(Messages.ValidateCustomer.BUSSINES_DRIVER_PASSWORD_IS_INCORRECT));
 		}
 	}	
 }

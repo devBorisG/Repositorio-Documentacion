@@ -283,4 +283,33 @@ public class Messages {
 	 	public static final String BUSSINES_ROUTE_REQUEST_DOES_EXIST = "la peticion ruta ya feu creada";
 		
 	}
+	
+	public static class ValidateDriver{
+		private ValidateDriver() {
+			super();
+		}
+		
+		public static final String BUSSINES_DRIVER_DOES_NOT_EXIST = "Driver has the same id that default id";
+		public static final String BUSSINES_DRIVER_NUMBER_LICENSE_IS_INCORRECT = "License number is incorrect, has not the correct format";
+	}
+	
+	public static class ValidateCustomer{
+		private ValidateCustomer() {
+			super();
+		}
+		
+		public static final String BUSSINES_CUSTOMER_DOES_NOT_EXIST = "Driver has the same id that default id";
+		public static final String BUSSINES_DRIVER_PASSWORD_IS_INCORRECT = "Password is incorrect, has not the correct format";
+	}
+	
+	public static class CustomerController{
+		private CustomerController() {
+			super();
+		}
+		
+		public static final String CONTROLLER_CREATE_CUSTOMER_SUCCESFUL = "Customer has been create succssefully";
+		public static final String CONTROLLER_ERROR_TRY_TO_CREATE_CUSTOMER = "There was an error trying to create customer. Please try again...";
+		public static final String CONTROLLER_UNEXPECTED_ERROR_TRY_TO_CREATE_CUSTOMER = "There was a unexpected error trying to create customer. Please try again...";
+
+	}
 }

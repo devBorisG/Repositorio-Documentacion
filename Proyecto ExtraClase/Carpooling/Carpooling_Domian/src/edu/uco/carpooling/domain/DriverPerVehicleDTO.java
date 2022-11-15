@@ -51,6 +51,4 @@ public class DriverPerVehicleDTO {
 	public final void setState(final String state) {
 		this.state = applyTrim(state);
 	}
-	
-	
 }

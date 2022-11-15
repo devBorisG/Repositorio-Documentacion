@@ -27,8 +27,8 @@ import edu.uco.carpooling.domain.DriverDTO;
 	
 		@Override
 		public void create(final DriverDTO driver) {
-			final var sql = "INSERT INTO \"Driver\"(id,dni,\"firstName\",\"secondName\",\"firstSurname\",\"secondSurname\", password, born) "
-					+ "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+			final var sql = "INSERT INTO public.driver(id,licensenumber,authorizedcategories) "
+					+ "VALUES (?, ?, ?)";
 	
 			try (final var preparedStatement = getConnection().prepareStatement(sql)) {
 				preparedStatement.setString(1, driver.getIdAsString());
@@ -75,23 +75,23 @@ import edu.uco.carpooling.domain.DriverDTO;
 		
 		private final void createSelectFrom(final StringBuilder sqlbuilder) {
 			sqlbuilder.append("SELECT      Dr.id AS IdDriver,");
-			sqlbuilder.append("            Dr.licenseNumber AS license,");
-			sqlbuilder.append("            Dr.authorizedCategories AS Categorie,");
+			sqlbuilder.append("            Dr.licensenumber AS license,");
+			sqlbuilder.append("            Dr.authorizedcategories AS Categorie,");
 			sqlbuilder.append("            Au.id AS IDCategorie,");
-			sqlbuilder.append("            Au.licenseNumber AS License,");
-			sqlbuilder.append("            Au.authorizedCategories,");
+			sqlbuilder.append("            Au.licensenumber AS License,");
+			sqlbuilder.append("            Au.authorizedcategories,");
 			sqlbuilder.append("            U.Id AS UserId,");
 			sqlbuilder.append("            U.dni AS DniUser,");
-			sqlbuilder.append("            U.firstName AS Name,");
-			sqlbuilder.append("            U.secondName AS SecondName,");
-			sqlbuilder.append("            U.firstSurname AS FirstSurname,");
-			sqlbuilder.append("            U.SecondSurname AS SecondSurname,");
+			sqlbuilder.append("            U.firstname AS Name,");
+			sqlbuilder.append("            U.secondname AS SecondName,");
+			sqlbuilder.append("            U.firstsurname AS FirstSurname,");
+			sqlbuilder.append("            U.Secondsurname AS SecondSurname,");
 			sqlbuilder.append("            U.phone As Phone,");
-			sqlbuilder.append("            U.companyEmail AS Email");
-			sqlbuilder.append("FROM        Driver Dr ");
-			sqlbuilder.append("INNER JOIN  authorizedCategories Au,");
-			sqlbuilder.append("ON          Dr.authorizedCategorie = Au.id");
-			sqlbuilder.append("INNER JOIN  User U");
+			sqlbuilder.append("            U.companyemail AS Email");
+			sqlbuilder.append("FROM        driver Dr ");
+			sqlbuilder.append("INNER JOIN  authorizedcategories Au,");
+			sqlbuilder.append("ON          Dr.authorizedcategorie = Au.id");
+			sqlbuilder.append("INNER JOIN  user U");
 			sqlbuilder.append("ON          Dr.id = U.id");
 		}
 		
