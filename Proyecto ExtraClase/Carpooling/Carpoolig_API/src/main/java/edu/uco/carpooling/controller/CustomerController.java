@@ -18,37 +18,22 @@ import edu.uco.carpooling.controller.validator.customer.CreateCustomerValidator;
 import edu.uco.carpooling.crosscutting.exception.CarpoolingCustomException;
 import edu.uco.carpooling.crosscutting.exception.DataCarpoolingException;
 import edu.uco.carpooling.crosscutting.messages.Message;
-import edu.uco.carpooling.crosscutting.messages.Messages;
 import edu.uco.carpooling.domain.CustomerDTO;
 import edu.uco.carpooling.service.command.CreatecustomerCommand;
 import edu.uco.carpooling.service.command.GetCustomerByIdCommand;
 import edu.uco.carpooling.service.command.implementation.CreatecustomerCommandImpl;
+import edu.uco.carpooling.service.command.implementation.GetCustomerByIdCommandImpl;
 import edu.uco.carpooling.crosscutting.messages.Messages;
 
 @RestController
-@RequestMapping("/carpooling/customer")
+@RequestMapping("/capooling/customer")
 public class CustomerController {
 
 	public CreatecustomerCommand createCustomer = new CreatecustomerCommandImpl();
 	
-	@GetMapping("/byid/{id}")
-	public ResponseEntity<Response<CustomerDTO>> getById(@PathVariable(required = true) String id) {
-		Response<CustomerDTO> response = new Response<>();
-		HttpStatus httpStatus = HttpStatus.BAD_REQUEST;
-		try {
-			GetCustomerByIdCommand command = new GetCustomerByIdCommandImpl();
-			List<CustomerDTO> list = command.getById(id);
-			if(list.isEmpty()) {
-				throw DataCarpoolingException.createTechnicalException("No customer found");
-			}else {
-				response.setData(list);
-				httpStatus = HttpStatus.OK;
-				response.addSuccessMessages("Success");				
-			}
-		} catch (Exception e) {
-			response.addErrorMessages(e.getMessage());
-		}
-		return new ResponseEntity<>(response, httpStatus);
+	@GetMapping("/dummy")
+	public CustomerDTO holaMundo() {
+		return new CustomerDTO();
 	}
 	
 	@PostMapping
@@ -91,5 +76,29 @@ public class CustomerController {
 		}
 		
 		return new ResponseEntity<>(response, httpStatus);
+	}
+	
+	@GetMapping("/byid/{id}")
+	ResponseEntity<Response<CustomerDTO>> getCustomerById(@PathVariable(required = true) String id) {
+		Response<CustomerDTO> response = new Response<>();
+		HttpStatus httpStatus = HttpStatus.BAD_REQUEST;
+		try {
+			GetCustomerByIdCommand command = new GetCustomerByIdCommandImpl();
+			List<CustomerDTO> dto = command.getById(id);
+			if(dto.isEmpty()) {
+				throw DataCarpoolingException.createTechnicalException(Messages.CustomerController.CONTROLLER_ERROR_TRY_FOUND_CUSTOMER_BYID);
+			}else {
+				response.setData(dto);
+				httpStatus = HttpStatus.OK;
+				response.addSuccessMessages(Messages.CustomerController.CONTROLLER_SUCCES_FOUND_CUSTOMER_BYID);				
+			}
+		} catch(CarpoolingCustomException e) {
+			response.addErrorMessages(e.getMessage());
+		}
+		catch (Exception e) {
+			response.addErrorMessages(e.getMessage());
+		}
+		return new ResponseEntity<>(response, httpStatus);
+		
 	}
 }

@@ -68,6 +68,11 @@ public class Messages {
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_DRIVER = "There was an unexpected problem trying update driver in DriverPostgreSql";
 		public static final String TECHNICAL_PROBLEM_DELETE_DRIVER = "There was a problem trying delete driver in DriverPostgreSql with id=";
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_DELETE_DRIVER = "There was an unexpected problem trying delete driver in DriverPostgreSql";
+		public static final String TECHNICAL_PROBLEM_FILL_RESULTS_DRIVER = "There was a problem trying fill result on driver";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS_DRIVER = "There was an unexpected problem trying fill result on driver";
+		public static final String TECHNICAL_PROBLEM_FILL_RESULTS_CATEGORY_AUTHORIZED = "There was a problem trying fill result on category authorized";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS_CATEGORY_AUTHORIZED = "There was an unexpected problem trying fill result on category authorized";
+
 		
 	}
 	
@@ -84,6 +89,14 @@ public class Messages {
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_CUSTOMER = "There was an unexpected problem trying update customer in CustomerPostgreSql";
 		public static final String TECHNICAL_PROBLEM_DELETE_CUSTOMER = "There was a problem trying delete customer in CustomerPostgreSql with id=";
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_DELETE_CUSTOMER = "There was an unexpected problem trying delete customer in CustomerPostgreSql";
+		public static final String TECHNICAL_PROBLEM_PREPARED_STAMENT = "There was a problem trying to prepared the sql stament the parameters";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STAMENT = "There was an unexpected problem trying to prepared the sql stament the parameters";
+	 	public static final String TECHNICAL_PROBLEM_EXECUTE_QUERY = "There was a problem trying to excute query to find the specific customer";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_EXECEUTE_QUERY = "There was an unexpected problem trying to execute query to finad the specific customer";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMETER_VALUES_QUERY = "There was an unexpected problem trying to set the parameters values to the query";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_CUSTOMER = "There was an unexpected problem trying fill routeStatusDTO from the resultSet ";
+	 	public static final String TECHNICAL_PROBLEM_FILL_CUSTOMER_DTO = "There was a problem filling DriverDTO from the resultSet ";
+
 	
 	}
 	
@@ -360,6 +373,9 @@ public class Messages {
 		}
 		
 		public static final String ERROR_DRIVER_ID_IS_DEFAULT = "Driver id is equal to default value";
+		public static final String BUSSINES_DRIVER_NUMBER_LICENSE_IS_INCORRECT = "Number of license es incorrect";
+		public static final String BUSSINES_DRIVER_LICENSE_IS_EMPTY = "The file license number i s empty";
+
 	}
 	
 	public static class CreateRouteRequestValidator{
@@ -371,4 +387,42 @@ public class Messages {
 		public static final String ERROR_DATE_IS_LESS_THAN_ACTUALLY_DATE = "the entered date is less than the current date";
 		public static final String ERROR_HOUR_IS_LESS_THAN_ACTUALLY_HOUR = "The entered hour is less than the current hour";
 	}
-}
+	public static class DriverController{
+		private DriverController() {
+			super();
+		}
+
+		public static final String CONTROLLER_CREATE_DRIVER_SUCCESFUL = "Driver has been create succssefully";
+		public static final String CONTROLLER_ERROR_TRY_TO_CREATE_DRIVER = "There was an error trying to create driver. Please try again...";
+		public static final String CONTROLLER_UNEXPECTED_ERROR_TRY_TO_CREATE_DRIVER = "There was a unexpected error trying to create driver. Please try again...";
+		public static final String CONTROLLER_ERROR_TRY_FOUND_DRIVER_BYID = "The driver wasyou try to found does not exist, try again";
+		public static final String CONTROLLER_SUCCES_FOUND_DRIVER_BYID= "Succes found driver by id";
+
+	}
+	
+	public static class ValidateCustomer{
+		private ValidateCustomer() {
+			super();
+		}
+			public static final String BUSSINES_CUSTOMER_DOES_NOT_EXIST = "Id customer that you uses not exist";
+			public static final String BUSSINES_CUSTOMER_EMAIL_IS_INCORRECT = "The email has the format incorrent";
+			public static final String BUSSINES_CUSTOMER_PASSWORD_IS_INCORRECT = "Password format is incorrent, you neef minimun 10 characteres";
+			public static final String BUSSINES_CUSTOMER_FIRST_NAME_IS_EMPTY = "The field firstName is empty";
+			public static final String BUSSINES_CUSTOMER_FIRST_SURNNAME_IS_EMPTY = "The field firstsurname is empty";
+			public static final String BUSSINES_CUSTOMER_SECOND_SURNNAME_IS_EMPTY = "The field secondsurname is empty";
+			public static final String BUSSINES_CUSTOMER_DNI_IS_INCORRECT = "The field dni has the incorrect format you need almost 10 characters";
+		}
+	
+	public static class CustomerController{
+		private CustomerController() {
+			super();
+		}
+
+		public static final String CONTROLLER_CREATE_CUSTOMER_SUCCESFUL = "Customer has been create succssefully";
+		public static final String CONTROLLER_ERROR_TRY_TO_CREATE_CUSTOMER = "There was an error trying to create driver. Please try again...";
+		public static final String CONTROLLER_UNEXPECTED_ERROR_TRY_TO_CREATE_CUSTOMER = "There was a unexpected error trying to create Customer. Please try again...";
+		public static final String CONTROLLER_ERROR_TRY_FOUND_CUSTOMER_BYID = "The customer was you try to found does not exist, try again";
+		public static final String CONTROLLER_SUCCES_FOUND_CUSTOMER_BYID= "Succes found customer with id";
+
+	}
+	}

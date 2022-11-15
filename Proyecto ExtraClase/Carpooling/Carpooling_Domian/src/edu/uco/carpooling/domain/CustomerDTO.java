@@ -45,6 +45,9 @@ public class CustomerDTO extends UserDTO {
 	public static final CustomerDTO create(final UUID id) {
 		return new CustomerDTO(id, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, ZERO, EMPTY);
 	}
+	public static final CustomerDTO create(final String id) {
+		return new CustomerDTO(getUUIDFromString(id), EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, ZERO, EMPTY);
+	}
 	public static final String getUUIDAsString(final UUID value) {
 		return getDefaultUUID(value).toString();
 	}
