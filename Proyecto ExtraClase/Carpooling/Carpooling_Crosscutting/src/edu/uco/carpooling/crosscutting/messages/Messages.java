@@ -303,10 +303,6 @@ public class Messages {
 		}
 
 		public static final String BUSSINES_DRIVER_DOES_NOT_EXISTS = "The driver for whom the vehicle was to be created does not exist.";
-		public static final String BUSSINES_LENGTH_PLATE_IS_NOT_CORRECT = "The plate length is not correct for a licence plate";
-		public static final String BUSSINES_ARE_NOT_LETTERS = "The plate must first contain 3 letters";
-		public static final String BUSSINES_ARE_NOT_NUMBERS = "The plate must contain 3 numbers at the end";
-		public static final String BUSSINES_NUMBER_ENROLLMENT_INCORRECT_FORMAT = "Number Enrollment must be 11 digits";
 		public static final String BUSSINES_VEHICLE_EXIST = "Is alredy exists a vehicle in the application, please, try add other vehicle";
 	}
 
@@ -333,5 +329,18 @@ public class Messages {
 			super();
 		}
 		
+	}
+	
+	public static class CreateVehicleValidator{
+		private CreateVehicleValidator() {
+			super();
+		}
+		
+		public static final String ERROR_OWNER_ID_IS_DEFAULT = "Owner id is equals to default value, please verify that all is correct...";
+		public static final String ERROR_PLATE_IS_EMPTY = "Plate is empty, please verify that all is correct...";
+		public static final String ERROR_NUMBER_ENROLLMENT_IS_EMPTY = "Number enrollment is emply, please verify that all is correct...";
+		public static final String ERROR_NUMBER_ENROLLMENT_INCORRECT_LENGTH = "Number Enrollment must be 11 digits";
+		public static final String ERROR_LENGTH_PLATE_IS_NOT_CORRECT = "The plate length is not correct for a licence plate";
+		public static final String ERROR_DONT_HAVE_CORRECT_FORMAT = "Verify that plate have te correct format (NNN-123), three letters first and three numbers at the end";
 	}
 }
