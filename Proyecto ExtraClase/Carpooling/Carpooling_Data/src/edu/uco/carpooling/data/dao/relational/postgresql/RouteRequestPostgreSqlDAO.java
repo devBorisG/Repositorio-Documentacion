@@ -28,9 +28,7 @@ public class RouteRequestPostgreSqlDAO extends DAORelational implements RouteReq
 
 	@Override
 	public final void create(final RouteRequestDTO routeRequest) {
-		final String sql = "INSERT INTO routerequest"
-				+ "	VALUES (?, ?, ?, ?, ?, ?, ?);";
-		
+		final String sql = "INSERT INTO routerequest(id,routeorigin,routedestination,confirmedroute,date,hour,iduser) VALUES (?, ?, ?, ?, ?, ?, ?);";
 		
 		try (final var preparedStatement = getConnection().prepareStatement(sql)) {
 			preparedStatement.setString(1, routeRequest.getIdAsString());
@@ -41,12 +39,6 @@ public class RouteRequestPostgreSqlDAO extends DAORelational implements RouteReq
 			preparedStatement.setTime(6, routeRequest.getServiceRequestTime());
 			preparedStatement.setString(7, routeRequest.getCustomer().getIdAsString());
 			
-			try {
-				int i = preparedStatement.executeUpdate();				
-				System.out.println(i+" records inserted");
-			} catch (Exception e) {
-				throw e;
-			}
 		} catch (final SQLException exception) {
 			String message = Messages.RouteRequestPostgreSQLDAO.TECHNICAL_PROBLEM_CREATE_ROUTE_REQUEST.concat(routeRequest.getIdAsString()).concat(exception.getMessage());
 			throw DataCarpoolingException.createTechnicalException(message, exception);
@@ -70,7 +62,7 @@ public class RouteRequestPostgreSqlDAO extends DAORelational implements RouteReq
 	private final List<RouteRequestDTO> prepareAndExecuteQuery(final StringBuilder sqlBuilder, final List<Object> parameters){
 		try (final var preparedStatement = getConnection().prepareStatement(sqlBuilder.toString())){
 			
-			SetParameterValues(preparedStatement, parameters);
+			setParameterValues(preparedStatement, parameters);
 			
 			return executeQuery(preparedStatement);
 			
@@ -142,7 +134,7 @@ public class RouteRequestPostgreSqlDAO extends DAORelational implements RouteReq
 		}
 	}
 	
-	private void SetParameterValues (PreparedStatement preparedStatement, final List<Object> parameters) {
+	private void setParameterValues (PreparedStatement preparedStatement, final List<Object> parameters) {
 		try {
 			for(int index = 0; index < parameters.size(); index ++) {
 				preparedStatement.setObject(index + 1, parameters.get(index));

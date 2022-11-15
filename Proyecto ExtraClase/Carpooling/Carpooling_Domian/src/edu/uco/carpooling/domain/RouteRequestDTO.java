@@ -104,8 +104,9 @@ public class RouteRequestDTO {
 		return status;
 	}
 	public final void setStatus(final String status) {
-		this.status = applyTrim(routeRequestEnd);
+		this.status = applyTrim(status);
 	}
+	
 	public String getRouterequesOrigin() {
 		return routeRequestOrigin;
 	}
