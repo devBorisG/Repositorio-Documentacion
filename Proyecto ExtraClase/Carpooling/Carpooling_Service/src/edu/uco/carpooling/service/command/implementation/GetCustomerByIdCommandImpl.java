@@ -20,11 +20,14 @@ public class GetCustomerByIdCommandImpl implements GetCustomerByIdCommand{
 			return factory.getUserDAO().findById(id);
 			
 		} catch (CarpoolingCustomException e) {
+			factory.cancelTransaction();
 			throw e;
 		}
 		catch (Exception e) {
 			factory.cancelTransaction();
 			throw DataCarpoolingException.createTechnicalException(e.getMessage());
+		}finally {
+			factory.closeConnection();
 		}
 	}
 

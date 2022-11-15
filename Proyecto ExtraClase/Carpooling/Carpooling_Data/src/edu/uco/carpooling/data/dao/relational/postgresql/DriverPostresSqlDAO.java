@@ -223,6 +223,17 @@ import edu.uco.carpooling.domain.DriverDTO;
 
 		@Override
 		public List<DriverDTO> findById(String id) {
-			return null;
+			String query = "SELECT * FROM public.driver D INNER JOIN public.user U ON D.id = U.id INNER JOIN public.authorizedcategories A on D.authorizedcategories = A.id WHERE D.id = ?";
+			try (final var preparedStatement = getConnection().prepareStatement(query)) {
+
+				preparedStatement.setString(1, id);
+				List<DriverDTO> list = executeQuery(preparedStatement);
+				return list;
+
+			} catch (SQLException e) {
+				throw DataCarpoolingException.createTechnicalException(e.getMessage());
+			} catch (Exception e) {
+				throw DataCarpoolingException.createTechnicalException(e.getMessage());
+			}
 		}
 	}

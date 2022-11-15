@@ -406,7 +406,7 @@ public class Messages {
 		}
 			public static final String BUSSINES_CUSTOMER_DOES_NOT_EXIST = "Id customer that you uses not exist";
 			public static final String BUSSINES_CUSTOMER_EMAIL_IS_INCORRECT = "The email has the format incorrent";
-			public static final String BUSSINES_CUSTOMER_PASSWORD_IS_INCORRECT = "Password format is incorrent, you neef minimun 10 characteres";
+			public static final String BUSSINES_CUSTOMER_PASSWORD_IS_INCORRECT = "Password format is incorrent, you need minimun 6 characteres";
 			public static final String BUSSINES_CUSTOMER_FIRST_NAME_IS_EMPTY = "The field firstName is empty";
 			public static final String BUSSINES_CUSTOMER_FIRST_SURNNAME_IS_EMPTY = "The field firstsurname is empty";
 			public static final String BUSSINES_CUSTOMER_SECOND_SURNNAME_IS_EMPTY = "The field secondsurname is empty";

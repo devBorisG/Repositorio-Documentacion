@@ -212,7 +212,25 @@ private final List<CustomerDTO> fillResults(final ResultSet resultSet){
 
 	@Override
 	public List<CustomerDTO> findById(String id) {
-		// TODO Auto-generated method stub
-		return null;
+		String query = "SELECT u.id AS UserId, u.dni AS DniUser, u.firstname AS Name, u.secondname AS SecondName,"
+				+ " u.firstsurname AS FirstSurname, u.secondsurname AS SecondSurname, u.password AS Password,"
+				+ " u.phone As Phone, u.companyemail AS Email FROM public.user u WHERE u.id = ?";
+		try (final var preparedStatement = getConnection().prepareStatement(query)) {
+
+			preparedStatement.setString(1, id);
+
+			return executeQuery(preparedStatement);
+
+		} catch (final DataCarpoolingException exception) {
+			throw exception;
+		} catch (final SQLException exception) {
+			throw DataCarpoolingException.createTechnicalException(
+					Messages.RouteRequestPostgreSQLDAO.TECHNICAL_PROBLEM_PREPARED_STAMENT
+					.concat("\nMore info: ").concat(exception.getMessage()), exception);
+		} catch (final Exception exception) {
+			throw DataCarpoolingException.createTechnicalException(
+					Messages.RouteRequestPostgreSQLDAO.TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMETER_VALUES_QUERY
+					.concat("\nMore info: ").concat(exception.getMessage()), exception);
+		}
 	}
 }

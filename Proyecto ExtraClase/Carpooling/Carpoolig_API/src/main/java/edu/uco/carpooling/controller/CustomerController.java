@@ -26,7 +26,7 @@ import edu.uco.carpooling.service.command.implementation.GetCustomerByIdCommandI
 import edu.uco.carpooling.crosscutting.messages.Messages;
 
 @RestController
-@RequestMapping("/capooling/customer")
+@RequestMapping("/carpooling/customer")
 public class CustomerController {
 
 	public CreatecustomerCommand createCustomer = new CreatecustomerCommandImpl();
