@@ -56,22 +56,6 @@ public class Messages {
 		public static final String TECHNICAL_CLOSE_CONNECTION_UNEXPECTED_ERROR = "There was an unexpected error trying close connection in PostgreSqlDAOFactory";
 	}
 	
-	public static class DriverPostgreSqlDAO{
-		
-		private DriverPostgreSqlDAO() {
-			super();
-		}
-		
-		public static final String TECHNICAL_PROBLEM_CREATE_DRIVER = "There was a problem trying create driver in DriverPostgreSql with id=";
-		public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_DRIVER = "There was an unexpected problem trying create driver in DriverPostgreSql";
-		public static final String TECHNICAL_PROBLEM_UPDATE_DRIVER = "There was a problem trying update driver in DriverPostgreSql with id=";
-		public static final String TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_DRIVER = "There was an unexpected problem trying update driver in DriverPostgreSql";
-		public static final String TECHNICAL_PROBLEM_DELETE_DRIVER = "There was a problem trying delete driver in DriverPostgreSql with id=";
-		public static final String TECHNICAL_UNEXPECTED_PROBLEM_DELETE_DRIVER = "There was an unexpected problem trying delete driver in DriverPostgreSql";
-		
-	}
-	
-	
 	public static class CustomerPostgreSqlDAO{
 		
 		private CustomerPostgreSqlDAO() {
@@ -84,7 +68,14 @@ public class Messages {
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_CUSTOMER = "There was an unexpected problem trying update customer in CustomerPostgreSql";
 		public static final String TECHNICAL_PROBLEM_DELETE_CUSTOMER = "There was a problem trying delete customer in CustomerPostgreSql with id=";
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_DELETE_CUSTOMER = "There was an unexpected problem trying delete customer in CustomerPostgreSql";
-	
+		public static final String TECHNICAL_PROBLEM_PREPARED_STAMENT = "There was a problem trying to prepared the sql stament the parameters";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STAMENT = "There was an unexpected problem trying to prepared the sql stament the parameters";
+	 	public static final String TECHNICAL_PROBLEM_EXECUTE_QUERY = "There was a problem trying to excute query to find the specific customer";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_EXECEUTE_QUERY = "There was an unexpected problem trying to execute query to finad the specific customer";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMETER_VALUES_QUERY = "There was an unexpected problem trying to set the parameters values to the query";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_CUSTOMER = "There was an unexpected problem trying fill routeStatusDTO from the resultSet ";
+	 	public static final String TECHNICAL_PROBLEM_FILL_CUSTOMER_DTO = "There was a problem filling DriverDTO from the resultSet ";
+	 	
 	}
 	
 	public static class UUIDHelper{
@@ -265,9 +256,9 @@ public class Messages {
 		public static final String TECHNICAL_PROBLEM_FILL_AUTHORIZED_CATEGORY_DTO = "There was a problem filling authotizedcategoryDTO from the resultSet ";
 	}
 	
-	public static class DriverPostresSqlDAO {
+	public static class DriverPostgresSqlDAO {
 
-		private DriverPostresSqlDAO() {
+		private DriverPostgresSqlDAO() {
 			super();
 		}
 
@@ -284,6 +275,12 @@ public class Messages {
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMETER_VALUES_QUERY = "There was an unexpected problem trying to set the parameters values to the query";
 		public static final String TECHNICAL_PROBLEM_PREPARED_STAMENT = "There was a problem trying to prepared the sql stament the parameters";
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STAMENT = "There was an unexpected problem trying to prepared the sql stament the parameters";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_DELETE_DRIVER = "There was an unexpected problem trying to delete driver";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_DRIVER = "There was an unexpected problem trying to uptade driver";
+		public static final String TECHNICAL_PROBLEM_FILL_RESULTS_DRIVER = "There was a problem trying fill result on driver";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS_DRIVER = "There was an unexpected problem trying fill result on driver";
+		public static final String TECHNICAL_PROBLEM_FILL_RESULTS_CATEGORY_AUTHORIZED = "There was a problem trying fill result on category authorized";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS_CATEGORY_AUTHORIZED = "There was an unexpected problem trying fill result on category authorized";
 		
 	}
 
@@ -388,5 +385,15 @@ public class Messages {
 		public static final String CONTROLLER_CREATE_CUSTOMER_SUCCESFUL = "Customer has been create succssefully";
 		public static final String CONTROLLER_ERROR_TRY_TO_CREATE_CUSTOMER = "There was an error trying to create customer. Please try again...";
 		public static final String CONTROLLER_UNEXPECTED_ERROR_TRY_TO_CREATE_CUSTOMER = "There was a unexpected error trying to create customer. Please try again...";
+	}
+	
+	public static class DriverController{
+		private DriverController() {
+			super();
+		}
+		
+		public static final String CONTROLLER_CREATE_DRIVER_SUCCESFUL = "Driver has been create succssefully";
+		public static final String CONTROLLER_ERROR_TRY_TO_CREATE_DRIVER = "There was an error trying to create driver. Please try again...";
+		public static final String CONTROLLER_UNEXPECTED_ERROR_TRY_TO_CREATE_DRIVER = "There was a unexpected error trying to create driver. Please try again...";
 	}
 }

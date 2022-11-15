@@ -37,12 +37,12 @@ import edu.uco.carpooling.domain.DriverDTO;
 	
 				preparedStatement.executeUpdate();
 			} catch (final SQLException exception) {
-				final String message = Messages.DriverPostgreSqlDAO.TECHNICAL_PROBLEM_CREATE_DRIVER
+				final String message = Messages.DriverPostgresSqlDAO.TECHNICAL_PROBLEM_CREATE_DRIVER
 						.concat(driver.getIdAsString());
 				throw DataCarpoolingException.createTechnicalException(message, exception);
 			} catch (final Exception exception) {
 				throw DataCarpoolingException.createTechnicalException(
-						Messages.DriverPostgreSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_CREATE_DRIVER, exception);
+						Messages.DriverPostgresSqlDAO.TECHNICAL_PROBLEM_CREATE_DRIVER, exception);
 			}
 			}
 
@@ -67,9 +67,9 @@ import edu.uco.carpooling.domain.DriverDTO;
 			} catch (final DataCarpoolingException exception) {
 				throw exception;
 			} catch (final SQLException exception) {
-				throw DataCarpoolingException.createTechnicalException(Messages.DriverPostresSqlDAO.TECHNICAL_PROBLEM_PREPARED_STAMENT, exception);
+				throw DataCarpoolingException.createTechnicalException(Messages.DriverPostgresSqlDAO.TECHNICAL_PROBLEM_PREPARED_STAMENT, exception);
 			} catch (final Exception exception) {
-				throw DataCarpoolingException.createTechnicalException(Messages.DriverPostresSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMETER_VALUES_QUERY, exception);
+				throw DataCarpoolingException.createTechnicalException(Messages.DriverPostgresSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMETER_VALUES_QUERY, exception);
 			}
 		}
 		
@@ -124,9 +124,9 @@ import edu.uco.carpooling.domain.DriverDTO;
 			} catch (DataCarpoolingException exception) {
 				throw exception;
 			} catch (final SQLException exception) {
-				throw DataCarpoolingException.createTechnicalException(Messages.DriverPostgreSqlDAO.TECHNICAL_PROBLEM_EXECUTE_QUERY, exception);
+				throw DataCarpoolingException.createTechnicalException(Messages.DriverPostgresSqlDAO.TECHNICAL_PROBLEM_EXECUTE_QUERY, exception);
 			} catch (final Exception exception) {
-				throw DataCarpoolingException.createTechnicalException(Messages.DriverPostgreSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_EXECEUTE_QUERY, exception);
+				throw DataCarpoolingException.createTechnicalException(Messages.DriverPostgresSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_EXECEUTE_QUERY, exception);
 			}
 		}
 		
@@ -136,9 +136,9 @@ import edu.uco.carpooling.domain.DriverDTO;
 					preparedStatement.setObject(index + 1, parameters.get(index));
 				}
 			} catch (SQLException exception) {
-				throw DataCarpoolingException.createTechnicalException(Messages.RouteqlServerDAO.TECHNICAL_PROBLEM_SET_PARAMETER_VALUES_QUERY, exception);
+				throw DataCarpoolingException.createTechnicalException(Messages.DriverPostgresSqlDAO.TECHNICAL_PROBLEM_SET_PARAMETER_VALUES_QUERY, exception);
 			} catch (final Exception exception) {
-				throw DataCarpoolingException.createTechnicalException(Messages.RouteqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMETER_VALUES_QUERY, exception);
+				throw DataCarpoolingException.createTechnicalException(Messages.DriverPostgresSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMETER_VALUES_QUERY, exception);
 			}
 		}
 		
@@ -154,9 +154,9 @@ import edu.uco.carpooling.domain.DriverDTO;
 			} catch (final DataCarpoolingException exception) {
 				throw exception;
 			} catch (final SQLException exception) {
-				throw DataCarpoolingException.createTechnicalException(Messages.RouteqlServerDAO.TECHNICAL_PROBLEM_FILL_RESULTS, exception);
+				throw DataCarpoolingException.createTechnicalException(Messages.DriverPostgresSqlDAO.TECHNICAL_PROBLEM_FILL_RESULTS, exception);
 			} catch (final Exception exception) {
-				throw DataCarpoolingException.createTechnicalException(Messages.RouteqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS, exception);
+				throw DataCarpoolingException.createTechnicalException(Messages.DriverPostgresSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS, exception);
 			}
 		}
 		
@@ -165,9 +165,9 @@ import edu.uco.carpooling.domain.DriverDTO;
 	        	return DriverDTO.create(resultSet.getString("id"),resultSet.getString("licenseNumber"),
 	        			fillAuthorizedCategoryDTO(resultSet));
 	        } catch (final SQLException exception) {
-	            throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestPostgreSQLDAO.TECHNICAL_PROBLEM_FILL_CUSTOMER_DTO, exception);
+	            throw DataCarpoolingException.createTechnicalException(Messages.DriverPostgresSqlDAO.TECHNICAL_PROBLEM_FILL_RESULTS_DRIVER, exception);
 	        } catch (final Exception exception) {
-	            throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestPostgreSQLDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_CUSTOMER_DTO, exception);
+	            throw DataCarpoolingException.createTechnicalException(Messages.DriverPostgresSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS_DRIVER, exception);
 	        }
 	    }
 		
@@ -176,9 +176,9 @@ import edu.uco.carpooling.domain.DriverDTO;
 				return AuthorizedCategoryDTO.create(resultSet.getString("IdCategory"),
 						resultSet.getString("NameCategory"),resultSet.getString("Validity"));
 			} catch (final SQLException exception) {
-				throw DataCarpoolingException.createTechnicalException(Messages.RouteqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_AUTHORIZED_CATEGOTY_DTO, exception);			
+				throw DataCarpoolingException.createTechnicalException(Messages.DriverPostgresSqlDAO.TECHNICAL_PROBLEM_FILL_RESULTS_DRIVER, exception);			
 			} catch (final Exception exception) {
-				throw DataCarpoolingException.createTechnicalException(Messages.RouteqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_AUTHORIZED_CATEGOTY_DTO, exception);
+				throw DataCarpoolingException.createTechnicalException(Messages.DriverPostgresSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS_DRIVER, exception);
 			}
 		}
 
@@ -194,12 +194,12 @@ import edu.uco.carpooling.domain.DriverDTO;
 				preparedStatement.executeUpdate();
 				
 			} catch (final SQLException exception) {
-				final String message = Messages.DriverPostgreSqlDAO.TECHNICAL_PROBLEM_UPDATE_DRIVER
+				final String message = Messages.DriverPostgresSqlDAO.TECHNICAL_PROBLEM_UPDATE_DRIVER
 						.concat(driver.getIdAsString());
 				throw DataCarpoolingException.createTechnicalException(message, exception);
 			} catch (final Exception exception) {
 				throw DataCarpoolingException.createTechnicalException(
-						Messages.DriverPostgreSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_DRIVER, exception);
+						Messages.DriverPostgresSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_DRIVER, exception);
 			}
 		}
 	
@@ -213,11 +213,11 @@ import edu.uco.carpooling.domain.DriverDTO;
 				
 				preparedStatement.executeUpdate();
 			} catch (final SQLException exception) {
-				final String message = Messages.DriverPostgreSqlDAO.TECHNICAL_PROBLEM_DELETE_DRIVER.concat(idAsString);
+				final String message = Messages.DriverPostgresSqlDAO.TECHNICAL_PROBLEM_DELETE_DRIVER.concat(idAsString);
 				throw DataCarpoolingException.createTechnicalException(message, exception);
 			} catch (final Exception exception) {
 				throw DataCarpoolingException.createTechnicalException(
-						Messages.DriverPostgreSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_DELETE_DRIVER, exception);
+						Messages.DriverPostgresSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_DELETE_DRIVER, exception);
 			}
 		}
 	}

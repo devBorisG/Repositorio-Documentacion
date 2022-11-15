@@ -60,6 +60,7 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 		
 		creatSelectFrom(sqlBuilder);
 		creatWhere(sqlBuilder, user, parameters);
+		createOrderBy(sqlBuilder);
 		
 		return prepareAndExecuteQuery(sqlBuilder, parameters);
 	}
@@ -76,9 +77,9 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 		} catch (final DataCarpoolingException exception) {
 			throw exception;
 		} catch (final SQLException exception) {
-			throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestPostgreSQLDAO.TECHNICAL_PROBLEM_PREPARED_STAMENT, exception);
+			throw DataCarpoolingException.createTechnicalException(Messages.CustomerPostgreSqlDAO.TECHNICAL_PROBLEM_PREPARED_STAMENT, exception);
 		} catch (final Exception exception) {
-			throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestPostgreSQLDAO.TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMETER_VALUES_QUERY, exception);
+			throw DataCarpoolingException.createTechnicalException(Messages.CustomerPostgreSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMETER_VALUES_QUERY, exception);
 		}
 	}
 	
@@ -114,9 +115,9 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 		} catch (DataCarpoolingException exception) {
 			throw exception;
 		} catch (final SQLException exception) {
-			throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestPostgreSQLDAO.TECHNICAL_PROBLEM_EXECUTE_QUERY, exception);
+			throw DataCarpoolingException.createTechnicalException(Messages.CustomerPostgreSqlDAO.TECHNICAL_PROBLEM_EXECUTE_QUERY, exception);
 		} catch (final Exception exception) {
-			throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestPostgreSQLDAO.TECHNICAL_UNEXPECTED_PROBLEM_EXECEUTE_QUERY, exception);
+			throw DataCarpoolingException.createTechnicalException(Messages.CustomerPostgreSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_EXECEUTE_QUERY, exception);
 		}
 	}
 	
@@ -126,9 +127,9 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 				preparedStatement.setString(index + 1, parameters.get(index).toString());
 			}
 		} catch (SQLException exception) {
-			throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestPostgreSQLDAO.TECHNICAL_PROBLEM_EXECUTE_QUERY, exception);
+			throw DataCarpoolingException.createTechnicalException(Messages.CustomerPostgreSqlDAO.TECHNICAL_PROBLEM_EXECUTE_QUERY, exception);
 		} catch (final Exception exception) {
-			throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestPostgreSQLDAO.TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMETER_VALUES_QUERY, exception);
+			throw DataCarpoolingException.createTechnicalException(Messages.CustomerPostgreSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMETER_VALUES_QUERY, exception);
 		}
 	}
 	
@@ -144,9 +145,9 @@ private final List<CustomerDTO> fillResults(final ResultSet resultSet){
 		} catch (final DataCarpoolingException exception) {
 			throw exception;
 		} catch (final SQLException exception) {
-			throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestPostgreSQLDAO.TECHNICAL_PROBLEM_FILL_RESULTS, exception);
+			throw DataCarpoolingException.createTechnicalException(Messages.CustomerPostgreSqlDAO.TECHNICAL_PROBLEM_FILL_CUSTOMER_DTO, exception);
 		} catch (final Exception exception) {
-			throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestPostgreSQLDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS, exception);
+			throw DataCarpoolingException.createTechnicalException(Messages.CustomerPostgreSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_CUSTOMER, exception);
 		}
 	}
 
@@ -160,15 +161,15 @@ private final List<CustomerDTO> fillResults(final ResultSet resultSet){
 						resultSet.getString("Email"));
 						
 		} catch (final SQLException exception) {
-			throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestPostgreSQLDAO.TECHNICAL_PROBLEM_FILL_CUSTOMER_DTO, exception);
+			throw DataCarpoolingException.createTechnicalException(Messages.CustomerPostgreSqlDAO.TECHNICAL_PROBLEM_FILL_CUSTOMER_DTO, exception);
 		} catch (final Exception exception) {
-			throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestPostgreSQLDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_CUSTOMER_DTO, exception);
+			throw DataCarpoolingException.createTechnicalException(Messages.CustomerPostgreSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_CUSTOMER, exception);
 		}
 	}
 
 	public final void update(final CustomerDTO customer) {
-		final var sql = "UPDATE User SET \"firstName\" = ?," + "\"secondName\" = ?," + "\"firstSurname\" = ?,"
-				+ "\"secondSurname\" = ?," + "password = ?," + "\"phone\" = ?," + "companyEmail = ?," + "WHERE id = ?";
+		final var sql = "UPDATE User SET firstName = ?," + "secondName = ?," + "firstSurname = ?,"
+				+ "secondSurname = ?," + "password = ?," + "phone = ?," + "companyEmail = ?," + "WHERE id = ?";
 
 		try (final var preparedStatement = getConnection().prepareStatement(sql)) {
 			
