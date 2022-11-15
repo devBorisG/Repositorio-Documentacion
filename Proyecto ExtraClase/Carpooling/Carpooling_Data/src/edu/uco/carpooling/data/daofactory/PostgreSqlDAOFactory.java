@@ -15,6 +15,7 @@ import edu.uco.carpooling.data.dao.CustomerDAO;
 import edu.uco.carpooling.data.dao.VehicleDAO;
 import edu.uco.carpooling.data.dao.relational.postgresql.DriverPostresSqlDAO;
 import edu.uco.carpooling.data.dao.relational.postgresql.CustomerPostgreSqlDAO;
+import edu.uco.carpooling.data.dao.relational.postgresql.DriverPerVehiclePostgresSqlDAO;
 import edu.uco.carpooling.data.dao.relational.postgresql.VehiclePostgreSqlDAO;
 import edu.uco.carpooling.data.dao.relational.postgresql.RouteRequestPostgreSqlDAO;
 
@@ -121,8 +122,7 @@ final class PostgreSqlDAOFactory extends DAOFactory {
 
 	@Override
 	public DriverPerVehicleDAO getDriverPerVehicleDAO() {
-		// TODO Auto-generated method stub
-		return null;
+		return new DriverPerVehiclePostgresSqlDAO(connection);
 	}
 	
 

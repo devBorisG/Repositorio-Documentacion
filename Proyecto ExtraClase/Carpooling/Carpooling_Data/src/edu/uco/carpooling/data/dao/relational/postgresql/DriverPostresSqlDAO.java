@@ -121,11 +121,6 @@ public final class DriverPostresSqlDAO extends DAORelational implements DriverDA
 				parameters.add(driver.getIdAsString());
 			}
 
-			if (!UUIDHelper.isDefaultUUID(driver.getAuthorizedCategory().getId())) {
-				sqlBuilder.append(setWhere ? "WHERE " : "AND ").append("Ro.IdDriverVehicle");
-				parameters.add(driver.getAuthorizedCategory().getIdAsString());
-			}
-
 			if (!UUIDHelper.isDefaultUUID(driver.getId())) {
 				sqlBuilder.append(setWhere ? "WHERE " : "AND ").append("RO.IdDetailRoute");
 				parameters.add(driver.getIdAsString());

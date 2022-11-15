@@ -228,10 +228,7 @@ public class RoutePostrgeSqlDAO extends DAORelational implements RouteDAO{
 	
 	private final DriverPerVehicleDTO fillDriverPerVehicleDTO(final ResultSet resultSet) {
 		try {
-			return DriverPerVehicleDTO.create(resultSet.getString("IdDriverPerVehicle"), fillDriverDTO(resultSet), 
-					fillVehicleDTO(resultSet));
-		} catch (final SQLException exception) {
-			throw DataCarpoolingException.createTechnicalException(Messages.RouteqlServerDAO.TECHNICAL_PROBLEM_FILL_DRIVERPERVEHICLE_DTO, exception);
+			return DriverPerVehicleDTO.create(fillDriverDTO(resultSet), fillVehicleDTO(resultSet));
 		} catch (final Exception exception) {
 			throw DataCarpoolingException.createTechnicalException(Messages.RouteqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_DRIVERPERVEHICLE_DTO, exception);
 		}
