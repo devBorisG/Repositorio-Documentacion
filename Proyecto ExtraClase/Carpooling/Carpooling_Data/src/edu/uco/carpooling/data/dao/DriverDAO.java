@@ -10,6 +10,7 @@ public interface DriverDAO {
 	void create(DriverDTO driver);
 	
 	List<DriverDTO> find(DriverDTO driver);
+	public List<DriverDTO> findById(String id);
 	
 	void update(DriverDTO driver);
 	

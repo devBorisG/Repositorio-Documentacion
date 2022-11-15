@@ -40,7 +40,7 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 			preparedStatement.setString(7, customer.getPassword());
 			preparedStatement.setInt(8, customer.getPhone());
 			preparedStatement.setString(9, customer.getCompanyEmail());
-			
+
 			preparedStatement.executeUpdate();
 		} catch (final SQLException exception) {
 			final String message = Messages.CustomerPostgreSqlDAO.TECHNICAL_PROBLEM_CREATE_CUSTOMER
@@ -53,36 +53,59 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 	}
 
 	@Override
+	public final List<CustomerDTO> findById(String id){
+		String query = "SELECT u.id AS UserId, u.dni AS DniUser, u.firstname AS Name, u.secondname AS SecondName,"
+				+ " u.firstsurname AS FirstSurname, u.secondsurname AS SecondSurname, u.password AS Password,"
+				+ " u.phone As Phone, u.companyemail AS Email FROM public.user u WHERE u.id = ?";
+		try (final var preparedStatement = getConnection().prepareStatement(query)) {
+
+			preparedStatement.setString(1, id);
+
+			return executeQuery(preparedStatement);
+
+		} catch (final DataCarpoolingException exception) {
+			throw exception;
+		} catch (final SQLException exception) {
+			throw DataCarpoolingException.createTechnicalException(
+					Messages.RouteRequestPostgreSQLDAO.TECHNICAL_PROBLEM_PREPARED_STAMENT
+					.concat("\nMore info: ").concat(exception.getMessage()), exception);
+		} catch (final Exception exception) {
+			throw DataCarpoolingException.createTechnicalException(
+					Messages.RouteRequestPostgreSQLDAO.TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMETER_VALUES_QUERY
+					.concat("\nMore info: ").concat(exception.getMessage()), exception);
+		}
+		
+	}
+	@Override
 	public final List<CustomerDTO> find(final CustomerDTO user) {
 
 		var sqlBuilder = new StringBuilder();
 		final var parameters = new ArrayList<Object>();
-		
+
 		creatSelectFrom(sqlBuilder);
 		creatWhere(sqlBuilder, user, parameters);
 		createOrderBy(sqlBuilder);
-		
 		return prepareAndExecuteQuery(sqlBuilder, parameters);
 	}
-	
-	
-	
-	private final List<CustomerDTO> prepareAndExecuteQuery(final StringBuilder sqlBuilder, final List<Object> parameters){
-		try (final var preparedStatement = getConnection().prepareStatement(sqlBuilder.toString())){
-			
+
+	private final List<CustomerDTO> prepareAndExecuteQuery(final StringBuilder sqlBuilder,
+			final List<Object> parameters) {
+		try (final var preparedStatement = getConnection().prepareStatement(sqlBuilder.toString())) {
+
 			SetParameterValues(preparedStatement, parameters);
-			
+
 			return executeQuery(preparedStatement);
-			
+
 		} catch (final DataCarpoolingException exception) {
 			throw exception;
 		} catch (final SQLException exception) {
+
 			throw DataCarpoolingException.createTechnicalException(Messages.CustomerPostgreSqlDAO.TECHNICAL_PROBLEM_PREPARED_STAMENT, exception);
 		} catch (final Exception exception) {
 			throw DataCarpoolingException.createTechnicalException(Messages.CustomerPostgreSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMETER_VALUES_QUERY, exception);
 		}
 	}
-	
+
 	private final void creatSelectFrom(final StringBuilder sqlBuilder) {
 		sqlBuilder.append("SELECT u.id AS UserId,");
 		sqlBuilder.append(" u.dni AS DniUser,");
@@ -93,11 +116,12 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 		sqlBuilder.append(" u.password AS Password,");
 		sqlBuilder.append(" u.phone As Phone,");
 		sqlBuilder.append(" u.companyemail AS Email");
-		sqlBuilder.append(" FROM public.user u");	
+		sqlBuilder.append(" FROM public.user u");
 	}
-	
-	private final void creatWhere(final StringBuilder sqlBuilder, final CustomerDTO user, final List<Object> parameters) {
-		if(!ObjectHelper.isNull(user)) {
+
+	private final void creatWhere(final StringBuilder sqlBuilder, final CustomerDTO user,
+			final List<Object> parameters) {
+		if (!ObjectHelper.isNull(user)) {
 			UUIDHelper.isDefaultUUID(user.getId());
 			sqlBuilder.append(" WHERE u.id = ? ");
 			parameters.add(user.getIdAsString());
@@ -109,36 +133,45 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 	}
 	private final List<CustomerDTO> executeQuery (PreparedStatement preparedStatement){
 		try (final var resultset = preparedStatement.executeQuery()){
-			
+
+	private final List<CustomerDTO> executeQuery(PreparedStatement preparedStatement) {
+		try (final var resultset = preparedStatement.executeQuery()) {
 			return fillResults(resultset);
-			
+
 		} catch (DataCarpoolingException exception) {
 			throw exception;
 		} catch (final SQLException exception) {
-			throw DataCarpoolingException.createTechnicalException(Messages.CustomerPostgreSqlDAO.TECHNICAL_PROBLEM_EXECUTE_QUERY, exception);
+			throw DataCarpoolingException
+					.createTechnicalException(Messages.RouteRequestPostgreSQLDAO.TECHNICAL_PROBLEM_EXECUTE_QUERY
+							.concat("\nMore info: ").concat(exception.getMessage()), exception);
 		} catch (final Exception exception) {
-			throw DataCarpoolingException.createTechnicalException(Messages.CustomerPostgreSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_EXECEUTE_QUERY, exception);
+			throw DataCarpoolingException.createTechnicalException(
+					Messages.RouteRequestPostgreSQLDAO.TECHNICAL_UNEXPECTED_PROBLEM_EXECEUTE_QUERY
+					.concat("\nMore info: ").concat(exception.getMessage()), exception);
 		}
 	}
-	
-	private void SetParameterValues (PreparedStatement preparedStatement, final List<Object> parameters) {
+
+	private void SetParameterValues(PreparedStatement preparedStatement, final List<Object> parameters) {
 		try {
-			for(int index = 0; index < parameters.size(); index ++) {
+			for (int index = 0; index < parameters.size(); index++) {
 				preparedStatement.setString(index + 1, parameters.get(index).toString());
 			}
 		} catch (SQLException exception) {
-			throw DataCarpoolingException.createTechnicalException(Messages.CustomerPostgreSqlDAO.TECHNICAL_PROBLEM_EXECUTE_QUERY, exception);
+			throw DataCarpoolingException.createTechnicalException(
+					Messages.RouteRequestPostgreSQLDAO.TECHNICAL_PROBLEM_EXECUTE_QUERY, exception);
 		} catch (final Exception exception) {
-			throw DataCarpoolingException.createTechnicalException(Messages.CustomerPostgreSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMETER_VALUES_QUERY, exception);
+			throw DataCarpoolingException.createTechnicalException(
+					Messages.RouteRequestPostgreSQLDAO.TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMETER_VALUES_QUERY,
+					exception);
 		}
 	}
-	
-private final List<CustomerDTO> fillResults(final ResultSet resultSet){
-		
+
+	private final List<CustomerDTO> fillResults(final ResultSet resultSet) {
+
 		try {
 			var results = new ArrayList<CustomerDTO>();
-			
-			while(resultSet.next()) {
+
+			while (resultSet.next()) {
 				results.add(fillCustomer(resultSet));
 			}
 			return results;
@@ -147,23 +180,22 @@ private final List<CustomerDTO> fillResults(final ResultSet resultSet){
 		} catch (final SQLException exception) {
 			throw DataCarpoolingException.createTechnicalException(Messages.CustomerPostgreSqlDAO.TECHNICAL_PROBLEM_FILL_CUSTOMER_DTO, exception);
 		} catch (final Exception exception) {
-			throw DataCarpoolingException.createTechnicalException(Messages.CustomerPostgreSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_CUSTOMER, exception);
-		}
+			throw DataCarpoolingException.createTechnicalException(Messages.CustomerPostgreSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_CUSTOMER, exception);      
 	}
 
 	private final CustomerDTO fillCustomer(final ResultSet resultSet) {
 		try {
-			
-				return CustomerDTO.create(resultSet.getString("UserId"), resultSet.getString("DniUser"), 
-						resultSet.getString("Name"), resultSet.getString("SecondName"), 
-						resultSet.getString("FirstSurname"), resultSet.getString("SecondSurname"), 
-						resultSet.getString("Password"),resultSet.getInt("Phone"), 
-						resultSet.getString("Email"));
-						
+
+			return CustomerDTO.create(resultSet.getString("UserId"), resultSet.getString("DniUser"),
+					resultSet.getString("Name"), resultSet.getString("SecondName"), resultSet.getString("FirstSurname"),
+					resultSet.getString("SecondSurname"), resultSet.getString("Password"), resultSet.getInt("Phone"),
+					resultSet.getString("Email"));
+
 		} catch (final SQLException exception) {
 			throw DataCarpoolingException.createTechnicalException(Messages.CustomerPostgreSqlDAO.TECHNICAL_PROBLEM_FILL_CUSTOMER_DTO, exception);
 		} catch (final Exception exception) {
 			throw DataCarpoolingException.createTechnicalException(Messages.CustomerPostgreSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_CUSTOMER, exception);
+
 		}
 	}
 
@@ -172,17 +204,16 @@ private final List<CustomerDTO> fillResults(final ResultSet resultSet){
 				+ "secondSurname = ?," + "password = ?," + "phone = ?," + "companyEmail = ?," + "WHERE id = ?";
 
 		try (final var preparedStatement = getConnection().prepareStatement(sql)) {
-			
+
 			preparedStatement.setString(1, customer.getFirstName());
 			preparedStatement.setString(2, customer.getSecondName());
 			preparedStatement.setString(3, customer.getFirstSurname());
 			preparedStatement.setString(4, customer.getSecondSurname());
 			preparedStatement.setString(5, customer.getPassword());
 			preparedStatement.setInt(6, customer.getPhone());
-			preparedStatement.setString(7, customer.getCompanyEmail());			
+			preparedStatement.setString(7, customer.getCompanyEmail());
 			preparedStatement.setString(8, customer.getIdAsString());
-			
-			
+
 		} catch (final SQLException exception) {
 			final String message = Messages.CustomerPostgreSqlDAO.TECHNICAL_PROBLEM_UPDATE_CUSTOMER
 					.concat(customer.getIdAsString());
@@ -199,7 +230,7 @@ private final List<CustomerDTO> fillResults(final ResultSet resultSet){
 		final var sql = "DELETE FROM \"Customer\" WHERE id = ?";
 		final var idAsString = getUUIDAsString(id);
 
-		try (final var preparedStatement = getConnection().prepareStatement(sql)){
+		try (final var preparedStatement = getConnection().prepareStatement(sql)) {
 			preparedStatement.setString(1, idAsString);
 			preparedStatement.executeUpdate();
 		} catch (final SQLException exception) {
