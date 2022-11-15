@@ -19,12 +19,14 @@ public class DriverPerVehicleDTOBuilder {
     }
 
 
-    public void setDriver(DriverDTO driver) {
+    public final DriverPerVehicleDTOBuilder setDriver(DriverDTO driver) {
         this.driver = driver;
+        return this;
     }
 
-    public void setVehicle(VehicleDTO vehicle) {
+    public final DriverPerVehicleDTOBuilder setVehicle(VehicleDTO vehicle) {
         this.vehicle = vehicle;
+        return this;
     }
     
 

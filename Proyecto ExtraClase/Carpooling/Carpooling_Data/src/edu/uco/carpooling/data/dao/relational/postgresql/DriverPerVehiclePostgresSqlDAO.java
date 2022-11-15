@@ -1,20 +1,13 @@
 package edu.uco.carpooling.data.dao.relational.postgresql;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
 import edu.uco.carpooling.crosscutting.exception.DataCarpoolingException;
 import edu.uco.carpooling.crosscutting.messages.Messages;
 import edu.uco.carpooling.data.dao.DriverPerVehicleDAO;
 import edu.uco.carpooling.data.dao.relational.DAORelational;
-import edu.uco.carpooling.domain.AuthorizedCategoryDTO;
-import edu.uco.carpooling.domain.DriverDTO;
 import edu.uco.carpooling.domain.DriverPerVehicleDTO;
-import edu.uco.carpooling.domain.VehicleDTO;
 
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getUUIDAsString;
 
@@ -25,12 +18,11 @@ public class DriverPerVehiclePostgresSqlDAO extends DAORelational implements Dri
 	}
 
 	@Override
-	public void create(DriverPerVehicleDTO driverPerVehicle) {
-		final var sql = "INSERT INTO \"DriverVehicle\"(\"idVehicle\",\"idDriver\",state) + VALUES(?,?,?)";
+	public final void create(final DriverPerVehicleDTO driverPerVehicle) {
+		final var sql = "INSERT INTO drivervehicle(iddriver,idvehicle) VALUES(?,?)";
 		try (final var preparedStatement = getConnection().prepareStatement(sql)) {
 			preparedStatement.setString(1, driverPerVehicle.getDriver().getIdAsString());
 			preparedStatement.setString(2, driverPerVehicle.getVehicle().getIdAsString());
-			preparedStatement.setString(3, driverPerVehicle.getState());
 
 			preparedStatement.executeUpdate();
 		} catch (final SQLException exception) {
@@ -47,7 +39,7 @@ public class DriverPerVehiclePostgresSqlDAO extends DAORelational implements Dri
 
     @Override
     public void delete(UUID id) throws SQLException {
-        final var sql = "DELETE FROM DRIVERVEHICLE WHERE id = ?";
+        final var sql = "DELETE FROM drivervehicle WHERE id = ?";
         final var idAsString = getUUIDAsString(id);
 
         try (final var preparedStatement = getConnection().prepareStatement(sql)){

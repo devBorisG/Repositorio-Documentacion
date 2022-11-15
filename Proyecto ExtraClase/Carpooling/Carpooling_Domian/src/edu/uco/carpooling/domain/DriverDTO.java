@@ -37,7 +37,7 @@ public class DriverDTO extends UserDTO{
 	}
 	
 	public static final DriverDTO create (final UUID id) {
-		return new DriverDTO(id, EMPTY, null);
+		return new DriverDTO(id, EMPTY, getAuthorizedCategoryDTOBuilder().build());
 	}
 	
 	public static final String getUUIDAsString(final UUID value) {

@@ -60,7 +60,7 @@ import edu.uco.carpooling.domain.DriverDTO;
 		private final List<DriverDTO> prepareAndExecuteQuery(final StringBuilder sqlBuilder, final List<Object> parameters){
 			try (final var preparedStatement = getConnection().prepareStatement(sqlBuilder.toString())){
 				
-				SetParameterValues(preparedStatement, parameters);
+				setParameterValues(preparedStatement, parameters);
 				
 				return executeQuery(preparedStatement);
 				
@@ -75,24 +75,24 @@ import edu.uco.carpooling.domain.DriverDTO;
 		
 		private final void createSelectFrom(final StringBuilder sqlbuilder) {
 			sqlbuilder.append("SELECT      Dr.id AS IdDriver,");
-			sqlbuilder.append("            Dr.licenseNumber AS license,");
-			sqlbuilder.append("            Dr.authorizedCategories AS Categorie,");
+			sqlbuilder.append("            Dr.licensenumber AS license,");
+			sqlbuilder.append("            Dr.authorizedcategories AS Categorie,");
 			sqlbuilder.append("            Au.id AS IDCategorie,");
-			sqlbuilder.append("            Au.licenseNumber AS License,");
-			sqlbuilder.append("            Au.authorizedCategories,");
+			sqlbuilder.append("            Au.category AS Category,");
+			sqlbuilder.append("            Au.validity AS Validity,");
 			sqlbuilder.append("            U.Id AS UserId,");
 			sqlbuilder.append("            U.dni AS DniUser,");
-			sqlbuilder.append("            U.firstName AS Name,");
-			sqlbuilder.append("            U.secondName AS SecondName,");
-			sqlbuilder.append("            U.firstSurname AS FirstSurname,");
-			sqlbuilder.append("            U.SecondSurname AS SecondSurname,");
+			sqlbuilder.append("            U.firstname AS Name,");
+			sqlbuilder.append("            U.secondname AS SecondName,");
+			sqlbuilder.append("            U.firstsurname AS FirstSurname,");
+			sqlbuilder.append("            U.Secondsurname AS SecondSurname,");
 			sqlbuilder.append("            U.phone As Phone,");
-			sqlbuilder.append("            U.companyEmail AS Email");
-			sqlbuilder.append("FROM        Driver Dr ");
-			sqlbuilder.append("INNER JOIN  authorizedCategories Au,");
-			sqlbuilder.append("ON          Dr.authorizedCategorie = Au.id");
-			sqlbuilder.append("INNER JOIN  User U");
-			sqlbuilder.append("ON          Dr.id = U.id");
+			sqlbuilder.append("            U.companyemail AS Email ");
+			sqlbuilder.append("FROM        driver Dr ");
+			sqlbuilder.append("INNER JOIN  authorizedcategories Au ");
+			sqlbuilder.append("ON          Dr.authorizedcategories = Au.id ");
+			sqlbuilder.append("INNER JOIN  \"user\" U ");
+			sqlbuilder.append("ON          Dr.id = U.id ");
 		}
 		
 		private final void createWhere(final StringBuilder sqlBuilder, final DriverDTO driver,
@@ -101,26 +101,21 @@ import edu.uco.carpooling.domain.DriverDTO;
 					var setWhere = true;
 				
 				if (!UUIDHelper.isDefaultUUID(driver.getId())) {
-					sqlBuilder.append("WHERE Ro.id = ?");
+					sqlBuilder.append("WHERE Dr.id = ? ");
 						setWhere = false;
 						parameters.add(driver.getIdAsString());
 				}
 				
 				if (!UUIDHelper.isDefaultUUID(driver.getAuthorizedCategory().getId())) {
-						sqlBuilder.append(setWhere ? "WHERE ": "AND ").append("Ro.IdDriverVehicle");
+						sqlBuilder.append(setWhere ? "WHERE ": "AND ").append("Au.id = ? ");
 						parameters.add(driver.getAuthorizedCategory().getIdAsString());
-				}
-				
-				if (!UUIDHelper.isDefaultUUID(driver.getId())) {
-						sqlBuilder.append(setWhere ? "WHERE ": "AND ").append("RO.IdDetailRoute");
-						parameters.add(driver.getIdAsString());
 				}
 			}
 		}
 		
 		private void createOrderBy(final StringBuilder sqlBuilder) {
-			sqlBuilder.append("ORDER BY    Dr.licenseNumber");
-			sqlBuilder.append("ORDER BY    U.firstName");
+			sqlBuilder.append("ORDER BY    Dr.licenseNumber, ");
+			sqlBuilder.append("U.firstName");
 		}
 		
 		private final List<DriverDTO> executeQuery(PreparedStatement preparedStatement){
@@ -135,7 +130,7 @@ import edu.uco.carpooling.domain.DriverDTO;
 			}
 		}
 		
-		private void SetParameterValues(PreparedStatement preparedStatement, final List<Object> parameters) {
+		private void setParameterValues(PreparedStatement preparedStatement, final List<Object> parameters) {
 			try {
 				for(int index = 0; index < parameters.size(); index ++) {
 					preparedStatement.setObject(index + 1, parameters.get(index));
@@ -167,7 +162,7 @@ import edu.uco.carpooling.domain.DriverDTO;
 		
 		private final DriverDTO fillDriverDTO(final ResultSet resultSet) {
 	        try {
-	        	return DriverDTO.create(resultSet.getString("id"),resultSet.getString("licenseNumber"),
+	        	return DriverDTO.create(resultSet.getString("IdDriver"),resultSet.getString("license"),
 	        			fillAuthorizedCategoryDTO(resultSet));
 	        } catch (final SQLException exception) {
 	            throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestPostgreSQLDAO.TECHNICAL_PROBLEM_FILL_CUSTOMER_DTO, exception);
@@ -178,8 +173,8 @@ import edu.uco.carpooling.domain.DriverDTO;
 		
 		private final AuthorizedCategoryDTO fillAuthorizedCategoryDTO(final ResultSet resultSet) {
 			try {
-				return AuthorizedCategoryDTO.create(resultSet.getString("IdCategory"),
-						resultSet.getString("NameCategory"),resultSet.getString("Validity"));
+				return AuthorizedCategoryDTO.create(resultSet.getString("IDCategorie"),
+						resultSet.getString("Category"),resultSet.getString("Validity"));
 			} catch (final SQLException exception) {
 				throw DataCarpoolingException.createTechnicalException(Messages.RouteqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_AUTHORIZED_CATEGOTY_DTO, exception);			
 			} catch (final Exception exception) {

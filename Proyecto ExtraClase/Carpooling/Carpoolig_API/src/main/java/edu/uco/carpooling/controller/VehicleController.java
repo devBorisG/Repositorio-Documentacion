@@ -47,7 +47,7 @@ public class VehicleController {
 				createVehicleCommand.execute(vehicle);
 				ArrayList<VehicleDTO> data = new ArrayList<>();
 				data.add(vehicle);
-				response.setData(data);
+				response.setData(data); 
 				response.addSuccessMessages(Messages.VehicleController.SUCCESS_CREATE_VEHICLE);
 			} else {
 				httpStatus = HttpStatus.BAD_REQUEST;
