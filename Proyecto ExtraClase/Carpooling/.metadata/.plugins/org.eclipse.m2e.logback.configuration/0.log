@@ -8807,3 +8807,90 @@ java.io.FileNotFoundException: C:\Users\Federico\U\Doo\Carpooling\Repositorio-Do
 2022-11-14 21:05:58,421 [Worker-316: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2022-11-14 21:05:58,421 [Worker-316: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
 2022-11-14 21:05:58,422 [Worker-316: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Federico\U\Doo\Carpooling\Repositorio-Documentacion\Proyecto ExtraClase\Carpooling\Carpoolig_API\src\test\resources
+2022-11-14 21:08:07,051 [ModalContext] ERROR o.e.m.c.i.p.r.ProjectRegistryReader - Can't write workspace state
+java.io.FileNotFoundException: C:\Users\Federico\U\Doo\Carpooling\Repositorio-Documentacion\Proyecto ExtraClase\Carpooling\.metadata\.plugins\org.eclipse.m2e.core\workspaceState.ser (El sistema no puede encontrar la ruta especificada)
+	at java.base/java.io.FileOutputStream.open0(Native Method) ~[na:na]
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:293) ~[na:na]
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:235) ~[na:na]
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:184) ~[na:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryReader.createObjectOutputStream(ProjectRegistryReader.java:128) ~[na:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryReader.writeWorkspaceState(ProjectRegistryReader.java:117) ~[na:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.writeWorkspaceState(ProjectRegistryManager.java:987) ~[na:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.saving(ProjectRegistryManager.java:1199) ~[na:na]
+	at org.eclipse.core.internal.resources.SaveManager.executeLifecycle(SaveManager.java:394) ~[na:na]
+	at org.eclipse.core.internal.resources.SaveManager$1.run(SaveManager.java:210) ~[na:na]
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45) ~[org.eclipse.equinox.common_3.16.200.v20220817-1601.jar:na]
+	at org.eclipse.core.internal.resources.SaveManager.broadcastLifecycle(SaveManager.java:213) ~[na:na]
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1171) ~[na:na]
+	at org.eclipse.core.internal.resources.Workspace.save(Workspace.java:2421) ~[na:na]
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor.lambda$1(IDEWorkbenchAdvisor.java:554) ~[na:na]
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122) ~[org.eclipse.jface_3.27.0.v20220817-1444.jar:na]
+2022-11-14 21:53:29,346 [Worker-1: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: edu.uco.carpooling:Carpooling_Service:0.0.1-SNAPSHOT @ C:\Users\Federico\U\Doo\Carpooling\Repositorio-Documentacion\Proyecto ExtraClase\Carpooling\Carpooling_Service\pom.xml.
+2022-11-14 21:53:29,457 [Worker-1: Updating Maven Dependencies] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for edu.uco.carpooling:Carpooling_Domian:jar:0.0.1-SNAPSHOT is missing, no dependency information available
+2022-11-14 21:53:29,463 [Worker-1: Updating Maven Dependencies] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for edu.uco.carpooling:Carpooling_Crosscutting:jar:0.0.1-SNAPSHOT is missing, no dependency information available
+2022-11-14 21:53:29,466 [Worker-1: Updating Maven Dependencies] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for edu.uco.carpooling:Carpooling_Data:jar:0.0.1-SNAPSHOT is missing, no dependency information available
+2022-11-14 21:53:29,716 [Worker-10: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: edu.uco.carpooling:Carpooling_Crosscutting:0.0.1-SNAPSHOT @ C:\Users\Federico\U\Doo\Carpooling\Repositorio-Documentacion\Proyecto ExtraClase\Carpooling\Carpooling_Crosscutting\pom.xml.
+2022-11-14 21:53:31,169 [Worker-10: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-14 21:53:31,171 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Federico\U\Doo\Carpooling\Repositorio-Documentacion\Proyecto ExtraClase\Carpooling\Carpooling_Crosscutting\src\main\resources
+2022-11-14 21:53:31,180 [Worker-10: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-14 21:53:31,182 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Federico\U\Doo\Carpooling\Repositorio-Documentacion\Proyecto ExtraClase\Carpooling\Carpooling_Crosscutting\src\test\resources
+2022-11-14 21:53:32,482 [Worker-9: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: edu.uco.carpooling:Carpooling_Service:0.0.1-SNAPSHOT @ C:\Users\Federico\U\Doo\Carpooling\Repositorio-Documentacion\Proyecto ExtraClase\Carpooling\Carpooling_Service\pom.xml.
+2022-11-14 21:53:32,488 [Worker-9: Updating Maven Dependencies] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for edu.uco.carpooling:Carpooling_Domian:jar:0.0.1-SNAPSHOT is missing, no dependency information available
+2022-11-14 21:53:32,494 [Worker-9: Updating Maven Dependencies] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for edu.uco.carpooling:Carpooling_Data:jar:0.0.1-SNAPSHOT is missing, no dependency information available
+2022-11-14 21:53:32,504 [Worker-9: Updating Maven Dependencies] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/Carpooling_Crosscutting: edu.uco.carpooling:Carpooling_Crosscutting:0.0.1-SNAPSHOT with classifier  to /Carpooling_Crosscutting/target/classes
+2022-11-14 21:53:33,180 [Worker-9: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: edu.uco.carpooling:Carpooling_Domian:0.0.1-SNAPSHOT @ C:\Users\Federico\U\Doo\Carpooling\Repositorio-Documentacion\Proyecto ExtraClase\Carpooling\Carpooling_Domian\pom.xml.
+2022-11-14 21:53:33,184 [Worker-9: Building] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/Carpooling_Crosscutting: edu.uco.carpooling:Carpooling_Crosscutting:0.0.1-SNAPSHOT with classifier  to /Carpooling_Crosscutting/target/classes
+2022-11-14 21:53:33,324 [Worker-9: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: edu.uco.carpooling:Carpooling_Service:0.0.1-SNAPSHOT @ C:\Users\Federico\U\Doo\Carpooling\Repositorio-Documentacion\Proyecto ExtraClase\Carpooling\Carpooling_Service\pom.xml.
+2022-11-14 21:53:33,330 [Worker-9: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for edu.uco.carpooling:Carpooling_Data:jar:0.0.1-SNAPSHOT is missing, no dependency information available
+2022-11-14 21:53:33,332 [Worker-9: Building] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/Carpooling_Domian: edu.uco.carpooling:Carpooling_Domian:0.0.1-SNAPSHOT with classifier  to /Carpooling_Domian/target/classes
+2022-11-14 21:53:33,332 [Worker-9: Building] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/Carpooling_Crosscutting: edu.uco.carpooling:Carpooling_Crosscutting:0.0.1-SNAPSHOT with classifier  to /Carpooling_Crosscutting/target/classes
+2022-11-14 21:53:33,457 [Worker-9: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-14 21:53:33,459 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Federico\U\Doo\Carpooling\Repositorio-Documentacion\Proyecto ExtraClase\Carpooling\Carpooling_Domian\src\main\resources
+2022-11-14 21:53:33,466 [Worker-9: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-14 21:53:33,468 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Federico\U\Doo\Carpooling\Repositorio-Documentacion\Proyecto ExtraClase\Carpooling\Carpooling_Domian\src\test\resources
+2022-11-14 21:53:33,976 [Worker-2: Download sources and javadoc] ERROR o.e.m.j.internal.DownloadSourcesJob - Could not download sources for edu.uco.carpooling:Carpooling_Data:0.0.1-SNAPSHOT
+org.eclipse.core.runtime.CoreException: Could not resolve artifact edu.uco.carpooling:Carpooling_Data:jar:sources:0.0.1-SNAPSHOT
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lambda$6(MavenImpl.java:608) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:350) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:219) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:205) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:577) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:562) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.download(DownloadSourcesJob.java:308) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadAttachments(DownloadSourcesJob.java:282) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadMaven(DownloadSourcesJob.java:252) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadFilesAndPopulateToUpdate(DownloadSourcesJob.java:220) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.lambda$0(DownloadSourcesJob.java:149) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:350) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:262) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:205) ~[na:na]
+	at org.eclipse.m2e.core.embedder.IMaven.execute(IMaven.java:270) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.run(DownloadSourcesJob.java:149) ~[na:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) ~[org.eclipse.core.jobs_3.13.100.v20220817-1539.jar:na]
+2022-11-14 21:53:35,219 [Worker-9: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: edu.uco.carpooling:Carpooling_Data:0.0.1-SNAPSHOT @ C:\Users\Federico\U\Doo\Carpooling\Repositorio-Documentacion\Proyecto ExtraClase\Carpooling\Carpooling_Data\pom.xml.
+2022-11-14 21:53:35,269 [Worker-9: Building] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/Carpooling_Domian: edu.uco.carpooling:Carpooling_Domian:0.0.1-SNAPSHOT with classifier  to /Carpooling_Domian/target/classes
+2022-11-14 21:53:35,270 [Worker-9: Building] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/Carpooling_Crosscutting: edu.uco.carpooling:Carpooling_Crosscutting:0.0.1-SNAPSHOT with classifier  to /Carpooling_Crosscutting/target/classes
+2022-11-14 21:53:35,398 [Worker-9: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: edu.uco.carpooling:Carpooling_Service:0.0.1-SNAPSHOT @ C:\Users\Federico\U\Doo\Carpooling\Repositorio-Documentacion\Proyecto ExtraClase\Carpooling\Carpooling_Service\pom.xml.
+2022-11-14 21:53:35,404 [Worker-9: Building] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/Carpooling_Domian: edu.uco.carpooling:Carpooling_Domian:0.0.1-SNAPSHOT with classifier  to /Carpooling_Domian/target/classes
+2022-11-14 21:53:35,405 [Worker-9: Building] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/Carpooling_Crosscutting: edu.uco.carpooling:Carpooling_Crosscutting:0.0.1-SNAPSHOT with classifier  to /Carpooling_Crosscutting/target/classes
+2022-11-14 21:53:35,406 [Worker-9: Building] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/Carpooling_Data: edu.uco.carpooling:Carpooling_Data:0.0.1-SNAPSHOT with classifier  to /Carpooling_Data/target/classes
+2022-11-14 21:53:35,612 [Worker-9: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-14 21:53:35,615 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Federico\U\Doo\Carpooling\Repositorio-Documentacion\Proyecto ExtraClase\Carpooling\Carpooling_Data\src\main\resources
+2022-11-14 21:53:35,621 [Worker-9: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-14 21:53:35,623 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Federico\U\Doo\Carpooling\Repositorio-Documentacion\Proyecto ExtraClase\Carpooling\Carpooling_Data\src\test\resources
+2022-11-14 21:53:36,691 [Worker-9: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-14 21:53:36,693 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Federico\U\Doo\Carpooling\Repositorio-Documentacion\Proyecto ExtraClase\Carpooling\Carpooling_Service\src\main\resources
+2022-11-14 21:53:36,699 [Worker-9: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-11-14 21:53:36,703 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Federico\U\Doo\Carpooling\Repositorio-Documentacion\Proyecto ExtraClase\Carpooling\Carpooling_Service\src\test\resources
+2022-11-14 21:53:39,322 [Worker-9: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: edu.uco.carpooling:Carpoolig_API:0.0.1-SNAPSHOT @ C:\Users\Federico\U\Doo\Carpooling\Repositorio-Documentacion\Proyecto ExtraClase\Carpooling\Carpoolig_API\pom.xml.
+2022-11-14 21:53:39,779 [Worker-9: Building] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/Carpooling_Service: edu.uco.carpooling:Carpooling_Service:0.0.1-SNAPSHOT with classifier  to /Carpooling_Service/target/classes
+2022-11-14 21:53:39,779 [Worker-9: Building] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/Carpooling_Domian: edu.uco.carpooling:Carpooling_Domian:0.0.1-SNAPSHOT with classifier  to /Carpooling_Domian/target/classes
+2022-11-14 21:53:39,780 [Worker-9: Building] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/Carpooling_Crosscutting: edu.uco.carpooling:Carpooling_Crosscutting:0.0.1-SNAPSHOT with classifier  to /Carpooling_Crosscutting/target/classes
+2022-11-14 21:53:39,780 [Worker-9: Building] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/Carpooling_Data: edu.uco.carpooling:Carpooling_Data:0.0.1-SNAPSHOT with classifier  to /Carpooling_Data/target/classes
+2022-11-14 21:53:42,537 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-14 21:53:42,538 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-14 21:53:42,545 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-11-14 21:53:42,576 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-11-14 21:53:42,585 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-11-14 21:53:42,585 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-14 21:53:42,586 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Federico\U\Doo\Carpooling\Repositorio-Documentacion\Proyecto ExtraClase\Carpooling\Carpoolig_API\src\test\resources
