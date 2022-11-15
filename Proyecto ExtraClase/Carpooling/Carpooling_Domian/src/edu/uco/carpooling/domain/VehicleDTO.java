@@ -30,22 +30,26 @@ public class VehicleDTO {
 		setNumberEnrollment(EMPTY);
 	}
 
-	public VehicleDTO(UUID id,DriverDTO owner,int capacity,final String numberEnrollment) {
+	public VehicleDTO(UUID id,DriverDTO owner,int capacity,final String numberEnrollment, final String plate) {
 		setId(id);
-		setPlate(plate);
 		setOwner(owner);
 		setCapacity(capacity);
 		setNumberEnrollment(numberEnrollment);
+		setPlate(plate);
 	}
 	
 	public static final VehicleDTO create(final UUID id,final String plate,final DriverDTO owner,final int capacity
 			,final String numberEnrollment) {
-		return new VehicleDTO(id,owner,capacity,numberEnrollment);
+		return new VehicleDTO(id,owner,capacity,numberEnrollment, plate);
+	}
+	
+	public static final VehicleDTO create(final String plate) {
+		return new VehicleDTO(getDefaultUUID(null), DriverDTOBuilder.getDriverDTOBuilder().build(), ZERO, EMPTY, plate);
 	}
 	
 	public static final VehicleDTO create(final String id,final String plate, final DriverDTO owner,
 			int capacity,final String numberEnrollment) {
-		return new VehicleDTO(getUUIDFromString(id),owner,capacity,numberEnrollment);
+		return new VehicleDTO(getUUIDFromString(id),owner,capacity,numberEnrollment,plate);
 	}
 	
 	public static final String getUUIDAsString(final UUID value) {
@@ -101,4 +105,13 @@ public class VehicleDTO {
 	public final String getIdAsString() {
 		return getUUIDAsString(getId());
 	}
+	
+	public boolean exist() {
+		return !UUIDHelper.isDefaultUUID(id);
+	}
+
+	public boolean notExist() {
+		return !exist();
+	}
+	
 }

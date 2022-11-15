@@ -28,13 +28,6 @@ public class DriverPerVehicleDTOBuilder {
         this.vehicle = vehicle;
     }
     
-    public String getState() {
-		return state;
-	}
-
-	public void setState(String state) {
-		this.state = state;
-	}
 
 	public final DriverPerVehicleDTO build() {
     	return create(state,driver,vehicle);
