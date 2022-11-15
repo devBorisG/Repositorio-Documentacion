@@ -44,13 +44,16 @@ public class CustomerController {
 			
 			if(messages.isEmpty()) {
 				createCustomer.execute(customer);
+				final List<CustomerDTO> data = new ArrayList<>();
+				data.add(customer);
+				response.setData(data);
+				
+				response.addSuccessMessages(Messages.CustomerController.CONTROLLER_CREATE_CUSTOMER_SUCCESFUL);
+			}else {
+				response.setMessages(messages);
+				httpStatus = HttpStatus.BAD_REQUEST;
 			}
-			
-			final List<CustomerDTO> data = new ArrayList<>();
-			data.add(customer);
-			response.setData(data);
-			
-			response.addSuccessMessages(Messages.CustomerController.CONTROLLER_CREATE_CUSTOMER_SUCCESFUL);		
+				
 		} catch (final CarpoolingCustomException exception) {
 			if(exception.isTechnicalException()) {
 				response.addErrorMessages(Messages.CustomerController.CONTROLLER_ERROR_TRY_TO_CREATE_CUSTOMER);

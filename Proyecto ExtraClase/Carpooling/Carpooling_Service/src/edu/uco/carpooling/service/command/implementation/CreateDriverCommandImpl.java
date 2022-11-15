@@ -11,21 +11,14 @@ import edu.uco.carpooling.service.command.CreateDriverCommand;
 public class CreateDriverCommandImpl implements CreateDriverCommand{
 
 	private DAOFactory factory;
-<<<<<<< HEAD
-	private final CreateDriverUseCase driverUsecase = new CreateDriverUseCaseImpl(factory);
-=======
 	private CreateDriverUseCase driverUsecase;
->>>>>>> main
 	
 	@Override
 	public void execute(DriverDTO driver) {
 		try {
 			factory = DAOFactory.getDAOFactory(DAOFactoryType.POSTGRESQL);
-<<<<<<< HEAD
-=======
 			driverUsecase = new CreateDriverUseCaseImpl(factory);
->>>>>>> main
-factory.initTransaction();
+			factory.initTransaction();
 			
 		driverUsecase.create(driver);
 			

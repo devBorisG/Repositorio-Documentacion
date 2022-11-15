@@ -83,17 +83,6 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 	}
 	
 	private final void creatSelectFrom(final StringBuilder sqlBuilder) {
-<<<<<<< HEAD
-		sqlBuilder.append("SELECT     U.id AS UserId,");
-		sqlBuilder.append("           U.dni AS DniUser,");
-		sqlBuilder.append("           U.firstname AS Name,");
-		sqlBuilder.append("           U.secondname AS SecondName,");
-		sqlBuilder.append("           U.firstsurname AS FirstSurname,");
-		sqlBuilder.append("           U.Secondsurname AS SecondSurname,");
-		sqlBuilder.append("           U.phone As Phone,");
-		sqlBuilder.append("           U.companyemail AS Email");
-		sqlBuilder.append("FROM       user U");	
-=======
 		sqlBuilder.append("SELECT u.id AS UserId,");
 		sqlBuilder.append(" u.dni AS DniUser,");
 		sqlBuilder.append(" u.firstname AS Name,");
@@ -104,7 +93,6 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 		sqlBuilder.append(" u.phone As Phone,");
 		sqlBuilder.append(" u.companyemail AS Email");
 		sqlBuilder.append(" FROM public.user u");	
->>>>>>> main
 	}
 	
 	private final void creatWhere(final StringBuilder sqlBuilder, final CustomerDTO user, final List<Object> parameters) {
@@ -115,13 +103,9 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 		}
 	}
 	
-<<<<<<< HEAD
 	private void  createOrderBy(final StringBuilder sqlBuilder) {
 		sqlBuilder.append("ORDER BY   U.firstsurname ASC,");
 	}
-	
-=======
->>>>>>> main
 	private final List<CustomerDTO> executeQuery (PreparedStatement preparedStatement){
 		try (final var resultset = preparedStatement.executeQuery()){
 			

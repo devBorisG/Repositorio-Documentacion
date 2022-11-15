@@ -60,16 +60,16 @@ import edu.uco.carpooling.domain.DriverDTO;
 		private final List<DriverDTO> prepareAndExecuteQuery(final StringBuilder sqlBuilder, final List<Object> parameters){
 			try (final var preparedStatement = getConnection().prepareStatement(sqlBuilder.toString())){
 				
-				SetParameterValues(preparedStatement, parameters);
+				setParameterValues(preparedStatement, parameters);
 				
 				return executeQuery(preparedStatement);
 				
 			} catch (final DataCarpoolingException exception) {
 				throw exception;
 			} catch (final SQLException exception) {
-				throw DataCarpoolingException.createTechnicalException(Messages.RouteqlServerDAO.TECHNICAL_PROBLEM_PREPARED_STAMENT, exception);
+				throw DataCarpoolingException.createTechnicalException(Messages.DriverPostresSqlDAO.TECHNICAL_PROBLEM_PREPARED_STAMENT, exception);
 			} catch (final Exception exception) {
-				throw DataCarpoolingException.createTechnicalException(Messages.RouteqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMETER_VALUES_QUERY, exception);
+				throw DataCarpoolingException.createTechnicalException(Messages.DriverPostresSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMETER_VALUES_QUERY, exception);
 			}
 		}
 		
@@ -110,11 +110,6 @@ import edu.uco.carpooling.domain.DriverDTO;
 						sqlBuilder.append(setWhere ? "WHERE ": "AND ").append("Ro.IdDriverVehicle");
 						parameters.add(driver.getAuthorizedCategory().getIdAsString());
 				}
-				
-				if (!UUIDHelper.isDefaultUUID(driver.getId())) {
-						sqlBuilder.append(setWhere ? "WHERE ": "AND ").append("RO.IdDetailRoute");
-						parameters.add(driver.getIdAsString());
-				}
 			}
 		}
 		
@@ -129,13 +124,13 @@ import edu.uco.carpooling.domain.DriverDTO;
 			} catch (DataCarpoolingException exception) {
 				throw exception;
 			} catch (final SQLException exception) {
-				throw DataCarpoolingException.createTechnicalException(Messages.RouteqlServerDAO.TECHNICAL_PROBLEM_EXECUTE_QUERY, exception);
+				throw DataCarpoolingException.createTechnicalException(Messages.DriverPostgreSqlDAO.TECHNICAL_PROBLEM_EXECUTE_QUERY, exception);
 			} catch (final Exception exception) {
-				throw DataCarpoolingException.createTechnicalException(Messages.RouteqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMETER_VALUES_QUERY, exception);
+				throw DataCarpoolingException.createTechnicalException(Messages.DriverPostgreSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_EXECEUTE_QUERY, exception);
 			}
 		}
 		
-		private void SetParameterValues(PreparedStatement preparedStatement, final List<Object> parameters) {
+		private void setParameterValues(PreparedStatement preparedStatement, final List<Object> parameters) {
 			try {
 				for(int index = 0; index < parameters.size(); index ++) {
 					preparedStatement.setObject(index + 1, parameters.get(index));

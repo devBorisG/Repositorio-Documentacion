@@ -11,21 +11,12 @@ import edu.uco.carpooling.service.command.CreatecustomerCommand;
 public class CreatecustomerCommandImpl implements CreatecustomerCommand{
 
 	private DAOFactory factory;
-<<<<<<< HEAD
-	private final CreateCustomerUseCase useCase = new CreateCustomerUseCaseImpl(factory);
-=======
-	private CreateCustomerUseCase useCase;
->>>>>>> main
+	private CreateCustomerUseCase useCase = new CreateCustomerUseCaseImpl(factory);
 	
 	@Override
 	public final void execute(CustomerDTO customer) {
 		try {
-<<<<<<< HEAD
-			factory = DAOFactory.getDAOFactory(DAOFactoryType.POSTGRESQL);
-=======
 			factory=DAOFactory.getDAOFactory(DAOFactoryType.POSTGRESQL);
-			useCase = new CreateCustomerUseCaseImpl(factory);
->>>>>>> main
 			factory.initTransaction();
 			
 			useCase.create(customer);
