@@ -63,7 +63,7 @@ public abstract class DAOFactory {
 
 	public abstract DriverDAO getDriverDAO();
 	
-	public abstract RouteRequestDAO getRouteRequestDTO();
+	public abstract RouteRequestDAO getRouteRequestDAO();
 	
 	public abstract DriverPerVehicleDAO getDriverPerVehicleDAO();
 

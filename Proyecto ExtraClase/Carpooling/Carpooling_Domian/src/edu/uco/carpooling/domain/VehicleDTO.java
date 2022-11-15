@@ -2,9 +2,10 @@ package edu.uco.carpooling.domain;
 
 import java.util.UUID;
 
+import edu.uco.carpooling.crosscutting.helper.UUIDHelper;
+import edu.uco.carpooling.domain.builder.DriverDTOBuilder;
 
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getDefaultUUID;
-import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getNewUUID;
 
 import static edu.uco.carpooling.crosscutting.helper.StringHelper.applyTrim;
 import static edu.uco.carpooling.crosscutting.helper.StringHelper.EMPTY;
@@ -23,7 +24,7 @@ public class VehicleDTO {
 	private String numberEnrollment;
 
 	public VehicleDTO() {
-		setId(getNewUUID());
+		setId(getDefaultUUID(id));
 		setPlate(EMPTY);
 		setCapacity(ZERO);
 		setOwner(getDriverDTOBuilder().build());
