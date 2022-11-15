@@ -1,4 +1,4 @@
-package edu.uco.carpooling.controller.validator;
+package edu.uco.carpooling.controller.validator.driver;
 
 import static edu.uco.carpooling.crosscutting.helper.StringHelper.isEmpty;
 
@@ -8,6 +8,7 @@ import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import edu.uco.carpooling.controller.validator.Validator;
 import edu.uco.carpooling.crosscutting.helper.UUIDHelper;
 import edu.uco.carpooling.crosscutting.messages.Message;
 import edu.uco.carpooling.domain.DriverDTO;
@@ -29,13 +30,13 @@ public class CreateDriverValidator implements Validator<DriverDTO>{
 	private void validateCustomerId(UUID driverId, List<Message> messages) {
 		
 		if(UUIDHelper.isDefaultUUID(driverId)) {
-			messages.add(Message.createErrorMessage(Messages.ValidateDriver.BUSSINES_DRIVER_DOES_NOT_EXIST));
+			messages.add(Message.createErrorMessage(Messages.CreateDriverValidator.ERROR_DRIVER_ID_IS_DEFAULT));
 		}
 	}
 	
 	private void validateLicenseNumber(String driverlicense, List<Message> message) {
 		if(!validateLicenseNumber(driverlicense)) {
-			message.add(Message.createErrorMessage(Messages.ValidateDriver.BUSSINES_DRIVER_NUMBER_LICENSE_IS_INCORRECT));
+			message.add(Message.createErrorMessage(Messages.CreateDriverValidator.BUSSINES_DRIVER_NUMBER_LICENSE_IS_INCORRECT));
 		}
 	}
 	
@@ -46,7 +47,7 @@ public class CreateDriverValidator implements Validator<DriverDTO>{
 	}
 	private void validatorCategory(String category, List<Message> message) {
 		if(isEmpty(category)) {
-			message.add(Message.createErrorMessage(Messages.ValidateCustomer.BUSSINES_CUSTOMER_FIRST_SURNNAME_IS_EMPTY));
+			message.add(Message.createErrorMessage(Messages.CreateDriverValidator.BUSSINES_DRIVER_LICENSE_IS_EMPTY));
 		}
 	}
 }

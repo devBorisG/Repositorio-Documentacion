@@ -1,4 +1,4 @@
-package edu.uco.carpooling.controller.validator;
+package edu.uco.carpooling.controller.validator.customer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,6 +6,7 @@ import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import edu.uco.carpooling.controller.validator.Validator;
 import edu.uco.carpooling.crosscutting.helper.UUIDHelper;
 import edu.uco.carpooling.crosscutting.messages.Message;
 import edu.uco.carpooling.domain.CustomerDTO;

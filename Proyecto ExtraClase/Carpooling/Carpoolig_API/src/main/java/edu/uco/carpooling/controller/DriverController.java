@@ -3,8 +3,6 @@ package edu.uco.carpooling.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.websocket.server.PathParam;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -55,7 +53,7 @@ public class DriverController {
 				data.add(driver);
 				response.setData(data);
 				
-				response.addSuccessMessages(Messages.CustomerController.CONTROLLER_CREATE_CUSTOMER_SUCCESFUL);
+				response.addSuccessMessages(Messages.DriverController.CONTROLLER_CREATE_DRIVER_SUCCESFUL);
 			} else {
 				response.setMessages(messages);
 				httpStatus = HttpStatus.BAD_REQUEST;
@@ -64,7 +62,7 @@ public class DriverController {
 				
 		} catch (final CarpoolingCustomException exception) {
 			if(exception.isTechnicalException()) {
-				response.addErrorMessages(Messages.CustomerController.CONTROLLER_ERROR_TRY_TO_CREATE_CUSTOMER);
+				response.addErrorMessages(Messages.DriverController.CONTROLLER_ERROR_TRY_TO_CREATE_DRIVER);
 			} else {
 				httpStatus = HttpStatus.BAD_REQUEST;
 				response.addErrorMessages(exception.getMessage());
@@ -74,7 +72,7 @@ public class DriverController {
 		
 		catch (final Exception exception) {
 			httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
-			response.addFatalMessages(Messages.CustomerController.CONTROLLER_UNEXPECTED_ERROR_TRY_TO_CREATE_CUSTOMER);
+			response.addFatalMessages(Messages.DriverController.CONTROLLER_UNEXPECTED_ERROR_TRY_TO_CREATE_DRIVER);
 			
 			exception.printStackTrace();
 		}

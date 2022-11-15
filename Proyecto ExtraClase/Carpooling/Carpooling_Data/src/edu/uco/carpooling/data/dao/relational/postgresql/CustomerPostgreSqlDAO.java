@@ -119,9 +119,6 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 			throw DataCarpoolingException.createTechnicalException(Messages.CustomerPostgreSqlDAO.TECHNICAL_PROBLEM_EXECUTE_QUERY, exception);
 		} catch (final Exception exception) {
 			throw DataCarpoolingException.createTechnicalException(Messages.CustomerPostgreSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_EXECEUTE_QUERY, exception);
-			throw DataCarpoolingException
-					.createTechnicalException(Messages.RouteRequestPostgreSQLDAO.TECHNICAL_PROBLEM_EXECUTE_QUERY
-							.concat("\nMore info: ").concat(exception.getMessage()), exception);
 		}
 	}
 	
@@ -134,8 +131,6 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 			throw DataCarpoolingException.createTechnicalException(Messages.CustomerPostgreSqlDAO.TECHNICAL_PROBLEM_EXECUTE_QUERY, exception);
 		} catch (final Exception exception) {
 			throw DataCarpoolingException.createTechnicalException(Messages.CustomerPostgreSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMETER_VALUES_QUERY, exception);
-			throw DataCarpoolingException.createTechnicalException(
-					Messages.RouteRequestPostgreSQLDAO.TECHNICAL_PROBLEM_EXECUTE_QUERY, exception);
 		} 
 	}
 	
@@ -153,6 +148,7 @@ private final List<CustomerDTO> fillResults(final ResultSet resultSet){
 		} catch (final SQLException exception) {
 			throw DataCarpoolingException.createTechnicalException(Messages.CustomerPostgreSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_CUSTOMER, exception);      
 	}
+}
 
 	private final CustomerDTO fillCustomer(final ResultSet resultSet) {
 		try {
@@ -212,5 +208,11 @@ private final List<CustomerDTO> fillResults(final ResultSet resultSet){
 			throw DataCarpoolingException.createTechnicalException(
 					Messages.CustomerPostgreSqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_DELETE_CUSTOMER, exception);
 		}
+	}
+
+	@Override
+	public List<CustomerDTO> findById(String id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

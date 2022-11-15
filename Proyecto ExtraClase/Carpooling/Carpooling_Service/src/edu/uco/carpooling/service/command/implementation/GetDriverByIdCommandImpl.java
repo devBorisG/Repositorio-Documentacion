@@ -2,7 +2,6 @@ package edu.uco.carpooling.service.command.implementation;
 
 import java.util.List;
 
-import edu.uco.carpooling.crosscutting.helper.UUIDHelper;
 import edu.uco.carpooling.data.daofactory.DAOFactory;
 import edu.uco.carpooling.data.enumeration.DAOFactoryType;
 import edu.uco.carpooling.domain.DriverDTO;
