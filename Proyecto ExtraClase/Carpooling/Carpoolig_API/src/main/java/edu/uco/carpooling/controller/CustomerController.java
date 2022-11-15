@@ -46,7 +46,7 @@ public class CustomerController {
 				createCustomer.execute(customer);
 				final List<CustomerDTO> data = new ArrayList<>();
 				data.add(customer);
-				response.setData(data);
+				response.setData(data); 
 				
 				response.addSuccessMessages(Messages.CustomerController.CONTROLLER_CREATE_CUSTOMER_SUCCESFUL);
 			}else {
