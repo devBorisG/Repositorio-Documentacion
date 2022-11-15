@@ -48,7 +48,7 @@ public class CreateVehicleValidator implements Validator<VehicleDTO> {
 			messages.add(Message.createErrorMessage(Messages.CreateVehicleValidator.ERROR_NUMBER_ENROLLMENT_IS_EMPTY));
 		}
 		
-		if (numEnrollment.length() != 16) {
+		if (numEnrollment.length() != 11) {
 			messages.add(Message.createErrorMessage(Messages.CreateVehicleValidator.ERROR_NUMBER_ENROLLMENT_INCORRECT_LENGTH));
 		}
 	}

@@ -83,7 +83,7 @@ public final class SQLConnectionHelper {
 						Messages.SqlConnectionHelper.TECHNICAL_CONNECTION_IS_CLOSED_FOR_ROLLBACK_TRANSACTION);
 			}
 
-			connection.setAutoCommit(false);
+			connection.rollback();
 
 		} catch (final CrosscuttingCarpoolingException exception) {
 			throw exception;

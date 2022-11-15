@@ -343,4 +343,32 @@ public class Messages {
 		public static final String ERROR_LENGTH_PLATE_IS_NOT_CORRECT = "The plate length is not correct for a licence plate";
 		public static final String ERROR_DONT_HAVE_CORRECT_FORMAT = "Verify that plate have te correct format (NNN-123), three letters first and three numbers at the end";
 	}
+	
+	public static class CreateCustomerValidator{
+		private CreateCustomerValidator() {
+			super();
+		}
+		
+		public static final String ERROR_CUSTOMER_ID_IS_DEFAULT = "Customer id is equal to default value";
+		public static final String ERROR_INVALID_FORMAT_EMAIL = "Email is not valied";
+		public static final String ERROR_INVALID_PASSWORD = "Password is not valied";
+	}
+	
+	public static class CreateDriverValidator{
+		private CreateDriverValidator() {
+			super();
+		}
+		
+		public static final String ERROR_DRIVER_ID_IS_DEFAULT = "Driver id is equal to default value";
+	}
+	
+	public static class CreateRouteRequestValidator{
+		private CreateRouteRequestValidator() {
+			super();
+		}
+		
+		public static final String ERRROR_ROUTE_REQUEST_ID_IS_DEFAULT = "Route Request id is equal to default value";
+		public static final String ERROR_DATE_IS_LESS_THAN_ACTUALLY_DATE = "the entered date is less than the current date";
+		public static final String ERROR_HOUR_IS_LESS_THAN_ACTUALLY_HOUR = "The entered hour is less than the current hour";
+	}
 }
