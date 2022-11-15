@@ -231,10 +231,16 @@ public class Messages {
 
 		public static final String TECHNICAL_PROBLEM_CREATE_VEHICLE = "There was a problem trying to create the Vehicle in PostgreSqlDao with id= ";
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_VEHICLE = "The was an unexpected error trying to create Vehicle in PostgreSqlDao";
-		public static final String TECHNICAL__PROBLEM_DELETE_VEHICLE = "The was a problem trying to delete the vehicle in PostgreSqlDao with id= ";
+		public static final String TECHNICAL_PROBLEM_DELETE_VEHICLE = "The was a problem trying to delete the vehicle in PostgreSqlDao with id= ";
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_DELETE_VEHICLE = "The was a problem trying to delete the vehicle in PostgreSqlDao";
-
-		
+		public static final String TECHNICAL_PROBLEM_PREPARED_STATEMENT = "There was a problem trying to prepared the sql stament the parameters";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STATEMENT = "There was an unexpected problem trying to prepared the sql stament the parameters";
+		public static final String TECHNICAL_PROBLEM_EXECUTE_QUERY = "There was a problem trying to excute query to find the specific vehicle";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_EXECEUTE_QUERY = "There was an unexpected problem trying to execute query to find the Vehicle";
+		public static final String TECHNICAL_PROBLEM_FILL_RESULTS = "There was a problem recovering results from the select";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS = "There was an unexpected problem trying recovering results from the select ";
+	 	public static final String TECHNICAL_PROBLEM_FILL_VEHICLE = "There was a problem filling VehicleDTO from the resultSet";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_VEHICLE = "There was an unexpected problem filling VehicleDTO from the resultSet";
 	}
 
 	public static class AuthotizedCategoryPostgresSqlDAOPostgresSqlDAO {
