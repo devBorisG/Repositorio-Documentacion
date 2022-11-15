@@ -11,12 +11,13 @@ import edu.uco.carpooling.service.command.CreateRouteRequestCommand;
 public class CreateRouteRequestCommandImpl implements CreateRouteRequestCommand{
 
 	private DAOFactory factory;
-	private final CreateRouteRequestUseCase useCase = new CreateRouteRequestUsecaseImpl(factory);
+	private CreateRouteRequestUseCase useCase;
 	
 	@Override
 	public final void execute(RouteRequestDTO routeRequest) {
 		try {
-			DAOFactory.getDAOFactory(DAOFactoryType.POSTGRESQL);
+			factory=DAOFactory.getDAOFactory(DAOFactoryType.POSTGRESQL);
+			useCase = new CreateRouteRequestUsecaseImpl(factory);
 			
 			factory.initTransaction();
 			useCase.create(routeRequest);

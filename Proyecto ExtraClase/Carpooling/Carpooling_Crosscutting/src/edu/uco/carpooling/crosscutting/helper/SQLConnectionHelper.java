@@ -66,7 +66,7 @@ public final class SQLConnectionHelper {
 						Messages.SqlConnectionHelper.TECHNICAL_CONNECTION_IS_CLOSED_FOR_COMMIT_TRANSACTION);
 			}
 
-			connection.setAutoCommit(false);
+			connection.commit();
 
 		} catch (final CrosscuttingCarpoolingException exception) {
 			throw exception;

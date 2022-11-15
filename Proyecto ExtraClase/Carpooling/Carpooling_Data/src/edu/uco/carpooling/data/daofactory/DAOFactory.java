@@ -67,3 +67,5 @@ public abstract class DAOFactory {
 
 	public abstract DriverPerVehicleDAO getDriverPerVehicleDAO();
 	// TODO create others getDAO
+	
+}
