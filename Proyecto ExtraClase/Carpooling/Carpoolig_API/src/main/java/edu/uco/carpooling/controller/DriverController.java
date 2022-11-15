@@ -3,9 +3,12 @@ package edu.uco.carpooling.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.websocket.server.PathParam;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,11 +18,14 @@ import edu.uco.carpooling.controller.response.Response;
 import edu.uco.carpooling.controller.validator.Validator;
 import edu.uco.carpooling.controller.validator.driver.CreateDriverValidator;
 import edu.uco.carpooling.crosscutting.exception.CarpoolingCustomException;
+import edu.uco.carpooling.crosscutting.exception.DataCarpoolingException;
 import edu.uco.carpooling.crosscutting.messages.Message;
 import edu.uco.carpooling.crosscutting.messages.Messages;
 import edu.uco.carpooling.domain.DriverDTO;
 import edu.uco.carpooling.service.command.CreateDriverCommand;
+import edu.uco.carpooling.service.command.GetDriverByIdCommand;
 import edu.uco.carpooling.service.command.implementation.CreateDriverCommandImpl;
+import edu.uco.carpooling.service.command.implementation.GetDriverByIdCommandImpl;
 
 @RestController
 @RequestMapping("/carpooling/driver")
@@ -74,6 +80,29 @@ public class DriverController {
 		}
 		
 		return new ResponseEntity<>(response, httpStatus);
+	}
+	@GetMapping("/byid/{id}")
+	ResponseEntity<Response<DriverDTO>> getDriverById(@PathVariable(required = true) String id) {
+		Response<DriverDTO> response = new Response<>();
+		HttpStatus httpStatus = HttpStatus.BAD_REQUEST;
+		try {
+			GetDriverByIdCommand command = new GetDriverByIdCommandImpl();
+			List<DriverDTO> dto = command.getById(id);
+			if(dto.isEmpty()) {
+				throw DataCarpoolingException.createTechnicalException("No driver found");
+			}else {
+				response.setData(dto);
+				httpStatus = HttpStatus.OK;
+				response.addSuccessMessages("Success");				
+			}
+		} catch(CarpoolingCustomException e) {
+			response.addErrorMessages(e.getMessage());
+		}
+		catch (Exception e) {
+			response.addErrorMessages(e.getMessage());
+		}
+		return new ResponseEntity<>(response, httpStatus);
+		
 	}
 	
 }

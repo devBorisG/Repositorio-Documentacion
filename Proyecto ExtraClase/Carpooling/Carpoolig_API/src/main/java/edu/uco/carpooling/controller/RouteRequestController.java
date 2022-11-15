@@ -3,8 +3,12 @@ package edu.uco.carpooling.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.websocket.server.PathParam;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +21,9 @@ import edu.uco.carpooling.crosscutting.exception.CarpoolingCustomException;
 import edu.uco.carpooling.crosscutting.messages.Message;
 import edu.uco.carpooling.domain.RouteRequestDTO;
 import edu.uco.carpooling.service.command.CreateRouteRequestCommand;
+import edu.uco.carpooling.service.command.GetAllRouteRequestsCommand;
 import edu.uco.carpooling.service.command.implementation.CreateRouteRequestCommandImpl;
+import edu.uco.carpooling.service.command.implementation.GetAllRouteRequestsCommandImpl;
 
 @RestController
 @RequestMapping("/carpooling/routerequest")
@@ -66,5 +72,24 @@ public class RouteRequestController {
 		}
 		
 		return new ResponseEntity<>(response, httpStatus);
+	}
+	@GetMapping("/all")
+	ResponseEntity<Response<RouteRequestDTO>> get(){
+		final Response<RouteRequestDTO> response = new Response<>();
+		HttpStatus httpStatus = HttpStatus.NOT_FOUND;
+		try {
+			GetAllRouteRequestsCommand command = new GetAllRouteRequestsCommandImpl();
+			List<RouteRequestDTO> list = command.get();
+			response.setData(list);
+			httpStatus = HttpStatus.OK;
+			response.addSuccessMessages("Success");
+			
+		}catch(CarpoolingCustomException carpoolingException) {
+			response.addErrorMessages(carpoolingException.getMessage());
+		}
+		catch (Exception e) {
+			response.addErrorMessages("There was an unexpected error trying to get request information\nMore info: ".concat(e.getMessage()));
+		}
+		return new ResponseEntity<Response<RouteRequestDTO>>(response, httpStatus);
 	}
 }
