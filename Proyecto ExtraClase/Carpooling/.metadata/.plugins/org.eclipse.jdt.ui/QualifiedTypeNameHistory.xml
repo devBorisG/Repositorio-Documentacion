@@ -1,2 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.sql.Time"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.domain.DetailRouteDTO"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.domain.AuthorizedCategoryDTO"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.crosscutting.messages.Messages.AuthotizedCategoryPostgresSqlDAOPostgresSqlDAO"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.domain.PointInterestDTO"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.crosscutting.messages.Messages.RouteRequestPostgreSQLDAO"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.data.dao.relational.DAORelational"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.data.dao.DriverDAO"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.crosscutting.helper.UUIDHelper"/>
+    <fullyQualifiedTypeName name="java.sql.SQLException"/>
+</qualifiedTypeNameHistroy>

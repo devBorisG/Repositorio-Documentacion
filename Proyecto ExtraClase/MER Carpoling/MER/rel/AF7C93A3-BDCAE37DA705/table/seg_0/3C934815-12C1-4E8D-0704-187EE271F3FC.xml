@@ -1,0 +1,71 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3C934815-12C1-4E8D-0704-187EE271F3FC" name="Score">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-15 23:49:42 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<ordsAlias>table_6</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="5B842D84-4132-1E23-2B7E-CE226D07E8B3">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-16 01:08:16 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>36</dataTypeSize>
+<ownDataTypeParameters>36,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="score" id="C05486E9-5179-2635-9175-E5691561A9B5">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-16 01:08:16 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MyRoute_id" id="EC857990-2E84-010E-7079-EB2419753EAA">
+<createdBy>Federico</createdBy>
+<createdTime>2022-11-11 11:48:50 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>36</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8E8C865E-95FC-C0EF-5C2B-4D4ED8B4A3D0" referredColumn="CD7F4497-B524-DE2A-C187-FC38B790CD9E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="ED01593D-A57D-F246-F80B-3F22DFC476F8" name="ScorePK">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-16 01:08:16 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5B842D84-4132-1E23-2B7E-CE226D07E8B3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="63A602EF-8E98-0AF4-09FE-8B30484E7153" name="Score_MyRoute_FK">
+<createdBy>Federico</createdBy>
+<createdTime>2022-11-11 11:48:50 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EC857990-2E84-010E-7079-EB2419753EAA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

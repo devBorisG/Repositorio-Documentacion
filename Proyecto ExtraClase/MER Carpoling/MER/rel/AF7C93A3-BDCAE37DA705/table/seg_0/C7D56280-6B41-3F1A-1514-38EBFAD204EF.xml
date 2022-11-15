@@ -1,0 +1,68 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C7D56280-6B41-3F1A-1514-38EBFAD204EF" name="Vehicle">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-15 23:49:28 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<ordsAlias>table_4</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="C2471370-25FD-EE33-0B24-A40AF3976ADD">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-16 00:07:52 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>36</dataTypeSize>
+<ownDataTypeParameters>36,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="plate" id="0278A640-BC2B-77A2-242A-D70A68DC6C0C">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-16 00:04:57 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="capacity" id="1127BCD6-A870-EF08-CFBD-0A1531BC22A9">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-16 00:04:57 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="matricula" id="B307D53D-25DF-C05D-706C-6AFF62BD9905">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-16 00:04:57 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6C50530D-499E-E552-61FC-A84726963663" name="VehiclePK">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-16 00:04:57 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C2471370-25FD-EE33-0B24-A40AF3976ADD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

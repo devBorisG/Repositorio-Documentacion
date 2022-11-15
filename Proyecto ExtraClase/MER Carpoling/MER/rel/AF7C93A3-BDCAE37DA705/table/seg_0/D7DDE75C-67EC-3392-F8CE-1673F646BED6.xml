@@ -1,0 +1,58 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D7DDE75C-67EC-3392-F8CE-1673F646BED6" name="AutorizedCategories">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-11 00:46:39 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<ordsAlias>table_10</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="56E75F05-A039-6EB4-5766-ABF5D2DB5695">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-11 00:48:34 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>36</dataTypeSize>
+<ownDataTypeParameters>36,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="category" id="7D5BDC0E-0437-EDCD-CB64-95D13D13A095">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-11 00:48:34 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="validity" id="33F8331D-7467-945E-0DC8-D3FBCF9FD0FC">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-11 00:48:34 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="529B0947-890B-E711-5503-7DAE68DFEC62" name="AutorizedCategories_PK">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-11 00:48:34 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="56E75F05-A039-6EB4-5766-ABF5D2DB5695"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

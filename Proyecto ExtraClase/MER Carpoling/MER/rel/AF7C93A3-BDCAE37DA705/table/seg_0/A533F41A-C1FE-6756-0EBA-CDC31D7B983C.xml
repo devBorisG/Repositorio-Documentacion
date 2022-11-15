@@ -1,0 +1,107 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A533F41A-C1FE-6756-0EBA-CDC31D7B983C" name="DetalleMiRuta">
+<createdBy>Federico</createdBy>
+<createdTime>2022-11-11 11:50:24 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<ordsAlias>table_18</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="91422930-2F94-813C-41C3-5CBCC3F5FD20">
+<createdBy>Federico</createdBy>
+<createdTime>2022-11-11 11:51:55 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>36</dataTypeSize>
+<ownDataTypeParameters>36,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha" id="89E00CF9-009E-F972-D1FD-08878254CD08">
+<createdBy>Federico</createdBy>
+<createdTime>2022-11-11 11:51:55 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="horaCreacion" id="672DBE0B-1212-371E-3AAE-6C46ABF5AC86">
+<createdBy>Federico</createdBy>
+<createdTime>2022-11-11 11:51:55 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT046</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,2,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="horaFinalizacion" id="8F1B6C68-C9E9-FC52-7642-8ED60B379CC4">
+<createdBy>Federico</createdBy>
+<createdTime>2022-11-11 11:51:55 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT046</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,2,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="horaFinalización" id="D3C6C737-B518-1536-6F4B-D0415BA0C2FF">
+<createdBy>Federico</createdBy>
+<createdTime>2022-11-11 11:51:55 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT046</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,2,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MyRoute_id" id="1B69D25D-147B-E563-E2FF-632EBD27D88D">
+<createdBy>Federico</createdBy>
+<createdTime>2022-11-11 11:52:06 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>36</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="63D99E6E-3A00-0549-2F2B-CB4D62031521" referredColumn="CD7F4497-B524-DE2A-C187-FC38B790CD9E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E5D70C97-DF8A-F20A-C954-7A76C3B3BFC1" name="DetalleMiRuta_PK">
+<createdBy>Federico</createdBy>
+<createdTime>2022-11-11 11:51:55 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="91422930-2F94-813C-41C3-5CBCC3F5FD20"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B8F767D3-E329-59A1-8123-32773B98B6A6" name="DetalleMiRuta_MyRoute_FK">
+<createdBy>Federico</createdBy>
+<createdTime>2022-11-11 11:52:06 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1B69D25D-147B-E563-E2FF-632EBD27D88D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

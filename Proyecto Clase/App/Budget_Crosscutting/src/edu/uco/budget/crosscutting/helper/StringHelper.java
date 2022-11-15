@@ -1,5 +1,7 @@
 package edu.uco.budget.crosscutting.helper;
 
+import java.util.Objects;
+
 import static edu.uco.budget.crosscutting.helper.ObjectHelper.getDefaultIfNull;
 
 public class StringHelper {
@@ -20,5 +22,9 @@ public class StringHelper {
 	
 	public static final String applyTrim(String value) {
 		return getDefaultString(value).trim();
+	}
+	
+	public static final boolean isEmpty(String value) {
+		return Objects.equals(value, EMPTY);
 	}
 }

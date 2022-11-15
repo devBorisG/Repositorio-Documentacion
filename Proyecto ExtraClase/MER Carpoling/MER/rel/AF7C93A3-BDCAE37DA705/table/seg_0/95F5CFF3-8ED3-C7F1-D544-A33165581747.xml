@@ -1,0 +1,72 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="95F5CFF3-8ED3-C7F1-D544-A33165581747" name="DetailInterestPointRoute">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-11 03:28:12 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<ordsAlias>table_15</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="9F105D9F-F6B3-ACC8-0D88-95544C3CB58A">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-11 03:31:37 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>36</dataTypeSize>
+<ownDataTypeParameters>36,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="description" id="B5C719C5-2242-6F7F-D999-21A6FB7BF086">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-11 03:31:10 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="idInterestPoint" id="F41785C7-7C15-BA5E-031B-5954B8FF41BC">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-11 03:58:40 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>36</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7461E1A2-803A-8935-69DA-E069E6C26A9A" referredColumn="92EBBE9A-865F-5997-DF76-F29E00399B29"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0B9FCB8A-822C-4214-0DA9-8CEAA73E9DD5" name="DetailInterestPointRoutePK">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-11 03:31:37 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9F105D9F-F6B3-ACC8-0D88-95544C3CB58A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5311ADDB-03C9-425B-40B2-CBC217A88AE8" name="DetailInterestPointRouteInterestPointFK">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-11 03:58:40 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F41785C7-7C15-BA5E-031B-5954B8FF41BC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

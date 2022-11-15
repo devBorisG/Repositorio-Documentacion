@@ -1,0 +1,148 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="356120DA-ECFE-6591-1935-FE72CBEBE062" name="User">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-09 05:53:42 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<ordsAlias>table_17</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="DDAA15FD-130D-FAEE-C0BB-767AD024CA7F">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-09 06:03:36 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>36</dataTypeSize>
+<ownDataTypeParameters>36,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="dni" id="27DACE9D-3EA1-8E10-3299-6243E2A66715">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-09 06:03:36 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="firstName" id="01F00FEE-EA6C-9BDA-8493-5F8CF9946A39">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-09 06:03:36 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="secondName" id="E3839831-E9DA-A6C0-957C-075BFF382263">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-09 06:03:36 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="firstSurname" id="A358FB21-F689-9878-A77D-5FB48CD71085">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-09 06:03:36 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="secondSurname" id="850D3E85-2758-73E6-AB9D-3B09072297C5">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-09 06:03:36 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="password" id="E67FD4C2-3FBC-3A4E-BDE0-869873C84C22">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-09 06:03:36 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="phone" id="1234961C-0933-D2DF-2675-7E8872664723">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-09 06:03:36 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="companyEmail" id="205A36DE-31A5-B661-89BB-C9D7DE1EE79B">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-09 06:03:36 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="personTypeid" id="885EA2A4-A232-18CF-B0AE-FE86300A0451">
+<createdBy>Federico</createdBy>
+<createdTime>2022-11-10 19:58:19 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>36</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DD199D0D-0ABF-2C54-84DE-7F1B48D8641F" referredColumn="B34C9FD7-667A-F36D-DFD2-45A79D133CC5"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5F606926-7BB1-2D18-0F3C-A69B0562392D" name="User_PK">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-11-09 06:03:36 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DDAA15FD-130D-FAEE-C0BB-767AD024CA7F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3B518197-3C8E-00D2-33BB-FC57F3189A97" name="UserPersonTypeFK">
+<createdBy>Federico</createdBy>
+<createdTime>2022-11-10 19:58:19 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="885EA2A4-A232-18CF-B0AE-FE86300A0451"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

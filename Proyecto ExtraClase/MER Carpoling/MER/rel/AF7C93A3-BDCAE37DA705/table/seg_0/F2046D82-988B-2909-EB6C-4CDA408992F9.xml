@@ -1,0 +1,104 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F2046D82-988B-2909-EB6C-4CDA408992F9" name="RouteRequest">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-15 23:50:36 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<ordsAlias>table_9</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="1A84B473-8973-E3F0-4A50-0E38CDFFDB1F">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-16 01:24:26 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>36</dataTypeSize>
+<ownDataTypeParameters>36,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name=" routeOrigin" id="77BFF573-F06D-2E45-8C12-33A63DBB365F">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-16 01:24:26 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name=" routeDestination" id="A7A4405C-DD41-FB1D-B86B-7F60C09D810E">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-16 01:24:26 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="confirmedRoute" id="D465005A-D58B-74E2-BF79-02690F4178E0">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-16 01:24:26 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="date" id="45EE7EB5-D5C3-307F-76FD-F48EA09659B9">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-16 01:24:26 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="idUser" id="BBA9F371-E562-154D-91FD-3B6F4E2B79EC">
+<createdBy>Federico</createdBy>
+<createdTime>2022-11-10 21:20:12 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>36</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F3334D86-FE49-F141-21F3-98E6C145D76F" referredColumn="DDAA15FD-130D-FAEE-C0BB-767AD024CA7F"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5F50EA15-1214-4E1C-1C06-C7C87BAE128C" name="RouteRequestPK">
+<createdBy>DAVID</createdBy>
+<createdTime>2022-09-16 01:24:26 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1A84B473-8973-E3F0-4A50-0E38CDFFDB1F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2497EE89-2E6E-9265-A66D-B0555F15B0DF" name="RouteRequestUserFK">
+<createdBy>Federico</createdBy>
+<createdTime>2022-11-10 21:20:12 UTC</createdTime>
+<ownerDesignName>MER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BBA9F371-E562-154D-91FD-3B6F4E2B79EC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
