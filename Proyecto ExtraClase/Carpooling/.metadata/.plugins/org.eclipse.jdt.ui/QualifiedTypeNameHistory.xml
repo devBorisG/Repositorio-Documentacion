@@ -12,4 +12,10 @@
     <fullyQualifiedTypeName name="edu.uco.carpooling.data.dao.DriverDAO"/>
     <fullyQualifiedTypeName name="edu.uco.carpooling.crosscutting.helper.UUIDHelper"/>
     <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.crosscutting.messages.Messages.VehiclePosgreSqlDao"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.crosscutting.messages.Messages.ValidateCustomer"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.crosscutting.messages.Messages.DriverPostgreSqlDAO"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.crosscutting.messages.Messages"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.crosscutting.messages.Messages.ValidateDriver"/>
+    <fullyQualifiedTypeName name="edu.uco.carpooling.crosscutting.messages.Messages.CustomerController"/>
 </qualifiedTypeNameHistroy>

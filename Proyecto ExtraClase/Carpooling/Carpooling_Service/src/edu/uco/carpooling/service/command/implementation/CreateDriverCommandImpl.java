@@ -18,7 +18,7 @@ public class CreateDriverCommandImpl implements CreateDriverCommand{
 		try {
 			factory = DAOFactory.getDAOFactory(DAOFactoryType.POSTGRESQL);
 			driverUsecase = new CreateDriverUseCaseImpl(factory);
-factory.initTransaction();
+			factory.initTransaction();
 			
 		driverUsecase.create(driver);
 			

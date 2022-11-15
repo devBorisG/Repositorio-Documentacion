@@ -18,7 +18,6 @@ public class CreateRouteRequestCommandImpl implements CreateRouteRequestCommand{
 		try {
 			factory=DAOFactory.getDAOFactory(DAOFactoryType.POSTGRESQL);
 			useCase = new CreateRouteRequestUsecaseImpl(factory);
-			
 			factory.initTransaction();
 			useCase.create(routeRequest);
 			factory.confirmTransaction();

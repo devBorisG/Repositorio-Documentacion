@@ -23,7 +23,7 @@ import edu.uco.carpooling.domain.CustomerDTO;
 import edu.uco.carpooling.service.command.CreatecustomerCommand;
 import edu.uco.carpooling.service.command.GetCustomerByIdCommand;
 import edu.uco.carpooling.service.command.implementation.CreatecustomerCommandImpl;
-import edu.uco.carpooling.service.command.implementation.GetCustomerByIdCommandImpl;
+import edu.uco.carpooling.crosscutting.messages.Messages;
 
 @RestController
 @RequestMapping("/carpooling/customer")
@@ -60,20 +60,22 @@ public class CustomerController {
 		try {
 			Validator<CustomerDTO> validator = new CreateCustomerValidator();
 			List<Message> messages = validator.validate(customer);
-			createCustomer.execute(customer);
 			
 			if(messages.isEmpty()) {
 				createCustomer.execute(customer);
+				final List<CustomerDTO> data = new ArrayList<>();
+				data.add(customer);
+				response.setData(data); 
+				
+				response.addSuccessMessages(Messages.CustomerController.CONTROLLER_CREATE_CUSTOMER_SUCCESFUL);
+			}else {
+				response.setMessages(messages);
+				httpStatus = HttpStatus.BAD_REQUEST;
 			}
-			
-			final List<CustomerDTO> data = new ArrayList<>();
-			data.add(customer);
-			response.setData(data);
-			
-			response.addSuccessMessages("Customer has been create succssefully");		
+				
 		} catch (final CarpoolingCustomException exception) {
 			if(exception.isTechnicalException()) {
-				response.addErrorMessages("There was an error trying to create customer. Please try again...");
+				response.addErrorMessages(Messages.CustomerController.CONTROLLER_ERROR_TRY_TO_CREATE_CUSTOMER);
 			} else {
 				httpStatus = HttpStatus.BAD_REQUEST;
 				response.addErrorMessages(exception.getMessage());
@@ -83,7 +85,7 @@ public class CustomerController {
 		
 		catch (final Exception exception) {
 			httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
-			response.addFatalMessages("There was a unexpected error trying to create customer. Please try again...");
+			response.addFatalMessages(Messages.CustomerController.CONTROLLER_UNEXPECTED_ERROR_TRY_TO_CREATE_CUSTOMER);
 			
 			exception.printStackTrace();
 		}

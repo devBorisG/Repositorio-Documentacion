@@ -20,6 +20,7 @@ import edu.uco.carpooling.controller.validator.driver.CreateDriverValidator;
 import edu.uco.carpooling.crosscutting.exception.CarpoolingCustomException;
 import edu.uco.carpooling.crosscutting.exception.DataCarpoolingException;
 import edu.uco.carpooling.crosscutting.messages.Message;
+import edu.uco.carpooling.crosscutting.messages.Messages;
 import edu.uco.carpooling.domain.DriverDTO;
 import edu.uco.carpooling.service.command.CreateDriverCommand;
 import edu.uco.carpooling.service.command.GetDriverByIdCommand;
@@ -50,16 +51,20 @@ public class DriverController {
 			
 			if(messages.isEmpty()) {
 				createDriver.execute(driver);
+				final List<DriverDTO> data = new ArrayList<>();
+				data.add(driver);
+				response.setData(data);
+				
+				response.addSuccessMessages(Messages.CustomerController.CONTROLLER_CREATE_CUSTOMER_SUCCESFUL);
+			} else {
+				response.setMessages(messages);
+				httpStatus = HttpStatus.BAD_REQUEST;
 			}
 			
-			final List<DriverDTO> data = new ArrayList<>();
-			data.add(driver);
-			response.setData(data);
-			
-			response.addSuccessMessages("Driver has been create succssefully");		
+				
 		} catch (final CarpoolingCustomException exception) {
 			if(exception.isTechnicalException()) {
-				response.addErrorMessages("There was an error trying to create driver. Please try again...");
+				response.addErrorMessages(Messages.CustomerController.CONTROLLER_ERROR_TRY_TO_CREATE_CUSTOMER);
 			} else {
 				httpStatus = HttpStatus.BAD_REQUEST;
 				response.addErrorMessages(exception.getMessage());
@@ -69,7 +74,7 @@ public class DriverController {
 		
 		catch (final Exception exception) {
 			httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
-			response.addFatalMessages("There was a unexpected error trying to create driver. Please try again...");
+			response.addFatalMessages(Messages.CustomerController.CONTROLLER_UNEXPECTED_ERROR_TRY_TO_CREATE_CUSTOMER);
 			
 			exception.printStackTrace();
 		}
