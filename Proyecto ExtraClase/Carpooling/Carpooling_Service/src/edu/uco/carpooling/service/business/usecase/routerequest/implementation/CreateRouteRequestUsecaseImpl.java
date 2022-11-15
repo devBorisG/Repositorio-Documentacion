@@ -31,13 +31,13 @@ public class CreateRouteRequestUsecaseImpl implements CreateRouteRequestUseCase{
 		
 		routeRequest.setId(UUIDHelper.getNewUUID());
 		
-		factory.getRouteRequestDTO().create(routeRequest);
+		factory.getRouteRequestDAO().create(routeRequest);
 	}
 	
 	private final CustomerDTO findCustomer(final UUID id) {
 		final CustomerDTO customer = findCustomerByIdImpl.execute(id);
 		
-		if (customer.notExist()) {
+		if (customer!= null && customer.notExist()) {
 			throw UseCaseCustomException.createUserException(Messages.CreateRouteRequestUseCaseImpl.BUSSINES_CUSTOMER_DOES_NOT_EXIST);
 		}
 		return customer;

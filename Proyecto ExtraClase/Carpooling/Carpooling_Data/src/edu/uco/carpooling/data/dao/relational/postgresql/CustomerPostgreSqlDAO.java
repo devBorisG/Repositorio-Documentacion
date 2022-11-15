@@ -60,7 +60,6 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 		
 		creatSelectFrom(sqlBuilder);
 		creatWhere(sqlBuilder, user, parameters);
-		createOrderBy(sqlBuilder);
 		
 		return prepareAndExecuteQuery(sqlBuilder, parameters);
 	}
@@ -84,6 +83,7 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 	}
 	
 	private final void creatSelectFrom(final StringBuilder sqlBuilder) {
+<<<<<<< HEAD
 		sqlBuilder.append("SELECT     U.id AS UserId,");
 		sqlBuilder.append("           U.dni AS DniUser,");
 		sqlBuilder.append("           U.firstname AS Name,");
@@ -93,20 +93,35 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 		sqlBuilder.append("           U.phone As Phone,");
 		sqlBuilder.append("           U.companyemail AS Email");
 		sqlBuilder.append("FROM       user U");	
+=======
+		sqlBuilder.append("SELECT u.id AS UserId,");
+		sqlBuilder.append(" u.dni AS DniUser,");
+		sqlBuilder.append(" u.firstname AS Name,");
+		sqlBuilder.append(" u.secondname AS SecondName,");
+		sqlBuilder.append(" u.firstsurname AS FirstSurname,");
+		sqlBuilder.append(" u.secondsurname AS SecondSurname,");
+		sqlBuilder.append(" u.password AS Password,");
+		sqlBuilder.append(" u.phone As Phone,");
+		sqlBuilder.append(" u.companyemail AS Email");
+		sqlBuilder.append(" FROM public.user u");	
+>>>>>>> main
 	}
 	
 	private final void creatWhere(final StringBuilder sqlBuilder, final CustomerDTO user, final List<Object> parameters) {
 		if(!ObjectHelper.isNull(user)) {
 			UUIDHelper.isDefaultUUID(user.getId());
-			sqlBuilder.append("WHERE U.id = ? ");
+			sqlBuilder.append(" WHERE u.id = ? ");
 			parameters.add(user.getIdAsString());
 		}
 	}
 	
+<<<<<<< HEAD
 	private void  createOrderBy(final StringBuilder sqlBuilder) {
 		sqlBuilder.append("ORDER BY   U.firstsurname ASC,");
 	}
 	
+=======
+>>>>>>> main
 	private final List<CustomerDTO> executeQuery (PreparedStatement preparedStatement){
 		try (final var resultset = preparedStatement.executeQuery()){
 			
@@ -124,7 +139,7 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 	private void SetParameterValues (PreparedStatement preparedStatement, final List<Object> parameters) {
 		try {
 			for(int index = 0; index < parameters.size(); index ++) {
-				preparedStatement.setObject(index + 1, parameters.get(index));
+				preparedStatement.setString(index + 1, parameters.get(index).toString());
 			}
 		} catch (SQLException exception) {
 			throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestPostgreSQLDAO.TECHNICAL_PROBLEM_EXECUTE_QUERY, exception);
@@ -154,9 +169,9 @@ private final List<CustomerDTO> fillResults(final ResultSet resultSet){
 	private final CustomerDTO fillCustomer(final ResultSet resultSet) {
 		try {
 			
-				return CustomerDTO.create(resultSet.getString("IdCustomer"), resultSet.getString("dniCustomer"), 
-						resultSet.getString("FirstNameCutomer"), resultSet.getString("SecondNameCustomer"), 
-						resultSet.getString("FirstSurnameCustomer"), resultSet.getString("SecondSurnameCustomer"), 
+				return CustomerDTO.create(resultSet.getString("UserId"), resultSet.getString("DniUser"), 
+						resultSet.getString("Name"), resultSet.getString("SecondName"), 
+						resultSet.getString("FirstSurname"), resultSet.getString("SecondSurname"), 
 						resultSet.getString("Password"),resultSet.getInt("Phone"), 
 						resultSet.getString("Email"));
 						

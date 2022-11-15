@@ -22,27 +22,33 @@ import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getUUIDAsString;
 
 public class RouteRequestPostgreSqlDAO extends DAORelational implements RouteRequestDAO{
 
-	protected RouteRequestPostgreSqlDAO(Connection connection) {
+	public RouteRequestPostgreSqlDAO(Connection connection) {
 		super(connection);
 	}
 
 	@Override
 	public final void create(final RouteRequestDTO routeRequest) {
-		final var sql = "INSERT INTO ROUTEREQUEST(id,routeOrigin,routeDestination,condirmedRoute,date,idUser,requestHour)"
-				+ "VALUES(?,?,?,?,?,?,?)";
+		final String sql = "INSERT INTO routerequest"
+				+ "	VALUES (?, ?, ?, ?, ?, ?, ?);";
+		
 		
 		try (final var preparedStatement = getConnection().prepareStatement(sql)) {
 			preparedStatement.setString(1, routeRequest.getIdAsString());
 			preparedStatement.setString(2, routeRequest.getRouterequesOrigin());
 			preparedStatement.setString(3, routeRequest.getRouterequesEnd());
-			preparedStatement.setString(4, routeRequest.getStatus());
+			preparedStatement.setBoolean(4, false);
 			preparedStatement.setDate(5, routeRequest.getServiceRequestDate());
-			preparedStatement.setString(6, routeRequest.getCustomer().getIdAsString());
-			preparedStatement.setTime(7, routeRequest.getServiceRequestTime());
+			preparedStatement.setTime(6, routeRequest.getServiceRequestTime());
+			preparedStatement.setString(7, routeRequest.getCustomer().getIdAsString());
 			
-			preparedStatement.executeUpdate();
+			try {
+				int i = preparedStatement.executeUpdate();				
+				System.out.println(i+" records inserted");
+			} catch (Exception e) {
+				throw e;
+			}
 		} catch (final SQLException exception) {
-			String message = Messages.RouteRequestPostgreSQLDAO.TECHNICAL_PROBLEM_CREATE_ROUTE_REQUEST.concat(routeRequest.getIdAsString());
+			String message = Messages.RouteRequestPostgreSQLDAO.TECHNICAL_PROBLEM_CREATE_ROUTE_REQUEST.concat(routeRequest.getIdAsString()).concat(exception.getMessage());
 			throw DataCarpoolingException.createTechnicalException(message, exception);
 		} catch (final Exception exception) {
 			throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestPostgreSQLDAO.TECHNICAL_UNEXPECTED_PROBLEM_CREATE_ROUTE_REQUEST, exception);
@@ -177,9 +183,9 @@ public class RouteRequestPostgreSqlDAO extends DAORelational implements RouteReq
 	private final RouteRequestDTO fillRouteRequestDTO(final ResultSet resultSet) {
 		try {
 			
-			return RouteRequestDTO.create(resultSet.getString("id"), resultSet.getTime("Time"),
-					resultSet.getDate("Date"),fillCustomer(resultSet), resultSet.getString("status"),
-					resultSet.getString("BeginRoute"), resultSet.getString("EndRoute"));
+			return RouteRequestDTO.create(resultSet.getString("id"), resultSet.getTime("hour"),
+					resultSet.getDate("date"),fillCustomer(resultSet), resultSet.getString("confirmedroute"),
+					resultSet.getString("routeorigin"), resultSet.getString("routedestination"));
 		
 		} catch (final SQLException exception) {
 			throw DataCarpoolingException.createTechnicalException(Messages.RouteqlServerDAO.TECHNICAL_PROBLEM_FILL_ROUTE_DTO, exception);
@@ -191,11 +197,11 @@ public class RouteRequestPostgreSqlDAO extends DAORelational implements RouteReq
 	private final CustomerDTO fillCustomer(final ResultSet resultSet) {
 		try {
 			
-				return CustomerDTO.create(resultSet.getString("IdCustomer"), resultSet.getString("dniCustomer"), 
-						resultSet.getString("FirstNameCutomer"), resultSet.getString("SecondNameCustomer"), 
-						resultSet.getString("FirstSurnameCustomer"), resultSet.getString("SecondSurnameCustomer"), 
-						resultSet.getString("Password"),resultSet.getInt("Phone"), 
-						resultSet.getString("Email"));
+				return CustomerDTO.create(resultSet.getString("id"), StringHelper.EMPTY, 
+						StringHelper.EMPTY, StringHelper.EMPTY, 
+						StringHelper.EMPTY, StringHelper.EMPTY, 
+						StringHelper.EMPTY,0, 
+						StringHelper.EMPTY);
 						
 		} catch (final SQLException exception) {
 			throw DataCarpoolingException.createTechnicalException(Messages.RouteRequestPostgreSQLDAO.TECHNICAL_PROBLEM_FILL_CUSTOMER_DTO, exception);
