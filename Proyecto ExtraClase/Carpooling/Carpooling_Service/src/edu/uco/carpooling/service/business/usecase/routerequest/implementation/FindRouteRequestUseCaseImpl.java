@@ -18,11 +18,11 @@ public class FindRouteRequestUseCaseImpl implements FindRouteRequestById{
 	@Override
 	public RouteRequestDTO execute(UUID id) {
 		
-		RouteRequestDTO result = new RouteRequestDTO();
+		RouteRequestDTO result = new RouteRequestDTO(null,null,null,null,null,null,null);
 		
 		final RouteRequestDTO routeRequest = RouteRequestDTO.create(id);
 		
-		final List<RouteRequestDTO> results = factory.getRouteRequestDTO().find(routeRequest);
+		final List<RouteRequestDTO> results = factory.getRouteRequestDAO().find(routeRequest);
 		
 		if(results.isEmpty()) {
 			result = results.get(0);

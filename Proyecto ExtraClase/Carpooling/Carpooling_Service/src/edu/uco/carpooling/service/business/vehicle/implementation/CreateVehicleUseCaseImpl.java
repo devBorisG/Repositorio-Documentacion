@@ -1,10 +1,5 @@
 package edu.uco.carpooling.service.business.vehicle.implementation;
 
-import java.util.UUID;
-
-import edu.uco.carpooling.crosscutting.exception.ServiceCarpoolingException;
-import edu.uco.carpooling.crosscutting.helper.UUIDHelper;
-import edu.uco.carpooling.crosscutting.messages.Messages;
 import edu.uco.carpooling.data.daofactory.DAOFactory;
 import edu.uco.carpooling.domain.DriverDTO;
 import edu.uco.carpooling.service.business.driverpervehicle.CreateDriverPerVehicleUseCase;
@@ -13,9 +8,6 @@ import edu.uco.carpooling.domain.VehicleDTO;
 import edu.uco.carpooling.service.business.driver.FindDriverByIdUseCase;
 import edu.uco.carpooling.service.business.driver.implementation.FindDriverByIdUseCaseImpl;
 import edu.uco.carpooling.service.business.vehicle.CreateVehicleUseCase;
-import edu.uco.carpooling.service.business.vehicle.FindVehiclePlate;
-import edu.uco.carpooling.service.business.vehicle.FormatNumEnrollment;
-import edu.uco.carpooling.service.business.vehicle.FormatPlate;
 
 public class CreateVehicleUseCaseImpl implements CreateVehicleUseCase {
 

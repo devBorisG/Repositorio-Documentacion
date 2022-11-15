@@ -1,49 +1,49 @@
 package edu.uco.carpooling.crosscutting.messages;
 
 public class Messages {
-
+	
 	private Messages() {
 		super();
 	}
 
 	public static class DAOFactory {
-
+		
 		private DAOFactory() {
 			super();
 		}
-
-		public static final String TECHNICAL_MONGO_DB_NOT_IMPLEMENTED = "DAOFactory for MONGODB is'nt implemented yet";
-		public static final String TECHNICAL_MY_SQL_NOT_IMPLEMENTED = "DAOFactory for MYSQL is'nt implemented yet";
-		public static final String TECHNICAL_ORACLE_NOT_IMPLEMENTED = "DAOFactory for ORACLE is'nt implemented yet";
-		public static final String TECHINICAL_SQL_SERVER_NOT_IMPLEMENTED = "DAOFactory for SQLSERVER is'nt implemented yet";
-		public static final String TECHNICAL_UNEXPECTED_DAOFACTORY = "Unexpected DAOFactory is'nt implemented";
+		
+		public static final String TECHNICAL_MONGO_DB_NOT_IMPLEMENTED="DAOFactory for MONGODB is'nt implemented yet";
+		public static final String TECHNICAL_MY_SQL_NOT_IMPLEMENTED="DAOFactory for MYSQL is'nt implemented yet";
+		public static final String TECHNICAL_ORACLE_NOT_IMPLEMENTED="DAOFactory for ORACLE is'nt implemented yet";
+		public static final String TECHINICAL_SQL_SERVER_NOT_IMPLEMENTED="DAOFactory for SQLSERVER is'nt implemented yet";
+		public static final String TECHNICAL_UNEXPECTED_DAOFACTORY= "Unexpected DAOFactory is'nt implemented";
 	}
-
+	
 	public static class SqlConnectionHelper {
-
+		
 		private SqlConnectionHelper() {
 			super();
 		}
-
-		public static final String TECHNICAL_CONNECTION_IS_NULL = "Connection is null";
-		public static final String TECHNICAL_CONNECTION_IS_CLOSED = "Connection is closed";
+		
+		public static final String TECHNICAL_CONNECTION_IS_NULL="Connection is null";
+		public static final String TECHNICAL_CONNECTION_IS_CLOSED="Connection is closed";
 		public static final String TECHNICAL_CONNECTION_ALREDY_IS_CLOSED = "Connection alredy is closed";
 		public static final String TECHNICAL_PROBLEM_CLOSING_CONNECTION = "There was a problem try close the connection. Please verify the technicals details";
 		public static final String TECHNICAL_CONNECTION_IS_CLOSED_FOR_INIT_TRANSACTION = "Connection is closed to start a new transaction";
-		public static final String TECHNICAL_PROBLEM_TRY_INIT_TRANSACTION = "There was a problem trying to start the transaction. Please verify the technical details";
+		public static final String TECHNICAL_PROBLEM_TRY_INIT_TRANSACTION = "There was a problem trying to start the transaction. Please verify the technical details";	
 		public static final String TECHNICAL_CONNECTION_IS_CLOSED_FOR_COMMIT_TRANSACTION = "Connection is closed to commit the current transaction";
 		public static final String TECHNICAL_PROBLEM_TRY_COMMIT_TRANSACTION = "There was a problem trying to commit the current trasaction. Please verify te technical details";
 		public static final String TECHNICAL_CONNECTION_IS_CLOSED_FOR_ROLLBACK_TRANSACTION = "Connection is closed to rollback the current transaction";
 		public static final String TECHNICAL_PROBLEM_TRY_ROLLBACK_TRANSACTION = "There was a problem trying to rollback the current trasaction. Please verify te technical details";
 
 	}
-
-	public static class PostgreSqlDAOFactory {
-
+	
+	public static class PostgreSqlDAOFactory{
+		
 		private PostgreSqlDAOFactory() {
 			super();
 		}
-
+		
 		public static final String TECHNICAL_CONNECTION_NOT_POSSIBLE = "The connection is not possible";
 		public static final String TECHNICAL_OPEN_CONNECTION_UNEXPECTED_ERROR = "The was an unexpected error trying openning connection in PostgreSqlDAOFactory";
 		public static final String TECHNICAL_PROBLEM_INIT_TRANSACTION = "There was a problem trying to init transaction with the current connection in PostgreSqlDAOFactory";
@@ -55,45 +55,47 @@ public class Messages {
 		public static final String TECHNICAL_PROBLEM_CLOSE_CONNECTION = "There was a problem trying to close connection in PostgreSqlDAOFactory";
 		public static final String TECHNICAL_CLOSE_CONNECTION_UNEXPECTED_ERROR = "There was an unexpected error trying close connection in PostgreSqlDAOFactory";
 	}
-
-	public static class DriverPostgreSqlDAO {
-
+	
+	public static class DriverPostgreSqlDAO{
+		
 		private DriverPostgreSqlDAO() {
 			super();
 		}
-
+		
 		public static final String TECHNICAL_PROBLEM_CREATE_DRIVER = "There was a problem trying create driver in DriverPostgreSql with id=";
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_DRIVER = "There was an unexpected problem trying create driver in DriverPostgreSql";
 		public static final String TECHNICAL_PROBLEM_UPDATE_DRIVER = "There was a problem trying update driver in DriverPostgreSql with id=";
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_DRIVER = "There was an unexpected problem trying update driver in DriverPostgreSql";
 		public static final String TECHNICAL_PROBLEM_DELETE_DRIVER = "There was a problem trying delete driver in DriverPostgreSql with id=";
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_DELETE_DRIVER = "There was an unexpected problem trying delete driver in DriverPostgreSql";
-
+		
 	}
-
-	public static class CustomerPostgreSqlDAO {
-
+	
+	
+	public static class CustomerPostgreSqlDAO{
+		
 		private CustomerPostgreSqlDAO() {
 			super();
 		}
-
+		
 		public static final String TECHNICAL_PROBLEM_CREATE_CUSTOMER = "There was a problem trying create customer in CustomerPostgreSql with id=";
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_CUSTOMER = "There was an unexpected problem trying create customer in CustomerPostgreSql";
 		public static final String TECHNICAL_PROBLEM_UPDATE_CUSTOMER = "There was a problem trying update customer in CustomerPostgreSql with id=";
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_CUSTOMER = "There was an unexpected problem trying update customer in CustomerPostgreSql";
 		public static final String TECHNICAL_PROBLEM_DELETE_CUSTOMER = "There was a problem trying delete customer in CustomerPostgreSql with id=";
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_DELETE_CUSTOMER = "There was an unexpected problem trying delete customer in CustomerPostgreSql";
-
+	
 	}
-
-	public static class UUIDHelper {
+	
+	public static class UUIDHelper{
 		private UUIDHelper() {
 			super();
 		}
-
-		public static final String TECHICAL_UUID_FROM_STRING_INAVLID = "The UUID to covert does not have a valied";
+		
+		public static final String TECHICAL_UUID_FROM_STRING_INAVLID ="The UUID to covert does not have a valied";
 		public static final String TECNICAL_UUID_FROM_STRING_UNEXPECTED_ERROR = "There was an unexpected exception trying to convert a UUID from String";
 	}
+
 	public static class DriverPerVehiclePostgresSqlDAO {
 		private DriverPerVehiclePostgresSqlDAO() {
 			super();
@@ -116,6 +118,7 @@ public class Messages {
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STAMENT = "There was an unexpected problem trying to prepared the sql stament the parameters";
 		public static final String TECHNICAL_PROBLEM_FILL_ROUTE_STATUS_DTO = "There was a problem filling authotizedcategoryDTO from the resultSet ";
 	}
+
 	public static class RouteqlServerDAO{
 	 	private RouteqlServerDAO(){
 	 		super();	
@@ -219,26 +222,38 @@ public class Messages {
 	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STAMENT = "There was an unexpected problem trying to prepared the sql stament the parameters";
 	 	public static final String TECHNICAL_PROBLEM_FILL_ROUTE_STATUS_DTO = "There was a problem filling routeStatusDTO from the resultSet ";
 	}
-
-
-	public static class VehiclePosgreSqlDao {
+	
+	public static class DriverPerVehiclePostgresSqlDAO{
+        public DriverPerVehiclePostgresSqlDAO(){super();}
+	 	public static final String TECHNICAL_PROBLEM_CREATE_DRIVER_PER_VEHICLE  = "There was a problem trying to create the driver per vehicle in SQLServerDaoFactory with idVehicle= ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_DRIVER_PER_VEHICLE = "There was an unexpected problem trying to create driver per vehivle in PostgreSQLDaoFactory";
+	 	public static final String TECHNICAL_PROBLEM_UPDATE_DRIVER_PER_VEHICLE  = "There was a problem trying to update the driver per vehicle in SQLServerDaoFactory with id= ";
+	 	public static final String TECHNICAL_PROBLEM_DELETE_DRIVER_PER_VEHICLE  = "There was a problem trying to delete the driver per vehicle in PostgreSQLDaoFactory with idDriver= ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_DELETE_DRIVER_PER_VEHICLE = "The was an unexpected error tryinf to delete driver per vehicle in PostgreSQLDapFactory";
+	 	public static final String TECHNICAL_PROBLEM_FILL_RESULTS = "There was a problem recovering results from the select ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS = "There was an unexpected problem trying recovering results from the select ";
+	 	public static final String TECHNICAL_PROBLEM_FILL_DRIVER_PER_VEHICLE_DTO = "There was a problem filling authotizedcategoryDTO from the resultSet ";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_DRIVER_PER_VEHICLE_DTO = "There was an unexpected problem trying fill driverpervehicleDTO from the resultSet ";
+	 	public static final String TECHNICAL_PROBLEM_EXECUTE_QUERY = "There was a problem trying to excute query to find the specific driver per vehicle";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_EXECEUTE_QUERY = "There was an unexpected problem trying to execute query to find the specific driver per vehicle";
+	 	public static final String TECHNICAL_PROBLEM_SET_PARAMETER_VALUES_QUERY = "There was a problem trying to set the parameters values to the query";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMETER_VALUES_QUERY = "There was an unexpected problem trying to set the parameters values to the query";
+	 	public static final String TECHNICAL_PROBLEM_PREPARED_STAMENT = "There was a problem trying to prepared the sql stament the parameters";
+	 	public static final String TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STAMENT = "There was an unexpected problem trying to prepared the sql stament the parameters";
+	 	public static final String TECHNICAL_PROBLEM_FILL_ROUTE_STATUS_DTO = "There was a problem filling authotizedcategoryDTO from the resultSet ";
+	}
+	
+	public static class VehiclePosgreSqlDao{
 		private VehiclePosgreSqlDao() {
 			super();
 		}
 
 		public static final String TECHNICAL_PROBLEM_CREATE_VEHICLE = "There was a problem trying to create the Vehicle in PostgreSqlDao with id= ";
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_VEHICLE = "The was an unexpected error trying to create Vehicle in PostgreSqlDao";
-		public static final String TECHNICAL_PROBLEM_DELETE_VEHICLE = "The was a problem trying to delete the vehicle in PostgreSqlDao with id= ";
+		public static final String TECHNICAL__PROBLEM_DELETE_VEHICLE = "The was a problem trying to delete the vehicle in PostgreSqlDao with id= ";
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_DELETE_VEHICLE = "The was a problem trying to delete the vehicle in PostgreSqlDao";
-		public static final String TECHNICAL_PROBLEM_FILL_VEHICLE = "there was a problem trying to full VehicleDTO from the resultset";
-		public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_VEHICLE = "there was an unexpected problem trying to full VehicleDTO from the resultset";
-		public static final String TECHNICAL_PROBLEM_FILL_RESULTS = "There was a problem recoverying results from the select";
-		public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS = "There was an unexpected problem recoverying results from the select";
-		public static final String TECHNICAL_PROBLEM_EXECUTE_QUERY = "There was a problem trying to execute query to find the specific vehicle";
-		public static final String TECHNICAL_UNEXPECTED_PROBLEM_EXECUTE_QUERY = "There was an unexpected problem trying to execute query to find the specific vehicle";
-		public static final String TECHNICAL_PROBLEM_PREPARED_STATEMENT = "There was a problem trying prepare the sql statement";
-		public static final String TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STATEMENT = "There was an unexpected problem trying prepare the sql statement";
 
+		
 	}
 
 	public static class AuthotizedCategoryPostgresSqlDAOPostgresSqlDAO {
@@ -331,8 +346,5 @@ public class Messages {
 			super();
 		}
 		
-		public static final String BUSSINES_DRIVER_DOES_NOT_EXISTS = "The driver does not exist.";
-		public static final String BUSSINES_VEHICLE_DOES_NOT_EXISTS = "The vehicle does not exist.";
-
 	}
 }

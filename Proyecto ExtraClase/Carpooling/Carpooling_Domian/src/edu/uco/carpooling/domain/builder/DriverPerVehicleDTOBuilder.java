@@ -9,6 +9,7 @@ import static edu.uco.carpooling.domain.DriverPerVehicleDTO.create;
 public class DriverPerVehicleDTOBuilder {
     private DriverDTO driver;
     private VehicleDTO vehicle;
+    private String state;
 
     private DriverPerVehicleDTOBuilder() {
     	super();
@@ -29,6 +30,6 @@ public class DriverPerVehicleDTOBuilder {
     
 
 	public final DriverPerVehicleDTO build() {
-    	return create(driver,vehicle);
+    	return create(state,driver,vehicle);
     }
 }

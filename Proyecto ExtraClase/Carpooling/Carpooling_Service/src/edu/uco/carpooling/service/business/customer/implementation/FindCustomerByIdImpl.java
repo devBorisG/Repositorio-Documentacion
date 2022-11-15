@@ -21,9 +21,9 @@ public class FindCustomerByIdImpl implements FindCustomerById{
 		final CustomerDTO customer = CustomerDTO.create(id);
 		final List<CustomerDTO> results = factory.getUserDAO().find(customer);
 		
-		if (!results.isEmpty()) {
+		if (results != null && !results.isEmpty()) {
 			result = results.get(0);
 		}
-		return null;
+		return result;
 	}
 }
