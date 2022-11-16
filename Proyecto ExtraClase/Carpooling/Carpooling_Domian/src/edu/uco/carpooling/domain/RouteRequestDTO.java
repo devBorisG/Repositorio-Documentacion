@@ -38,8 +38,8 @@ public class RouteRequestDTO {
 		setServiceRequestTime(TIME);
 		setCustomer(null);
 		setStatus(EMPTY);
-		setRouterequesOrigin(EMPTY);
-		setRouterequesEnd(EMPTY);
+		setRouteRequestOrigin(EMPTY);
+		setRouteRequestEnd(EMPTY);
 	}
 	
 	public  RouteRequestDTO (final UUID id,final Time serviceRequesTime,
@@ -51,8 +51,8 @@ public class RouteRequestDTO {
 		setServiceRequestDate(serviceRequestDate);
 		setCustomer(customer);
 		setStatus(status);
-		setRouterequesOrigin(routeRequestOrigin);
-		setRouterequesEnd(routeRequestEnd);
+		setRouteRequestOrigin(routeRequestOrigin);
+		setRouteRequestEnd(routeRequestEnd);
 	}
 	
 	public static final RouteRequestDTO create(final UUID id,final Time serviceRequesTime,
@@ -88,13 +88,13 @@ public class RouteRequestDTO {
 	public Time getServiceRequestTime() {
 		return serviceRequestTime;
 	}
-	public void setServiceRequestTime(final Time serviceRequestTime) {
+	public void setServiceRequestTime(Time serviceRequestTime) {
 		this.serviceRequestTime = getDefaultTimeIfNull(serviceRequestTime);
 	}
 	public Date getServiceRequestDate() {
 		return serviceRequestDate;
 	}
-	public void setServiceRequestDate(final Date serviceRequestDate) {
+	public void setServiceRequestDate(Date serviceRequestDate) {
 		this.serviceRequestDate = getDefaultDate(serviceRequestDate);
 	}
 	public CustomerDTO getCustomer() {
@@ -106,19 +106,19 @@ public class RouteRequestDTO {
 	public String getStatus() {
 		return status;
 	}
-	public final void setStatus(final String status) {
-		this.status = applyTrim(routeRequestEnd);
+	public final void setStatus(String status) {
+		this.status = applyTrim(status);
 	}
-	public String getRouterequesOrigin() {
+	public String getRouteRequestOrigin() {
 		return routeRequestOrigin;
 	}
-	public final void setRouterequesOrigin(final String routeRequestOrigin) {
+	public final void setRouteRequestOrigin(String routeRequestOrigin) {
 		this.routeRequestOrigin = applyTrim(routeRequestOrigin);
 	}
-	public String getRouterequesEnd() {
+	public String getRouteRequestEnd() {
 		return routeRequestEnd;
 	}
-	public final void setRouterequesEnd(final String routeRequestEnd) {
+	public final void setRouteRequestEnd(String routeRequestEnd) {
 		this.routeRequestEnd = applyTrim(routeRequestEnd);
 	}
 	

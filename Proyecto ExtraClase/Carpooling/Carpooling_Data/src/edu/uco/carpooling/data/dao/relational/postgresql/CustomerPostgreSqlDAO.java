@@ -59,8 +59,7 @@ public final class CustomerPostgreSqlDAO extends DAORelational implements Custom
 		final var parameters = new ArrayList<Object>();
 		
 		creatSelectFrom(sqlBuilder);
-		creatWhere(sqlBuilder, user, parameters);
-		createOrderBy(sqlBuilder);
+		creatWhere(sqlBuilder, user, parameters); 
 		return prepareAndExecuteQuery(sqlBuilder, parameters);
 	}
 	
@@ -158,7 +157,7 @@ private final List<CustomerDTO> fillResults(final ResultSet resultSet){
 						resultSet.getString("FirstSurname"), resultSet.getString("SecondSurname"), 
 						resultSet.getString("Password"),resultSet.getInt("Phone"), 
 						resultSet.getString("Email"));
-						
+
 		} catch (final SQLException exception) {
 			throw DataCarpoolingException.createTechnicalException(Messages.CustomerPostgreSqlDAO.TECHNICAL_PROBLEM_FILL_CUSTOMER_DTO, exception);
 		} catch (final Exception exception) {

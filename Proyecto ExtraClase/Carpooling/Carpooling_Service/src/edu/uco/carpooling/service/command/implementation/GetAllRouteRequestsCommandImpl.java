@@ -10,6 +10,7 @@ import edu.uco.carpooling.service.command.GetAllRouteRequestsCommand;
 public class GetAllRouteRequestsCommandImpl implements GetAllRouteRequestsCommand{
 
 	private DAOFactory factory;
+	
 	@Override
 	public List<RouteRequestDTO> get() {
 		try {

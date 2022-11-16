@@ -60,7 +60,7 @@ public class RouteRequestController {
 				response.addErrorMessages(exception.getMessage());
 			}
 		
-			//exception.printStackTrace();
+			exception.printStackTrace();
 		}
 		
 		catch (final Exception exception) {
@@ -73,6 +73,8 @@ public class RouteRequestController {
 		
 		return new ResponseEntity<>(response, httpStatus);
 	}
+	
+	
 	@GetMapping("/all")
 	ResponseEntity<Response<RouteRequestDTO>> get(){
 		final Response<RouteRequestDTO> response = new Response<>();
