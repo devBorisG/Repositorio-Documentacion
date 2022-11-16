@@ -2,7 +2,6 @@ package edu.uco.carpooling.domain;
 
 import java.sql.Date;
 import java.sql.Time;
-import java.time.LocalDateTime;
 import java.util.UUID;
 
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getDefaultUUID;
@@ -16,8 +15,6 @@ import static edu.uco.carpooling.crosscutting.helper.StringHelper.applyTrim;
 import static edu.uco.carpooling.crosscutting.helper.UUIDHelper.getUUIDFromString;
 import static edu.uco.carpooling.crosscutting.helper.DateHelper.DEFAULT_DATE;
 import static edu.uco.carpooling.crosscutting.helper.TimeHelper.TIME;
-
-import edu.uco.carpooling.crosscutting.helper.DateHelper;
 import edu.uco.carpooling.crosscutting.helper.UUIDHelper;
 
 
@@ -36,7 +33,7 @@ public class RouteRequestDTO {
 		setId(getNewUUID());
 		setServiceRequestDate(DEFAULT_DATE);
 		setServiceRequestTime(TIME);
-		setCustomer(null);
+		setCustomer(getUserDTOBuilder().build());
 		setStatus(EMPTY);
 		setRouteRequestOrigin(EMPTY);
 		setRouteRequestEnd(EMPTY);
@@ -72,7 +69,7 @@ public class RouteRequestDTO {
 	}
 	
 	public static final RouteRequestDTO create(final UUID id) {
-		return new RouteRequestDTO(id, TIME, DEFAULT_DATE, null, EMPTY, EMPTY, EMPTY);
+		return new RouteRequestDTO(id, TIME, DEFAULT_DATE, getUserDTOBuilder().build(), EMPTY, EMPTY, EMPTY);
 	}
 	
 	public static final String getUUIDAsString(final UUID value) {

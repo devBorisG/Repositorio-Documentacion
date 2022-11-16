@@ -14,7 +14,7 @@ import edu.uco.carpooling.crosscutting.messages.Messages;
 import static edu.uco.carpooling.crosscutting.helper.StringHelper.isEmpty;
 
 public class CreateCustomerValidator implements Validator<CustomerDTO> {
-
+	
 	@Override
 	public List<Message> validate(CustomerDTO dto) {
 		List<Message> messages = new ArrayList<>();

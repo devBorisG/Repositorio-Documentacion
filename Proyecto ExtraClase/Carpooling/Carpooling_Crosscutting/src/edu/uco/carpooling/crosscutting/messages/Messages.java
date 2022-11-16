@@ -425,4 +425,16 @@ public class Messages {
 		public static final String CONTROLLER_SUCCES_FOUND_CUSTOMER_BYID= "Succes found customer with id";
 
 	}
+	
+	public static class RouteRequestController{
+		private RouteRequestController() {
+			super();
+		}
+		public static final String CONTROLLER_CREATE_ROUTE_REQUEST_SUCCESFUL = "Route Request has been create succssefully";
+		public static final String CONTROLLER_ERROR_TRY_TO_CREATE_CUSTOMER_ROUTE_REQUEST = "There was an error trying to create route request. Please try again...";
+		public static final String CONTROLLER_UNEXPECTED_ERROR_TRY_TO_CREATE_ROUTE_REQUEST = "There was a unexpected error trying to create route request. Please try again...";
 	}
+}
+
+
+
