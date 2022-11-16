@@ -39,6 +39,7 @@ public class RouteRequestPostgreSqlDAO extends DAORelational implements RouteReq
 			preparedStatement.setTime(6, routeRequest.getServiceRequestTime());
 			preparedStatement.setString(7, routeRequest.getCustomer().getIdAsString());
 			
+			preparedStatement.executeUpdate();
 		} catch (final SQLException exception) {
 			String message = Messages.RouteRequestPostgreSQLDAO.TECHNICAL_PROBLEM_CREATE_ROUTE_REQUEST.concat(routeRequest.getIdAsString()).concat(exception.getMessage());
 			throw DataCarpoolingException.createTechnicalException(message, exception);
