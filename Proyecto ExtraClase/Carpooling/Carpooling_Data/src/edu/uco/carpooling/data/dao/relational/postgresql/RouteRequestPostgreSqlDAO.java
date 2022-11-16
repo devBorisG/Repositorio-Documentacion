@@ -113,7 +113,7 @@ public class RouteRequestPostgreSqlDAO extends DAORelational implements RouteReq
 			}
 			
 			if (!StringHelper.isEmpty(routeRequest.getStatus())) {
-				sqlBuilder.append(setWhere ? "WHERE ": "AND ").append("RR.ststus = ? ");
+				sqlBuilder.append(setWhere ? "WHERE ": "AND ").append("RR.confirmedroute = ? ");
 				parameters.add(routeRequest.getStatus());
 			}
 		}

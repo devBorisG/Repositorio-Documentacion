@@ -6,6 +6,7 @@ import edu.uco.carpooling.service.business.customer.implementation.FindCustomerB
 import edu.uco.carpooling.service.business.usecase.routerequest.CreateRouteRequestUseCase;
 import edu.uco.carpooling.crosscutting.exception.UseCaseCustomException;
 import edu.uco.carpooling.crosscutting.messages.Messages;
+import edu.uco.carpooling.crosscutting.helper.ObjectHelper;
 import edu.uco.carpooling.crosscutting.helper.UUIDHelper;
 
 import java.util.UUID;
@@ -37,7 +38,7 @@ public class CreateRouteRequestUsecaseImpl implements CreateRouteRequestUseCase{
 	private final CustomerDTO findCustomer(final UUID id) {
 		final CustomerDTO customer = findCustomerByIdImpl.execute(id);
 		
-		if (customer!= null && customer.notExist()) {
+		if (!ObjectHelper.isNull(customer) && customer.notExist()) {
 			throw UseCaseCustomException.createUserException(Messages.CreateRouteRequestUseCaseImpl.BUSSINES_CUSTOMER_DOES_NOT_EXIST);
 		}
 		return customer;
