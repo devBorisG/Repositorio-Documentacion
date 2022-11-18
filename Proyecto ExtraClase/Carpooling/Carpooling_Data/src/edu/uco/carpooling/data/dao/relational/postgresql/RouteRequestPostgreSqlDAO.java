@@ -32,13 +32,14 @@ public class RouteRequestPostgreSqlDAO extends DAORelational implements RouteReq
 		
 		try (final var preparedStatement = getConnection().prepareStatement(sql)) {
 			preparedStatement.setString(1, routeRequest.getIdAsString());
-			preparedStatement.setString(2, routeRequest.getRouterequesOrigin());
-			preparedStatement.setString(3, routeRequest.getRouterequesEnd());
+			preparedStatement.setString(2, routeRequest.getRouteRequestOrigin());
+			preparedStatement.setString(3, routeRequest.getRouteRequestEnd());
 			preparedStatement.setBoolean(4, false);
 			preparedStatement.setDate(5, routeRequest.getServiceRequestDate());
 			preparedStatement.setTime(6, routeRequest.getServiceRequestTime());
 			preparedStatement.setString(7, routeRequest.getCustomer().getIdAsString());
 			
+			preparedStatement.executeUpdate();
 		} catch (final SQLException exception) {
 			String message = Messages.RouteRequestPostgreSQLDAO.TECHNICAL_PROBLEM_CREATE_ROUTE_REQUEST.concat(routeRequest.getIdAsString()).concat(exception.getMessage());
 			throw DataCarpoolingException.createTechnicalException(message, exception);
@@ -112,7 +113,7 @@ public class RouteRequestPostgreSqlDAO extends DAORelational implements RouteReq
 			}
 			
 			if (!StringHelper.isEmpty(routeRequest.getStatus())) {
-				sqlBuilder.append(setWhere ? "WHERE ": "AND ").append("RR.ststus = ? ");
+				sqlBuilder.append(setWhere ? "WHERE ": "AND ").append("RR.confirmedroute = ? ");
 				parameters.add(routeRequest.getStatus());
 			}
 		}
@@ -203,8 +204,8 @@ public class RouteRequestPostgreSqlDAO extends DAORelational implements RouteReq
 			preparedStatement.setTime(1, routeRequest.getServiceRequestTime());
 			preparedStatement.setDate(2, routeRequest.getServiceRequestDate());
 			preparedStatement.setString(3, routeRequest.getCustomer().getIdAsString());
-			preparedStatement.setString(4, routeRequest.getRouterequesOrigin());
-			preparedStatement.setString(5, routeRequest.getRouterequesEnd());
+			preparedStatement.setString(4, routeRequest.getRouteRequestOrigin());
+			preparedStatement.setString(5, routeRequest.getRouteRequestEnd());
 			preparedStatement.setString(6, routeRequest.getIdAsString());
 			
 			preparedStatement.executeUpdate();
